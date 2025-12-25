@@ -46,16 +46,16 @@ Athena/
 │   │       └── Skill_VectorRAG.md             # Semantic Search
 │   ├── workflows/                 # 20 slash commands
 
-│   │   ├── [start.md](examples/workflows/start.md)               # Session boot
-│   │   ├── [end.md](examples/workflows/end.md)                 # Session close + maintenance
-│   │   ├── [think.md](examples/workflows/think.md)               # Deep reasoning (L4)
-│   │   ├── [ultrathink.md](examples/workflows/ultrathink.md)          # Maximum depth (Triple Crown)
-│   │   ├── [refactor.md](examples/workflows/refactor.md)            # Anti-entropy engine
-│   │   ├── [research.md](examples/workflows/research.md)            # Multi-source web research
+│   │   ├── [start.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/start.md)               # Session boot
+│   │   ├── [end.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/end.md)                 # Session close + maintenance
+│   │   ├── [think.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/think.md)               # Deep reasoning (L4)
+│   │   ├── [ultrathink.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/ultrathink.md)          # Maximum depth (Triple Crown)
+│   │   ├── [refactor.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/refactor.md)            # Anti-entropy engine
+│   │   ├── [research.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/research.md)            # Multi-source web research
 │   │   └── needful.md             # Autonomous high-value action
 │   ├── scripts/                   # Python automation
-│   │   ├── [quicksave.py](examples/scripts/quicksave.py)           # Auto-checkpoint every exchange
-│   │   ├── [generate_puml.py](examples/scripts/generate_puml.py)   # Visual architecture audit
+│   │   ├── [quicksave.py](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/quicksave.py)           # Auto-checkpoint every exchange
+│   │   ├── [generate_puml.py](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/generate_puml.py)   # Visual architecture audit
 │   │   ├── create_session.py      # Session log creation
 │   │   ├── orphan_detector.py     # Unlinked file detection
 │   │   └── memory_integrity.py    # Workspace health check

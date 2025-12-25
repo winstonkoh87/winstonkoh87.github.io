@@ -27,13 +27,13 @@ I needed more than a note-taking app. I needed a **"second brain"** — one that
 
 ### Action
 
-I built **Athena**: a hybrid-cloud cognitive system powered by the **[Triple Crown Stack](examples/templates/core_identity_template.md#5-bionic-capability-stack-the-triple-crown)** (Gemini + Supabase + Edge Functions).
+I built **Athena**: a hybrid-cloud cognitive system powered by the **[Triple Crown Stack](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/core_identity_template.md#5-bionic-capability-stack-the-triple-crown)** (Gemini + Supabase + Edge Functions).
 
 - Researched and integrated best practices from [Anthropic's Agents.md](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/agents.md), [Supabase pgvector](https://supabase.com/docs/guides/ai/vector-columns), and [Stanford's DSPy](https://github.com/stanfordnlp/dspy)
-- Designed **[Laws #0-#4](examples/templates/core_identity_template.md)** as hard-coded safety rails and decision principles
+- Designed **[Laws #0-#4](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/core_identity_template.md)** as hard-coded safety rails and decision principles
 - Built **[3-Phase Temporal Workflow](#the-workflow-temporal-flow)** (`/start` → Execute → `/end`) for continuous context inheritance
 - Implemented **[Edge Functions](#tech-stack)** for automated "iCloud-like" memory synchronization
-- Created **[194 Protocols](examples/templates/SKILL_INDEX_template.md)** as reusable thinking patterns for everything from trading to design
+- Created **[194 Protocols](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/SKILL_INDEX_template.md)** as reusable thinking patterns for everything from trading to design
 
 ### Result
 
@@ -42,16 +42,16 @@ I built **Athena**: a hybrid-cloud cognitive system powered by the **[Triple Cro
 | **Build Time** | <30 days |
 | **Monthly Cost** | <SGD 30 |
 | **Sessions Logged** | 352+ |
-| **[Protocols](examples/templates/SKILL_INDEX_template.md)** | 198 |
-| **[Automation Scripts](examples/scripts/)** | 88 |
-| **[Workflows](examples/workflows/)** | 23 |
+| **[Protocols](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/SKILL_INDEX_template.md)** | 198 |
+| **[Automation Scripts](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/)** | 88 |
+| **[Workflows](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/)** | 23 |
 | **Embedded Documents** | 750+ (VectorRAG) |
 
 **Impact:**
 
-- **[Zero-Latency Recall](examples/concepts/adaptive_latency.md)**: Instant context from any past session — no more "who are you again?"
+- **[Zero-Latency Recall](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/concepts/adaptive_latency.md)**: Instant context from any past session — no more "who are you again?"
 - **100% Context Continuity**: Every session builds on the last. Session 272 knows what Session 1 decided.
-- **~40% faster decisions**: Via "[Triple Crown](examples/templates/core_identity_template.md#5-bionic-capability-stack-the-triple-crown)" reasoning (Domain + Adversarial + Cross-Domain analysis)
+- **~40% faster decisions**: Via "[Triple Crown](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/core_identity_template.md#5-bionic-capability-stack-the-triple-crown)" reasoning (Domain + Adversarial + Cross-Domain analysis)
 
 This isn't just an AI assistant. It's a cognitive extension that grows smarter with every interaction.
 
@@ -76,7 +76,7 @@ This isn't just an AI assistant. It's a cognitive extension that grows smarter w
 
 ## 🎬 Quick Demo
 
-[![Athena Terminal Demo — Boot to Response](./examples/demo_screenshot.png)](https://winstonkoh87.github.io/Athena-Public/examples/demo.html)
+[![Athena Terminal Demo — Boot to Response](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/demo_screenshot.png)](https://winstonkoh87.github.io/Athena-Public/examples/demo.html)
 
 *Click to view the **live interactive demo** → [winstonkoh87.github.io/Athena-Public/examples/demo.html](https://winstonkoh87.github.io/Athena-Public/examples/demo.html)*
 
@@ -121,7 +121,7 @@ See where the system is heading: [**View the Living Roadmap**](ROADMAP.md)
 
 AI-Augmented Engineering isn't about replacing skill; it's about shifting from **Execution** to **Intent, Direction, and Verification**.
 
-[→ Read the full concept: **The Paradigm Shift**](examples/concepts/paradigm_shift.md) | [**Amoral Realism**](examples/concepts/amoral_realism.md)
+[→ Read the full concept: **The Paradigm Shift**](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/concepts/paradigm_shift.md) | [**Amoral Realism**](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/concepts/amoral_realism.md)
 
 ---
 
@@ -138,7 +138,7 @@ AI-Augmented Engineering isn't about replacing skill; it's about shifting from *
 
 I built this using [Google AI Antigravity](https://ai.google.dev) (Gemini Code Assist) as my development partner.
 
-[**→ Read the Origin Story: The Raison d'Être of Athena**](examples/concepts/origin_story.md)
+[**→ Read the Origin Story: The Raison d'Être of Athena**](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/concepts/origin_story.md)
 
 ---
 
@@ -176,7 +176,7 @@ Athena operates on three distinct levels of cognitive latency, scalable to the p
 
 | Mode | Trigger | Analogy | Description |
 |------|---------|---------|-------------|
-| **Shikai** | `/start` | [*Adaptive Latency*](examples/concepts/adaptive_latency.md) | The default state. Conversational, low-latency responses for standard tasks. |
+| **Shikai** | `/start` | [*Adaptive Latency*](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/concepts/adaptive_latency.md) | The default state. Conversational, low-latency responses for standard tasks. |
 | **Bankai** | `/think` | *Chain of Thought* | Multi-step reasoning. Deliberate, 3-track analysis (Domain, Adversarial, Cross-Domain). |
 | **Shukai** | `/ultrathink` | *Master Release* | Maximum depth mode. Solves complex multi-domain issues using zero-point inversion and exhaustive simulation. |
 
@@ -193,11 +193,11 @@ Athena isn't just backend logic. I use it to act as a **Creative Director** for 
 | Feature | Description |
 |---------|-------------|
 | **Semantic Injection** | "Make it look like a Porsche dashboard" → Generates `obsidian-black` hex codes and tight, high-contrast spacing. |
-| **Vibe Coding** | Iterative refinement via **[Protocol 130](examples/protocols/130-vibe-coding.md)**, focusing on "feel" over syntax. |
+| **Vibe Coding** | Iterative refinement via **[Protocol 130](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/130-vibe-coding.md)**, focusing on "feel" over syntax. |
 | **Speed** | Concept → Production-ready HTML/CSS in <60 seconds. |
 | **No Figma** | I skip design tools entirely. The code *is* the canvas.
 
-[→ See [Protocol 130](examples/protocols/130-vibe-coding.md) (Vibe Coding)](examples/protocols/130-vibe-coding.md) | [See [Protocol 98](examples/protocols/98-strategic-depth-theory.md) (Strategic Depth)](examples/protocols/98-strategic-depth-theory.md) | [Protocol Template](examples/templates/protocol_template.md)
+[→ See [Protocol 130](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/130-vibe-coding.md) (Vibe Coding)](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/130-vibe-coding.md) | [See [Protocol 98](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/98-strategic-depth-theory.md) (Strategic Depth)](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/98-strategic-depth-theory.md) | [Protocol Template](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/protocol_template.md)
 
 ---
 
@@ -219,9 +219,9 @@ Athena/
 
 **👉 Explore the examples:**
 
-- [Core Identity Template](examples/templates/core_identity_template.md) — How to define your AI's personality
-- [Protocol Template](examples/templates/protocol_template.md) — Reusable thinking pattern format
-- [Session Log Template](examples/templates/session_log_template.md) — Continuous memory structure
+- [Core Identity Template](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/core_identity_template.md) — How to define your AI's personality
+- [Protocol Template](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/protocol_template.md) — Reusable thinking pattern format
+- [Session Log Template](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/session_log_template.md) — Continuous memory structure
 
 ### The Workflow (Temporal Flow)
 
@@ -281,7 +281,7 @@ flowchart TB
 3. 💾 Quicksave        →  quicksave.py (persist for future sessions)
 ```
 
-👉 **Scripts**: [supabase_search.py](examples/scripts/supabase_search.py) | [quicksave.py](examples/scripts/quicksave.py)
+👉 **Scripts**: [supabase_search.py](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/supabase_search.py) | [quicksave.py](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/quicksave.py)
 
 #### Phase 3: The Consolidation (`/end`)
 
@@ -338,7 +338,7 @@ Athena operates on a continuous loop: **Boot (`/start`) → Execute → Persist 
 
 **The key unlock**: Context lives in **files**, not in **chat history**. Files don't expire. Files are searchable. Files compound.
 
-### The Anti-Entropy Engine ([/refactor](examples/workflows/refactor.md))
+### The Anti-Entropy Engine ([/refactor](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/refactor.md))
 
 **For a human coder**: Full workspace refactoring = weeks or months of tedious work.
 
@@ -440,17 +440,17 @@ description: Boot your AI assistant
 
 ### Step 4: Set Up Session Logging
 
-Use the [`quicksave.py`](examples/scripts/quicksave.py) script to auto-log every exchange.
+Use the [`quicksave.py`](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/quicksave.py) script to auto-log every exchange.
 
 **Other useful scripts:**
 
-- [`create_session.py`](examples/scripts/create_session.py) — Generate new session log files
-- [`generate_tag_index.py`](examples/scripts/generate_tag_index.py) — Auto-build searchable tag indices
-- [`context_capture.py`](examples/scripts/context_capture.py) — Snapshot context for retrieval
+- [`create_session.py`](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/create_session.py) — Generate new session log files
+- [`generate_tag_index.py`](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/generate_tag_index.py) — Auto-build searchable tag indices
+- [`context_capture.py`](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/context_capture.py) — Snapshot context for retrieval
 
 ### Step 5: Build Your Protocol Library
 
-Start with the [protocol_template.md](examples/templates/protocol_template.md) and create protocols for:
+Start with the [protocol_template.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/protocol_template.md) and create protocols for:
 
 - Decision-making frameworks
 - Communication patterns
@@ -458,9 +458,9 @@ Start with the [protocol_template.md](examples/templates/protocol_template.md) a
 
 **Additional templates:**
 
-- [case_study_template.md](examples/templates/case_study_template.md) — Document patterns from real experiences
-- [SKILL_INDEX_template.md](examples/templates/SKILL_INDEX_template.md) — Master registry of all skills
-- [operating_principles_template.md](examples/templates/operating_principles_template.md) — Define behavioral rules
+- [case_study_template.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/case_study_template.md) — Document patterns from real experiences
+- [SKILL_INDEX_template.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/SKILL_INDEX_template.md) — Master registry of all skills
+- [operating_principles_template.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/operating_principles_template.md) — Define behavioral rules
 
 ---
 
@@ -468,17 +468,17 @@ Start with the [protocol_template.md](examples/templates/protocol_template.md) a
 
 | Command | Description | View Source |
 |---------|-------------|-------------|
-| `/start` | Boot the system, load identity, create session log | [start.md](examples/workflows/start.md) |
-| `/end` | Close session, commit changes, update memories | [end.md](examples/workflows/end.md) |
-| `/think` | Deep reasoning mode with structured analysis | [think.md](examples/workflows/think.md) |
-| `/ultrathink` | Maximum depth: [Triple Crown](examples/templates/core_identity_template.md#5-bionic-capability-stack-the-triple-crown) + adversarial stress-test | [ultrathink.md](examples/workflows/ultrathink.md) |
-| `/refactor` | Full workspace optimization: diagnostics, orphan fix, VectorRAG sync | [refactor.md](examples/workflows/refactor.md) |
-| `/research` | Multi-source web research with citations | [research.md](examples/workflows/research.md) |
-| `/diagnose` | Read-only workspace health check | [diagnose.md](examples/workflows/diagnose.md) |
-| `/audit` | Cross-check work with adversarial review | [audit.md](examples/workflows/audit.md) |
-| `/circuit` | High-risk action override ceremony | [circuit.md](examples/workflows/circuit.md) |
+| `/start` | Boot the system, load identity, create session log | [start.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/start.md) |
+| `/end` | Close session, commit changes, update memories | [end.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/end.md) |
+| `/think` | Deep reasoning mode with structured analysis | [think.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/think.md) |
+| `/ultrathink` | Maximum depth: [Triple Crown](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/core_identity_template.md#5-bionic-capability-stack-the-triple-crown) + adversarial stress-test | [ultrathink.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/ultrathink.md) |
+| `/refactor` | Full workspace optimization: diagnostics, orphan fix, VectorRAG sync | [refactor.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/refactor.md) |
+| `/research` | Multi-source web research with citations | [research.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/research.md) |
+| `/diagnose` | Read-only workspace health check | [diagnose.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/diagnose.md) |
+| `/audit` | Cross-check work with adversarial review | [audit.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/audit.md) |
+| `/circuit` | High-risk action override ceremony | [circuit.md](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/circuit.md) |
 
-👉 **[Browse all workflows →](examples/workflows/)**
+👉 **[Browse all workflows →](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/)**
 
 ---
 
@@ -523,7 +523,7 @@ The report was stress-tested on [LMArena](https://lmarena.ai/) using blind peer 
 - **Institutional Grade**: **CRITICAL LOSS** (Payback Period: Never)
 - **Key Insight**: Added **"Bowls per Hour"** toil metric + **Operator Priority Draw**.
 
-**👉 [Read the Full Institutional-Grade Case Study →](examples/case_studies/bcm_silent_partner_analysis.md)**
+**👉 [Read the Full Institutional-Grade Case Study →](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/case_studies/bcm_silent_partner_analysis.md)**
 
 ---
 
@@ -585,7 +585,7 @@ pip install python-telegram-bot google-generativeai python-dotenv
 python3 telegram_bot.py
 ```
 
-👉 **[View the Telegram Bot Template →](examples/scripts/telegram_bot_template.py)** — A complete starter implementation with:
+👉 **[View the Telegram Bot Template →](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/telegram_bot_template.py)** — A complete starter implementation with:
 
 - User authentication (locks to your Telegram ID)
 - Gemini API integration with model fallback cascade
@@ -631,13 +631,13 @@ Athena-Public/
 
 ## 🛡️ Anti-Hallucination Architecture
 
-Athena mitigates hallucination through **Grounding** (local files), **Modular Loading**, and **[Law #5](examples/templates/core_identity_template.md)** (Epistemic Rigor).
+Athena mitigates hallucination through **Grounding** (local files), **Modular Loading**, and **[Law #5](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/core_identity_template.md)** (Epistemic Rigor).
 
 **Cross-Model Validation**: The ultimate filter. We assume no single model is infallible — but collusion between non-connected SoTA models (**Claude Opus 4.5**, **Gemini 3 Pro**) is statistically impossible. When rival architectures agree, hallucination probability approaches zero.
 
 > *The human retains the verification layer. AI accelerates; human validates. That's the bionic unit model.*
 
-[→ Read full architecture: **Anti-Hallucination Mechanics**](examples/concepts/anti_hallucination.md)
+[→ Read full architecture: **Anti-Hallucination Mechanics**](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/concepts/anti_hallucination.md)
 
 ---
 
@@ -719,16 +719,16 @@ I'm Winston — an **AI Systems Engineer** who spent 10+ years in financial serv
 | **Visual Architecture Auditing** | PlantUML generation and structural verification ([Protocol 166](docs/protocols/engineering/166-intent-drift-detector.md)) |
 | **Intent Persistence** | TASK_LOG infrastructure to prevent AI regression |
 | **Protocol 49 v2: Robustness > Efficiency** | Upgraded trade-off framework: Pareto frontier framing, failure modes table, executable flip gates |
-| **Anti-Hallucination Architecture** | Structural design to minimize AI hallucinations (Law #5, [Protocol 141](examples/protocols/141-claim-atomization.md)) |
+| **Anti-Hallucination Architecture** | Structural design to minimize AI hallucinations (Law #5, [Protocol 141](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/141-claim-atomization.md)) |
 | **📱 Telegram Bot (Athena-Lite)** | Private mobile bot for field notes, voice, and photo logging |
 | **Academic References** | Full bibliography with APA citations for all frameworks |
-| **[Protocol 139](examples/protocols/139-decentralized-command.md)-141** | Decentralized Command, Base Rate Audit, Claim Atomization |
+| **[Protocol 139](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/139-decentralized-command.md)-141** | Decentralized Command, Base Rate Audit, Claim Atomization |
 | **Graph of Thoughts** | Added to Triple Crown reasoning stack |
 | **Serverless Sync** | Fully automated GitHub -> Supabase Edge Function pipeline |
 | **Supabase Semantic Search** | pgvector-powered meaning-based memory retrieval |
 | **93 Automation Scripts** | Comprehensive toolkit for knowledge management |
 | **198 Protocols** | Reusable thinking patterns and decision frameworks |
-| **Institutional Case Study** | **[BCM Silent Partner Analysis](examples/case_studies/bcm_silent_partner_analysis.md)** upgraded to "God Mode" fidelity (Operator Draw, Biological Limits). |
+| **Institutional Case Study** | **[BCM Silent Partner Analysis](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/case_studies/bcm_silent_partner_analysis.md)** upgraded to "God Mode" fidelity (Operator Draw, Biological Limits). |
 | **23 Workflows** | Slash commands for common operations |
 
 </details>

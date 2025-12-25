@@ -1,4 +1,4 @@
-# [Protocol 130](examples/protocols/130-vibe-coding.md): The Vibe Coding System (System-Assisted Building)
+# [Protocol 130](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/130-vibe-coding.md): The Vibe Coding System (System-Assisted Building)
 
 > **Source**: r/vibecoding (User: Tonjiez)
 > **Purpose**: High-velocity product building by treating AI as a system component, not just a generator.
