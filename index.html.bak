@@ -26,7 +26,6 @@
 
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/terminal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -52,22 +51,12 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <div class="terminal-window">
-                    <div class="terminal-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                    </div>
-                    <div class="terminal-body">
-                        <p class="console-line"><span class="prompt">></span> <span id="typewriter"></span><span
-                                class="cursor">_</span></p>
-                    </div>
-                </div>
-
-                <h1 class="fade-in-delayed">Winston Koh</h1>
-                <p class="hero-subtitle fade-in-delayed-2">Strategic Systems Architect</p>
-                <p class="hero-description fade-in-delayed-3">
-                    I build systems that survive contact with reality.
+                <p class="hero-tag">Strategic Systems Architect</p>
+                <h1>Winston Koh</h1>
+                <p class="hero-subtitle">I build systems that survive contact with reality.</p>
+                <p class="hero-description">
+                    Whether it's AI infrastructure, decision frameworks, or navigating high-stakes arenas —
+                    I architect outcomes, not just outputs.
                 </p>
             </div>
         </section>
@@ -150,7 +139,6 @@
     </a>
 
     <script src="assets/js/particles.js"></script>
-    <script src="assets/js/typewriter.js"></script>
 </body>
 
 </html>

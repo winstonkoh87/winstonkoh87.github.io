@@ -1,0 +1,114 @@
+/* Terminal / Typewriter Styles */
+.terminal-window {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: left;
+}
+
+.terminal-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-dot.red {
+    background-color: #FF5F56;
+}
+
+.terminal-dot.yellow {
+    background-color: #FFBD2E;
+}
+
+.terminal-dot.green {
+    background-color: #27C93F;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    color: var(--text-color);
+    font-size: 1rem;
+    min-height: 80px;
+    /* Prevent jitter */
+}
+
+.console-line {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.prompt {
+    color: var(--accent-color);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background-color: var(--accent-color);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Fade In Animations */
+.fade-in-delayed {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 2.5s;
+    /* Wait for typewriter */
+}
+
+.fade-in-delayed-2 {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 2.8s;
+}
+
+.fade-in-delayed-3 {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 3.1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
