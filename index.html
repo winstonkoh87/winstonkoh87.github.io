@@ -15,6 +15,8 @@
 </head>
 
 <body>
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
     <div class="background-radial"></div>
 
     <header>
@@ -23,37 +25,51 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#framework">Framework</a></li>
-                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#stats">Impact</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- HERO SECTION -->
         <section id="hero">
-            <h1 class="fade-in">Winston Koh</h1>
-            <p class="subtitle fade-in-delayed">Systems Architect. Strategist. Sovereign Operator.</p>
-            <div class="cta-container fade-in-delayed">
-                <a href="#framework" class="btn btn-primary">The Framework</a>
-                <a href="#philosophy" class="btn btn-secondary">Operating Principles</a>
+            <div class="hero-content">
+                <h1 class="glitch" data-text="Winston Koh">Winston Koh</h1>
+                <p class="subtitle">
+                    <span id="typing-text"></span><span class="cursor">|</span>
+                </p>
+                <div class="cta-container">
+                    <a href="#framework" class="btn btn-primary glow-btn">The Framework</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="scroll-indicator">
+                    <span></span>
+                </div>
             </div>
         </section>
 
-        <section id="framework">
+        <!-- FRAMEWORK SECTION -->
+        <section id="framework" class="reveal-on-scroll">
             <h2>The Three-Pillar Leadership Framework</h2>
             <div class="framework-grid">
-                <div class="framework-card strategy">
+                <div class="framework-card strategy stagger-child">
+                    <div class="card-icon">⚡</div>
                     <h3>Strategy</h3>
                     <p class="role">Primary Lever</p>
                     <p>Outthink the environment. Focus on long-term optimization and asset construction. Identifying
                         "Alien Truths" and navigating high-stakes arenas.</p>
                 </div>
-                <div class="framework-card power">
+                <div class="framework-card power stagger-child">
+                    <div class="card-icon">🔥</div>
                     <h3>Raw Power</h3>
                     <p class="role">Secondary Lever</p>
                     <p>Calculated force. Decisive execution when strategy is set. Ruin prevention via Law #1
                         enforcement.</p>
                 </div>
-                <div class="framework-card warmth">
+                <div class="framework-card warmth stagger-child">
+                    <div class="card-icon">💫</div>
                     <h3>Warmth</h3>
                     <p class="role">Tertiary Lever</p>
                     <p>Selective charm. Building strategic alliances when rapport is a requirement for the objective.
@@ -62,23 +78,118 @@
             </div>
         </section>
 
-        <section id="philosophy">
+        <!-- STATS SECTION -->
+        <section id="stats" class="reveal-on-scroll">
+            <h2>Impact & Metrics</h2>
+            <div class="stats-grid">
+                <div class="stat-card stagger-child">
+                    <span class="counter" data-target="1000" data-suffix="%">0</span>
+                    <p>Leverage via Bionic Convergence</p>
+                </div>
+                <div class="stat-card stagger-child">
+                    <span class="counter" data-target="180" data-suffix="+">0</span>
+                    <p>Sessions Optimized</p>
+                </div>
+                <div class="stat-card stagger-child">
+                    <span class="counter" data-target="24" data-suffix="/7">0</span>
+                    <p>AI Availability</p>
+                </div>
+                <div class="stat-card stagger-child">
+                    <span class="counter" data-target="0" data-suffix="">0</span>
+                    <p>Ruin Events (Law #1)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHILOSOPHY SECTION -->
+        <section id="philosophy" class="reveal-on-scroll">
             <h2>Operating Philosophy</h2>
             <div class="philosophy-container">
-                <div class="philosophy-item">
+                <div class="philosophy-item stagger-child">
                     <h4>Amoral Realism</h4>
                     <p>Navigating reality "AS IS" rather than how it "SHOULD BE". Arena Physics over Moral Instruction.
                     </p>
                 </div>
-                <div class="philosophy-item">
+                <div class="philosophy-item stagger-child">
                     <h4>Bionic Excellence</h4>
                     <p>Human intent (Top 1% Nuance) + AI Scale (Bottom 99% Execution). 1000% leverage via bionic
                         convergence.</p>
                 </div>
-                <div class="philosophy-item">
+                <div class="philosophy-item stagger-child">
                     <h4>Sovereignty</h4>
                     <p>Internal judgment over external validation. Architecting reality rather than applying for it.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section id="testimonials" class="reveal-on-scroll">
+            <h2>What People Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card stagger-child">
+                    <div class="quote-icon">"</div>
+                    <p class="quote-text">A strategist who sees three moves ahead. Winston's ability to synthesize
+                        complex problems into actionable frameworks is unparalleled.</p>
+                    <div class="quote-author">
+                        <div class="author-info">
+                            <span class="author-name">Strategic Partner</span>
+                            <span class="author-role">Technology Sector</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card stagger-child">
+                    <div class="quote-icon">"</div>
+                    <p class="quote-text">The rare combination of analytical rigor and decisive execution. He doesn't
+                        just plan—he ships.</p>
+                    <div class="quote-author">
+                        <div class="author-info">
+                            <span class="author-name">Business Collaborator</span>
+                            <span class="author-role">Consulting</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card stagger-child">
+                    <div class="quote-icon">"</div>
+                    <p class="quote-text">His bionic approach to problem-solving—leveraging AI while maintaining human
+                        judgment—is the future of leadership.</p>
+                    <div class="quote-author">
+                        <div class="author-info">
+                            <span class="author-name">Industry Observer</span>
+                            <span class="author-role">AI & Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="reveal-on-scroll">
+            <h2>Let's Connect</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p class="contact-tagline">Ready to explore strategic opportunities or discuss high-stakes
+                        challenges?</p>
+                    <div class="social-links">
+                        <a href="https://github.com/winstonkoh87" target="_blank" class="social-link">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/winstonkoh" target="_blank" class="social-link">
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary glow-btn">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
@@ -87,16 +198,8 @@
         <p>&copy; 2025 Winston Koh. Developed via Athena Bionic OS.</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
