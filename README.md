@@ -4,7 +4,7 @@ Personal brand portfolio site showcasing the Three-Pillar Leadership Framework, 
 
 ## Live Site
 
-🔗 **<https://winstonkoh87.github.io/WebSite-Portfolio/>**
+🔗 **<https://winstonkoh87.github.io/>**
 
 ## Tech Stack
 
@@ -17,7 +17,7 @@ Personal brand portfolio site showcasing the Three-Pillar Leadership Framework, 
 
 | Page | Description |
 |------|-------------|
-| Home | Hero + navigation cards |
+| Home | Hero + Featured Projects (Athena) + Navigation |
 | About | Identity, philosophy, Bionic Operating Model |
 | Framework | Three-Pillar Leadership, Arena Physics, Laws, SDR |
 | Writing | Blog placeholder (SEO-ready) |
