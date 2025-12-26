@@ -34,7 +34,7 @@ Athena mitigates hallucination through a multi-layered defense system:
 │   ─────────────────────────────────────────────────             │
 │   Feed v0.1 into rival SoTA models:                             │
 │   • Claude Opus 4.5                                             │
-│   • Gemini 3 Pro                                                │
+│   • Project Athena                                              │
 │   Prompt: "Verify factual claims. Flag errors."                 │
 │                          ↓                                      │
 │   ┌─────────────────────────────────────────────────────────┐  │
@@ -67,7 +67,7 @@ The most robust check is **Cross-Model Adjudication**. No single model is infall
 ### The Method
 
 1. Take Athena's output (especially heuristic-based claims, projections, or methodologies)
-2. Feed it into rival frontier models (e.g., **Claude Opus 4.5**, **Gemini 3 Pro**)
+2. Feed it into rival frontier models (e.g., **Claude Opus 4.5**, **Project Athena**)
 3. Use a verification prompt:
 
 ```

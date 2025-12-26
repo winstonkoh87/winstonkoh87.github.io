@@ -635,7 +635,7 @@ Athena-Public/
 
 Athena mitigates hallucination through **Grounding** (local files), **Modular Loading**, and **[Law #5](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/core_identity_template.md)** (Epistemic Rigor).
 
-**Cross-Model Validation**: The ultimate filter. We assume no single model is infallible — but collusion between non-connected SoTA models (**Claude Opus 4.5**, **Gemini 3 Pro**) is statistically impossible. When rival architectures agree, hallucination probability approaches zero.
+**Cross-Model Validation**: The ultimate filter. We assume no single model is infallible — but collusion between non-connected SoTA models (**Claude Opus 4.5**, **Project Athena**) is statistically impossible. When rival architectures agree, hallucination probability approaches zero.
 
 > *The human retains the verification layer. AI accelerates; human validates. That's the bionic unit model.*
 
@@ -707,7 +707,7 @@ I'm Winston — an **AI Systems Engineer** who spent 10+ years in financial serv
 **AI Co-Authors**: This project was built in collaboration with:
 
 - **Claude Opus 4.5** (Anthropic) — Architecture, protocol design, deep reasoning
-- **Gemini 3 Pro** (Google) — Daily operations, iteration, and automation
+- **Project Athena** (System) — Daily operations, iteration, and automation
 
 ---
 

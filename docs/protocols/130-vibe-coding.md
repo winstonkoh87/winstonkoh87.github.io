@@ -45,7 +45,7 @@ The Workplan must define:
 
 ## Phase 3: Foundation (The Big Context Shot)
 
-**Tool**: High Context Model (Opus 4.5/Gemini 3 Pro)
+**Tool**: High Context Model (Opus 4.5/Project Athena)
 **Action**: Initial Scaffold
 
 1. Feed the *entire* Workplan to the model.
