@@ -10,7 +10,7 @@ Personal brand portfolio site showcasing the Three-Pillar Leadership Framework, 
 
 ## 🤖 Built by a Bionic Unit
 
-> **This entire site was co-created with [Project Athena](https://github.com/winstonkoh87/Athena-Public)** — my AI-augmented second brain.
+> **This entire site was co-created with [Project Athena](https://github.com/winstonkoh87/Athena-Public)** — my AI-Powered Digital Personal Assistant.
 
 ### The Workflow
 
