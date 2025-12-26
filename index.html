@@ -14,7 +14,9 @@
     <meta property="og:title" content="Winston Koh | Strategic Systems Architect">
     <meta property="og:description"
         content="I build systems that survive contact with reality. Strategy, decision frameworks, and AI-augmented execution.">
-    <meta property="og:image" content="https://winstonkoh87.github.io/assets/img/favicon.svg">
+    <meta property="og:image" content="https://winstonkoh87.github.io/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -22,9 +24,11 @@
     <meta property="twitter:title" content="Winston Koh | Strategic Systems Architect">
     <meta property="twitter:description"
         content="I build systems that survive contact with reality. Strategy, decision frameworks, and AI-augmented execution.">
-    <meta property="twitter:image" content="https://winstonkoh87.github.io/assets/img/favicon.svg">
+    <meta property="twitter:image" content="https://winstonkoh87.github.io/assets/img/og-image.png">
 
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="alternate icon" type="image/png" href="assets/img/og-image.png">
+    <link rel="canonical" href="https://winstonkoh87.github.io/">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/terminal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,9 +36,25 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Winston Koh",
+      "jobTitle": "Strategic Systems Architect",
+      "url": "https://winstonkoh87.github.io",
+      "sameAs": [
+        "https://github.com/winstonkoh87"
+      ],
+      "knowsAbout": ["AI Systems", "Decision Frameworks", "System Architecture"]
+    }
+    </script>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <canvas id="particle-canvas"></canvas>
 
     <header>
@@ -50,7 +70,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-content">
                 <div class="terminal-window">

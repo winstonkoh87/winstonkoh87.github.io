@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+*.DS_Store
+
+# Backups
+*.bak
+
+# Node modules (if ever added)
+node_modules/
+
+# IDE
+.idea/
+.vscode/

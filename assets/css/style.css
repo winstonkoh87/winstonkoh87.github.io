@@ -9,6 +9,34 @@
     --card-bg: rgba(255, 255, 255, 0.02);
 }
 
+/* Accessibility: Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Accessibility: Focus Visible */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.card:focus-visible,
+.project-card:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
 * {
     margin: 0;
     padding: 0;

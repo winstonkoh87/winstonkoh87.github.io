@@ -14,7 +14,10 @@ function resizeCanvas() {
 
 function initParticles() {
     particles = [];
-    const numberOfParticles = Math.min((canvas.width * canvas.height) / 12000, 100);
+    const isMobile = window.innerWidth < 768;
+    const numberOfParticles = isMobile
+        ? Math.min((canvas.width * canvas.height) / 25000, 30)  // Fewer particles on mobile
+        : Math.min((canvas.width * canvas.height) / 12000, 100);
 
     for (let i = 0; i < numberOfParticles; i++) {
         const x = Math.random() * canvas.width;
