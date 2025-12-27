@@ -334,6 +334,42 @@
             color: #3b82f6;
             margin-bottom: 0.8rem;
         }
+
+        .toc-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .toc-box h4 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 !important;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 0 !important;
+        }
+
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none !important;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-primary);
+        }
     </style>
 </head>
 
@@ -376,7 +412,19 @@
                 <p>This article shows you how AI-powered systems — like the one I use daily — can handle 80% of
                     your digital marketing needs. Not in theory. In practice.</p>
 
-                <h2>The Problem</h2>
+                <div class="toc-box">
+                    <h4>Table of Contents</h4>
+                    <ul class="toc-list">
+                        <li><a href="#problem">1. The Problem</a></li>
+                        <li><a href="#solution">2. The Solution: AI as Your Department</a></li>
+                        <li><a href="#outcome">3. The Outcome</a></li>
+                        <li><a href="#cost">4. Cost Comparison</a></li>
+                        <li><a href="#chatgpt">5. Why Not Just Use ChatGPT?</a></li>
+                        <li><a href="#who">6. Is This For You?</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="problem">The Problem</h2>
 
                 <div class="problem-box">
                     <h4>🚨 The SME Digital Dilemma</h4>
@@ -406,7 +454,7 @@
                         and I don't have time to figure it out."</p>
                 </blockquote>
 
-                <h2>The Solution: AI as Your Digital Marketing Department</h2>
+                <h2 id="solution">The Solution: AI as Your Digital Marketing Department</h2>
 
                 <div class="solution-box">
                     <h4>✅ The Bionic Approach</h4>
@@ -527,7 +575,7 @@
                     <li>Carousel/infographic outlines</li>
                 </ul>
 
-                <h2>The Outcome</h2>
+                <h2 id="outcome">The Outcome</h2>
 
                 <div class="outcome-box">
                     <h4>📈 What Changes for Your Business</h4>
@@ -565,7 +613,7 @@
                     </tbody>
                 </table>
 
-                <h2>The Cost Comparison</h2>
+                <h2 id="cost">The Cost Comparison</h2>
 
                 <table class="comparison-table">
                     <thead>
@@ -607,7 +655,7 @@
                         who to target, and how much to spend. The AI just removes the execution bottleneck.</p>
                 </div>
 
-                <h2>"Why Don't I Just Use ChatGPT?"</h2>
+                <h2 id="chatgpt">"Why Don't I Just Use ChatGPT?"</h2>
 
                 <p>Fair question. You could. But here's what actually happens:</p>
 
@@ -660,7 +708,7 @@
 
                 <p>That's the gap. You get the output, not the learning curve.</p>
 
-                <h2>Is This For You?</h2>
+                <h2 id="who">Is This For You?</h2>
 
                 <ul>
                     <li>✅ You're an SME owner who knows your business well</li>
@@ -687,7 +735,7 @@
                             built a tuition centre website in one session</a></p>
                 </div>
 
-                <h2>Interested?</h2>
+                <h2 id="contact">Interested?</h2>
 
                 <p>If you're curious about how this works for your business, feel free to reach out. No sales pitch,
                     just a chat about systems.</p>
