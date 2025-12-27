@@ -28,7 +28,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 - **Implemented** interactive JavaScript (typewriter, particles)
 - **Audited** the codebase for SEO, performance, and broken links
 - **Generated** the og:image social card for LinkedIn/Twitter previews
-- **Ported** documentation from the private Athena repo to `/docs/`
+- **Ported** curated documentation to [Athena-Public](https://github.com/winstonkoh87/Athena-Public)
 
 ### The Operating Model
 
@@ -62,16 +62,15 @@ The human provides **strategic direction** and **high-nuance judgment**. The AI 
 | Framework | Three-Pillar Leadership, Arena Physics, Laws, SDR |
 | Writing | Blog placeholder (SEO-ready) |
 | Contact | WhatsApp CTA + social links |
-| Docs | Docsify-powered knowledge base |
 
 ## Documentation (Knowledge Base)
 
-System architectures and strategic frameworks ported from **Project Athena**:
+System architectures and strategic frameworks are hosted on the **[Athena-Public Repo](https://github.com/winstonkoh87/Athena-Public)**:
 
-- [**Adaptive Latency**](docs/concepts/adaptive-latency.md) — Variable compute reasoning.
-- [**Modular Identity**](docs/concepts/modular-architecture.md) — Scalable agent design.
-- [**Arena Physics**](docs/frameworks/arena-physics.md) — Contextual viability analysis.
-- [**System Architecture**](docs/ARCHITECTURE.md) — Portfolio diagram.
+- [**Adaptive Latency**](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/concepts/adaptive_latency.md) — Variable compute reasoning.
+- [**Modular Identity**](https://github.com/winstonkoh87/Athena-Public/blob/main/docs/concepts/Cognitive_Architecture.md) — Scalable agent design.
+- [**Arena Physics**](https://github.com/winstonkoh87/Athena-Public/blob/main/docs/TAG_INDEX.md) — Contextual viability analysis.
+- [**System Architecture**](https://github.com/winstonkoh87/Athena-Public/blob/main/docs/ARCHITECTURE.md) — Portfolio diagram.
 
 ## Features
 
@@ -80,7 +79,7 @@ System architectures and strategic frameworks ported from **Project Athena**:
 - Mobile responsive
 - Dark mode aesthetic
 - Fast load (~40KB total)
-- Docsify documentation with search
+- Fast load (~40KB total)
 - JSON-LD structured data for SEO
 - Accessibility: skip-links, focus-visible states
 
