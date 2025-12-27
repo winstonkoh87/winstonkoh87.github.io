@@ -107,6 +107,8 @@
             font-size: 1.1rem;
             line-height: 1.8;
             text-align: justify;
+            -webkit-hyphens: auto;
+            hyphens: auto;
         }
 
         .article-content a {
@@ -449,10 +451,9 @@
 
                 <div class="key-insight">
                     <h4>💡 Key Insight</h4>
-                    <p>The best AI users aren't people who treat prompting as the skill. They're <a
-                            href="../pages/about.html"><strong>systems architects</strong></a> who design feedback loops
-                        between human judgment and machine capability. Prompt engineering is just typing; systems
-                        architecture is engineering.
+                    <p>Prompting matters, but it's table stakes. The compounding advantage comes from <a
+                            href="../pages/about.html"><strong>system design</strong></a>—building feedback loops
+                        between human judgment and machine capability.
                     </p>
                 </div>
 
@@ -523,9 +524,10 @@
                     <li><strong>Persistent Memory</strong>: Every conversation, decision, and insight gets indexed in a
                         vector database (so the AI can retrieve relevant prior context, not just store notes). The AI
                         "remembers" context from months ago.</li>
-                    <li><strong>Protocol Library</strong>: A growing collection (198 so far) of reusable frameworks for
-                        recurring problems—decision memos, pre-mortems, risk scoring rubrics, meeting briefing packs,
-                        postmortem reviews.</li>
+                    <li><strong>Protocol Library</strong>: A growing collection (~200 so far) of reusable frameworks for
+                        recurring problems—including decision memos, pre-mortem checklists, risk scoring rubrics,
+                        stakeholder maps,
+                        and term-sheet red flags.</li>
                     <li><strong>Session Logging</strong>: Each exchange gets checkpointed. If the AI hallucinates or I
                         make a bad call, we can trace the reasoning chain.</li>
                     <li><strong>Challenge Mode</strong>: The AI is explicitly configured to push back on flawed
@@ -545,20 +547,29 @@
                             Chor Mee stall. No formal business plan. Verbal profit-sharing terms.</li>
                         <li><strong>Athena steps:</strong> Applied 7 frameworks (PESTLE, Five Forces, SWOT, TOWS, EV
                             calculation, Funding Ladder, Term Sheet). Ran financial projections across 3 scenarios.
-                            Cross-validated with 4 other AI models to catch blind spots.</li>
+                            Cross-validated with 4 other AI models (Gemini, Claude, GPT-4o, Perplexity) to catch blind
+                            spots.</li>
                         <li><strong>Key discovery:</strong> NEA regulations require the licensee to <em>personally
-                                operate</em> the stall. Subletting = termination. My "equity" was actually an unsecured
+                                operate</em> the stall—subletting means termination. (<a
+                                href="https://www.nea.gov.sg/our-services/hawker-management/overview" target="_blank"
+                                rel="noopener">NEA Hawker Centre rules</a>.) My "equity" was actually an unsecured
                             personal loan with zero legal protection.</li>
                         <li><strong>Output:</strong> 15-section due diligence report. Recommendation: <strong>DO NOT
-                                INVEST</strong>. Expected Value: −$24,450 over 3 years.</li>
+                                INVEST</strong>. Expected Value: −$24,450 over 3 years (based on 60% probability of
+                            stall failure, $0 downside recovery, 10% discount rate).</li>
                         <li><strong>Human judgment:</strong> Decision was clear. But I could have taken the emotional
                             route—this was a friend. The structured analysis made the "no" defensible.</li>
                         <li><strong>Measured gain:</strong> Traditional analyst time: 1–2 weeks, ~$5,000. Athena time:
                             ~1 hour, ~$5 in API credits.</li>
                     </ul>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; margin-bottom: 0;">
+                        <em>This is an example of my workflow, not financial advice.</em>
+                    </p>
                 </div>
 
-                <p>The result? I operate at roughly 3-5x the cognitive throughput I had before—not because the AI does
+                <p>The result? I operate at roughly 3–5x the cognitive throughput I had before. (By "cognitive
+                    throughput" I mean: time-to-decision, number of scenarios evaluated, and auditability per hour of
+                    work.) Not because the AI does
                     my thinking for me, but because it handles the <em>scaffolding</em> while I focus on
                     <strong>judgment calls</strong>.
                 </p>
