@@ -65,7 +65,7 @@
         rel="stylesheet">
     <style>
         .article-container {
-            max-width: 720px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 2rem 1.5rem 4rem;
         }
@@ -118,10 +118,24 @@
             text-underline-offset: 2px;
         }
 
+        .article-part {
+            /* Resetting to default block behavior - no borders, no padding */
+            padding: 0;
+            border: none;
+            margin: 0;
+        }
+
         .article-content h2 {
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            border-top: none;
+            padding-top: 0;
+        }
+
+        /* First H2 doesn't need as much space if it's top of content */
+        #problem {
+            margin-top: 2rem;
         }
 
         .article-content h3 {
@@ -350,6 +364,8 @@
             font-size: 1rem;
         }
 
+
+
         .toc-list {
             list-style: none;
             padding: 0;
@@ -370,10 +386,25 @@
         .toc-list a:hover {
             color: var(--accent-primary);
         }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            margin-top: 4rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-section h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 
-<body>
+<body style="background-color: #0a0a0a;">
     <canvas id="particle-canvas"></canvas>
 
     <header>
@@ -394,17 +425,35 @@
 
         <article>
             <header class="article-header">
-                <h1>How SMEs Can Use AI to Handle All Their Digital Marketing</h1>
-                <div class="article-meta">
-                    <span>⏱️ 6 min read</span>
-                    <span>🏷️ AI for Business</span>
-                </div>
-                <div class="article-dates">
-                    <span>Published: 27 December 2025</span>
-                </div>
+                <h1>How SG SMEs Can Build a Full Marketing Department for <$100 (Using Project Athena)</h1>
+                        <div class="article-meta">
+                            <span>⏱️ 6 min read</span>
+                            <span>🏷️ AI for Business</span>
+                        </div>
+                        <div class="article-dates">
+                            <span>Published: 27 December 2025</span>
+                            <span>•</span>
+                            <span>Last updated: 27 December 2025</span>
+                        </div>
             </header>
 
             <div class="article-content">
+                <div class="toc-box">
+                    <h4>🤖 AI Summary (TL;DR)</h4>
+                    <p style="margin-bottom: 1rem; text-align: justify;"><strong>Thesis:</strong> Most SMEs are priced
+                        out of effective digital marketing. The solution isn't "learning AI" — it's deploying an
+                        <strong>AI-powered execution system</strong> that handles the 6 pillars of digital presence
+                        (Web, SEO, Local, Social, Ads) at near-zero marginal cost.
+                    </p>
+                    <ul>
+                        <li><strong>The Problem:</strong> Agencies cost $2k+/mo. DIY takes too much time.</li>
+                        <li><strong>The Solution:</strong> A "Bionic" marketing stack where the AI generates the
+                            strategy and templates, and <strong>you execute</strong>.</li>
+                        <li><strong>The Result:</strong> Full digital infrastructure (Website + Content + Ads) deployed
+                            effectively. A full-stack solution for <$100 vs Agency $5k+.</li>
+                    </ul>
+                </div>
+
                 <p>You're running a small business in Singapore. You know you need a website. You know you should be
                     "doing SEO." You've heard Facebook and Google ads can work. But you don't have the budget
                     for a marketing team, and you definitely don't have the time to learn everything yourself.</p>
@@ -424,323 +473,375 @@
                     </ul>
                 </div>
 
-                <h2 id="problem">Part 1: The SME Digital Dilemma</h2>
+                <section id="part-1" class="article-part">
+                    <h2 id="problem">Part 1: The SME Digital Dilemma</h2>
 
-                <div class="problem-box">
-                    <h4>🚨 The SME Digital Dilemma</h4>
-                    <p>Most Singapore SMEs face the same bottleneck:</p>
+                    <div class="problem-box">
+                        <h4>🚨 The SME Digital Dilemma</h4>
+                        <p>Most Singapore SMEs face the same bottleneck:</p>
+                        <ul>
+                            <li><strong>Agencies are expensive & risky</strong> — Retainers start at
+                                <strong>$2,000-$5,000/month</strong>. The Director sells you the dream, but the intern
+                                does
+                                the work.
+                            </li>
+                            <li><strong>Hiring is a gamble</strong> — A marketing executive costs
+                                <strong>$3,000-$5,000/month</strong>, and you won't know if they are good until months
+                                later.
+                            </li>
+                            <li><strong>DIY is overwhelming</strong> — The learning curve is steep. You have a business
+                                to
+                                run; you can't spend 20 hours learning SEO.</li>
+                            <li><strong>Inaction is fatal</strong> — You need leads. Ignoring digital means starving the
+                                business.</li>
+                        </ul>
+                    </div>
+
+                    <p>The result? Most SMEs end up with:</p>
                     <ul>
-                        <li><strong>Can't afford agencies</strong> — $2,000-5,000/month for basic marketing is out of
-                            reach</li>
-                        <li><strong>Can't afford full-time hires</strong> — A marketing executive costs
-                            $3,500-5,000/month</li>
-                        <li><strong>Can't do it themselves</strong> — Marketing moves too fast, learning curve is steep,
-                            time is limited</li>
-                        <li><strong>Can't ignore it</strong> — Competitors who figure this out will take your customers
-                        </li>
+                        <li>A half-finished website from 2019</li>
+                        <li>A Facebook page with 3 posts from last year</li>
+                        <li>Zero Google presence beyond a basic listing</li>
+                        <li>Complete dependence on word-of-mouth</li>
                     </ul>
-                </div>
 
-                <p>The result? Most SMEs end up with:</p>
-                <ul>
-                    <li>A half-finished website from 2019</li>
-                    <li>A Facebook page with 3 posts from last year</li>
-                    <li>Zero Google presence beyond a basic listing</li>
-                    <li>Complete dependence on word-of-mouth</li>
-                </ul>
+                    <blockquote>
+                        <p>"I know I need to do something about my online presence. I just don't know where to start,
+                            and I don't have time to figure it out."</p>
+                    </blockquote>
+                </section>
 
-                <blockquote>
-                    <p>"I know I need to do something about my online presence. I just don't know where to start,
-                        and I don't have time to figure it out."</p>
-                </blockquote>
+                <section id="part-2" class="article-part">
+                    <h2 id="solution">Part 2: The 6-Pillar Digital System</h2>
 
-                <h2 id="solution">Part 2: The 6-Pillar Digital System</h2>
+                    <div class="solution-box">
+                        <h4>✅ The Bionic Approach</h4>
+                        <p>You discuss with AI what you want. <strong>Athena generates the templates and instruction
+                                manual.</strong> You simply execute the steps.</p>
+                    </div>
 
-                <div class="solution-box">
-                    <h4>✅ The Bionic Approach</h4>
-                    <p>Use AI to handle the <strong>execution</strong> while you provide the <strong>direction</strong>.
-                        You know your business. The AI handles the technical work.</p>
-                </div>
+                    <p>Here's what a single AI-powered system (like <a
+                            href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener">Project
+                            Athena</a>) can do for an SME:</p>
 
-                <p>Here's what a single AI-powered system (like <a href="https://github.com/winstonkoh87/Athena-Public"
-                        target="_blank" rel="noopener">Project Athena</a>) can do for an SME:</p>
+                    <h3>1. Website Creation</h3>
 
-                <h3>1. Website Creation</h3>
+                    <div class="service-card">
+                        <h4>🌐 Full Website in One Session</h4>
+                        <p>A complete 5-page business website — Home, About, Services, Results, Contact — built from
+                            scratch in under 30 minutes.</p>
+                        <p class="example"><a href="../projects/p6-math-tuition/" class="demo-link">See the MathPro
+                                Tuition
+                                Demo →</a></p>
+                        <!-- [Screenshot Placeholder: MathPro Tuition Homepage] -->
+                    </div>
 
-                <div class="service-card">
-                    <h4>🌐 Full Website in One Session</h4>
-                    <p>A complete 5-page business website — Home, About, Services, Results, Contact — built from
-                        scratch in under 30 minutes.</p>
-                    <p class="example">Example: <a href="../projects/p6-math-tuition/">MathPro Tuition demo</a> —
-                        built in one sitting.</p>
-                </div>
+                    <p>What you get:</p>
+                    <ul>
+                        <li>Mobile-responsive design</li>
+                        <li>SEO meta tags for every page</li>
+                        <li>Lead capture forms</li>
+                        <li>Enterprise-grade hosting with $0 monthly fees. We use modern infrastructure (the same tech
+                            big
+                            tech companies use) that eliminates the need for expensive monthly hosting fees or constant
+                            plugin updates.</li>
+                        <li>Built on static infrastructure that doesn't break, get hacked, or need weekly plugin updates
+                            like WordPress</li>
+                    </ul>
 
-                <p>What you get:</p>
-                <ul>
-                    <li>Mobile-responsive design</li>
-                    <li>SEO meta tags for every page</li>
-                    <li>Lead capture forms</li>
-                    <li>Enterprise-grade hosting with $0 monthly fees</li>
-                    <li>Built on static infrastructure that doesn't break, get hacked, or need weekly plugin updates
-                        like WordPress</li>
-                </ul>
+                    <h3>2. SEO-Optimized Content</h3>
 
-                <h3>2. SEO-Optimized Content</h3>
+                    <div class="service-card">
+                        <h4>✍️ Content That Ranks</h4>
+                        <p>Blog posts, service pages, and FAQ content written specifically for search engines AND
+                            humans. Not generic AI slop.</p>
+                        <p class="example">Example: This article you're reading right now.</p>
+                    </div>
 
-                <div class="service-card">
-                    <h4>✍️ Content That Ranks</h4>
-                    <p>Blog posts, service pages, and FAQ content written specifically for search engines AND
-                        humans. Not generic AI slop.</p>
-                    <p class="example">Example: This article you're reading right now.</p>
-                </div>
+                    <p>What you get:</p>
+                    <ul>
+                        <li>Keyword research and targeting</li>
+                        <li>Proper heading structure (H1, H2, H3)</li>
+                        <li>Internal linking strategy</li>
+                        <li>Schema markup for rich snippets</li>
+                        <li>Content that answers real customer questions</li>
+                    </ul>
 
-                <p>What you get:</p>
-                <ul>
-                    <li>Keyword research and targeting</li>
-                    <li>Proper heading structure (H1, H2, H3)</li>
-                    <li>Internal linking strategy</li>
-                    <li>Schema markup for rich snippets</li>
-                    <li>Content that answers real customer questions</li>
-                </ul>
+                    <h3>3. Google Business Profile Optimization</h3>
 
-                <h3>3. Google Business Profile Optimization</h3>
+                    <div class="service-card">
+                        <h4>📍 Local SEO That Actually Works</h4>
+                        <p>Your Google Business Profile is probably the #1 thing Singapore SMEs underutilize. AI can
+                            optimize descriptions, suggest post schedules, and draft review responses.</p>
+                        <p class="example">Example: "p6 math tuition bishan" — you want to show up in Maps for this.</p>
+                    </div>
 
-                <div class="service-card">
-                    <h4>📍 Local SEO That Actually Works</h4>
-                    <p>Your Google Business Profile is probably the #1 thing Singapore SMEs underutilize. AI can
-                        optimize descriptions, suggest post schedules, and draft review responses.</p>
-                    <p class="example">Example: "p6 math tuition bishan" — you want to show up in Maps for this.</p>
-                </div>
+                    <p>What you get:</p>
+                    <ul>
+                        <li>Optimized business description</li>
+                        <li>Weekly Google Business posts (AI-generated)</li>
+                        <li>Review response templates</li>
+                        <li>Photo optimization recommendations</li>
+                        <li>Local keyword targeting</li>
+                    </ul>
 
-                <p>What you get:</p>
-                <ul>
-                    <li>Optimized business description</li>
-                    <li>Weekly Google Business posts (AI-generated)</li>
-                    <li>Review response templates</li>
-                    <li>Photo optimization recommendations</li>
-                    <li>Local keyword targeting</li>
-                </ul>
+                    <h3>4. Facebook & Instagram Ads</h3>
 
-                <h3>4. Facebook & Instagram Ads</h3>
+                    <div class="service-card">
+                        <h4>📱 Social Ads That Convert</h4>
+                        <p>AI can generate ad copy variations, suggest targeting options, and even create basic
+                            ad visuals. You still control the budget.</p>
+                        <p class="example">Example: 5 variations of "P6 Math Trial Lesson" ad copy in 2 minutes.</p>
+                    </div>
 
-                <div class="service-card">
-                    <h4>📱 Social Ads That Convert</h4>
-                    <p>AI can generate ad copy variations, suggest targeting options, and even create basic
-                        ad visuals. You still control the budget.</p>
-                    <p class="example">Example: 5 variations of "P6 Math Trial Lesson" ad copy in 2 minutes.</p>
-                </div>
+                    <p>What you get:</p>
+                    <ul>
+                        <li>Multiple ad copy variations for testing</li>
+                        <li>Audience targeting suggestions</li>
+                        <li>Campaign structure recommendations</li>
+                        <li>Performance analysis and optimization ideas</li>
+                        <li>Creative brief for ad images</li>
+                    </ul>
 
-                <p>What you get:</p>
-                <ul>
-                    <li>Multiple ad copy variations for testing</li>
-                    <li>Audience targeting suggestions</li>
-                    <li>Campaign structure recommendations</li>
-                    <li>Performance analysis and optimization ideas</li>
-                    <li>Creative brief for ad images</li>
-                </ul>
+                    <h3>5. Google Ads</h3>
 
-                <h3>5. Google Ads</h3>
+                    <div class="service-card">
+                        <h4>🔍 Search Ads for Local Intent</h4>
+                        <p>Capture people actively searching for your service. AI can draft headlines, descriptions,
+                            and keyword lists for your campaigns.</p>
+                        <p class="example">Example: Keywords like "best tuition centre tampines" or "psle math help".
+                        </p>
+                    </div>
 
-                <div class="service-card">
-                    <h4>🔍 Search Ads for Local Intent</h4>
-                    <p>Capture people actively searching for your service. AI can draft headlines, descriptions,
-                        and keyword lists for your campaigns.</p>
-                    <p class="example">Example: Keywords like "best tuition centre tampines" or "psle math help".</p>
-                </div>
+                    <p>What you get:</p>
+                    <ul>
+                        <li>Keyword research and negative keyword lists</li>
+                        <li>Ad copy variations (headlines + descriptions)</li>
+                        <li>Landing page recommendations</li>
+                        <li>Budget allocation suggestions</li>
+                        <li>Competitor analysis</li>
+                    </ul>
 
-                <p>What you get:</p>
-                <ul>
-                    <li>Keyword research and negative keyword lists</li>
-                    <li>Ad copy variations (headlines + descriptions)</li>
-                    <li>Landing page recommendations</li>
-                    <li>Budget allocation suggestions</li>
-                    <li>Competitor analysis</li>
-                </ul>
+                    <h3>6. Social Media Content</h3>
 
-                <h3>6. Social Media Content</h3>
+                    <div class="service-card">
+                        <h4>📸 Consistent Posting Without the Grind</h4>
+                        <p>AI can generate a month's worth of social media posts — captions, hashtags, posting schedule
+                            — in 15 minutes.</p>
+                        <p class="example">Example: 12 Instagram posts for a tuition centre's December content calendar.
+                        </p>
+                    </div>
 
-                <div class="service-card">
-                    <h4>📸 Consistent Posting Without the Grind</h4>
-                    <p>AI can generate a month's worth of social media posts — captions, hashtags, posting schedule
-                        — in 15 minutes.</p>
-                    <p class="example">Example: 12 Instagram posts for a tuition centre's December content calendar.</p>
-                </div>
+                    <p>What you get:</p>
+                    <ul>
+                        <li>Content calendar for 30 days</li>
+                        <li>Captions with hooks and CTAs</li>
+                        <li>Hashtag research</li>
+                        <li>Story ideas and templates</li>
+                        <li>Carousel/infographic outlines</li>
+                    </ul>
+                </section>
 
-                <p>What you get:</p>
-                <ul>
-                    <li>Content calendar for 30 days</li>
-                    <li>Captions with hooks and CTAs</li>
-                    <li>Hashtag research</li>
-                    <li>Story ideas and templates</li>
-                    <li>Carousel/infographic outlines</li>
-                </ul>
+                <section id="part-3" class="article-part">
+                    <h2 id="outcome">Part 3: Business Impact & Results</h2>
 
-                <h2 id="outcome">Part 3: Business Impact & Results</h2>
+                    <div class="outcome-box">
+                        <h4>📈 What Changes for Your Business</h4>
+                        <p>These aren't theoretical benefits. This is what happens when you actually implement:</p>
+                    </div>
 
-                <div class="outcome-box">
-                    <h4>📈 What Changes for Your Business</h4>
-                    <p>These aren't theoretical benefits. This is what happens when you actually implement:</p>
-                </div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Before</th>
+                                <th>After</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>No website (or outdated one)</td>
+                                <td>Professional site that ranks</td>
+                            </tr>
+                            <tr>
+                                <td>Invisible on Google Maps</td>
+                                <td>Showing up for local searches</td>
+                            </tr>
+                            <tr>
+                                <td>Zero social media presence</td>
+                                <td>Consistent weekly posting</td>
+                            </tr>
+                            <tr>
+                                <td>100% reliance on word-of-mouth</td>
+                                <td>Multiple lead sources</td>
+                            </tr>
+                            <tr>
+                                <td>"Marketing" = random acts</td>
+                                <td>Systematic, repeatable process</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
 
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Before</th>
-                            <th>After</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>No website (or outdated one)</td>
-                            <td>Professional site that ranks</td>
-                        </tr>
-                        <tr>
-                            <td>Invisible on Google Maps</td>
-                            <td>Showing up for local searches</td>
-                        </tr>
-                        <tr>
-                            <td>Zero social media presence</td>
-                            <td>Consistent weekly posting</td>
-                        </tr>
-                        <tr>
-                            <td>100% reliance on word-of-mouth</td>
-                            <td>Multiple lead sources</td>
-                        </tr>
-                        <tr>
-                            <td>"Marketing" = random acts</td>
-                            <td>Systematic, repeatable process</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <section id="part-4" class="article-part">
+                    <h2 id="cost">Part 4: Economics & Cost Analysis</h2>
 
-                <h2 id="cost">Part 4: Economics & Cost Analysis</h2>
+                    <p>The problem with traditional options is that they are <strong>deliverables-based, not
+                            outcome-based</strong>. If an agency posts 3 times a week but you get zero leads, you
+                        essentially paid for "activity," not results. You are left bag-holding.</p>
 
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Option</th>
-                            <th>Monthly Cost</th>
-                            <th>What You Get</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Marketing Agency</td>
-                            <td>$2,000-5,000</td>
-                            <td>Managed services, but generic</td>
-                        </tr>
-                        <tr>
-                            <td>Marketing Hire</td>
-                            <td>$3,500-5,000</td>
-                            <td>Dedicated, but expensive</td>
-                        </tr>
-                        <tr>
-                            <td>Freelancers</td>
-                            <td>$500-1,500</td>
-                            <td>Project-based, inconsistent</td>
-                        </tr>
-                        <tr>
-                            <td><strong>AI-Powered (Athena)</strong></td>
-                            <td><strong>$0-100*</strong></td>
-                            <td><strong>On-demand, instant, learns your business</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><em>*Cost of AI tools + 2-4 hours/week of your time. I set up the system; the intelligence is in the
-                        configuration.</em></p>
+                    <div class="table-wrapper">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Monthly Cost</th>
+                                    <th>The Risk</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Marketing Agency</td>
+                                    <td>$2,000-5,000</td>
+                                    <td>High cost retainer. Can promise world & fail to deliver.</td>
+                                </tr>
+                                <tr>
+                                    <td>Marketing Hire</td>
+                                    <td>$3,000-5,000</td>
+                                    <td>Fixed overhead. Hard to vet quality.</td>
+                                </tr>
+                                <tr>
+                                    <td>Freelancers</td>
+                                    <td>$500-1,500</td>
+                                    <td>Inconsistent. You have to manage them.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>AI-Powered (Athena)</strong></td>
+                                    <td><strong>&lt;$100 Total*</strong></td>
+                                    <td><strong>Time Investment. You execute the strategy.</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><em>*Total cost setup (~$10/yr domain). Athena generates the <strong>instruction manual</strong>;
+                            you
+                            just follow the steps.</em></p>
 
-                <div class="key-insight">
-                    <h4>💡 Key Insight</h4>
-                    <p>AI doesn't replace your judgment. It amplifies your capacity. You still decide what to say,
-                        who to target, and how much to spend. The AI just removes the execution bottleneck.</p>
-                </div>
+                    <div class="key-insight">
+                        <h4>💡 Key Insight</h4>
+                        <p>AI doesn't replace your judgment. It amplifies your capacity. You still decide what to say,
+                            who
+                            to target, and how much to spend. The AI just removes the execution bottleneck.</p>
+                    </div>
+                </section>
 
-                <h2 id="chatgpt">Part 5: The "System vs. Tool" Difference</h2>
+                <section id="part-5" class="article-part">
+                    <h2 id="chatgpt">Part 5: The "System vs. Tool" Difference</h2>
 
-                <p>Fair question. You could. But here's what actually happens:</p>
+                    <p>Project Athena tells you <strong>WHAT</strong> to do; you just have to execute the instructions.
+                    </p>
 
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Factor</th>
-                            <th>ChatGPT / Gemini</th>
-                            <th>You + Athena</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Knowledge</td>
-                            <td>Blank slate every session</td>
-                            <td>Knows your business, brand, history</td>
-                        </tr>
-                        <tr>
-                            <td>Singapore Context</td>
-                            <td>Generic global knowledge</td>
-                            <td>KiasuParents, local SEO, SG pricing</td>
-                        </tr>
-                        <tr>
-                            <td>Execution</td>
-                            <td>Gives you text. You figure out deployment.</td>
-                            <td>Actually builds and deploys. Website goes live.</td>
-                        </tr>
-                        <tr>
-                            <td>Your Time</td>
-                            <td>20+ hours learning prompt engineering</td>
-                            <td>System already built. You review and approve.</td>
-                        </tr>
-                        <tr>
-                            <td>Quality Filter</td>
-                            <td>You can't tell if output is good or slop</td>
-                            <td>Protocols tested on real SME projects</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <div class="table-wrapper">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Generic AI (ChatGPT)</th>
+                                    <th>Custom System (Athena)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Knowledge</strong></td>
+                                    <td>Generic answers. "Here is a marketing plan."</td>
+                                    <td>Custom solution. "Here is YOUR marketing plan."</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Context</strong></td>
+                                    <td>Blank slate every time.</td>
+                                    <td>Knows your pricing, brand, and market.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Output</strong></td>
+                                    <td>You prompt endlessly.</td>
+                                    <td>It guides you step-by-step.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                <p><strong>ChatGPT is a tool. Athena is a system.</strong></p>
+                    <blockquote>
+                        <p>"ChatGPT is like being given a pile of bricks and a hammer.<br>
+                            Athena is being given the blueprints and pre-assembled walls."</p>
+                    </blockquote>
 
-                <p>Your problem isn't "I need AI." It's:</p>
-                <ul>
-                    <li>I don't know what to ask for</li>
-                    <li>I don't know if the output is any good</li>
-                    <li>I don't know how to deploy it</li>
-                    <li>I don't have time to learn all this</li>
-                </ul>
+                    <p>Your problem isn't "I need AI." It's:</p>
 
-                <p>That's the gap. You get the output, not the learning curve.</p>
+                    <ul>
+                        <li>I don't know what to ask for</li>
+                        <li>I don't know if the output is any good</li>
+                        <li>I don't know how to deploy it</li>
+                        <li>I don't have time to learn all this</li>
+                    </ul>
 
-                <h2 id="who">Part 6: Ideal Client Profile</h2>
+                    <p>That's the gap. You get the output, not the learning curve.</p>
+                </section>
 
-                <ul>
-                    <li>✅ You're an SME owner who knows your business well</li>
-                    <li>✅ You have 2-4 hours/week to review and approve content</li>
-                    <li>✅ You're comfortable with "good enough" over "perfect"</li>
-                    <li>✅ <strong>You want to own your digital assets, not rent them</strong></li>
-                    <li>✅ You're tired of watching younger competitors eat your lunch while you're busy running the
-                        business</li>
-                </ul>
+                <section id="part-6" class="article-part">
+                    <h2 id="who">Part 6: Is This For You?</h2>
 
-                <p>This approach is NOT for you if:</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div>
+                            <h4 style="margin-bottom: 1rem;">✅ Who This Is For</h4>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 0.8rem;">✅ <strong>SME Owners</strong> who know their business
+                                    inside out.</li>
+                                <li style="margin-bottom: 0.8rem;">✅ <strong>Time-Strapped Leaders</strong> with 2-4
+                                    hours/week to review.</li>
+                                <li style="margin-bottom: 0.8rem;">✅ <strong>Asset Owners</strong> who want to own, not
+                                    rent, their systems.</li>
+                                <li style="margin-bottom: 0.8rem;">✅ <strong>Pragmatists</strong> who value "shipped"
+                                    over "perfect".</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 1rem;">❌ Who This Is NOT For</h4>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 0.8rem;">❌ <strong>Hands-Off Owners</strong> who want an
+                                    agency to do everything.</li>
+                                <li style="margin-bottom: 0.8rem;">❌ <strong>Enterprise Needs</strong> requiring complex
+                                    custom integrations.</li>
+                                <li style="margin-bottom: 0.8rem;">❌ <strong>Zero-Tech Tolerance</strong> (refuse to
+                                    learn new tools).</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <ul>
-                    <li>❌ You want someone else to handle everything (use an agency)</li>
-                    <li>❌ You need enterprise-level sophistication</li>
-                    <li>❌ You have zero tolerance for learning curves</li>
-                </ul>
+                    <div class="key-insight">
+                        <h4>🎯 See the Proof</h4>
+                        <p>Don't believe a website can be built in 30 minutes? <strong>Watch this:</strong></p>
+                        <div style="margin: 1.5rem 0;">
+                            <a href="../projects/p6-math-tuition/" class="demo-link">See the MathPro Tuition Demo →</a>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                            Or read the full breakdown: <a href="sme-website-case-study.html">How I built a tuition
+                                centre website in one session</a>
+                        </p>
+                    </div>
+                </section>
 
-                <div class="key-insight">
-                    <h4>🎯 See the Proof</h4>
-                    <p>Don't believe a website can be built in 30 minutes? <strong>Watch this:</strong></p>
-                    <p><a href="../projects/p6-math-tuition/" class="demo-link">See the MathPro Tuition Demo →</a></p>
-                    <p style="margin-top: 1rem;">Or read the full breakdown: <a href="sme-website-case-study.html">How I
-                            built a tuition centre website in one session</a></p>
-                </div>
-
-                <h2 id="contact">Part 7: Moving Forward</h2>
-
-                <p>If you're curious about how this works for your business, feel free to reach out. No sales pitch,
-                    just a chat about systems.</p>
-
-                <p><a href="../pages/contact.html" class="demo-link">Get in Touch →</a></p>
+                <section id="part-7" class="article-part">
+                    <div class="cta-section">
+                        <h2 id="contact">Part 7: Moving Forward</h2>
+                        <p
+                            style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem auto; color: var(--text-secondary);">
+                            If you're curious about how this works for your business, feel free to reach out. No sales
+                            pitch, just a chat about systems.
+                        </p>
+                        <p style="text-align: center; margin-top: 2rem;">
+                            <a href="../pages/contact.html" class="demo-link">Get in Touch →</a>
+                        </p>
+                    </div>
+                </section>
 
             </div>
 
