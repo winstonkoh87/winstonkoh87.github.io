@@ -804,6 +804,131 @@ footer p {
 }
 
 /* ========================================
+   PORTFOLIO PAGE
+======================================== */
+.portfolio-filters {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.6rem 1.25rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent-primary);
+    color: var(--text-color);
+}
+
+.filter-btn.active {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: white;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.portfolio-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+}
+
+.portfolio-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.portfolio-card.coming-soon {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.portfolio-card.coming-soon:hover {
+    transform: none;
+    border-color: var(--border-color);
+    background: var(--card-bg);
+}
+
+.project-status.service {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+.project-status.upcoming {
+    background: rgba(107, 114, 128, 0.1);
+    color: #6b7280;
+    border-color: rgba(107, 114, 128, 0.2);
+}
+
+.portfolio-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.portfolio-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.portfolio-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========================================
    RESPONSIVE
 ======================================== */
 @media (max-width: 768px) {
@@ -817,7 +942,8 @@ footer p {
 
     .card-grid,
     .framework-grid,
-    .project-grid {
+    .project-grid,
+    .portfolio-grid {
         grid-template-columns: 1fr;
     }
 
@@ -836,5 +962,14 @@ footer p {
     .law-item {
         flex-direction: column;
         gap: 0.75rem;
+    }
+
+    .portfolio-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .portfolio-filters {
+        justify-content: center;
     }
 }
