@@ -79,7 +79,6 @@ System architectures and strategic frameworks are hosted on the **[Athena-Public
 - Mobile responsive
 - Dark mode aesthetic
 - Fast load (~40KB total)
-- Fast load (~40KB total)
 - JSON-LD structured data for SEO
 - Accessibility: skip-links, focus-visible states
 
