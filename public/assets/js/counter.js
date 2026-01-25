@@ -30,7 +30,7 @@ function animateCounters() {
                     if (endValue > 1000) {
                         target.innerText = currentValue.toLocaleString();
                     } else {
-                        target.innerText = currentValue + (target.innerText.includes('+') ? '+' : '');
+                        target.innerText = currentValue + (target.getAttribute('data-target').includes('+') ? '+' : '');
                     }
 
                     if (progress < 1) {
