@@ -1,0 +1,66 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_C23E161l.mjs';
+import 'piccolore';
+import { $ as $$Layout } from '../../chunks/Layout_R40zG8VU.mjs';
+import { $ as $$Image } from '../../chunks/_astro_assets_0Jjocdhj.mjs';
+/* empty css                                                    */
+export { renderers } from '../../renderers.mjs';
+
+const heroImg = new Proxy({"src":"/_astro/alteryx_hero.DArsuw41.png","width":1024,"height":1024,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/alteryx-24-hours/alteryx_hero.png";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/alteryx-24-hours/alteryx_hero.png");
+							return target[name];
+						}
+					});
+
+const walkImg = new Proxy({"src":"/_astro/alteryx_walk.BXvnCjRO.png","width":1024,"height":1024,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/alteryx-24-hours/alteryx_walk.png";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/alteryx-24-hours/alteryx_walk.png");
+							return target[name];
+						}
+					});
+
+const systemImg = new Proxy({"src":"/_astro/alteryx_system.BwKXeO3G.png","width":1024,"height":1024,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/alteryx-24-hours/alteryx_system.png";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/alteryx-24-hours/alteryx_system.png");
+							return target[name];
+						}
+					});
+
+const $$Alteryx24Hours = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "24 Hours to Delivery: The Bionic Approach to Unfamiliar Tools | Winston Koh", "description": "A case study in portable skills: how strong fundamentals and AI orchestration compressed a week-long ML project into a single day.", "showFloatingButtons": false, "image": "/assets/images/articles/alteryx-24-hours/alteryx_hero.png", "articleData": {
+    publishedTime: "2026-01-20T02:00:00Z",
+    tags: ["AI", "Productivity", "Case Study", "Machine Learning"]
+  } }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="article-container"> <a href="/writing" class="back-link">← Back to Writing</a> <article> <header class="article-header"> <h1>24 Hours to Delivery: The Bionic Approach to Unfamiliar Tools</h1> <div class="article-meta"> <span>🔬 Case Study</span> <span>⚡ AI Workflow</span> </div> <div class="article-dates"> <span>Published: <time datetime="2026-01-20">20 January 2026</time></span> </div> </header> <figure class="article-figure"> ${renderComponent($$result2, "Image", $$Image, { "src": heroImg, "alt": "Person at laptop with connected workflow nodes", "class": "article-image", "loading": "eager" })} <figcaption>Human judgment meets machine capability.</figcaption> </figure> <div class="article-content"> <!-- Executive Summary --> <div class="exec-summary"> <h4>📋 The Bottom Line</h4> <ul> <li><strong>The Challenge:</strong> A client needed an ML pipeline built in Alteryx — software I had never touched.</li> <li><strong>The Approach:</strong> Bet on portable meta-skills (architecture, documentation, iteration) to fill domain gaps via AI.</li> <li><strong>The Result:</strong> Working pipeline, full documentation, and stakeholder deck delivered in 24 hours.</li> <li><strong>The Lesson:</strong> The combination of strong fundamentals + systematic AI usage compresses iteration dramatically.</li> </ul> </div> <h2>The Setup</h2> <p>An urgent request landed in my inbox: build an ML model using Alteryx. Deadline? Immediate. My experience with Alteryx? None.</p> <p>I took the project anyway.</p> <p>This wasn't recklessness. Over the past year, I've tested a pattern: <strong>strong meta-skills transfer across domains</strong>. Problem structuring. Decision documentation. Systematic iteration. These aren't tool-specific — they're portable infrastructure.</p> <p>The question was simple: could AI fill the Alteryx-specific gaps while I brought the structure?</p> <div class="toc-box"> <h4>What This Article Covers</h4> <ul class="toc-list"> <li><a href="#calibration">The Calibration Phase (What Didn't Work)</a></li> <li><a href="#reset">The Reset</a></li> <li><a href="#execution">The Execution Phase (What Did)</a></li> <li><a href="#principles">The Underlying Principles</a></li> </ul> </div> <h2 id="calibration">The Calibration Phase</h2> <p>First approach: feed the requirements into an AI model and iterate through Alteryx basics. The result was rough. Incomplete explanations. Workflows that didn't connect. Hours of friction with minimal forward progress.</p> <p>By midday, I was stuck. The instinct was to push harder — more prompts, more attempts, more grinding.</p> <p>Instead, I left. Took a train across the island. Walked through a shopping centre for an hour.</p> <figure class="article-figure"> ${renderComponent($$result2, "Image", $$Image, { "src": walkImg, "alt": "Person walking through sunlit mall corridor", "class": "article-image" })} <figcaption>Sometimes the best debugging happens away from the keyboard.</figcaption> </figure> <h2 id="reset">The Reset</h2> <p>Physical movement does something to the brain. You stop forcing and start noticing. The problem loosens.</p> <p>On the ride back, a thought: the issue wasn't the AI model — it was how I was working with it. I was throwing prompts at it reactively instead of working <em>within a system</em> that tracked context and decisions.</p> <p>Time to change the approach.</p> <h2 id="execution">The Execution Phase</h2> <p>I switched to my personal workflow system — one that tracks decisions across sessions, surfaces relevant context automatically, and forces problems to break into small, verifiable steps.</p> <figure class="article-figure"> ${renderComponent($$result2, "Image", $$Image, { "src": systemImg, "alt": "Comparison of chaotic prompts vs organized workflow", "class": "article-image" })} <figcaption>Left: reactive prompting. Right: systematic orchestration.</figcaption> </figure> <p>Same requirements. Same goal. Different process.</p> <p>This time, things clicked:</p> <ul> <li>When I hit a wall, I could reference what we'd already tried and why it failed.</li> <li>When the model suggested a path, I could validate it against documented requirements.</li> <li>When I needed to pivot, the context was already loaded — no re-explaining from scratch.</li> </ul> <p>The friction didn't vanish. But it became <em>manageable</em>. I could see forward instead of thrashing.</p> <p>Crucially, I wasn't just getting answers. I was getting the complete workflow, the model code, and full documentation. Not a black box — a transparent system I could actually hand off.</p> <div class="key-insight"> <h4>📦 The Deliverable (24 Hours)</h4> <ul> <li>Working ML pipeline in Alteryx</li> <li>Complete technical documentation</li> <li>Stakeholder presentation deck</li> </ul> <p>Client reaction: <em>"How did you do this so fast?"</em></p> <p>Honest answer: I didn't work faster. I <strong>iterated faster</strong>.</p> </div> <h2 id="principles">The Underlying Principles</h2> <h3>1. Meta-Skills Are Portable</h3> <p>This wasn't a one-off. The same pattern has held across unfamiliar tools for the past year: data pipelines, automation platforms, analytics dashboards.</p> <p>What transfers: how to structure a problem. How to document decisions. How to iterate systematically. AI fills domain-specific gaps. The human supplies architecture.</p> <h3>2. System > Model</h3> <p>The shift wasn't from a "worse" model to a "better" one. Both were frontier-capable. The shift was from <em>reactive prompting</em> to <em>systematic orchestration</em> — context tracked, decisions logged, feedback loops tight.</p> <p>The combination of human judgment and machine capability is non-linear. Neither alone gets there.</p> <h3>3. The Break Is Productive</h3> <p>The instinct to "push through" is usually wrong. Stepping away — physically moving, letting the problem sit — is often where the pivot happens.</p> <p>The walk wasn't a waste. It was where the solution started.</p> <h3>4. Iteration Compression, Not Elimination</h3> <p>Before AI assistance, this project would have taken a week minimum. Multiple approaches. Dead ends. Rework.</p> <p>With AI and a tight system: two approaches. Morning for calibration. Afternoon for execution.</p> <p><strong>AI doesn't eliminate iteration. It compresses the loop.</strong></p> <h2 class="final-word">The Takeaway</h2> <p>Strong fundamentals. A system that tracks context. Willingness to step away and return with fresh eyes.</p> <p>That combination made 24 hours possible.</p> <p>I didn't become an Alteryx expert. I became <em>good enough to deliver</em> — with a process that makes "good enough" achievable in domains I've never touched.</p> <hr> <div class="key-insight"> <h4>📚 Related Reading</h4> <ul> <li><a href="/articles/ai-bionic-layer">The Bionic Operator</a> — The Human × AI model that made this possible.</li> <li><a href="/articles/iterative-layer">The Iterative Layer</a> — Why systematic iteration beats brute-force prompting.</li> <li><a href="/articles/2-day-efficiency-trap">The Efficiency Trap</a> — Why fast learning curves are often a mirage.</li> </ul> </div> <p style="font-style: italic; color: #888;">This case study was originally published on <a href="https://medium.com/@winstonkoh87" target="_blank">Medium</a>.</p> <footer class="article-footer"> <div class="author-bio"> <div class="author-avatar">WK</div> <div class="author-info"> <h4>Winston Koh & Project Athena</h4> <p>This case study was co-authored with <a href="/athena">Project Athena</a><br>— the AI system referenced in this article.</p> <p><a href="/services">Work with me →</a></p> </div> </div> </footer> </div></article> </main> ` })}`;
+}, "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/pages/articles/alteryx-24-hours.astro", void 0);
+
+const $$file = "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/pages/articles/alteryx-24-hours.astro";
+const $$url = "/articles/alteryx-24-hours";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+	__proto__: null,
+	default: $$Alteryx24Hours,
+	file: $$file,
+	url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

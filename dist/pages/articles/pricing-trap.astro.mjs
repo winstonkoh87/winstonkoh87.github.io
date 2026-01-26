@@ -1,0 +1,79 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_C23E161l.mjs';
+import 'piccolore';
+import { $ as $$Layout } from '../../chunks/Layout_R40zG8VU.mjs';
+import { $ as $$Image } from '../../chunks/_astro_assets_0Jjocdhj.mjs';
+/* empty css                                                    */
+export { renderers } from '../../renderers.mjs';
+
+const heroImg = new Proxy({"src":"/_astro/hero.BVGWVD_-.png","width":1024,"height":1024,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/pricing-trap/hero.png";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/pricing-trap/hero.png");
+							return target[name];
+						}
+					});
+
+const comparisonImg = new Proxy({"src":"/_astro/comparison.5elLCNLh.png","width":1024,"height":1024,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/pricing-trap/comparison.png";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/pricing-trap/comparison.png");
+							return target[name];
+						}
+					});
+
+const phasesImg = new Proxy({"src":"/_astro/phases.XXUVL1j2.png","width":1024,"height":1024,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/pricing-trap/phases.png";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/pricing-trap/phases.png");
+							return target[name];
+						}
+					});
+
+const tradeoffImg = new Proxy({"src":"/_astro/tradeoff.efkyzmMk.png","width":1024,"height":1024,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/pricing-trap/tradeoff.png";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/assets/images/articles/pricing-trap/tradeoff.png");
+							return target[name];
+						}
+					});
+
+const $$PricingTrap = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "The $300 Website Experiment: A Price Discovery Lesson | Winston Koh", "description": "I tested how cheap I could price a website before the market pushed back. They didn't. Here's what that taught me about value, scope, and expectation gaps.", "showFloatingButtons": false, "image": "/assets/images/articles/pricing-trap/hero.png", "articleData": {
+    publishedTime: "2026-01-20T08:00:00Z",
+    tags: ["Business", "Freelancing", "Pricing", "Web Development"]
+  } }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="article-container"> <a href="/writing" class="back-link">← Back to Writing</a> <article> <header class="article-header"> <h1>The $300 Website Experiment: A Price Discovery Lesson</h1> <div class="article-meta"> <span>🏷️ Pricing Strategy</span> <span>⚡ Market Research</span> </div> <div class="article-dates"> <span>Published: <time datetime="2026-01-20">20 January 2026</time></span> </div> </header> <figure class="article-figure"> ${renderComponent($$result2, "Image", $$Image, { "src": heroImg, "alt": "The iceberg of web development pricing", "class": "article-image", "loading": "eager" })} <figcaption>What clients see vs. what they're actually paying for.</figcaption> </figure> <div class="article-content"> <!-- Executive Summary --> <div class="exec-summary"> <h4>📋 Executive Summary</h4> <ul> <li><strong>The Experiment:</strong> I tested market price elasticity by quoting $300 for a 5-page custom website — well below the $1K freelancer floor.</li> <li><strong>The Result:</strong> They accepted immediately. No negotiation. No pushback.</li> <li><strong>The Insight:</strong> When cheap is accepted without friction, one side has miscalculated scope.</li> <li><strong>The Framework:</strong> Brochure Site ≠ Conversion System. Same deliverable name, different product entirely.</li> </ul> </div> <h2>The Floor Test</h2> <p>I wanted to know: how cheap could I price a custom website before the market would say no?</p> <p>My hypothesis was $500. Below that, surely clients would assume something was wrong — too cheap to be real, or too inexperienced to trust.</p> <p>I tested $300.</p> <p><strong>They said yes immediately.</strong></p> <p>No counter-offer. No questions about what's included. Just: "Great, when can you start?"</p> <p>That's when I knew the pricing conversation was fundamentally broken.</p> <div class="toc-box"> <h4>Table of Contents</h4> <ul class="toc-list"> <li><a href="#market">Part 1: The Market Reality</a></li> <li><a href="#trap">Part 2: The Expectation Gap</a></li> <li><a href="#phases">Part 3: What Custom Work Requires</a></li> <li><a href="#decision">Part 4: The Decision Framework</a></li> </ul> </div> <h2 id="market">Part 1: Where Prices Actually Live</h2> <p>For context, here's where web development pricing actually sits in 2026:</p> <div class="checklist-box"> <h4>Market Rate Benchmarks</h4> <ul> <li><strong>Template + DIY:</strong> $0–$300 (Framer, Squarespace, Wix)</li> <li><strong>Offshore Freelancer:</strong> $300–$600 (Upwork, Fiverr)</li> <li><strong>Local Freelancer:</strong> $1,000–$2,000 (custom work)</li> <li><strong>Agency:</strong> $3,000–$10,000+ (process, team, overhead)</li> </ul> </div> <p>When a client accepts $300 for what they describe as "custom work with a few rounds of revisions," one of two things is true:</p> <ol> <li>They only need a brochure (template is fine)</li> <li>They <em>think</em> they're getting custom work at a 70% discount</li> </ol> <p>Option 2 is where projects die.</p> <h2 id="trap">Part 2: The Product Mismatch</h2> <p>The core problem isn't price. It's that "5-page website" means completely different things depending on who's speaking.</p> <figure class="article-figure"> ${renderComponent($$result2, "Image", $$Image, { "src": comparisonImg, "alt": "Brochure Site vs Conversion System comparison", "class": "article-image" })} <figcaption>Same words, different products. This is where scope creep lives.</figcaption> </figure> <p>A <strong>Brochure Site</strong> answers: "Do we exist? Here's our phone number."</p> <p>A <strong>Conversion System</strong> answers: "Who visits? What do they do? Are they buying?"</p> <p>Both are valid. Neither is wrong. But they require completely different levels of work.</p> <h2 id="phases">Part 3: The Invisible Labour</h2> <p>When I scope a project at $1,500+, here's what the engagement actually includes:</p> <figure class="article-figure"> ${renderComponent($$result2, "Image", $$Image, { "src": phasesImg, "alt": "Four phases of professional web development", "class": "article-image" })} <figcaption>Discovery → Design Iteration → Build + Optimise → Handoff + Support</figcaption> </figure> <div class="key-insight"> <h4>🔍 Phase Breakdown</h4> <p><strong>Discovery:</strong> Understanding your business, audience, competitors, and conversion goals. I use a custom AI agent (<a href="/projects/gem-agent">Gemini GEM</a>) to accelerate this, but synthesis still requires judgment.</p> <p><strong>Design Iteration:</strong> 2–4 rounds of feedback. "I'll know it when I see it" is expensive.</p> <p><strong>Build + Optimise:</strong> Mobile, performance, SEO, analytics. AI generates 80%. Auditing the output is the other 20% — and where cheap builds fail.</p> <p><strong>Handoff + Support:</strong> Documentation, training, CMS setup. If you can't edit your own site, I've built you a liability.</p> </div> <p>A $300 build skips most of this. That's fine — if both sides know what's being skipped.</p> <h2 id="decision">Part 4: The Trade-Off Matrix</h2> <p>Neither price point is "wrong." They're different tools for different jobs.</p> <figure class="article-figure"> ${renderComponent($$result2, "Image", $$Image, { "src": tradeoffImg, "alt": "Pricing trade-off comparison", "class": "article-image" })} <figcaption>Pick your trade-off. Both are valid — if you know what you're choosing.</figcaption> </figure> <div class="checklist-box"> <h4>The Decision Questions</h4> <ul> <li><strong>Revenue Driver?</strong> If the site should generate leads/sales → Invest in conversion.</li> <li><strong>Frequent Updates?</strong> If you need to edit content often → Ensure CMS or editable setup.</li> <li><strong>Clear Positioning?</strong> If you don't know your message yet → Discovery is mandatory.</li> <li><strong>Competitive Market?</strong> If you're in a crowded space → Differentiation matters.</li> </ul> </div> <h2 class="final-word">The Lesson</h2> <p>I didn't take the $300 job.</p> <p>Not because the client was wrong — they knew what they wanted. But because the scope they described ("custom work, few rounds of revisions, analytics, SEO") was a $1,500 job dressed in $300 language.</p> <p>The trap isn't the price. <strong>The trap is when expectations don't match the investment.</strong></p> <p>If you're hiring: ask what's included. If you're selling: define what isn't.</p> <hr> <div class="key-insight"> <h4>📚 Related Reading</h4> <ul> <li><a href="/articles/vibe-coding-trap">The Vibe Coder's Trap</a> — Why AI speed can't fix business physics</li> <li><a href="/articles/case-study-p6-math-tuition">Case Study: SME Website Build</a> — A 5-page site delivered in under an hour</li> <li><a href="/articles/gemini-gem-agent">How I Built a Gemini GEM Agent</a> — The AI tool that accelerates discovery</li> </ul> </div> <p style="font-style: italic; color: #888;">A version of this article was originally published on <a href="https://medium.com/@winstonkoh87" target="_blank">Medium</a>.</p> <footer class="article-footer"> <div class="author-bio"> <div class="author-avatar">WK</div> <div class="author-info"> <h4>Winston Koh & Project Athena</h4> <p>This article was co-authored with <a href="/projects/athena">Project Athena</a><br>— an AI-augmented writing and research system.</p> <p><a href="/about">More about us →</a></p> </div> </div> </footer> </div></article> </main> ` })}`;
+}, "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/pages/articles/pricing-trap.astro", void 0);
+
+const $$file = "/Users/winstonkoh/Desktop/winstonkoh87.github.io/src/pages/articles/pricing-trap.astro";
+const $$url = "/articles/pricing-trap";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+	__proto__: null,
+	default: $$PricingTrap,
+	file: $$file,
+	url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
