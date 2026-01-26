@@ -52,18 +52,23 @@ const ogImageURL = new URL(image, Astro.site);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0f">
-    <meta name="google-site-verification" content="0LRsIInh-jyrPq-S0qX1qwLX_5GP7TiTIPZ_CUmGBVg">
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description}>
     
-    <!-- Open Graph & Twitter meta tags can be added here as components or static -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content={title}>
-    <meta property="og:description" content={description}>
-    <meta property="og:image" content={ogImageURL}>
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="0LRsIInh-jyrPq-S0qX1qwLX_5GP7TiTIPZ_CUmGBVg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={permalink} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content={title}>
     <meta property="twitter:description" content={description}>
