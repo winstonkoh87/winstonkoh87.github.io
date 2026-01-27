@@ -12,3 +12,8 @@ node_modules/
 .idea/
 .vscode/
 .DS_Store
+
+# Build & Tooling
+dist/
+.astro/
+node_modules/

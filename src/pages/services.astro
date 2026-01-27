@@ -416,4 +416,34 @@ import Layout from '../layouts/Layout.astro';
             });
         });
     </script>
+
+    <!-- FAQ Schema (SEO) -->
+    <script type="application/ld+json" is:inline>
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "What is a Bionic Unit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Bionic Unit is a human-AI hybrid workflow where cognitive labor is shared. Unlike standard 'AI assistance', a Bionic Unit integrates AI into the core execution loop, allowing for 10x leverage in output quality and speed."
+            }
+          }, {
+            "@type": "Question",
+            "name": "Do you offer Consulting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. I offer fixed-price strategic consulting sessions ($150 nett/hr) conducted via Zoom. These are high-intensity problem-solving sessions designed to unblock systems or architecture issues immediately."
+            }
+          }, {
+            "@type": "Question",
+            "name": "What is the Anti-Slop Protocol?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Anti-Slop Protocol is my zero-tolerance quality standard. It rejects generic 'ChatGPT-sounding' output in favor of First Principles thinking, specific data citations, and high-density insight. If it looks like AI wrote it, it doesn't ship."
+            }
+          }]
+        }
+    </script>
 </Layout>
