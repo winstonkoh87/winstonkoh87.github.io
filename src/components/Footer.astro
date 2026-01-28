@@ -79,8 +79,23 @@
     </div>
 </footer>
 
-<script is:inline>
-    function toggleFooterCol(el) {
-        el.classList.toggle('active');
-    }
 </script>
+
+<style>
+    /* ... existing styles if any were hidden, but assuming new block ... */
+    
+    .footer-bottom p {
+        color: #a3a3a3; /* Ensure base text is muted */
+    }
+
+    .footer-bottom a {
+        color: #a3a3a3;
+        text-decoration: none;
+        transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+
+    .footer-bottom a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+</style>
