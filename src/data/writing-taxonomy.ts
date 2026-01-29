@@ -57,7 +57,7 @@ export const ARTICLES: Article[] = [
     {
         title: "The Bionic Operator: Why AI Replaces Tasks, Not Humans",
         slug: "ai-bionic-layer",
-        date: "2025-12-28",
+        date: "2026-01-15",
         cluster: "sovereign-systems",
         tags: ["Strategy"],
         excerpt: "Why the 'AI will replace you' narrative is wrong. The real play is augmentation — becoming a bionic operator.",
@@ -200,7 +200,7 @@ export const ARTICLES: Article[] = [
     {
         title: "Building a Tuition Centre's Lead Engine in Under One Hour",
         slug: "case-study-p6-math-tuition",
-        date: "2025-12-20",
+        date: "2026-01-12",
         cluster: "case-files",
         tags: ["Case Study"],
         excerpt: "From brief to deployment: a 5-page SME website and digital marketing launch plan — built in under one hour with AI-augmented execution.",
@@ -209,7 +209,7 @@ export const ARTICLES: Article[] = [
     {
         title: "How SG SMEs Can Build a Full Marketing Department for <$100",
         slug: "sme-ai-marketing-guide",
-        date: "2025-12-15",
+        date: "2026-01-10",
         cluster: "case-files",
         tags: ["AI for Business"],
         excerpt: "Website creation, SEO content, Facebook/Google ads — a practical guide on using AI to run your digital marketing without hiring a team.",
