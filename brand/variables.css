@@ -1,0 +1,162 @@
+/*
+ * Winston Koh Brand Variables
+ * Version: 1.0
+ * Generated: 2026-01-29
+ */
+
+:root {
+    /* ========================================
+     COLORS - PRIMARY (Dark Theme)
+     ======================================== */
+    --bg-color: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-elevated: #1a1a1a;
+    --text-color: #e8e8e8;
+    --text-muted: #a1a1aa;
+    --text-pure: #ffffff;
+
+    /* ========================================
+     COLORS - ACCENT (Bionic Palette)
+     ======================================== */
+    --accent-primary: #3b82f6;
+    /* Electric Blue */
+    --accent-primary-hover: #60a5fa;
+    /* Neon Blue */
+    --accent-secondary: #ec4899;
+    /* Orchid Pink */
+    --accent-secondary-hover: #f472b6;
+    /* Bloom Pink */
+
+    /* ========================================
+     COLORS - UTILITY
+     ======================================== */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --card-bg: rgba(255, 255, 255, 0.02);
+    --glow-color: rgba(59, 130, 246, 0.15);
+    --overlay-bg: rgba(0, 0, 0, 0.8);
+
+    /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+    --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-2xl: 1.5rem;
+    /* 24px */
+    --text-3xl: 2rem;
+    /* 32px */
+    --text-4xl: 2.5rem;
+    /* 40px */
+    --text-5xl: 3rem;
+    /* 48px */
+
+    /* Line Heights */
+    --leading-tight: 1.2;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.7;
+
+    /* ========================================
+     SPACING
+     ======================================== */
+    --space-1: 0.25rem;
+    /* 4px */
+    --space-2: 0.5rem;
+    /* 8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-5: 1.25rem;
+    /* 20px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-10: 2.5rem;
+    /* 40px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
+    --space-20: 5rem;
+    /* 80px */
+
+    /* ========================================
+     LAYOUT
+     ======================================== */
+    --container-max: 900px;
+    --content-max: 700px;
+    --padding-x: 2rem;
+    --padding-y: 1.5rem;
+
+    /* ========================================
+     BORDERS & RADIUS
+     ======================================== */
+    --radius-none: 0;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+
+    /* ========================================
+     SHADOWS
+     ======================================== */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px var(--glow-color);
+    --shadow-accent: 0 8px 32px rgba(59, 130, 246, 0.2);
+
+    /* ========================================
+     TRANSITIONS
+     ======================================== */
+    --duration-instant: 100ms;
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+
+    --ease-default: ease;
+    --ease-in: cubic-bezier(0.4, 0.0, 1, 1);
+    --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    /* ========================================
+     Z-INDEX SCALE
+     ======================================== */
+    --z-base: 0;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+}
+
+/* ========================================
+   GRADIENT UTILITIES
+   ======================================== */
+.gradient-bionic {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+}
+
+.text-gradient {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
