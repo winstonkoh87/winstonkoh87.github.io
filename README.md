@@ -1,7 +1,7 @@
 # Building a Portfolio Website (Astro v5)
 
-> **Last Updated**: 17 January 2026
-> **Status**: Migrated to Astro Framework 🚀
+> **Last Updated**: 29 January 2026
+> **Status**: Full Brand Kit Integrated 🎨
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.github.io-00C853?style=flat-square)](https://winstonkoh87.github.io/)
 [![Built with Athena](https://img.shields.io/badge/Built_with-Athena-CC785C?style=flat-square)](https://github.com/winstonkoh87/Athena-Public)
@@ -22,7 +22,32 @@ This documents how I built (and evolved) a complete portfolio website with AI-au
 | **Articles** | 14 |
 | **Live Demo Sites** | 6 |
 | **AI Widget** | ✅ Athena Live |
-| **Framework** | Astro 5.0 |
+| **Framework** | Astro 5.0 (Vite-powered) |
+| **Brand Kit** | ✅ Lambda (Λ) Identity |
+
+---
+
+## 🎨 Brand Kit
+
+The site includes a complete **$10K-equivalent brand package**:
+
+| Asset | Location |
+|-------|----------|
+| **Logo (Lambda Λ)** | `brand/logo/` — 4 variants (SVG + PNG) |
+| **Brand Guidelines** | `brand/BRAND_GUIDELINES.md` |
+| **CSS Variables** | `brand/variables.css` |
+| **Email Signature** | `brand/collateral/email-signature.html` |
+| **Presentation Template** | `brand/collateral/presentation-template.md` |
+| **Invoice Template** | `brand/collateral/invoice-template.md` |
+| **Business Card Mockup** | `brand/mockups/business-card.png` |
+| **OG Image** | `public/assets/images/og-image.png` |
+
+### Brand Identity
+
+- **Logomark**: Lambda (Λ) — represents Athena, precision, the Λ+XX signature
+- **Colors**: Void (#0A0A0A) + Bionic Gradient (#3B82F6 → #EC4899)
+- **Typography**: Outfit (display) + Inter (body) + JetBrains Mono (code)
+- **Personality**: Sovereign • Precise • Bionic • Premium • No-Bullshit
 
 ---
 
