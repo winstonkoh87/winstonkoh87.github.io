@@ -13,9 +13,6 @@ const articlesByCluster = ARTICLES.reduce((acc, article) => {
 
 // Get cluster keys in specific order
 const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 'economics-of-leverage', 'case-files'];
-
-// Get featured/latest article for hero (optional, taking the first one marked featured or just the first one)
-const featuredArticle = ARTICLES.find(a => a.featured) || ARTICLES[0];
 ---
 
 <Layout title="Writing | AI Strategy & Engineering Insights [2026]" description="Strategic insights on AI architecture, sovereign systems, and the bionic workflow. Decoding the physics of digital leverage and survival in the automation age.">
@@ -26,7 +23,6 @@ const featuredArticle = ARTICLES.find(a => a.featured) || ARTICLES[0];
                     <h1>Writing</h1>
                     <p class="page-subtitle">Thoughts on systems, strategy, and survival.</p>
                 </div>
-                <!-- Search could go here if needed later, removing manual filters for now to focus on structure -->
             </div>
         </section>
 
@@ -50,14 +46,22 @@ const featuredArticle = ARTICLES.find(a => a.featured) || ARTICLES[0];
                                 {articles.map((article) => (
                                     <article class="article-card" data-category={article.cluster} data-date={article.date}>
                                         <a href={`/articles/${article.slug}`} class="article-link">
-                                            <div class="article-card-content">
-                                                <div class="article-meta">
-                                                    <span class="article-date">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
-                                                    <span class="article-tag">{article.tags[0]}</span>
+                                            <div class="article-image-wrapper">
+                                                <img 
+                                                    src={article.image} 
+                                                    alt={article.title}
+                                                    class="article-image"
+                                                    loading="lazy"
+                                                />
+                                                <div class="article-tags-overlay">
+                                                    {article.tags.map((tag) => (
+                                                        <span class="article-tag-pill">{tag}</span>
+                                                    ))}
                                                 </div>
+                                            </div>
+                                            <div class="article-card-content">
+                                                <span class="article-date">{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
                                                 <h3>{article.title}</h3>
-                                                <p class="article-excerpt">{article.excerpt}</p>
-                                                <span class="read-more">Read article →</span>
                                             </div>
                                         </a>
                                     </article>
@@ -80,27 +84,25 @@ const featuredArticle = ARTICLES.find(a => a.featured) || ARTICLES[0];
             </ul>
         </section>
     </section>
-
-    <!-- Removing writing-filters.js as we are now using a structural layout -->
 </Layout>
 
 <style>
-    /* Add some specific styles for the hub layout */
+    /* Cluster Section Styling */
     .cluster-section {
-        margin-bottom: 6rem;
+        margin-bottom: 5rem;
     }
     
     .cluster-header {
-        margin-bottom: 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 1rem;
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 1.5rem;
     }
 
     .cluster-subtitle {
         color: var(--accent);
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.1em;
         font-weight: 600;
         display: block;
         margin-bottom: 0.5rem;
@@ -110,18 +112,135 @@ const featuredArticle = ARTICLES.find(a => a.featured) || ARTICLES[0];
         font-size: 2rem;
         margin: 0 0 0.5rem 0;
         color: var(--text-primary);
+        font-weight: 700;
     }
 
     .cluster-description {
         color: var(--text-secondary);
-        font-size: 1.1rem;
-        max-width: 600px;
+        font-size: 1rem;
+        max-width: 550px;
         margin: 0;
+        line-height: 1.6;
+    }
+
+    /* Article Grid - Adverdize Style */
+    .article-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+        .article-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 640px) {
+        .article-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Article Card - Image First */
+    .article-card {
+        background: transparent;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .article-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .article-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    /* Image Wrapper */
+    .article-image-wrapper {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        border-radius: 12px;
+        background: var(--bg-secondary);
+    }
+
+    .article-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .article-card:hover .article-image {
+        transform: scale(1.05);
+    }
+
+    /* Tag Pills Overlay */
+    .article-tags-overlay {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .article-tag-pill {
+        background: rgba(255, 255, 255, 0.95);
+        color: #111;
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        backdrop-filter: blur(4px);
+    }
+
+    /* Card Content */
+    .article-card-content {
+        padding: 1.25rem 0.25rem 0.5rem;
+    }
+
+    .article-date {
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .article-card-content h3 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--text-primary);
+        margin: 0;
+        transition: color 0.2s ease;
+    }
+
+    .article-card:hover .article-card-content h3 {
+        color: var(--accent);
     }
 
     @media (max-width: 768px) {
         .cluster-header h2 {
             font-size: 1.5rem;
+        }
+        
+        .article-card-content h3 {
+            font-size: 1rem;
+        }
+
+        .cluster-section {
+            margin-bottom: 4rem;
         }
     }
 </style>
