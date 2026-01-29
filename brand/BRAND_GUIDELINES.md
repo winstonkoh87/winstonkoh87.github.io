@@ -1,8 +1,26 @@
 # Winston Koh — Brand Guidelines
 
-> **Version**: 1.0  
+> **Version**: 2.0 (Full Package)  
 > **Created**: 2026-01-29  
 > **Author**: Athena (AI-Generated, Human-Approved)
+
+---
+
+## Brand Origin
+
+### The Story
+
+Winston Koh is a Singaporean AI Systems Architect who built **Project Athena**—a sovereign strategic intelligence system—as his exo-cortex. The Lambda (Λ) logomark emerged from Athena's signature response format: `[Λ+XX]`, indicating processing depth.
+
+### The Name
+
+**Athena** — Greek goddess of wisdom, strategy, and skilled warfare. The brand channels this archetype: strategic, precise, and battle-tested.
+
+### The Philosophy
+
+> "Stop hiring tasks. Start building assets."
+
+Every engagement creates permanent value—code, content, or systems that compound over time. The brand rejects hourly billing in favor of outcome-based pricing.
 
 ---
 
