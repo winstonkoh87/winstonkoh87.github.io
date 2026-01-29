@@ -2,6 +2,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
+import { Image } from 'astro:assets';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 import bionicStackDiagram from '../../assets/images/bionic-stack-diagram.png';
 import '../../styles/article.css';
 ---
@@ -23,7 +25,7 @@ import '../../styles/article.css';
                 <div class="article-dates">
                     <span>Published: <time datetime="2025-12-26">26 December 2025</time></span>
                     <span>•</span>
-                    <span>Last updated: <time datetime="2025-12-31">31 December 2025</time></span>
+                    <span>Last updated: <time datetime="2026-01-29">29 January 2026</time></span>
                 </div>
             </header>
             <div class="article-content">
@@ -170,7 +172,7 @@ import '../../styles/article.css';
                             calculation, Funding Ladder, Term Sheet). Ran financial projections across 3 scenarios.
                             Cross-validated with 4 other AI models to catch blind spots.</li>
                         <li><strong>Key discovery:</strong> For NEA-managed hawker centres, <a
-                                href="https://www.nea.gov.sg/our-services/hawker-management/overview" target="_blank"
+                                href="https://www.nea.gov.sg/our-services/hawker-management/overview" target="_blank" rel="noopener"
                                 rel="noopener">tenancy rules</a> require stallholders to personally operate the
                             stall—subletting means termination. My "equity" was actually an unsecured personal loan with
                             zero legal protection.</li>
@@ -247,14 +249,16 @@ import '../../styles/article.css';
                         <li><a href="/articles/athena-5-pillars">The 5 Pillars of Sovereign AI</a> — The architecture behind the bionic stack.</li>
                     </ul>
                 </div>
-            </div>
+            <!-- DUAL CTA FUNNEL BRIDGE -->
+            <ArticleCTA />
+            
             <footer class="article-footer">
                 <div class="author-bio">
                     <div class="author-avatar">WK</div>
                     <div class="author-info">
                         <h4>Winston Koh & Project Athena</h4>
                         <p>This article was co-authored by Winston and <a
-                                href="https://github.com/winstonkoh87/Athena-Public" target="_blank"
+                                href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener"
                                 rel="noopener">Project Athena</a><br>— his AI-powered digital personal assistant.</p>
                         <p><a href="/about">More about us →</a></p>
                     </div>

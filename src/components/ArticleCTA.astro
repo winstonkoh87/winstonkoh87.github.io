@@ -1,0 +1,116 @@
+---
+---
+<section class="article-cta-bridge">
+    <div class="cta-grid">
+        <div class="cta-proof">
+            <div class="cta-icon">⚡</div>
+            <div class="cta-content">
+                <h4>See the System</h4>
+                <p>I don't just write about this; I build the systems. Explore the actual codebase behind these insights.</p>
+                <a href="https://github.com/winstonkoh87/Athena-Public" class="btn-secondary" target="_blank" rel="noopener">
+                    View Athena-Public →
+                </a>
+            </div>
+        </div>
+        <div class="cta-revenue">
+            <div class="cta-icon">🤝</div>
+            <div class="cta-content">
+                <h4>Work With Me</h4>
+                <p>Stop drowning in complexity. Hire me to architect your AI systems and bionic workflows.</p>
+                <a href="/services" class="btn-primary">
+                    Book a Consultation →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .article-cta-bridge {
+        margin: 4rem 0 2rem 0;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .cta-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+
+    .cta-proof, .cta-revenue {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .cta-proof:hover, .cta-revenue:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cta-icon {
+        font-size: 1.5rem;
+        line-height: 1;
+        padding-top: 0.25rem;
+    }
+
+    .cta-content h4 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .cta-content p {
+        margin: 0 0 1.25rem 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #a0a0b0;
+    }
+
+    /* Buttons */
+    .btn-primary, .btn-secondary {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+        color: white;
+        border: none;
+        box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 6px 16px rgba(67, 97, 238, 0.4);
+        transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+</style>

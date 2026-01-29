@@ -5,6 +5,7 @@ import { Image } from 'astro:assets';
 import heroImg from '../../assets/images/grab-trap/hero.png';
 import entropyImg from '../../assets/images/grab-trap/entropy.png';
 import robotaxiImg from '../../assets/images/grab-trap/robotaxi.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
 
@@ -29,6 +30,8 @@ import '../../styles/article.css';
                 </div>
                 <div class="article-dates">
                     <span>Published: <time datetime="2026-01-15">15 January 2026</time></span>
+                    <span>•</span>
+                    <span>Last updated: <time datetime="2026-01-29">29 January 2026</time></span>
                 </div>
             </header>
             <div class="article-content">
@@ -170,7 +173,9 @@ import '../../styles/article.css';
                 <hr />
                 
                 <p style="font-style: italic; color: #888;">This protocol was originally published as a personal essay on <a href="https://medium.com/@winstonkoh87" target="_blank">Medium</a>.</p>
-
+            
+            <ArticleCTA />
+            
             <footer class="article-footer">
                 <div class="author-bio">
                     <div class="author-avatar">WK</div>

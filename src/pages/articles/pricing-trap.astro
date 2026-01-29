@@ -5,6 +5,7 @@ import heroImg from '../../assets/images/articles/pricing-trap/hero.png';
 import comparisonImg from '../../assets/images/articles/pricing-trap/comparison.png';
 import phasesImg from '../../assets/images/articles/pricing-trap/phases.png';
 import tradeoffImg from '../../assets/images/articles/pricing-trap/tradeoff.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
 
@@ -29,6 +30,8 @@ import '../../styles/article.css';
                 </div>
                 <div class="article-dates">
                     <span>Published: <time datetime="2026-01-20">20 January 2026</time></span>
+                    <span>•</span>
+                    <span>Last updated: <time datetime="2026-01-29">29 January 2026</time></span>
                 </div>
             </header>
             
@@ -170,8 +173,10 @@ import '../../styles/article.css';
                     </ul>
                 </div>
                 
-                <p style="font-style: italic; color: #888;">A version of this article was originally published on <a href="https://medium.com/@winstonkoh87" target="_blank">Medium</a>.</p>
+                <p style="font-style: italic; color: #888;">A version of this article was originally published on <a href="https://medium.com/@winstonkoh87" target="_blank" rel="noopener">Medium</a>.</p>
 
+            <ArticleCTA />
+            
             <footer class="article-footer">
                 <div class="author-bio">
                     <div class="author-avatar">WK</div>

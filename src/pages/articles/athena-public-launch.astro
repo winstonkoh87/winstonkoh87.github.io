@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import redditStats from '../../assets/images/articles/athena-launch-reddit-stats.png';
 import githubClones from '../../assets/images/articles/athena-launch-github-clones.png';
 import githubReferrers from '../../assets/images/articles/athena-launch-github-referrers.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
 
@@ -27,6 +28,8 @@ import '../../styles/article.css';
                 </div>
                 <div class="article-dates">
                     <span>Published: <time datetime="2026-01-03">03 Jan 2026</time></span>
+                    <span>•</span>
+                    <span>Last updated: <time datetime="2026-01-29">29 Jan 2026</time></span>
                 </div>
             </header>
             <div class="article-content">
@@ -201,6 +204,7 @@ import '../../styles/article.css';
                         comments.</li>
                 </ul>
             </div>
+            <ArticleCTA />
             <!-- Author Footer -->
             <footer class="article-footer">
                 <div class="author-bio">

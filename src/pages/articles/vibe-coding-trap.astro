@@ -5,6 +5,7 @@ import heroImg from '../../assets/images/articles/vibe-coding-trap/hero.png';
 import stackoverflowImg from '../../assets/images/articles/vibe-coding-trap/stackoverflow_chart.png';
 import executionImg from '../../assets/images/articles/vibe-coding-trap/execution_funnel.png';
 import fourFitsImg from '../../assets/images/articles/vibe-coding-trap/four_fits.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
 
@@ -29,6 +30,8 @@ import '../../styles/article.css';
                 </div>
                 <div class="article-dates">
                     <span>Published: <time datetime="2026-01-15">15 January 2026</time></span>
+                    <span>•</span>
+                    <span>Last updated: <time datetime="2026-01-29">29 January 2026</time></span>
                 </div>
             </header>
             
@@ -166,7 +169,9 @@ import '../../styles/article.css';
                 </div>
                 
                 <p style="font-style: italic; color: #888;">This analysis was originally published as a personal essay on <a href="https://medium.com/@winstonkoh87" target="_blank">Medium</a>.</p>
-
+            
+            <ArticleCTA />
+            
             <footer class="article-footer">
                 <div class="author-bio">
                     <div class="author-avatar">WK</div>

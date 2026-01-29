@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import headerImg from '../../assets/images/first-principles/header.png';
 import logicImg from '../../assets/images/first-principles/logic.png';
 import resultImg from '../../assets/images/first-principles/result.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
 
@@ -28,6 +29,8 @@ import '../../styles/article.css';
                 </div>
                 <div class="article-dates">
                     <span>Published: <time datetime="2026-01-26">26 January 2026</time></span>
+                    <span>•</span>
+                    <span>Last updated: <time datetime="2026-01-29">29 January 2026</time></span>
                 </div>
             </header>
             <div class="article-content">
@@ -137,7 +140,7 @@ import '../../styles/article.css';
                 
                 <hr />
                 
-                <p><a href="https://sgassignmenthelp.com" target="_blank" class="demo-link">Visit the Live Site →</a></p>
+                <p><a href="https://sgassignmenthelp.com" target="_blank" rel="noopener" class="demo-link">Visit the Live Site →</a></p>
 
             <div class="further-reading" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
                 <h4>📚 Further Reading</h4>
@@ -145,6 +148,8 @@ import '../../styles/article.css';
                     <li style="margin-bottom: 0.5rem;"><a href="/articles/gemini-gem-agent/" style="color: var(--accent-primary); text-decoration: none;">Gemini Gem Agent</a> — Another case study in AI acceleration.</li>
                 </ul>
             </div>
+            <ArticleCTA />
+            
             <footer class="article-footer">
                 <div class="author-bio">
                     <div class="author-avatar">WK</div>

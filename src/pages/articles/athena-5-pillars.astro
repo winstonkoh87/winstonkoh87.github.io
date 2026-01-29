@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import '../../styles/article.css';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 ---
 
 <Layout 
@@ -8,6 +9,24 @@ import '../../styles/article.css';
     description="Why a portable, augmenting, and sovereign AI beats a 'smart' one. The 5 pillars that make Athena an asset, not a liability." 
     showFloatingButtons={false}
     image="/assets/images/og-image.png"
+    faqData={[
+        {
+            question: "What does 'Sovereign AI' mean?",
+            answer: "Sovereign AI means you own the files, the history, and the workflow on your own local device. Unlike a cloud subscription where you are a tenant, Sovereign AI makes you the owner of your intellectual capital."
+        },
+        {
+            question: "How is Athena different from ChatGPT?",
+            answer: "Standard ChatGPT has 'Goldfish Memory'—it resets every session. Athena uses 'Deep Context' (Semantic Search) to recall every project you've ever worked on, and 'Augmentation' to check your decisions against your long-term goals."
+        },
+        {
+            question: "What is the Trilateral Feedback Loop?",
+            answer: "It is an adversarial audit system where a primary AI (e.g., Claude) generates a plan, and a rival AI (e.g., Gemini) critiques it. This 'Red Teaming' process catches blind spots that a single model would miss."
+        },
+        {
+            question: "Is Project Athena open source?",
+            answer: "Yes. The architecture and protocols are open source on GitHub under 'Athena-Public'. However, the system is designed so that your personal data (memories and journals) remains private on your local machine."
+        }
+    ]}
 >
     <!-- Mermaid.js for diagrams -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" is:inline></script>
@@ -38,6 +57,8 @@ import '../../styles/article.css';
                 </div>
                 <div class="article-dates">
                     <span>Published: <time datetime="2026-01-02">02 Jan 2026</time></span>
+                    <span>•</span>
+                    <span>Last updated: <time datetime="2026-01-29">29 Jan 2026</time></span>
                 </div>
             </header>
             <div class="article-content">
@@ -301,6 +322,7 @@ import '../../styles/article.css';
                             Source Code</a> — Clone the repo even if you don't know Python.</li>
                 </ul>
             </div>
+            <ArticleCTA />
             <!-- Author Footer -->
             <footer class="article-footer">
                 <div class="author-bio">

@@ -21,6 +21,10 @@ interface Props {
         author?: string;
         tags?: string[];
     };
+    faqData?: {
+        question: string;
+        answer: string;
+    }[];
 }
 
 const { 
@@ -28,7 +32,8 @@ const {
     description = "AI Systems Architect. I build autonomous bionic workflows that scale your output 10x. [2026 Portfolio].",
     showFloatingButtons = true,
     image = "/assets/images/og-image.png",
-    articleData
+    articleData,
+    faqData
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -115,6 +120,17 @@ const ogImageURL = new URL(image, Astro.site);
             "@type": "Person",
             "name": articleData.author || "Winston Koh"
           }
+        } : null,
+        faqData ? {
+          "@type": "FAQPage",
+          "mainEntity": faqData.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
         } : null,
         Astro.url.pathname === '/' ? {
             "@type": "Review",

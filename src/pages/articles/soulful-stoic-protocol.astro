@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import '../../styles/article.css';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 ---
 
 <Layout title="The Soulful Stoic Protocol: Bionic Branding Case Study | Winston Koh" description="How we used a Trilateral Feedback Loop (Multi-Model System) to build a high-performance portfolio for a student leader.">
@@ -14,6 +15,8 @@ import '../../styles/article.css';
                 </div>
                 <div class="article-dates">
                     <span>Published: <time datetime="2026-01-16">16 January 2026</time></span>
+                    <span>•</span>
+                    <span>Last updated: <time datetime="2026-01-29">29 January 2026</time></span>
                 </div>
             </header>
             <div class="article-content">
@@ -162,7 +165,7 @@ import '../../styles/article.css';
                 <p>We haven't just built a website. We've built the operating system for his career.</p>
 
                 <div class="cta-box" style="margin: 4rem 0; text-align: center;">
-                    <a href="/projects/melvin" target="_blank" class="btn-primary-custom">View Live Portfolio →</a>
+                    <a href="/projects/melvin" target="_blank" rel="noopener" class="btn-primary-custom">View Live Portfolio →</a>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">See the final result.</p>
                 </div>
 
@@ -193,6 +196,7 @@ import '../../styles/article.css';
                     <li style="margin-bottom: 0.5rem;"><a href="/articles/trilateral-feedback-loop/" style="color: var(--accent-primary); text-decoration: none;">The Trilateral Feedback Loop</a> — The multi-model validation system used in this case study.</li>
                 </ul>
             </div>
+            <ArticleCTA />
             
             <footer class="article-footer">
                 <div class="author-bio">

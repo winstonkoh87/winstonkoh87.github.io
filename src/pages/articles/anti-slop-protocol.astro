@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import orchestratorImg from '../../../public/assets/images/articles/anti-slop-protocol/orchestrator_concept_1768509492814.png';
 import workflowImg from '../../../public/assets/images/articles/anti-slop-protocol/protocol_workflow_diagram_1768509458697.png';
 import feedbackImg from '../../../public/assets/images/articles/anti-slop-protocol/trilateral_feedback_visualization_1768509476203.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
 
@@ -29,6 +30,8 @@ import '../../styles/article.css';
                 </div>
                 <div class="article-dates">
                     <span>Published: <time datetime="2026-01-16">16 January 2026</time></span>
+                    <span>•</span>
+                    <span>Last updated: <time datetime="2026-01-29">29 January 2026</time></span>
                 </div>
             </header>
             
@@ -182,6 +185,8 @@ import '../../styles/article.css';
                 
                 <p style="font-style: italic; color: #888;">This protocol was stress-tested using the exact method described above.</p>
 
+            <ArticleCTA />
+            
             <footer class="article-footer">
                 <div class="author-bio">
                     <div class="author-avatar">WK</div>
