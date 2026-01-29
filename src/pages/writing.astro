@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { ARTICLES, CLUSTERS, type ClusterId } from '../data/writing-taxonomy';
 
-// Group articles by cluster
+// Group articles by cluster and sort each group by date (newest first)
 const articlesByCluster = ARTICLES.reduce((acc, article) => {
     if (!acc[article.cluster]) {
         acc[article.cluster] = [];
@@ -10,6 +10,13 @@ const articlesByCluster = ARTICLES.reduce((acc, article) => {
     acc[article.cluster].push(article);
     return acc;
 }, {} as Record<ClusterId, typeof ARTICLES>);
+
+// Sort each cluster's articles by date (newest first)
+Object.keys(articlesByCluster).forEach(key => {
+    articlesByCluster[key as ClusterId].sort((a, b) => 
+        new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+});
 
 // Get cluster keys in specific order
 const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 'economics-of-leverage', 'case-files'];
