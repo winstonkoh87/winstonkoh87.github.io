@@ -52,7 +52,9 @@ import clientDerrick from '../assets/images/client-derrick.png';
                     href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20site%20and%20wanted%20to%20connect."
                     target="_blank" rel="noopener noreferrer"
                     onclick="gtag('event', 'cta_click', {'cta_name': 'whatsapp_hero'})">Let's Talk</a>
-
+                <a id="hero-secondary-btn" class="btn btn-secondary" style="display: none;"
+                    href="/Winston Koh - Resume.pdf" target="_blank"
+                    onclick="gtag('event', 'cta_click', {'cta_name': 'resume_download'})">Download Resume</a>
             </div>
         </div>
     </section>
@@ -96,7 +98,7 @@ import clientDerrick from '../assets/images/client-derrick.png';
                 </div>
                 <h3>Project Athena</h3>
                 <p>
-                    <strong>The Outcome:</strong> Personal AI OS with "commit semantics" — 860+ sessions of
+                    <strong>The Outcome:</strong> Personal AI OS with "commit semantics" — 861 sessions of
                     persistent memory.
                     <br><br>
                     <strong>The System:</strong> Hybrid RAG + Local-first Vector Store + Agentic Workflow.
@@ -376,10 +378,12 @@ Or just ask a question naturally!`, 'system');
             fulltime: {
                 headline: "Full-Stack Engineer<br>with <span class='text-gradient'>AI Specialization.</span>",
                 subtitle: "Python • JavaScript • RAG • Agentic Orchestration",
-                desc: "I build production-grade applications with Claude Opus 4.5, Gemini Pro 3, and multi-LLM pipelines. Creator of Athena v8.0 (860+ sessions).",
+                desc: "I build production-grade applications with Claude Opus 4.5, Gemini Pro 3, and multi-LLM pipelines. Creator of Athena v8.0 (861 sessions).",
                 cta: "Try The Simulation",
                 ctaLink: "https://github.com/winstonkoh87/Athena-Public", // Direct to repo for simulation
-                showSecondary: true
+                showSecondary: true,
+                secondaryText: "Download Resume",
+                secondaryLink: "/Winston Koh - Resume.pdf"
             }
         };
 
@@ -402,7 +406,8 @@ Or just ask a question naturally!`, 'system');
                 document.getElementById('hero-headline'),
                 document.getElementById('hero-subtitle'),
                 document.getElementById('hero-description'),
-                document.getElementById('hero-cta-btn')
+                document.getElementById('hero-cta-btn'),
+                document.getElementById('hero-secondary-btn')
             ];
 
             // Helper to swap text
@@ -411,6 +416,7 @@ Or just ask a question naturally!`, 'system');
                 const subtitle = document.getElementById('hero-subtitle');
                 const description = document.getElementById('hero-description');
                 const ctaBtn = document.getElementById('hero-cta-btn');
+                const secondaryBtn = document.getElementById('hero-secondary-btn');
 
                 if (headline) headline.innerHTML = data.headline;
                 if (subtitle) subtitle.innerHTML = data.subtitle;
@@ -418,6 +424,15 @@ Or just ask a question naturally!`, 'system');
                 if (ctaBtn) {
                     ctaBtn.innerHTML = data.cta;
                     ctaBtn.href = data.ctaLink;
+                }
+                if (secondaryBtn) {
+                    if (data.showSecondary) {
+                        secondaryBtn.style.display = 'inline-block';
+                        secondaryBtn.innerHTML = data.secondaryText;
+                        secondaryBtn.href = data.secondaryLink;
+                    } else {
+                        secondaryBtn.style.display = 'none';
+                    }
                 }
             };
 
