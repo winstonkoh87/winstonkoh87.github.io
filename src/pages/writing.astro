@@ -1,5 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { ARTICLES, CLUSTERS, type ClusterId } from '../data/writing-taxonomy';
+
+// Group articles by cluster
+const articlesByCluster = ARTICLES.reduce((acc, article) => {
+    if (!acc[article.cluster]) {
+        acc[article.cluster] = [];
+    }
+    acc[article.cluster].push(article);
+    return acc;
+}, {} as Record<ClusterId, typeof ARTICLES>);
+
+// Get cluster keys in specific order
+const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 'economics-of-leverage', 'case-files'];
+
+// Get featured/latest article for hero (optional, taking the first one marked featured or just the first one)
+const featuredArticle = ARTICLES.find(a => a.featured) || ARTICLES[0];
 ---
 
 <Layout title="Writing | AI Strategy & Engineering Insights [2026]" description="Strategic insights on AI architecture, sovereign systems, and the bionic workflow. Decoding the physics of digital leverage and survival in the automation age.">
@@ -10,300 +26,46 @@ import Layout from '../layouts/Layout.astro';
                     <h1>Writing</h1>
                     <p class="page-subtitle">Thoughts on systems, strategy, and survival.</p>
                 </div>
-                <div class="controls-container">
-                    <div class="search-container">
-                        <input type="text" id="article-search" class="search-input" placeholder="Search articles..."
-                            aria-label="Search articles">
-                        <span class="search-icon">🔍</span>
-                    </div>
-                    <div class="sort-container">
-                        <select id="article-sort" class="sort-select" aria-label="Sort articles">
-                            <option value="newest">Newest</option>
-                            <option value="oldest">Oldest</option>
-                        </select>
-                    </div>
-                </div>
+                <!-- Search could go here if needed later, removing manual filters for now to focus on structure -->
             </div>
         </section>
 
         <section class="content-section">
-            <!-- Filter Buttons -->
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ai">AI & Systems</button>
-                <button class="filter-btn" data-filter="strategy">Strategy</button>
-                <button class="filter-btn" data-filter="casestudy">Case Studies</button>
-            </div>
+            <div class="hub-container">
+                {clusterKeys.map((key) => {
+                    const cluster = CLUSTERS[key];
+                    const articles = articlesByCluster[key] || [];
+                    
+                    if (articles.length === 0) return null;
 
-            <div class="article-grid" id="article-grid">
-                <article class="article-card" data-category="strategy" data-date="2026-01-29">
-                    <a href="/articles/the-price-of-ignoring-advice" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Safety Protocol</span>
+                    return (
+                        <div class="cluster-section" id={key}>
+                            <div class="cluster-header">
+                                <span class="cluster-subtitle">{cluster.subtitle}</span>
+                                <h2>{cluster.title}</h2>
+                                <p class="cluster-description">{cluster.description}</p>
                             </div>
-                            <h3>The Price of Ignoring Advice: A $300 Lesson in AI Safety</h3>
-                            <p class="article-excerpt">A client paid for Agentic AI superpowers but ignored the one rule that kept them safe. How one prompt wiped a project, and the backup protocol that would have saved it.</p>
-                            <span class="read-more">Read case study →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="strategy" data-date="2026-01-29">
-                    <a href="/articles/why-the-200-coder-broke-your-app" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Strategy</span>
+                            
+                            <div class="article-grid">
+                                {articles.map((article) => (
+                                    <article class="article-card" data-category={article.cluster} data-date={article.date}>
+                                        <a href={`/articles/${article.slug}`} class="article-link">
+                                            <div class="article-card-content">
+                                                <div class="article-meta">
+                                                    <span class="article-date">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+                                                    <span class="article-tag">{article.tags[0]}</span>
+                                                </div>
+                                                <h3>{article.title}</h3>
+                                                <p class="article-excerpt">{article.excerpt}</p>
+                                                <span class="read-more">Read article →</span>
+                                            </div>
+                                        </a>
+                                    </article>
+                                ))}
                             </div>
-                            <h3>Why the $200 Coder Broke Your App (And Why I Charge 3x More)</h3>
-                            <p class="article-excerpt">The hidden cost of "just throwing it into ChatGPT." A case study on why a cheap AI-generated web app failed, and the engineering required to fix it.</p>
-                            <span class="read-more">Read article →</span>
                         </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="casestudy" data-date="2026-01-26">
-                    <a href="/articles/first-principles-design" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Case Study</span>
-                            </div>
-                            <h3>One Day, One Site: A First Principles Design Case Study</h3>
-                            <p class="article-excerpt">How I used First Principles Thinking and Project Athena to compress a week of design paralysis into a single Deep Work Saturday.</p>
-                            <span class="read-more">Read case study →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="strategy" data-date="2026-01-20">
-                    <a href="/articles/pricing-trap" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Strategy</span>
-                            </div>
-                            <h3>The $300 Website Experiment: A Price Discovery Lesson</h3>
-                            <p class="article-excerpt">I tested how cheap I could price a website before the market pushed back. They didn't. Here's what that taught me about value, scope, and expectation gaps.</p>
-                            <span class="read-more">Read article →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="casestudy" data-date="2026-01-20">
-                    <a href="/articles/alteryx-24-hours" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Case Study</span>
-                            </div>
-                            <h3>24 Hours to Delivery: The Bionic Approach to Unfamiliar Tools</h3>
-                            <p class="article-excerpt">A client needed an ML pipeline in Alteryx — software I'd never touched. Here's how portable fundamentals and systematic AI usage compressed a week of work into a single day.</p>
-                            <span class="read-more">Read case study →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="strategy" data-date="2026-01-16">
-                    <a href="/articles/anti-slop-protocol" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Protocol</span>
-                            </div>
-                            <h3>The Anti-Slop Protocol: How to Write 3,000 Words in 3 Hours</h3>
-                            <p class="article-excerpt">Stop trying to prompt-engineer a perfect essay. Start acting like a Manager instead of a Maker. A 4-phase protocol for high-quality AI co-creation.</p>
-                            <span class="read-more">Read protocol →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="strategy" data-date="2026-01-15">
-                    <a href="/articles/vibe-coding-trap" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">AI Strategy</span>
-                            </div>
-                            <h3>The Vibe Coder's Trap: Why AI Speed Can't Fix Business Physics</h3>
-                            <p class="article-excerpt">I built 10 apps in a week, and I have $0 revenue. Why AI accelerates the "How" but breaks the "Who", "Where", and "How Much".</p>
-                            <span class="read-more">Read article →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="strategy" data-date="2026-01-15">
-                    <a href="/articles/net-life-hour-protocol" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Protocol</span>
-                            </div>
-                            <h3>Protocol: Auditing Your "Net Life Hour" (The Grab Test)</h3>
-                            <p class="article-excerpt">The dangerous illusion of "Monthly Income" vs. The brutal reality of "Net Life Hour". A framework for auditing the unit economics of your career.</p>
-                            <span class="read-more">Read protocol →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="strategy" data-date="2026-01-14">
-                    <a href="/articles/2-day-efficiency-trap" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Strategy</span>
-                            </div>
-                            <h3>The Efficiency Trap: A Systems Analysis of False Competence</h3>
-                            <p class="article-excerpt">Deconstructing the mechanic of "False Competence" in accelerated learning. Why efficient inputs (2-Day Courses) lead to fragile outputs.</p>
-                            <span class="read-more">Read article →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="casestudy" data-date="2026-01-14">
-                    <a href="/articles/gemini-gem-agent" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Case Study</span>
-                            </div>
-                            <h3>How I Compressed a Week of Agency R&D into a Single Day with Gemini Gems</h3>
-                            <p class="article-excerpt">I thought replacing myself with an AI agent would take a week. It took me 24 hours. A case study in rapid logic prototyping and hard-coding ethics.</p>
-                            <span class="read-more">Read case study →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="casestudy" data-date="2026-01-11">
-                    <a href="/articles/ai-marketing-workflow" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Case Study</span>
-                            </div>
-                            <h3>How I Built a $5K-Worth Marketing Strategy in One Afternoon</h3>
-                            <p class="article-excerpt">A methodology demonstration of AI-augmented strategic analysis — from industry research to interactive pitch deck in 4 hours. Reusable frameworks for any agency.</p>
-                            <span class="read-more">Read case study →</span>
-                        </div>
-                    </a>
-                </article>
-                <!-- Article Item -->
-                <article class="article-card" data-category="casestudy" data-date="2026-01-16">
-                    <a href="/articles/soulful-stoic-protocol" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Case Study</span>
-                            </div>
-                            <h3>The Soulful Stoic Protocol: Bionic Branding Case Study</h3>
-                            <p class="article-excerpt">
-                                How we used a Trilateral Feedback Loop (Gemini + Claude + O1) to build a high-performance portfolio for a student leader. Moving beyond "repository" to "trajectory."
-                            </p>
-                            <span class="read-more">Read case study →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="strategy" data-date="2026-01-08">
-                    <a href="/articles/iterative-layer" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Strategy</span>
-                            </div>
-                            <h3>The Iterative Layer: Why AI Will Never One-Shot Your Problems</h3>
-                            <p class="article-excerpt">Magic prompts don't exist. The real power of AI comes from iterative collaboration—Plan, Execute, Calibrate, Iterate.</p>
-                            <span class="read-more">Read article →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="ai" data-date="2026-01-05">
-                    <a href="/articles/athena-public-launch" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Launch Story</span>
-                            </div>
-                            <h3>9.8K Views, 750 Cloners: The Day I Shipped My Brain to the World</h3>
-                            <p class="article-excerpt">A first-hand account of open-sourcing Project Athena and the
-                                counter-intuitive lesson on why "risky" authenticity beats "safe" professionalism.</p>
-                            <span class="read-more">Read article →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="ai" data-date="2026-01-03">
-                    <a href="/articles/athena-5-pillars" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">AI Strategy</span>
-                            </div>
-                            <h3>Why I Built My Own Brain (The 5 Pillars of Sovereign AI)</h3>
-                            <p class="article-excerpt">Why a portable, augmenting, and sovereign AI beats a "smart" one.
-                                The 5 pillars that make Athena an asset, not a liability.</p>
-                            <span class="read-more">Read article →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="strategy" data-date="2026-01-01">
-                    <a href="/articles/trilateral-feedback-loop" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Jan 2026</span>
-                                <span class="article-tag">Strategy</span>
-                            </div>
-                            <h3>The Trilateral Feedback Loop: Why One AI is Not Enough</h3>
-                            <p class="article-excerpt">How to stop your AI from becoming a "Yes Man" and use adversarial
-                                audit loops to validate high-stakes decisions.</p>
-                            <span class="read-more">Read article →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="strategy" data-date="2025-12-28">
-                    <a href="/articles/ai-bionic-layer" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Dec 2025</span>
-                                <span class="article-tag">Strategy</span>
-                            </div>
-                            <h3>The Bionic Operator: Why AI Replaces Tasks, Not Humans</h3>
-                            <p class="article-excerpt">Why the "AI will replace you" narrative is wrong. The real play
-                                is augmentation — becoming a bionic operator, not a displaced worker.</p>
-                            <span class="read-more">Read article →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="casestudy" data-date="2025-12-20">
-                    <a href="/articles/case-study-p6-math-tuition" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Dec 2025</span>
-                                <span class="article-tag">Case Study</span>
-                            </div>
-                            <h3>Building a Tuition Centre's Lead Engine in Under One Hour</h3>
-                            <p class="article-excerpt">From brief to deployment: a 5-page SME website and digital
-                                marketing launch plan — built in under one hour with AI-augmented execution.</p>
-                            <span class="read-more">Read case study →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="article-card" data-category="ai" data-date="2025-12-15">
-                    <a href="/articles/sme-ai-marketing-guide" class="article-link">
-                        <div class="article-card-content">
-                            <div class="article-meta">
-                                <span class="article-date">Dec 2025</span>
-                                <span class="article-tag">AI for Business</span>
-                            </div>
-                            <h3>How SG SMEs Can Build a Full Marketing Department for <$100 (Using Project Athena)</h3>
-                                    <p class="article-excerpt">Website creation, SEO content, Facebook/Google ads — a
-                                        practical
-                                        guide on using AI to run your digital marketing without hiring a team.</p>
-                                    <span class="read-more">Read article →</span>
-                        </div>
-                    </a>
-                </article>
-            </div>
-
-            <!-- Empty State for Search -->
-            <div id="no-results" class="empty-state" style="display: none; padding: 4rem 1rem;">
-                <div class="empty-icon" style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
-                <h3>No articles found</h3>
-                <p>Try adjusting your search or filters to find what you're looking for.</p>
-                <button onclick="resetFilters()" class="text-link"
-                    style="margin-top: 1rem; background: none; border: none; font-family: inherit; cursor: pointer;">
-                    Clear all filters
-                </button>
+                    );
+                })}
             </div>
         </section>
 
@@ -319,5 +81,47 @@ import Layout from '../layouts/Layout.astro';
         </section>
     </section>
 
-    <script src="../assets/js/writing-filters.js"></script>
+    <!-- Removing writing-filters.js as we are now using a structural layout -->
 </Layout>
+
+<style>
+    /* Add some specific styles for the hub layout */
+    .cluster-section {
+        margin-bottom: 6rem;
+    }
+    
+    .cluster-header {
+        margin-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 1rem;
+    }
+
+    .cluster-subtitle {
+        color: var(--accent);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .cluster-header h2 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem 0;
+        color: var(--text-primary);
+    }
+
+    .cluster-description {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .cluster-header h2 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
