@@ -19,7 +19,7 @@ This documents how I built (and evolved) a complete portfolio website with AI-au
 | Metric | Count |
 |--------|-------|
 | **Pages** | 8 |
-| **Articles** | 14 |
+| **Articles** | 19 |
 | **Live Demo Sites** | 6 |
 | **AI Widget** | ✅ Athena Live |
 | **Framework** | Astro 5.0 (Vite-powered) |
@@ -155,7 +155,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | [Home](https://winstonkoh87.github.io/) | Hero + Athena Live widget + Featured projects |
 | [About](https://winstonkoh87.github.io/about) | Identity, philosophy, Bionic Operating Model |
 | [Framework](https://winstonkoh87.github.io/framework) | Three-Pillar Leadership, Arena Physics, Laws, SDR |
-| [Writing](https://winstonkoh87.github.io/writing) | Blog with 13 published articles |
+| [Writing](https://winstonkoh87.github.io/writing) | Blog with 19 published articles |
 | [Portfolio](https://winstonkoh87.github.io/portfolio) | 6 live demo sites |
 | [Athena](https://winstonkoh87.github.io/athena) | Product page: What Athena is and how it works |
 | [Services](https://winstonkoh87.github.io/services) | Fixed pricing. Fast delivery. Systems that work. |
@@ -163,17 +163,14 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 
 ---
 
-## ✍️ Articles
+## ✍️ Articles (19 Published)
 
-| Title | Topic |
-|-------|-------|
-| [The AI Bionic Layer](https://winstonkoh87.github.io/articles/ai-bionic-layer) | Why AI augmentation beats replacement |
-| [The 5 Pillars of Athena](https://winstonkoh87.github.io/articles/athena-5-pillars) | Architecture deep-dive |
-| [Athena Public Launch](https://winstonkoh87.github.io/articles/athena-public-launch) | Open-source announcement |
-| [Case Study: P6 Math Tuition](https://winstonkoh87.github.io/articles/case-study-p6-math-tuition) | Client work breakdown |
-| [SME AI Marketing Guide](https://winstonkoh87.github.io/articles/sme-ai-marketing-guide) | Practical AI for small business |
-| [Trilateral Feedback Loop](https://winstonkoh87.github.io/articles/trilateral-feedback-loop) | Multi-AI validation system |
-| [The Anti-Slop Protocol](https://winstonkoh87.github.io/articles/anti-slop-protocol) | AI co-creation workflow |
+| Cluster | Articles |
+|---------|----------|
+| **Sovereign Systems** | Athena 5 Pillars, Trilateral Feedback Loop, AI Bionic Layer, Iterative Layer, Athena Public Launch |
+| **Strategic Engineering** | The Price of Ignoring Advice, Anti-Slop Protocol, Soulful Stoic Protocol, Net Life Hour Protocol, First Principles Design |
+| **Economics of Leverage** | Why the $200 Coder Broke Your App, The Pricing Trap, Vibe Coding Trap, 2-Day Efficiency Trap |
+| **Case Files** | Alteryx 24 Hours, Gemini Gem Agent, AI Marketing Workflow, Case Study P6 Math Tuition, SME AI Marketing Guide |
 
 ---
 
