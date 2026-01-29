@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/images/articles/the-price-of-ignoring-advice/hero.png';
+import receiptImg from '../../assets/images/articles/the-price-of-ignoring-advice/receipt.png';
+import aftermathImg from '../../assets/images/articles/the-price-of-ignoring-advice/aftermath.png';
+import checklistImg from '../../assets/images/articles/the-price-of-ignoring-advice/checklist.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="The Price of Ignoring Advice: A $300 Lesson in Agentic AI Safety | Winston Koh" 
+    description="A case study on why Agentic AI requires 'Blast Shields' (Backups/Git). How a client ignored a critical safety rule and lost his entire project to an AI command." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/the-price-of-ignoring-advice/hero.png"
+    articleData={{
+        publishedTime: "2026-01-29T15:00:00Z",
+        tags: ["AI Safety", "Software Engineering", "Case Study", "Agentic AI"]
+    }}
+>
+    <main class="article-container">
+        <a href="/writing" class="back-link">← Back to Writing</a>
+        <article>
+            <header class="article-header">
+                <h1>The Price of Ignoring Advice</h1>
+                <h2>(Or: How to Lose a Project in One Prompt)</h2>
+                <div class="article-meta">
+                    <span>🛡️ AI Safety Protocol</span>
+                    <span>📉 Case Study</span>
+                </div>
+                <div class="article-dates">
+                    <span>Published: <time datetime="2026-01-29">29 January 2026</time></span>
+                </div>
+            </header>
+            
+            <figure class="article-figure">
+                <Image 
+                    src={heroImg} 
+                    alt="Cybersecurity Dashboard Warning" 
+                    class="article-image"
+                    loading="eager"
+                />
+                <figcaption>The Critical Error: Operating without an Undo Button.</figcaption>
+            </figure>
+
+            <div class="article-content">
+                
+                <!-- Executive Summary -->
+                <div class="exec-summary">
+                    <h4>📋 Executive Summary</h4>
+                    <ul>
+                        <li><strong>The Scenario:</strong> A student hired me to set up an Agentic IDE (AI with shell access).</li>
+                        <li><strong>The Risk:</strong> Agentic AI can delete files. I mandated a "Blast Shield" (Backup/Git) as a condition of use.</li>
+                        <li><strong>The Failure:</strong> The client ignored the backup constraint. He prompted the AI to "clean up," and it wiped his current directory.</li>
+                        <li><strong>The Lesson:</strong> Syncing is not backing up. You must have an offline/immutable checkpoint designated before granting AI write access.</li>
+                    </ul>
+                </div>
+
+                <h2>The "Ferrari" Problem</h2>
+                <p>When you use standard LLMs (ChatGPT, Claude), you are in a walled garden. You can't break anything because the AI can only output text.</p>
+                <p><strong>Agentic IDEs</strong> (Cursor, Windsurf) are different. They have <strong>shell access</strong>. They can execute `rm -rf`, move directories, and rewrite files.</p>
+                <p>I call this the Ferrari Problem: <strong>You bought the speed, but did you buy the brakes?</strong></p>
+
+                <h3>The Explicit Warning</h3>
+                <p>During a $300 consultation with a client ("Alex"), I gave one non-negotiable instruction before handing him the tools:</p>
+                <div class="key-insight">
+                    <h4>The Rule</h4>
+                    <p>"Install a Backup Protocol (Google Drive / Git). Not just Sync. A Backup."</p>
+                </div>
+                <p>I explained that Sync mirrors deletions. If the AI wipes his desktop, the cloud wipes the copy. He needed a dedicated checkpoint.</p>
+                
+                <figure class="article-figure">
+                    <Image 
+                        src={receiptImg} 
+                        alt="WhatsApp Warning Receipt" 
+                        class="article-image"
+                    />
+                    <figcaption>The Receipt: Explicit instruction to create redundancy.</figcaption>
+                </figure>
+
+                <h2>The Incident</h2>
+                <p>24 hours later, the inevitable happened.</p>
+                <p>Alex likely asked the Agent to "clean up the folder" or "remove temp files." The AI, being literal, interpreted the scope broadly.</p>
+                <p><strong>"I fked up."</strong></p>
+                <p>The directory was empty.</p>
+
+                <figure class="article-figure">
+                    <Image 
+                        src={aftermathImg} 
+                        alt="The Wipe Disaster" 
+                        class="article-image"
+                    />
+                    <figcaption>The Consequence: A wiped project and no backup.</figcaption>
+                </figure>
+
+                <h2>The Engineering Lesson: Robustness</h2>
+                <p>The tragedy here isn't the AI's mistake. It's the lack of <strong>System Resilience</strong>.</p>
+                <p>In software engineering, we assume failure will happen. We don't try to prevent every bug; we build systems that survive them.</p>
+                
+                <div class="checklist-box">
+                    <h4>Sync vs Backup</h4>
+                    <ul>
+                        <li><strong>Sync (Mirror):</strong> Live reflection. Good for convenience. Bad for safety. (AI deletes > Cloud deletes).</li>
+                        <li><strong>Backup (Snapshot):</strong> Frozen state. Good for safety. (AI deletes > Restore from 1 hour ago).</li>
+                    </ul>
+                </div>
+
+                <p>Alex had Sync (maybe). He didn't have a Backup. When the mirror broke, he had no reflection left.</p>
+
+                <h2 id="checklist">The Agentic Safety Baseline</h2>
+                <p>If you are using AI tools that have write-access to your file system, you must adopt this baseline:</p>
+
+                <figure class="article-figure">
+                    <Image 
+                        src={checklistImg} 
+                        alt="Git Safety Net Checklist" 
+                        class="article-image"
+                    />
+                    <figcaption>The Safety Net that separates professionals from amateurs.</figcaption>
+                </figure>
+
+                <div class="checklist-box">
+                    <h4>The 3-Step Blast Shield</h4>
+                    <ol>
+                        <li><strong>Git Init:</strong> Version control is the ultimate undo button. <code>git checkout .</code> would have saved him in 1 second.</li>
+                        <li><strong>Remote Push:</strong> GitHub/GitLab ensures that even if your local drive melts, the code exists elsewhere.</li>
+                        <li><strong>Checkpointing:</strong> Before any "Refactor" or "Clean" prompt, commit your changes.</li>
+                    </ol>
+                </div>
+
+                <h2 class="final-word">The Cost of Wisdom</h2>
+                <p>Alex paid $300 for the consultation. But the real cost was the lost week of work.</p>
+                <p>Domain expertise often sounds like "boring administrative advice" (Backups, Git, Security). In reality, it is the only thing standing between you and a total wipe.</p>
+                <p><strong>When an expert tells you to install a safety net, don't ask if it's necessary. Just install the damn net.</strong></p>
+
+                <hr />
+
+                <div class="key-insight">
+                    <h4>📚 Related Reading</h4>
+                    <ul>
+                        <li><a href="/articles/why-the-200-coder-broke-your-app">Why the $200 Coder Broke Your App</a> — More lessons on cheap vs robust engineering.</li>
+                        <li><a href="/projects/athena">Project Athena</a> — How I use Agentic AI safely.</li>
+                    </ul>
+                </div>
+                
+                <p style="font-style: italic; color: #888;">This article was originally published on <a href="https://winstonkoh87.medium.com/i-charged-him-300-to-save-his-project-he-ignored-one-text-and-lost-it-all-453413008a72" target="_blank" rel="noopener">Medium</a>.</p>
+
+            <ArticleCTA />
+            
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">WK</div>
+                    <div class="author-info">
+                        <h4>Winston Koh & Project Athena</h4>
+                        <p>This article was co-authored with <a href="/projects/athena">Project Athena</a>.</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>
