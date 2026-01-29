@@ -25,11 +25,47 @@ const clusterKeys: ClusterId[] = ['autonomous-systems', 'strategic-infrastructur
                 </div>
             </div>
             
+            <!-- Filter Controls (Client-Side) -->
+            <div class="filter-controls fade-in-delayed-2">
+                <button class="filter-btn active" data-filter="all">All</button>
+                {clusterKeys.map((key) => (
+                    <button class="filter-btn" data-filter={key}>{CLUSTERS[key].title}</button>
+                ))}
+            </div>
+
             <!-- Disclaimer Note -->
             <div class="portfolio-disclaimer" style="background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 8px; padding: 1rem; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted); max-width: 800px;">
                 <strong>⚠️ Note:</strong> Some demo projects reference real individuals or businesses (e.g., "Melvin Lim", "Coach Derrick Lim", "ThatBioTutor"). These are <strong>inspired by</strong> publicly available information for demonstration purposes. All financial projections and business metrics are AI-generated estimates. <strong>These are not actual client engagements.</strong>
             </div>
         </section>
+
+        <!-- Filter Logic Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const buttons = document.querySelectorAll('.filter-btn');
+                const sections = document.querySelectorAll('.cluster-section');
+
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // 1. Toggle Active State
+                        buttons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // 2. Filter Sections
+                        const filter = btn.getAttribute('data-filter');
+                        
+                        sections.forEach(section => {
+                            if (filter === 'all' || section.id === filter) {
+                                (section as HTMLElement).style.display = 'block';
+                                (section as HTMLElement).style.animation = 'fadeIn 0.5s ease forwards';
+                            } else {
+                                (section as HTMLElement).style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
 
         <section class="content-section">
             <div class="hub-container">
@@ -257,5 +293,43 @@ const clusterKeys: ClusterId[] = ['autonomous-systems', 'strategic-infrastructur
         .page-header h1 {
             font-size: 2.5rem;
         }
+    }
+
+    /* Filter Controls */
+    .filter-controls {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-secondary);
+        padding: 0.5rem 1.25rem;
+        border-radius: 99px;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .filter-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+        background: var(--text-primary);
+        color: var(--bg-primary); /* Invert colors for active state */
+        border-color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>

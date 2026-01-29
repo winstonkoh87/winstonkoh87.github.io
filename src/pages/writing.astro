@@ -24,7 +24,43 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
                     <p class="page-subtitle">Thoughts on systems, strategy, and survival.</p>
                 </div>
             </div>
+
+            <!-- Filter Controls (Client-Side) -->
+            <div class="filter-controls fade-in-delayed-2">
+                <button class="filter-btn active" data-filter="all">All</button>
+                {clusterKeys.map((key) => (
+                    <button class="filter-btn" data-filter={key}>{CLUSTERS[key].title}</button>
+                ))}
+            </div>
         </section>
+
+        <!-- Filter Logic Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const buttons = document.querySelectorAll('.filter-btn');
+                const sections = document.querySelectorAll('.cluster-section');
+
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // 1. Toggle Active State
+                        buttons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // 2. Filter Sections
+                        const filter = btn.getAttribute('data-filter');
+                        
+                        sections.forEach(section => {
+                            if (filter === 'all' || section.id === filter) {
+                                (section as HTMLElement).style.display = 'block';
+                                (section as HTMLElement).style.animation = 'fadeIn 0.5s ease forwards';
+                            } else {
+                                (section as HTMLElement).style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
 
         <section class="content-section">
             <div class="hub-container">
@@ -38,7 +74,7 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
                         <div class="cluster-section" id={key}>
                             <div class="cluster-header">
                                 <span class="cluster-subtitle">{cluster.subtitle}</span>
-                                <h2>{cluster.title}</h2>
+                                <h2 class="section-title">{cluster.title}</h2>
                                 <p class="cluster-description">{cluster.description}</p>
                             </div>
                             
@@ -121,6 +157,44 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
         max-width: 550px;
         margin: 0;
         line-height: 1.6;
+    }
+
+    /* Filter Controls */
+    .filter-controls {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-secondary);
+        padding: 0.5rem 1.25rem;
+        border-radius: 99px;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .filter-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+        background: var(--text-primary);
+        color: var(--bg-primary);
+        border-color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     /* Article Grid - Adverdize Style */
