@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/images/articles/why-the-200-coder-broke-your-app/hero.png';
+import comparisonImg from '../../assets/images/articles/why-the-200-coder-broke-your-app/comparison.png';
+import pilotImg from '../../assets/images/articles/why-the-200-coder-broke-your-app/pilot.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="Why the $200 Coder Broke Your App (And Why I Charge 3x More) | Winston Koh" 
+    description="The hidden cost of 'just throwing it into ChatGPT.' A case study on why a cheap AI-generated web app failed, and the engineering required to fix it." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/why-the-200-coder-broke-your-app/hero.png"
+    articleData={{
+        publishedTime: "2026-01-29T14:00:00Z",
+        tags: ["AI Engineering", "Consulting", "Software Architecture", "Case Study"]
+    }}
+>
+    <main class="article-container">
+        <a href="/writing" class="back-link">← Back to Writing</a>
+        <article>
+            <header class="article-header">
+                <h1>Why the $200 Coder Broke Your App</h1>
+                <h2>(And Why I Charge 3x More to Fix It)</h2>
+                <div class="article-meta">
+                    <span>⚡ AI Engineering</span>
+                    <span>📉 Pricing Strategy</span>
+                </div>
+                <div class="article-dates">
+                    <span>Published: <time datetime="2026-01-29">29 January 2026</time></span>
+                </div>
+            </header>
+            
+            <figure class="article-figure">
+                <Image 
+                    src={heroImg} 
+                    alt="AI Vending Machine Illusion" 
+                    class="article-image"
+                    loading="eager"
+                />
+                <figcaption>The Mirage: The dangerous belief that AI coding is a vending machine.</figcaption>
+            </figure>
+
+            <div class="article-content">
+                
+                <!-- Executive Summary -->
+                <div class="exec-summary">
+                    <h4>📋 Executive Summary</h4>
+                    <ul>
+                        <li><strong>The Problem:</strong> Clients believe AI makes software development free ("Just use ChatGPT").</li>
+                        <li><strong>The Reality:</strong> A $200 service ("Codingo") delivered a broken, Hallucination-prone app that caused a student to fail his module.</li>
+                        <li><strong>The Fix:</strong> Restoring the project required architectural restructuring, not just code generation.</li>
+                        <li><strong>The Lesson:</strong> You don't pay for the keystrokes. You pay for the 95% of work that happens <em>after</em> the code is generated (Testing, Debugging, Mentorship).</li>
+                    </ul>
+                </div>
+
+                <h2>The "Vendor" Mentality</h2>
+                <p>"Why is this so expensive? Can't you just ask ChatGPT to write the code?"</p>
+                <p>This is the defining question of 2026. If a model can generate 500 lines of Python in 10 seconds, why does professional engineering still cost hundreds (or thousands) of dollars?</p>
+                <p>The answer lies in the difference between <strong>AI Slop</strong> and <strong>Engineered Software</strong>.</p>
+
+                <h3>The $200 Disaster</h3>
+                <p>Recently, a client came to me with a web app assignment. He had previously hired a service (let's call them "Codingo") for $200. On paper, it was a steal. In reality, it was a catastrophe.</p>
+                <p>The code delivered was raw, uncurated LLM output.</p>
+                <ul>
+                    <li>Broken database connections.</li>
+                    <li>Non-existent security (CSRF vulnerabilities everywhere).</li>
+                    <li>Fractured logic that collapsed under load.</li>
+                </ul>
+                <p>The client didn't just lose $200. He failed his specific module requirement because the app simply didn't run. The "cheap" option was the most expensive mistake he made.</p>
+
+                <h2 id="gap">The Tooling Gap</h2>
+                <p>There is a misconception that developers just "throw files into Gemini UI."</p>
+                <p><strong>If it were that easy, you wouldn't need me.</strong></p>
+                <p>Real engineering doesn't happen in a chat window. Professional workflows look like this:</p>
+                
+                <div class="checklist-box">
+                    <h4>The Professional Stack</h4>
+                    <ul>
+                        <li><strong>IDE:</strong> Cursor / VS Code (not a browser tab).</li>
+                        <li><strong>Context Engine:</strong> Custom RAG systems (like my <a href="/projects/athena">Project Athena</a>) that inject architectural context.</li>
+                        <li><strong>Validation:</strong> Automated testing and security scanning.</li>
+                    </ul>
+                </div>
+                
+                <p><strong>Project Athena</strong> isn't just a wrapper. It's a private repository that condenses hundreds of hours of my coding patterns. When I generate a draft, it starts at 80% quality, not the 40% you get from a public web chat.</p>
+
+                <figure class="article-figure">
+                    <Image 
+                        src={comparisonImg} 
+                        alt="Spaghetti Code vs Planned Architecture" 
+                        class="article-image"
+                    />
+                    <figcaption>Left: "Generated" Code (Chaos). Right: Engineered Architecture (Order).</figcaption>
+                </figure>
+
+                <h2>The 95% Included in the Price</h2>
+                <p>Even with my advanced tooling, generation is only 5% of the job.</p>
+                <p>For this specific "simple" $400 rescue mission, I spent the <strong>entire night</strong> in the trenches.</p>
+                
+                <div class="key-insight">
+                    <h4>🔍 The Iteration Cycle</h4>
+                    <p><strong>Testing:</strong> Confident AI makes confident mistakes. Every route was manually verified.</p>
+                    <p><strong>Debugging:</strong> Looking for invisible logic errors, race conditions, and state management bugs.</p>
+                    <p><strong>UX Polish:</strong> "Make it pretty" is a bad prompt. Design principles are a discipline.</p>
+                    <p><strong>Security:</strong> Adding the CSRF tokens and input validation that the AI forgot.</p>
+                </div>
+
+                <p>This is the invisible labor. The client doesn't see the 4 hours I spent fixing a session management bug; they only see that "it works."</p>
+
+                <h2>The Real Product: Competence Transfer</h2>
+                <p>Finally, there's the <strong>After-Support</strong>.</p>
+                <p>My service isn't just "here's the zip file, good luck." It includes the mentorship required to actually use the software.</p>
+                <ul>
+                    <li>"How do I run this locally?"</li>
+                    <li>"Why is the database structured this way?"</li>
+                    <li>"How do I explain this function?"</li>
+                </ul>
+                <p>I had to ensure the client understood the code well enough to defend it. If I had just dumped the files (like the $200 vendor did), he would have been helpless.</p>
+
+                <h2 class="final-word">Fair Value</h2>
+                <p>To the client, $600 felt expensive compared to $200.</p>
+                <p>But the $200 option was a <strong>liability</strong>. The $600 option was an <strong>asset</strong>.</p>
+                
+                <figure class="article-figure">
+                    <Image 
+                        src={pilotImg} 
+                        alt="Pilot taking manual control" 
+                        class="article-image"
+                    />
+                    <figcaption>You don't pay for the autopilot. You pay for the Pilot who lands the plane when it fails.</figcaption>
+                </figure>
+
+                <p>In the age of AI, you aren't paying for keystrokes. You're paying for the expertise to know <em>which</em> keystrokes matter when the autopilot disconnects.</p>
+
+                <hr />
+
+                <div class="key-insight">
+                    <h4>📚 Related Reading</h4>
+                    <ul>
+                        <li><a href="/articles/pricing-trap">The $300 Website Experiment</a> — Another lesson in pricing vs value.</li>
+                        <li><a href="/projects/athena">Project Athena</a> — The system behind the workflow.</li>
+                    </ul>
+                </div>
+                
+                <p style="font-style: italic; color: #888;">This article was originally published on <a href="https://winstonkoh87.medium.com/why-the-200-coder-broke-your-app-and-why-i-charge-3x-more-to-fix-it-4f8571f235b6" target="_blank" rel="noopener">Medium</a>.</p>
+
+            <ArticleCTA />
+            
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">WK</div>
+                    <div class="author-info">
+                        <h4>Winston Koh & Project Athena</h4>
+                        <p>This article was co-authored with <a href="/projects/athena">Project Athena</a>.</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>
