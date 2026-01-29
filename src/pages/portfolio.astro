@@ -1,202 +1,87 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { PROJECTS, CLUSTERS, type ClusterId } from '../data/portfolio-taxonomy';
+
+// Group projects by cluster
+const projectsByCluster = PROJECTS.reduce((acc, project) => {
+    if (!acc[project.cluster]) {
+        acc[project.cluster] = [];
+    }
+    acc[project.cluster].push(project);
+    return acc;
+}, {} as Record<ClusterId, typeof PROJECTS>);
+
+// Order of clusters
+const clusterKeys: ClusterId[] = ['autonomous-systems', 'strategic-infrastructure', 'commerce-conversion'];
 ---
 
 <Layout title="Portfolio | AI Systems & Bionic Workflows [2026]" description="Explore a portfolio of autonomous AI systems, reliable web infrastructure, and strategic digital assets. Case studies in velocity, system architecture, and outcome-based engineering.">
     <section class="page-content">
-        <div class="page-header">
-            <h1>Portfolio</h1>
-            <p class="page-subtitle">Projects, demos, and case studies</p>
-        </div>
+        <section class="page-header">
+            <div class="header-row">
+                <div class="header-text">
+                    <h1>Portfolio</h1>
+                    <p class="page-subtitle">Projects, demos, and case studies.</p>
+                </div>
+            </div>
+            
+            <!-- Disclaimer Note -->
+            <div class="portfolio-disclaimer" style="background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 8px; padding: 1rem; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted); max-width: 800px;">
+                <strong>⚠️ Note:</strong> Some demo projects reference real individuals or businesses (e.g., "Melvin Lim", "Coach Derrick Lim", "ThatBioTutor"). These are <strong>inspired by</strong> publicly available information for demonstration purposes. All financial projections and business metrics are AI-generated estimates. <strong>These are not actual client engagements.</strong>
+            </div>
+        </section>
 
-        <!-- Disclaimer Note -->
-        <div class="portfolio-disclaimer" style="background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 2rem; font-size: 0.875rem; color: var(--text-muted);">
-            <strong>⚠️ Note:</strong> Some demo projects reference real individuals or businesses (e.g., "Melvin Lim", "Coach Derrick Lim", "ThatBioTutor"). These are <strong>inspired by</strong> publicly available information for demonstration purposes. All financial projections and business metrics are AI-generated estimates. <strong>These are not actual client engagements.</strong>
-        </div>
+        <section class="content-section">
+            <div class="hub-container">
+                {clusterKeys.map((key) => {
+                    const cluster = CLUSTERS[key];
+                    const projects = projectsByCluster[key] || [];
+                    
+                    if (projects.length === 0) return null;
 
-        <!-- Filter Buttons -->
-        <div class="portfolio-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="ai">AI Solutions</button>
-            <button class="filter-btn" data-filter="webdev">Web Development</button>
-            <button class="filter-btn" data-filter="strategy">Strategy & SEO</button>
-        </div>
-
-        <!-- Portfolio Grid -->
-        <div class="portfolio-grid">
-
-            <!-- Project Athena -->
-            <a href="/athena" class="portfolio-card" data-category="systems">
-                <div class="project-header">
-                    <span class="card-icon" aria-hidden="true">⚡</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
-                        <span class="project-status production">Production</span>
-                        <span class="live-badge">● LIVE</span>
-                    </div>
-                </div>
-                <h3>Project Athena</h3>
-                <p class="project-role"><em>Role: Architect + Full Stack</em></p>
-                <p>
-                    <strong>The Outcome:</strong> An autonomous "Second Brain" that reduces engineering research
-                    time by 60%.
-                    Leverages RAG and Supabase Vector to recall, reason, and execute.
-                </p>
-                <div class="project-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Supabase Vector</span>
-                    <span class="tech-tag">Gemini 3 Pro</span>
-                    <span class="tech-tag">Grok 4.1</span>
-                    <span class="tech-tag">System Architecture</span>
-                </div>
-            </a>
-
-            <!-- Gem Agent Case Study -->
-            <a href="/projects/gem-agent" class="portfolio-card" data-category="ai">
-                <div class="project-header">
-                    <span class="card-icon" aria-hidden="true">💎</span>
-                    <span class="project-status production">Production</span>
-                </div>
-                <h3>Service-Led Diagnostic Gem</h3>
-                <p class="project-role"><em>Role: Prompt Engineering + Logic Design</em></p>
-                <p>
-                    <strong>The Outcome:</strong> Automated client intake agent built in 24 hours. Features "Integrity Gate" logic and dynamic context switching.
-                </p>
-                <div class="project-tags">
-                    <span class="tech-tag">Gemini 3 Pro</span>
-                    <span class="tech-tag">Claude 4.5</span>
-                    <span class="tech-tag">Prompt Engineering</span>
-                    <span class="tech-tag">System Design</span>
-                </div>
-            </a>
-
-            <!-- Melvin Lim Portfolio -->
-            <a href="/articles/soulful-stoic-protocol/" class="portfolio-card" data-category="webdev">
-                <div class="project-header">
-                    <span class="card-icon" aria-hidden="true">🫡</span>
-                    <span class="project-status production">Production</span>
-                </div>
-                <h3>Melvin Lim Portfolio <span style="font-size: 0.7em; opacity: 0.7;">(Soulful Stoic)</span></h3>
-                <p class="project-role"><em>Role: Bionic Narrative Design</em></p>
-                <p>"The Soulful Stoic" Protocol. A high-trust, narrative-first portfolio for an elite scholarship candidate. Features Bento Grid layout and "Wabi-Sabi" authenticity injection.</p>
-                <div class="project-tags">
-                    <span class="tech-tag">HTML/CSS</span>
-                    <span class="tech-tag">Design</span>
-                    <span class="tech-tag">Leadership</span>
-                    <span class="tech-tag">Branding</span>
-                </div>
-            </a>
-
-            <!-- SG Assignment Helper -->
-            <a href="https://sgassignmenthelp.com" target="_blank" class="portfolio-card" data-category="webdev">
-                <div class="project-header">
-                    <span class="card-icon" aria-hidden="true">🆘</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
-                        <span class="project-status production">Production</span>
-                        <span class="live-badge">● LIVE</span>
-                    </div>
-                </div>
-                <h3>SG Assignment Helper</h3>
-                <p class="project-role"><em>Role: Strategy + Design + Dev</em></p>
-                <p>Academic triage service for university students. Features "Safe Harbor" compliance positioning, "Netflix & Chill" messaging, and 24h turnaround logic.</p>
-                <div class="project-tags">
-                    <span class="tech-tag">Design System</span>
-                    <span class="tech-tag">First Principles</span>
-                    <span class="tech-tag">Web Development</span>
-                    <span class="tech-tag">Education</span>
-                </div>
-            </a>
-
-            <!-- Demo: P6 Math Tuition -->
-            <a href="/articles/case-study-p6-math-tuition" class="portfolio-card" data-category="webdev">
-                <div class="project-header">
-                    <span class="card-icon" aria-hidden="true">📐</span>
-                    <span class="project-status demo">Demo</span>
-                </div>
-                <h3>MathPro Tuition</h3>
-                <p class="project-role"><em>Role: Design + Full Stack</em></p>
-                <p>5-page static website for a P6 Math tuition centre. Clean design, 3-tier pricing, lead capture
-                    form. Demonstrates SME web service quality.</p>
-                <div class="project-tags">
-                    <span class="tech-tag">Static HTML/CSS</span>
-                    <span class="tech-tag">Mobile Responsive</span>
-                    <span class="tech-tag">SEO Optimized</span>
-                    <span class="tech-tag">Education</span>
-                </div>
-            </a>
-
-            <!-- ThatBioTutor Proposal -->
-            <a href="/articles/sme-ai-marketing-guide" class="portfolio-card" data-category="strategy">
-                <div class="project-header">
-                    <span class="card-icon" aria-hidden="true">🧬</span>
-                    <span class="project-status demo">Demo</span>
-                </div>
-                <h3>ThatBioTutor Growth Proposal</h3>
-                <p class="project-role"><em>Role: Strategy + SEO + UX</em></p>
-                <p>Multi-page digital marketing proposal with SEO strategy, content recommendations, and
-                    pricing packages. Dark glassmorphism design with mobile nav.</p>
-                <div class="project-tags">
-                    <span class="tech-tag">Digital Marketing</span>
-                    <span class="tech-tag">Strategy</span>
-                    <span class="tech-tag">Glassmorphism</span>
-                </div>
-            </a>
-
-            <!-- Coach Derrick Lim Proposal -->
-            <a href="/swim-coach-demo" class="portfolio-card" data-category="strategy">
-                <div class="project-header">
-                    <span class="card-icon" aria-hidden="true">🏊</span>
-                    <span class="project-status demo">Demo</span>
-                </div>
-                <h3>Coach Derrick Lim <span style="font-size: 0.7em; opacity: 0.7;">(inspired)</span></h3>
-                <p class="project-role"><em>Role: Strategy + Marketing</em></p>
-                <p>90-day digital transformation proposal inspired by a real swim coach. Interactive slides, AI demo, ROI projections, and full PDF marketing plan.</p>
-                <div class="project-tags">
-                    <span class="tech-tag">Digital Marketing</span>
-                    <span class="tech-tag">Interactive Slides</span>
-                    <span class="tech-tag">Sales Strategy</span>
-                </div>
-            </a>
-
-            <!-- Brew & Bean Café Demo -->
-            <a href="/articles/iterative-layer" class="portfolio-card" data-category="webdev">
-                <div class="project-header">
-                    <span class="card-icon" aria-hidden="true">☕</span>
-                    <span class="project-status demo">Demo</span>
-                </div>
-                <h3>Brew & Bean Café</h3>
-                <p class="project-role"><em>Role: Design + Development</em></p>
-                <p>Artisan coffee shop landing page with menu showcase, story section, testimonials, and reservation
-                    CTA. Premium F&B design.</p>
-                <div class="project-tags">
-                    <span class="tech-tag">F&B</span>
-                    <span class="tech-tag">Landing Page</span>
-                    <span class="tech-tag">Mobile Responsive</span>
-                </div>
-            </a>
-
-            <!-- StickerLah E-commerce Demo -->
-            <a href="/projects/sticker-shop/" class="portfolio-card" data-category="webdev">
-                <div class="project-header">
-                    <span class="card-icon" aria-hidden="true">🛒</span>
-                    <span class="project-status demo">Demo</span>
-                </div>
-                <h3>StickerLah E-commerce</h3>
-                <p class="project-role"><em>Role: Design + Full Stack</em></p>
-                <p>Cute SG sticker shop with product grid, cart drawer, bulk discounts, and checkout flow. Inspired
-                    by DCHtoons.</p>
-                <div class="project-tags">
-                    <span class="tech-tag">E-commerce</span>
-                    <span class="tech-tag">Cart System</span>
-                    <span class="tech-tag">Mobile Responsive</span>
-                </div>
-            </a>
-
-        </div>
+                    return (
+                        <div class="cluster-section" id={key}>
+                            <div class="cluster-header">
+                                <span class="cluster-subtitle">{cluster.subtitle}</span>
+                                <h2>{cluster.title}</h2>
+                                <p class="cluster-description">{cluster.description}</p>
+                            </div>
+                            
+                            <div class="portfolio-grid">
+                                {projects.map((project) => (
+                                    <a href={project.link} target={project.target || "_self"} class="portfolio-card" data-category={project.cluster}>
+                                        <div class="project-header">
+                                            <span class="card-icon" aria-hidden="true">{project.icon}</span>
+                                            <div style={{display: 'flex', gap: '0.5rem', alignItems: 'center'}}>
+                                                <span class={`project-status ${project.status}`}>{project.status === 'production' ? 'Production' : 'Demo'}</span>
+                                                {project.isLive && <span class="live-badge">● LIVE</span>}
+                                            </div>
+                                        </div>
+                                        <h3>{project.title} {project.subtitle && <span style="font-size: 0.7em; opacity: 0.7;">{project.subtitle}</span>}</h3>
+                                        <p class="project-role"><em>Role: {project.role}</em></p>
+                                        <p>
+                                            <strong>{project.outcome ? "The Outcome:" : "The System:"}</strong> {project.outcome || project.description}
+                                            {project.outcome && <br />}
+                                            {project.outcome && <span style="display:block; margin-top:0.5rem; opacity: 0.9;">{project.description}</span>}
+                                        </p>
+                                        <div class="project-tags">
+                                            {project.tags.map(tag => (
+                                                <span class="tech-tag">{tag}</span>
+                                            ))}
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        </section>
 
         <!-- Stats Section -->
-        <div class="portfolio-stats">
+        <div class="portfolio-stats" style="margin-top: 4rem;">
             <div class="stat-item">
-                <span class="stat-number metric-value">3</span>
+                <span class="stat-number metric-value">4</span>
                 <span class="stat-label">Production Systems</span>
             </div>
             <div class="stat-item">
@@ -212,5 +97,165 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <script src="/assets/js/counter.js" is:inline></script>
-    <script src="../assets/js/portfolio-filters.js"></script>
 </Layout>
+
+<style>
+    /* Cluster Section Styling - Matches Writing Page */
+    .cluster-section {
+        margin-bottom: 5rem;
+    }
+    
+    .cluster-header {
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 1.5rem;
+    }
+
+    .cluster-subtitle {
+        color: var(--accent);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .cluster-header h2 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem 0;
+        color: var(--text-primary);
+        font-weight: 700;
+    }
+
+    .cluster-description {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        max-width: 550px;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    /* Portfolio Grid (Adapted) */
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+
+    /* Keep existing card styles but remove filtration logic dependence */
+    .portfolio-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .portfolio-card:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.05);
+        border-color: var(--accent);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .card-icon {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .project-status {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.25rem 0.75rem;
+        border-radius: 99px;
+        font-weight: 600;
+    }
+
+    .project-status.production {
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .project-status.demo {
+        background: rgba(59, 130, 246, 0.15);
+        color: #3b82f6;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .live-badge {
+        font-size: 0.7rem;
+        color: #ef4444; 
+        font-weight: 700;
+        animation: pulse 2s infinite;
+    }
+
+    .portfolio-card h3 {
+        font-size: 1.25rem;
+        margin: 0 0 0.25rem 0;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    .project-role {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        margin: 0 0 1rem 0;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    .portfolio-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        margin: 0 0 1.5rem 0;
+        flex-grow: 1;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: auto;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.25rem 0.75rem;
+        border-radius: 6px;
+        color: var(--text-muted);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+        .cluster-header h2 {
+            font-size: 1.5rem;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>
