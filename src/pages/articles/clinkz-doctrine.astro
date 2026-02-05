@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import clinkzImg from '../../../public/assets/images/articles/clinkz-doctrine/clinkz-archetype.png';
+import formationImg from '../../../public/assets/images/articles/clinkz-doctrine/tactical-grid.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="Spec: Unit Formation (The Clinkz Doctrine) | Winston Koh" 
+    description="Operational scaling framework for high-output solo units. Deploying the 2-2-1 formation using AI automation tanks and intelligence scouts." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/clinkz-doctrine/clinkz-archetype.png"
+    articleData={{
+        publishedTime: "2026-01-09T04:00:00Z",
+        tags: ["Operations", "Unit Formation", "Strategy", "Leverage"]
+    }}
+>
+    <!-- Mermaid Support -->
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+
+    <main class="article-container protocol-mode">
+        <a href="/writing" class="back-link">← Back to Engineering</a>
+        <article>
+            <header class="article-header">
+                <div class="protocol-badge">FORMATION: CLNKZ-01</div>
+                <h1>Unit Formation: The 5-Man Roster</h1>
+                <p class="subtitle">Operational scaling framework for high-output solo units.</p>
+                <div class="article-meta">
+                    <span>⚡ Scalability</span>
+                    <span>🏹 Glass Cannon Meta</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                
+                <div class="spec-block">
+                    <h3>1. Archetype Definition: The Clinkz</h3>
+                    <p><strong>Operator Profile:</strong> High Output, Low Administrative Durability.</p>
+                    <ul>
+                        <li><strong>Primary Stat:</strong> Efficiency/Lethality.</li>
+                        <li><strong>Weakness:</strong> Administrative Friction (Aggro). When "Aggro" exceeds 10% of total bandwidth, unit effectiveness drops by 90%.</li>
+                    </ul>
+                    <figure class="article-figure">
+                        <Image src={clinkzImg} alt="Clinkz Archetype" class="article-image" loading="eager" />
+                    </figure>
+                </div>
+
+                <h3>2. Strategic Topology: The 2-2-1 Formation</h3>
+                <p>To prevent "Feed" conditions (Founder burnout), the operator must outsource 80% of incoming pressure to automated components.</p>
+                
+                <div class="mermaid">
+                    graph TD
+                        subgraph "Frontline (Automation)"
+                        T1[Tank 01: Sales Ops]
+                        T2[Tank 02: Legal/Compliance]
+                        end
+                        
+                        subgraph "Intelligence (AI Agents)"
+                        S1[Scout 01: Lead Gen]
+                        S2[Support 01: Research]
+                        end
+                        
+                        subgraph "Impact (Human)"
+                        H1[Carry: High-Value Pitch/Build]
+                        end
+                        
+                        T1 -.->|Absorbs Aggro| H1
+                        T2 -.->|Blocks Liability| H1
+                        S1 -->|Targeting| H1
+                        S2 -->|Buffs Damage| H1
+                </div>
+
+                <div class="checklist-box">
+                    <h4>🏗️ Deployment Components</h4>
+                    <ul>
+                        <li><strong>The Tank (Axe):</strong> Zapier/Stripe/Calendly. Absorbs scheduling/invoicing friction.</li>
+                        <li><strong>The Anchor (Tidehunter):</strong> Standardized agreements (Stripe Atlas). Prevents negotiation fatigue.</li>
+                        <li><strong>The Scout (Nyx):</strong> Clay/Instantly. Automated enrichment and outreach.</li>
+                        <li><strong>The Support (Venge):</strong> Custom LLM Agents. Pre-meeting dossier and R&D.</li>
+                    </ul>
+                </div>
+
+                <h3>3. Rule: Zero-Positioning Admin</h3>
+                <p>The operator (Carry) should only be visible to the market during <strong>Impact Windows</strong> (Pitching, Architecture, Writing). At all other times, the unit remains in "Invisibility" (Deep Work), while the Automation Frontline tanks all communication.</p>
+
+                <div class="key-insight">
+                    <h4>📉 Physics of Leverage</h4>
+                    <p>Human Carry time = $1,000/hr. Tank/Support time = $0.05/hr (API cost). Failure to adhere to formation results in <code>20,000x Margin Erosion.</code></p>
+                </div>
+
+            <ArticleCTA />
+            
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">SYSTEM</div>
+                    <div class="author-info">
+                        <h4>Athena V2</h4>
+                        <p>Automated documentation generated from the <a href="/athena">Bionic OS</a> repository.</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>

@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCTA from '../../components/ArticleCTA.astro';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="Protocol: The Thinking Partner Handshake | Winston Koh" 
+    description="Operational model for moving from 'Vending Machine' prompting to 'Sparring Partner' negotiation." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/pair-programming-ai/hero-bionic.png"
+    articleData={{
+        publishedTime: "2025-12-31T04:00:00Z",
+        tags: ["Co-Pilot", "AI Ops", "Reasoning"]
+    }}
+>
+    <!-- Mermaid Support -->
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+
+    <main class="article-container protocol-mode">
+        <a href="/writing" class="back-link">← Back to Engineering</a>
+        <article>
+            <header class="article-header">
+                <div class="protocol-badge">PROTOCOL: COLLAB-02</div>
+                <h1>The Thinking Partner Handshake</h1>
+                <p class="subtitle">Operational model for moving from "Vending Machine" prompting to "Sparring Partner" negotiation.</p>
+                <div class="article-meta">
+                    <span>🤝 Architecture</span>
+                    <span>🧠 AI Reasoning</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                
+                <div class="spec-block">
+                    <h3>1. Interaction Modes</h3>
+                    <p>The system distinguishes between two distinct operational modes:</p>
+                    <div class="mermaid">
+                        graph LR
+                            A[User Intent] --> B(Determine Mode)
+                            B -->|Low Stakes| C[Vending Machine]
+                            B -->|High Stakes| D[Thinking Partner]
+                            
+                            subgraph "Vending Machine"
+                            C --> E[Prompt: 'Do X']
+                            E --> F[Output: X]
+                            end
+                            
+                            subgraph "Thinking Partner"
+                            D --> G[Prompt: 'Negotiate X']
+                            G --> H[Output: Options A, B, C]
+                            H --> I[User Selection]
+                            I --> J[Final Output]
+                            end
+                            
+                            style D fill:#1d4ed8,stroke:#3b82f6
+                            style C fill:#333,stroke:#666
+                    </div>
+                </div>
+
+                <h3>2. The Cost function: "The Schlep"</h3>
+                <p><strong>Definition:</strong> The hidden labor of context management required to unlock Model 2 ("With") performance.</p>
+                <ul>
+                    <li><strong>Input Cost:</strong> High (requires drafting specific constraints).</li>
+                    <li><strong>Output Variance:</strong> Low (deterministic quality).</li>
+                </ul>
+
+                <h3>3. Implementation: The Negotiation Prompt</h3>
+                <p>Use this constraint block to force the system out of Autopilot.</p>
+
+                <div class="checklist-box">
+                    <h4>📝 SYSTEM PROMPT: CRITICAL_EDITOR</h4>
+                    <p style="font-family: monospace; font-size: 0.9em;">
+                        <strong>ROLE:</strong> You are not a writer. You are a Critical Editor.<br/>
+                        <strong>GOAL:</strong> Find logical gaps in my thesis.<br/>
+                        <strong>CONSTRAINT:</strong> Do NOT generate the draft yet.<br/>
+                        <strong>TASK:</strong><br/>
+                        1. Review input context.<br/>
+                        2. Generate 3 structural outlines (Conservative, Aggressive, Contrarian).<br/>
+                        3. Wait for User Selection.<br/>
+                        <br/>
+                        <strong>STOP CONDITION:</strong> Pause after generating options.
+                    </p>
+                </div>
+
+                <h3>4. Failure Modes</h3>
+                <ul>
+                    <li><strong>Vending Machine Fallacy:</strong> Expecting high-quality reasoning from zero-shot commands.</li>
+                    <li><strong>Context Drift:</strong> Failing to "prune" the context window, leading to hallucinated constraints.</li>
+                </ul>
+
+            <ArticleCTA />
+            
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">SYSTEM</div>
+                    <div class="author-info">
+                        <h4>Athena V2</h4>
+                        <p>Automated documentation generated from the <a href="/athena">Bionic OS</a> repository.</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>

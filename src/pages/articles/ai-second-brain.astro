@@ -1,0 +1,134 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import schematicImg from '../../assets/images/articles/ai-second-brain/system-schematic.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="System Architecture: Athena Memory Core | Winston Koh" 
+    description="Technical specification for the Bionic OS Memory Subsystem. Replacing human fallibility with vector-based evidence retrieval." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/ai-second-brain/system-schematic.png" 
+    articleData={{
+        publishedTime: "2025-12-28T04:00:00Z",
+        tags: ["System Architecture", "Rag", "Vector Database", "Cognition"]
+    }}
+>
+    <!-- Mermaid Support -->
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+
+    <main class="article-container protocol-mode">
+        <a href="/writing" class="back-link">← Back to Engineering</a>
+        <article>
+            <header class="article-header">
+                <div class="protocol-badge">SYSTEM V2.4</div>
+                <h1>Athena Memory Core: Architecture Spec</h1>
+                <p class="subtitle">Replacing human cognitive fallibility with vector-based evidence retrieval.</p>
+                <div class="article-meta">
+                    <span>🏗️ Infrastructure</span>
+                    <span>💾 Vector Store</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                
+                <div class="spec-block">
+                    <h3>1. Problem Definition</h3>
+                    <p><strong>Human Memory Fault Tolerance:</strong> Low.</p>
+                    <p>Biological memory is lossy, context-dependent, and prone to "narrative drifted" (rewriting history to fit ego). This results in:</p>
+                    <ul>
+                        <li><strong>Looping Errors:</strong> Repeating mistakes despite "knowing" better.</li>
+                        <li><strong>Insight Decay:</strong> Losing 90% of read/thought material within 48h.</li>
+                        <li><strong>Dissonance Masking:</strong> Ignoring data that conflicts with self-image.</li>
+                    </ul>
+                </div>
+
+                <div class="spec-block">
+                    <h3>2. System Topology</h3>
+                    <p>The solution is an externalized "Evidence Store" that decouples memory from ego.</p>
+
+                    <figure class="article-figure">
+                        <Image 
+                            src={schematicImg} 
+                            alt="Bionic OS Memory Core Schematic" 
+                            class="article-image"
+                        />
+                        <figcaption>Architecture: Raw Experience → Vector Store → Semantic Retrieval.</figcaption>
+                    </figure>
+                    
+                    <div class="mermaid">
+                        graph TD
+                            A[Input: Raw Experience] -->|Capture| B(Daily Log)
+                            B -->|Embedding Model| C[(Vector Database)]
+                            C -->|Semantic Search| D[Retrieval Context]
+                            D -->|Augmentation| E[LLM Decision Engine]
+                            E -->|Feedback Loop| A
+                            
+                            subgraph "The Truth Layer"
+                            C
+                            D
+                            end
+                    </div>
+                </div>
+
+                <h3>3. Core Protocols</h3>
+
+                <div class="checklist-box">
+                    <h4>Protocol A: The Evidence Log</h4>
+                    <p><strong>Constraint:</strong> No "Diary entries". Only structured data.</p>
+                    <pre><code class="language-yaml">
+Entry Schema:
+  - Timestamp: ISO-8601
+  - Event: "Prioritised Deep Work"
+  - Evidence: "Checked email at 08:05 AM (Log #442)"
+  - Status: Dissonance Detected 🛑
+                    </code></pre>
+                    <p><em>Outcome:</em> The system flagged a mismatch between intent and reality. It forced an acknowledgment of the failure pattern.</p>
+                </div>
+
+                <div class="checklist-box">
+                    <h4>Protocol B: Decision Sparring</h4>
+                    <p><strong>Trigger:</strong> Before any High-Stakes Conversation (> $1k value or relationship critical).</p>
+                    <p><strong>The Query:</strong> <code>SELECT * FROM memories WHERE person = 'Target' AND type = 'Commitment'</code></p>
+                    <p><strong>Result:</strong> Surfaces broken promises or forgotten context *before* the call starts.</p>
+                </div>
+
+                <h3>4. Curation Heuristics</h3>
+                <p>To prevent "Data Swamp" conditions, the ingestion pipeline applies rigid filters:</p>
+                
+                <div class="mermaid">
+                    flowchart LR
+                        A[New Insight] --> B(Is it Actionable?)
+                        B -->|No| C[Discard / Trash]
+                        B -->|Yes| D(Is it Novel?)
+                        D -->|No| E[Increment Weight of Existing Node]
+                        D -->|Yes| F[Commit to Permanent Store]
+                </div>
+                
+                <br />
+
+                <div class="key-insight">
+                    <h4>⚠️ System Warning: Hallucination Mitigation</h4>
+                    <p><strong>Risk:</strong> LLM Confabulation.</p>
+                    <p><strong>Mitigation:</strong> <code>Strict Citation Requirement</code>. The RAG pipeline must return the <code>source_file_id</code> for every claim. If <code>source_file_id == null</code>, the insight is discarded as noise.</p>
+                </div>
+
+            <ArticleCTA />
+            
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">SYSTEM</div>
+                    <div class="author-info">
+                        <h4>Athena V2</h4>
+                        <p>Automated documentation generated from the <a href="/athena">Bionic OS</a> repository.</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>

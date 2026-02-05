@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCTA from '../../components/ArticleCTA.astro';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="System: The L5 Trace Framework | Winston Koh" 
+    description="A debugging stack for psychological pattern recognition. Tracing errors from Consequence (L1) to Origin (L5)." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/debugging-with-ai/hero-trace.png"
+    articleData={{
+        publishedTime: "2025-12-31T04:00:00Z",
+        tags: ["Psychology", "Debugging", "System Architecture"]
+    }}
+>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+
+    <main class="article-container protocol-mode">
+        <a href="/writing" class="back-link">← Back to Engineering</a>
+        <article>
+            <header class="article-header">
+                <div class="protocol-badge">SYSTEM: PSYCHIATRY-L5</div>
+                <h1>The L5 Trace Framework</h1>
+                <p class="subtitle">A debugging stack for psychological pattern recognition. Tracing errors from Consequence (L1) to Origin (L5).</p>
+                <div class="article-meta">
+                    <span>🧬 Bio-OS</span>
+                    <span>🐛 Debugging</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                
+                <div class="spec-block">
+                    <h3>1. System Objective</h3>
+                    <p>To move emotional processing from <strong>Comfort Mode</strong> (Validation) to <strong>Inquiry Mode</strong> (Root Cause Analysis).</p>
+                    <p><strong>Hypothesis:</strong> Most recurring interpersonal "bugs" are not execution errors (L1-L3), but kernel-level configuration errors (L4-L5).</p>
+                </div>
+
+                <h3>2. The Stack Topology</h3>
+                <p>The Trace Framework maps psychological depth to a 5-layer OSI model.</p>
+
+                <div class="mermaid">
+                    graph BT
+                        L1[L1: Consequence] -->|Caused By| L2[L2: Behaviour]
+                        L2 -->|Driven By| L3[L3: Strategy]
+                        L3 -->|Optimizing For| L4[L4: Belief / Kernel]
+                        L4 -->|Installed At| L5[L5: Origin Event]
+                        
+                        style L1 fill:#333,stroke:#666
+                        style L2 fill:#333,stroke:#666
+                        style L3 fill:#333,stroke:#666
+                        style L4 fill:#b91c1c,stroke:#f87171
+                        style L5 fill:#b91c1c,stroke:#f87171
+                </div>
+
+                <div class="checklist-box">
+                    <h4>🔬 Layer Definitions</h4>
+                    <ul>
+                        <li><strong>L1 (Output):</strong> "I get ghosted." (The crash).</li>
+                        <li><strong>L2 (Runtime):</strong> "I over-texted." (The execution).</li>
+                        <li><strong>L3 (Logic):</strong> "I wanted to secure the connection." (The intent).</li>
+                        <li><strong>L4 (Config):</strong> "If I pause, I will be abandoned." (The assumption).</li>
+                        <li><strong>L5 (Source):</strong> [Hypothesis] Age 7, Event X.</li>
+                    </ul>
+                </div>
+
+                <h3>3. Debugging Protocol</h3>
+                <p>Use this prompt to initiate a trace session. Do not use for crisis management.</p>
+                
+                <pre><code class="language-yaml">
+System Prompt:
+  Role: Structured Trace Partner
+  Constraint: Ask only ONE question at a time.
+  Algorithm:
+    1. Identify L1 (What happened?)
+    2. Trace L2 (What action preceded it?)
+    3. Query L3 (What was the goal?)
+    4. Challenge L4 (Is the underlying belief true?)
+    5. Hypothesize L5 (When was this learned?)
+                </code></pre>
+
+                <div class="key-insight">
+                    <h4>⚠️ Safety Check</h4>
+                    <p><strong>Confabulation Risk:</strong> The AI can hallucinate L5 origins. Treat outputs as <em>hypotheses</em> for human verification, not medical diagnoses.</p>
+                </div>
+
+            <ArticleCTA />
+            
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">SYSTEM</div>
+                    <div class="author-info">
+                        <h4>Athena V2</h4>
+                        <p>Automated documentation generated from the <a href="/athena">Bionic OS</a> repository.</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>

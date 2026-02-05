@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/images/articles/guardian-protocol/hero-shield.png';
+import hudImg from '../../assets/images/articles/guardian-protocol/sdr-hud.png';
+import barrierImg from '../../assets/images/articles/guardian-protocol/absorbing-barrier.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="Protocol: The Guardian System (SDR) | Winston Koh" 
+    description="Operating procedures for detecting 'Absorbing Barriers' in financial decision making. The 1% Ruin Constraint." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/guardian-protocol/hero-shield.png"
+    articleData={{
+        publishedTime: "2025-12-29T04:00:00Z",
+        tags: ["Risk Protocol", "SDR", "Trading", "System Safety"]
+    }}
+>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+
+    <main class="article-container protocol-mode">
+        <a href="/writing" class="back-link">← Back to Engineering</a>
+        <article>
+            <header class="article-header">
+                <div class="protocol-badge">PROTOCOL: RISK-01</div>
+                <h1>The Guardian System (SDR Analysis)</h1>
+                <p class="subtitle">Operating procedures for detecting "Absorbing Barriers" in financial decision making.</p>
+                <div class="article-meta">
+                    <span>🛡️ Defence Layer</span>
+                    <span>📉 Ruin Prevention</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                
+                <div class="exec-summary" style="border-left-color: #ef4444; background: rgba(239, 68, 68, 0.05);">
+                    <h4>⚠️ PRIME DIRECTIVE: SURVIVAL</h4>
+                    <p><strong>The Law:</strong> Any action with >1.0% probability of irreversible ruin (Absorbing Barrier) is FORBIDDEN. Regardless of Expected Value (EV).</p>
+                    <p><em>Reasoning:</em> You cannot compound from zero.</p>
+                </div>
+
+                <h3>1. Introduction to SDR</h3>
+                <p>The <strong>Structural Disadvantage Ratio (SDR)</strong> quantifies the friction working against a position.</p>
+                
+                <figure class="article-figure">
+                    <Image 
+                        src={hudImg} 
+                        alt="SDR Diagnosis HUD" 
+                        class="article-image"
+                    />
+                    <figcaption>The Guardian Interface: Flagging trades where risk outweighs edge.</figcaption>
+                </figure>
+
+                <p>If SDR > 5:1, the trade is structurally doomed over N > 100 iterations.</p>
+
+                <h3>2. The Absorbing Barrier</h3>
+                <p>We operate in Time Probability, not Ensemble Probability. If you hit the Absorbing Barrier (Zero), the game ends.</p>
+
+                <figure class="article-figure">
+                    <Image 
+                        src={barrierImg} 
+                        alt="Absorbing Barrier Visualization" 
+                        class="article-image"
+                    />
+                    <figcaption>Visualizing Ruin: Once a trajectory hits the red line, it cannot recover.</figcaption>
+                </figure>
+
+                <h3>3. Logic Flow: The Guardian Check</h3>
+                <p>Before any capital deployment, the following logic gate executes:</p>
+
+                <div class="mermaid">
+                    graph TD
+                        A[Opportunity Identified] --> B(Check Ergodicity)
+                        B -->|Blows up in N&lt;100| C[HARD REJECT]
+                        B -->|Survives N=100| D(Calculate SDR)
+                        D -->|SDR &gt; 3.0| E[REDUCE SIZE]
+                        D -->|SDR &lt; 3.0| F[EXECUTE]
+                        
+                        style C fill:#500,stroke:#f00
+                        style F fill:#050,stroke:#0f0
+                </div>
+
+                <h3>4. Diagnostic Tooling</h3>
+                
+                <div class="checklist-box">
+                    <h4>Automated Pre-Trade Output</h4>
+                    <p>Below is a standardized output from the Guardian Module for a rejected trade.</p>
+                    <div style="font-family: monospace; font-size: 0.9em; border-top: 1px solid #333; padding-top: 1rem; margin-top: 1rem;">
+                        <strong>[ALERT] LAW #1 VIOLATION</strong><br/>
+                        ---------------------------------<br/>
+                        TARGET: BTC-PERP-10x<br/>
+                        UPSIDE: +20%<br/>
+                        DOWNSIDE: -100% (Liquidation)<br/>
+                        <span style="color: #ef4444;">PROB(RUIN): 40% (within 20 steps)</span><br/>
+                        ---------------------------------<br/>
+                        RECOMMENDATION: <span style="color: #ef4444; font-weight: bold;">ABORT IMMEDIATELY</span>
+                    </div>
+                </div>
+
+                <h3>5. The Philosophy of Time Probability</h3>
+                <p>The Guardian allows us to underperform the "Hero" in the bull market to ensure we are still alive in the bear market.</p>
+
+            <ArticleCTA />
+            
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">SYSTEM</div>
+                    <div class="author-info">
+                        <h4>Athena V2</h4>
+                        <p>Automated documentation generated from the <a href="/athena">Bionic OS</a> repository.</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>

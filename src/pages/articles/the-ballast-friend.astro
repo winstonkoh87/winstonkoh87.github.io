@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/images/articles/the-ballast-friend/hero-cafe.png';
+import graphImg from '../../assets/images/articles/the-ballast-friend/oscillation-diagram.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="Spec: Stability Protocol (The Ballast) | Winston Koh" 
+    description="Relational engineering for high-intensity operators. Using counterweight dynamics to prevent resonance disasters in social networks." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/the-ballast-friend/hero-cafe.png"
+    articleData={{
+        publishedTime: "2026-01-03T04:00:00Z",
+        tags: ["Psychology", "Systems Thinking", "Social Engineering"]
+    }}
+>
+    <!-- Mermaid Support -->
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+
+    <main class="article-container protocol-mode">
+        <a href="/writing" class="back-link">← Back to Engineering</a>
+        <article>
+            <header class="article-header">
+                <div class="protocol-badge">PROTOCOL: BALST-03</div>
+                <h1>Stability Protocol: Counterweight Dynamics</h1>
+                <p class="subtitle">Relational engineering for high-intensity operators.</p>
+                <div class="article-meta">
+                    <span>⚓ Equilibrium</span>
+                    <span>📈 Network Safety</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                
+                <div class="spec-block">
+                    <h3>1. The Problem: Resonance Disaster</h3>
+                    <p>When two high-intensity (120% reactive) nodes connect without a dampening system, they create <strong>Positive Feedback Loops</strong>. In physics, this is a resonance disaster. In relationships, it's a detonation.</p>
+                    
+                    <figure class="article-figure">
+                        <Image src={graphImg} alt="Oscillation Diagram" class="article-image" />
+                        <figcaption>Intensity Overlap: High volatility nodes amplify spirals instead of damping them.</figcaption>
+                    </figure>
+                </div>
+
+                <h3>2. Node Archetype: The Ballast</h3>
+                <p>To survive high-acceleration career paths, the operator needs <strong>Stability Nodes</strong> (Ballast), not Mirror Nodes (Intensity Match).</p>
+                
+                <div class="mermaid">
+                    graph LR
+                        A((High Intensity Operator)) &lt;--&gt;|Resonance Danger| B((Mirror Node))
+                        A &lt;--&gt;|Equilibrium| C[The Ballast]
+                        
+                        style A fill:#333,stroke:#f00
+                        style B fill:#333,stroke:#f00
+                        style C fill:#1e293b,stroke:#3b82f6,color:#fff
+                </div>
+
+                <div class="checklist-box">
+                    <h4>🛠️ Component: Ballast Identification</h4>
+                    <ul>
+                        <li><strong>Low Reactivity:</strong> Descriptive non-judgmental problem framing.</li>
+                        <li><strong>Fixed Point:</strong> Identity remains stable regardless of external market status.</li>
+                        <li><strong>Noise Filter:</strong> Does not respond to "Drama Prompts."</li>
+                        <li><strong>High Capacity:</strong> Can match intellectual depth without Matching 1:1 emotional spikes.</li>
+                    </ul>
+                </div>
+
+                <h3>3. Optimization: The Screening Protocol</h3>
+                <p>Run <code>BALST-SCREEN</code> on new network nodes:</p>
+                <div style="background: #111; padding: 1.5rem; border-radius: 8px; font-family: monospace; border: 1px solid #3b82f6;">
+                    1. Do they frame problems as logistics or destiny?<br/>
+                    2. Are they comfortable in "Dead Air" (Silent companionship)?<br/>
+                    3. Do they make you feel amped or aminated (aligned energy) vs calm?<br/>
+                    4. Can they perform "Critical Recovery" (logical advice) during your L1-crash?
+                </div>
+
+                <h3>4. Maintenance Rule</h3>
+                <p>The Ballast is a critical system component. <strong>Do not treat them as an appliance.</strong> Every vent/dump must be preceded by a "Permission to Write" handshake. Protect the counterweight to ensure your own stability.</p>
+
+            <ArticleCTA />
+            
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">SYSTEM</div>
+                    <div class="author-info">
+                        <h4>Athena V2</h4>
+                        <p>Automated documentation generated from the <a href="/athena">Bionic OS</a> repository.</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>

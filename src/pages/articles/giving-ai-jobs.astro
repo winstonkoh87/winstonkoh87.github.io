@@ -1,0 +1,119 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import templateImg from '../../assets/images/articles/giving-ai-jobs/task-brief.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="Protocol: AI Delegation Framework (V1) | Winston Koh" 
+    description="Standard operating procedure for assigning deterministic tasks to LLMs. Moving from 'Chat' to 'Work Product'." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/giving-ai-jobs/hero-conductor.png"
+    articleData={{
+        publishedTime: "2025-12-29T04:00:00Z",
+        tags: ["Productivity", "Delegation", "SOP", "AI Ops"]
+    }}
+>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+
+    <main class="article-container protocol-mode">
+        <a href="/writing" class="back-link">← Back to Engineering</a>
+        <article>
+            <header class="article-header">
+                <div class="protocol-badge">PROTOCOL: OPS-04</div>
+                <h1>AI Delegation Framework (V1)</h1>
+                <p class="subtitle">Standard operating procedure for assigning deterministic tasks to LLMs.</p>
+                <div class="article-meta">
+                    <span>⚡ Operations</span>
+                    <span>🤖 Agent Control</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                
+                <div class="spec-block">
+                    <h3>1. The Shift to Deterministic Output</h3>
+                    <p><strong>Problem:</strong> "Chat" interfaces encourage vague querying, leading to non-actionable "vibes" based responses.</p>
+                    <p><strong>Solution:</strong> Treat the LLM as a Junior Analyst. Do not ask for opinions; assign specific deliverables with defined schemas.</p>
+                </div>
+
+                <h3>2. The Handshake Protocol</h3>
+                <p>Every task assignment must satisfy the 4-part Handshake before execution begins.</p>
+
+                <div class="mermaid">
+                    sequenceDiagram
+                        participant User as Architect
+                        participant AI as Operator
+                        
+                        User->>AI: 1. Objective (Definition of Done)
+                        User->>AI: 2. Context (Constraints/Tone)
+                        User->>AI: 3. Output Schema (JSON/Table)
+                        AI->>User: [Confirm Understanding / Ask Clarification]
+                        User->>AI: [Execute]
+                        AI->>User: [Deliverable]
+                </div>
+
+                <h3>3. The Task Template (JSON-S)</h3>
+                <p>Use this schema for all complex requests. It forces constraint definition.</p>
+
+                <div class="checklist-box" style="font-family: monospace;">
+                    <h4>📄 TEMPLATE: STD-TASK-BRIEF</h4>
+                    
+                    <figure class="article-figure" style="margin: 1rem 0;">
+                        <Image 
+                            src={templateImg} 
+                            alt="Standard Task Brief Template" 
+                            class="article-image"
+                        />
+                    </figure>
+
+                    <pre>
+1. OBJECTIVE: 
+   - [ ] Review Portfolio Copy
+   - [ ] Identify 3 weakest claims
+
+2. CONTEXT:
+   - Target Audience: Tech Recruiters
+   - Tone: Confident, terse, quantitative
+
+3. STEPS:
+   - READ input file
+   - EXTRACT claims
+   - CRITIQUE against "So What?" test
+   - REWRITE
+
+4. OUTPUT_FORMAT: 
+   | Original | Critique | Proposed Rewrite | Metric |
+
+5. QUALITY_BAR:
+   - No buzzwords ("passionate", "innovative")
+   - Every rewrite must contain a number.
+                    </pre>
+                </div>
+
+                <h3>4. Efficiency Metrics</h3>
+                <p>Adopting this protocol resulted in:</p>
+                <ul>
+                    <li><strong>Prompting Time:</strong> Reduced from 8m to 3m (Template Reuse).</li>
+                    <li><strong>Re-roll Rate:</strong> Reduced by 60% (Clearer initial constraints).</li>
+                </ul>
+
+            <ArticleCTA />
+            
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">SYSTEM</div>
+                    <div class="author-info">
+                        <h4>Athena V2</h4>
+                        <p>Automated documentation generated from the <a href="/athena">Bionic OS</a> repository.</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>

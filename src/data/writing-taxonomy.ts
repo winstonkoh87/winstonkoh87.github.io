@@ -37,6 +37,33 @@ export const CLUSTERS: Record<ClusterId, { title: string; subtitle: string; desc
 export const ARTICLES: Article[] = [
     // --- Sovereign Systems ---
     {
+        title: "System: Athena Memory Core",
+        slug: "ai-second-brain",
+        date: "2025-12-28",
+        cluster: "sovereign-systems",
+        tags: ["Architecture", "Cognition"],
+        excerpt: "Technical specification for the Bionic OS Memory Subsystem. Replacing human fallibility with vector-based evidence retrieval.",
+        image: "/assets/images/articles/ai-second-brain/system-schematic.png"
+    },
+    {
+        title: "System: The L5 Trace Framework",
+        slug: "debugging-with-ai",
+        date: "2025-12-31",
+        cluster: "sovereign-systems",
+        tags: ["Bio-OS", "Debugging"],
+        excerpt: "A debugging stack for psychological pattern recognition. Tracing errors from Consequence (L1) to Origin (L5).",
+        image: "/assets/images/articles/debugging-with-ai/hero-trace.png"
+    },
+    {
+        title: "Protocol: The Ballast System",
+        slug: "the-ballast-friend",
+        date: "2025-12-30",
+        cluster: "sovereign-systems",
+        tags: ["Philosophy"],
+        excerpt: "The friend who doesn't match your intensity is not an anchor. They are ballast. Why you need stability to survive high-G acceleration.",
+        image: "/assets/images/articles/the-ballast-friend/hero-cafe.png"
+    },
+    {
         title: "Why I Built My Own Brain (The 5 Pillars of Sovereign AI)",
         slug: "athena-5-pillars",
         date: "2026-01-03",
@@ -83,6 +110,42 @@ export const ARTICLES: Article[] = [
     },
 
     // --- Strategic Engineering ---
+    {
+        title: "Protocol: The Guardian System (SDR)",
+        slug: "guardian-protocol",
+        date: "2025-12-29",
+        cluster: "strategic-engineering",
+        tags: ["Risk Protocol", "SDR"],
+        excerpt: "Operating procedures for detecting 'Absorbing Barriers' in financial decision making. The 1% Ruin Constraint.",
+        image: "/assets/images/articles/guardian-protocol/hero-shield.png"
+    },
+    {
+        title: "Protocol: AI Delegation Framework (V1)",
+        slug: "giving-ai-jobs",
+        date: "2025-12-29",
+        cluster: "strategic-engineering",
+        tags: ["Operations", "Delegation"],
+        excerpt: "Standard operating procedure for assigning deterministic tasks to LLMs. Moving from 'Chat' to 'Work Product'.",
+        image: "/assets/images/articles/giving-ai-jobs/hero-conductor.png"
+    },
+    {
+        title: "Protocol: The Thinking Partner Handshake",
+        slug: "pair-programming-ai",
+        date: "2025-12-31",
+        cluster: "strategic-engineering",
+        tags: ["Co-Pilot", "AI Ops"],
+        excerpt: "Operational model for moving from 'Vending Machine' prompting to 'Sparring Partner' negotiation.",
+        image: "/assets/images/articles/pair-programming-ai/hero-bionic.png"
+    },
+    {
+        title: "Protocol: The Clinkz Doctrine",
+        slug: "clinkz-doctrine",
+        date: "2025-12-31",
+        cluster: "strategic-engineering",
+        tags: ["Protocol"],
+        excerpt: "Why speed is a weapon, and how to use the 'Clinkz Doctrine' to outmaneuver bureaucratic sluggishness.",
+        image: "/assets/images/articles/clinkz-doctrine/hero-clinkz.png"
+    },
     {
         title: "The Price of Ignoring Advice: A $300 Lesson in AI Safety",
         slug: "the-price-of-ignoring-advice",
