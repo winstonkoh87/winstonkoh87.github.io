@@ -41,19 +41,96 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
             </div>
         </section>
 
-        <!-- Filter Logic Script -->
+        <section class="content-section">
+            <div class="hub-container">
+                {clusterKeys.map((key) => {
+                    const cluster = CLUSTERS[key];
+                    const articles = articlesByCluster[key] || [];
+                    
+                    if (articles.length === 0) return null;
+
+                    // Chunk articles into groups of 6 for 2x3 slides
+                    const chunkSize = 6;
+                    const slides = [];
+                    for (let i = 0; i < articles.length; i += chunkSize) {
+                        slides.push(articles.slice(i, i + chunkSize));
+                    }
+
+                    return (
+                        <div class="cluster-section" id={key}>
+                            <div class="cluster-header">
+                                <span class="cluster-subtitle">{cluster.subtitle}</span>
+                                <h2 class="section-title">{cluster.title}</h2>
+                                <p class="cluster-description">{cluster.description}</p>
+                            </div>
+                            
+                            <div class="carousel-container" data-cluster={key}>
+                                <div class="carousel-track">
+                                    {slides.map((slideArticles, index) => (
+                                        <div class="carousel-slide" data-index={index}>
+                                            <div class="article-grid">
+                                                {slideArticles.map((article) => (
+                                                    <article class="article-card" data-category={article.cluster} data-date={article.date}>
+                                                        <a href={`/articles/${article.slug}`} class="article-link">
+                                                            <div class="article-image-wrapper">
+                                                                <img 
+                                                                    src={article.image} 
+                                                                    alt={article.title}
+                                                                    class="article-image"
+                                                                    loading="lazy"
+                                                                />
+                                                                <div class="article-tags-overlay">
+                                                                    {article.tags.map((tag) => (
+                                                                        <span class="article-tag-pill">{tag}</span>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                            <div class="article-card-content">
+                                                                <span class="article-date">{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                                                                <h3>{article.title}</h3>
+                                                            </div>
+                                                        </a>
+                                                    </article>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {slides.length > 1 && (
+                                    <div class="carousel-nav">
+                                        <button class="nav-btn prev" aria-label="Previous Slide" disabled>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                        </button>
+                                        <div class="nav-dots">
+                                            {slides.map((_, i) => (
+                                                <span class={`nav-dot ${i === 0 ? 'active' : ''}`} data-index={i}></span>
+                                            ))}
+                                        </div>
+                                        <button class="nav-btn next" aria-label="Next Slide">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        </section>
+
+        <!-- Carousel & Filter Logic -->
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const buttons = document.querySelectorAll('.filter-btn');
+                // --- Filter Logic ---
+                const filterButtons = document.querySelectorAll('.filter-btn');
                 const sections = document.querySelectorAll('.cluster-section');
 
-                buttons.forEach(btn => {
+                filterButtons.forEach(btn => {
                     btn.addEventListener('click', () => {
-                        // 1. Toggle Active State
-                        buttons.forEach(b => b.classList.remove('active'));
+                        filterButtons.forEach(b => b.classList.remove('active'));
                         btn.classList.add('active');
 
-                        // 2. Filter Sections
                         const filter = btn.getAttribute('data-filter');
                         
                         sections.forEach(section => {
@@ -66,55 +143,64 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
                         });
                     });
                 });
+
+                // --- Carousel Logic ---
+                const carousels = document.querySelectorAll('.carousel-container');
+
+                carousels.forEach(container => {
+                    const track = container.querySelector('.carousel-track') as HTMLElement;
+                    const slides = container.querySelectorAll('.carousel-slide');
+                    const nextBtn = container.querySelector('.nav-btn.next');
+                    const prevBtn = container.querySelector('.nav-btn.prev');
+                    const dots = container.querySelectorAll('.nav-dot');
+
+                    if (!track || slides.length <= 1) return;
+
+                    let currentIndex = 0;
+
+                    const updateCarousel = () => {
+                        const offset = currentIndex * -100;
+                        track.style.transform = `translateX(${offset}%)`;
+
+                        // Update Buttons
+                        if (prevBtn) (prevBtn as HTMLButtonElement).disabled = currentIndex === 0;
+                        if (nextBtn) (nextBtn as HTMLButtonElement).disabled = currentIndex === slides.length - 1;
+
+                        // Update Dots
+                        dots.forEach((dot, index) => {
+                            if (index === currentIndex) dot.classList.add('active');
+                            else dot.classList.remove('active');
+                        });
+                    };
+
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', () => {
+                            if (currentIndex < slides.length - 1) {
+                                currentIndex++;
+                                updateCarousel();
+                            }
+                        });
+                    }
+
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', () => {
+                            if (currentIndex > 0) {
+                                currentIndex--;
+                                updateCarousel();
+                            }
+                        });
+                    }
+
+                    // Dot Navigation
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => {
+                            currentIndex = index;
+                            updateCarousel();
+                        });
+                    });
+                });
             });
         </script>
-
-        <section class="content-section">
-            <div class="hub-container">
-                {clusterKeys.map((key) => {
-                    const cluster = CLUSTERS[key];
-                    const articles = articlesByCluster[key] || [];
-                    
-                    if (articles.length === 0) return null;
-
-                    return (
-                        <div class="cluster-section" id={key}>
-                            <div class="cluster-header">
-                                <span class="cluster-subtitle">{cluster.subtitle}</span>
-                                <h2 class="section-title">{cluster.title}</h2>
-                                <p class="cluster-description">{cluster.description}</p>
-                            </div>
-                            
-                            <div class="article-grid">
-                                {articles.map((article) => (
-                                    <article class="article-card" data-category={article.cluster} data-date={article.date}>
-                                        <a href={`/articles/${article.slug}`} class="article-link">
-                                            <div class="article-image-wrapper">
-                                                <img 
-                                                    src={article.image} 
-                                                    alt={article.title}
-                                                    class="article-image"
-                                                    loading="lazy"
-                                                />
-                                                <div class="article-tags-overlay">
-                                                    {article.tags.map((tag) => (
-                                                        <span class="article-tag-pill">{tag}</span>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                            <div class="article-card-content">
-                                                <span class="article-date">{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                                                <h3>{article.title}</h3>
-                                            </div>
-                                        </a>
-                                    </article>
-                                ))}
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-        </section>
 
         <section class="content-section">
             <h2>Topics I'll Cover</h2>
@@ -136,9 +222,12 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
     }
     
     .cluster-header {
-        margin-bottom: 2.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2rem;
         padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .cluster-subtitle {
@@ -161,7 +250,7 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
     .cluster-description {
         color: var(--text-secondary);
         font-size: 1rem;
-        max-width: 550px;
+        max-width: 600px;
         margin: 0;
         line-height: 1.6;
     }
@@ -204,10 +293,87 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
         to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Article Grid - Adverdize Style */
+    /* --- Carousel Components --- */
+    .carousel-container {
+        position: relative;
+        overflow: hidden; /* Mask overflow for sliding */
+        padding-bottom: 2rem; /* Space for Nav */
+    }
+
+    .carousel-track {
+        display: flex;
+        width: 100%;
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); /* Premium Ease */
+    }
+
+    .carousel-slide {
+        min-width: 100%; /* Each slide takes full container width */
+        box-sizing: border-box;
+    }
+
+    /* Carousel Navigation */
+    .carousel-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .nav-btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--text-primary);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+        background: var(--text-primary);
+        color: var(--bg-primary);
+        border-color: var(--text-primary);
+    }
+
+    .nav-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-dots {
+        display: flex;
+        gap: 8px;
+    }
+
+    .nav-dot {
+        width: 8px;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .nav-dot.active {
+        background: var(--accent);
+        transform: scale(1.2);
+    }
+
+    .nav-dot:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Article Grid - 2x3 Layout within Slide */
     .article-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr); /* Enforce 2 rows */
         gap: 2rem;
     }
 
@@ -220,6 +386,11 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
     @media (max-width: 640px) {
         .article-grid {
             grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+        
+        .carousel-track {
+            transform: none !important; /* Disable CSS transform on mobile if needed, but keeping consistent is better */
         }
     }
 
@@ -229,6 +400,9 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
         border-radius: 12px;
         overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%; /* Fill grid cell */
+        display: flex;
+        flex-direction: column;
     }
 
     .article-card:hover {
@@ -238,7 +412,9 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
     .article-link {
         text-decoration: none;
         color: inherit;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
     }
 
     /* Image Wrapper */
@@ -286,6 +462,10 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
     /* Card Content */
     .article-card-content {
         padding: 1.25rem 0.25rem 0.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .article-date {
@@ -323,5 +503,8 @@ const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 
         .cluster-section {
             margin-bottom: 4rem;
         }
+        
+        /* On mobile, maybe allow simple scroll fallback or just carousel */
+        /* Carousel fits okay on mobile if 1 column */
     }
 </style>
