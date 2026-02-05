@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/images/articles/debugging-with-ai/hero-trace.png';
 import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
@@ -8,7 +10,7 @@ import '../../styles/article.css';
     title="System: The L5 Trace Framework | Winston Koh" 
     description="A debugging stack for psychological pattern recognition. Tracing errors from Consequence (L1) to Origin (L5)." 
     showFloatingButtons={false} 
-    image="/assets/images/articles/debugging-with-ai/hero-trace.png"
+    image={heroImg.src}
     articleData={{
         publishedTime: "2025-12-31T04:00:00Z",
         tags: ["Psychology", "Debugging", "System Architecture"]

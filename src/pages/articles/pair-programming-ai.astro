@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/images/articles/pair-programming-ai/hero-bionic.png';
 import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
@@ -8,7 +10,7 @@ import '../../styles/article.css';
     title="Protocol: The Thinking Partner Handshake | Winston Koh" 
     description="Operational model for moving from 'Vending Machine' prompting to 'Sparring Partner' negotiation." 
     showFloatingButtons={false} 
-    image="/assets/images/articles/pair-programming-ai/hero-bionic.png"
+    image={heroImg.src}
     articleData={{
         publishedTime: "2025-12-31T04:00:00Z",
         tags: ["Co-Pilot", "AI Ops", "Reasoning"]
