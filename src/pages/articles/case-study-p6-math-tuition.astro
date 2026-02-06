@@ -1,9 +1,9 @@
-
 ---
 import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import mathproHero from '../../assets/images/mathpro-hero.png';
 import mathproLighthouse from '../../assets/images/mathpro-lighthouse.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
 
@@ -382,12 +382,13 @@ import '../../styles/article.css';
                     </ul>
                 </div>
             </div>
+            <ArticleCTA />
             <footer class="article-footer">
                 <div class="author-bio">
                     <div class="author-avatar">WK</div>
                     <div class="author-info">
                         <h4>Winston Koh & Project Athena</h4>
-                        <p>This case study was co-authored by Winston and <a href="/athena">Project
+                        <p>This case study was co-authored by Winston and <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener">Project
                                 Athena</a><br>— his AI-powered digital personal assistant.</p>
                         <p><a href="/about">More about us →</a></p>
                     </div>

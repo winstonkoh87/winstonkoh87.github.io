@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import heroImg from '../../assets/images/articles/alteryx-24-hours/alteryx_hero.png';
 import walkImg from '../../assets/images/articles/alteryx-24-hours/alteryx_walk.png';
 import systemImg from '../../assets/images/articles/alteryx-24-hours/alteryx_system.png';
+import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
 
@@ -158,13 +159,14 @@ import '../../styles/article.css';
                 </div>
                 
                 <p style="font-style: italic; color: #888;">This case study was originally published on <a href="https://medium.com/@winstonkoh87" target="_blank">Medium</a>.</p>
-
+            </div>
+            <ArticleCTA />
             <footer class="article-footer">
                 <div class="author-bio">
                     <div class="author-avatar">WK</div>
                     <div class="author-info">
                         <h4>Winston Koh & Project Athena</h4>
-                        <p>This case study was co-authored with <a href="/athena">Project Athena</a><br />— the AI system referenced in this article.</p>
+                        <p>This case study was co-authored with <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener">Project Athena</a><br />— the AI system referenced in this article.</p>
                         <p><a href="/services">Work with me →</a></p>
                     </div>
                 </div>
