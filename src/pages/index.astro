@@ -309,13 +309,22 @@ import clientDerrick from '../assets/images/client-derrick.png';
             
             function type() {
                 if (i < text.length) {
+                    // Check for links after typing is done or during? 
+                    // Simpler to type everything then linkify at the end.
                     div.innerText += text.charAt(i);
                     i++;
-                    // Scroll only the terminal container, not the page
                     termBody.scrollTop = termBody.scrollHeight;
                     setTimeout(type, speed);
-                } else if (callback) {
-                    callback();
+                } else {
+                    // Linkify after typing
+                    const content = div.innerText;
+                    const linkified = content.replace(/(\/[a-zA-Z0-9_-]+)/g, (match) => {
+                        // Avoid matching tech tags like /athena if not followed by space or end
+                        if (match === '/help' || match === '/clear') return match; 
+                        return `<a href="${match}" class="terminal-link">${match}</a>`;
+                    });
+                    div.innerHTML = linkified;
+                    if (callback) callback();
                 }
             }
             type();
@@ -468,9 +477,7 @@ Or just ask a question naturally!`, 'system');
 
         // Initialize on load
         document.addEventListener('DOMContentLoaded', () => {
-            // Force default to freelance as per user request, without animation
-            // const savedMode = localStorage.getItem('intent_mode') || 'freelance'; // Reverting to forced freelance
-            const savedMode = 'freelance';
+            const savedMode = localStorage.getItem('intent_mode') || 'freelance';
             setIntent(savedMode, false);
         });
     </script>

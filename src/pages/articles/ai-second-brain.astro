@@ -33,6 +33,9 @@ import '../../styles/article.css';
                     <span>🏗️ Infrastructure</span>
                     <span>💾 Vector Store</span>
                 </div>
+                <div class="article-dates">
+                    <span>Published: <time datetime="2025-12-28">28 December 2025</time></span>
+                </div>
             </header>
 
             <div class="article-content">
@@ -117,6 +120,7 @@ Entry Schema:
                     <p><strong>Risk:</strong> LLM Confabulation.</p>
                     <p><strong>Mitigation:</strong> <code>Strict Citation Requirement</code>. The RAG pipeline must return the <code>source_file_id</code> for every claim. If <code>source_file_id == null</code>, the insight is discarded as noise.</p>
                 </div>
+            </div>
 
             <ArticleCTA />
             
