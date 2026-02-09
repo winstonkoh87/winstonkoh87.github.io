@@ -44,6 +44,17 @@ const schema = JSON.stringify({
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG4XS3R5NV"></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { 
+                try { dataLayer.push(arguments); } catch(e) {} 
+            }
+            gtag("js", new Date());
+            gtag("config", "G-VG4XS3R5NV");
+        </script>
+
         <!-- SEO -->
 		<title>{title} | Melvin Lim - Law & Policy Portfolio</title>
         <meta name="description" content={description} />
