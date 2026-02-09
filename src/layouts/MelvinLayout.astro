@@ -11,14 +11,14 @@ const {
     image = "/assets/images/projects/melvin/hero-portrait.png" 
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, "https://winstonkoh87.github.io");
+const canonicalURL = new URL(Astro.url.pathname, "https://winstonkoh87.com");
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Melvin Lim",
-  "url": "https://winstonkoh87.github.io/projects/melvin",
-  "image": `https://winstonkoh87.github.io${image}`,
+  "url": "https://winstonkoh87.com/projects/melvin",
+  "image": `https://winstonkoh87.com${image}`,
   "sameAs": [
     "https://www.linkedin.com/in/melvinlimjunwei",
     "https://www.instagram.com/melv._.innnn/"
@@ -67,7 +67,7 @@ const schema = JSON.stringify({
         <meta property="og:url" content={canonicalURL} />
         <meta property="og:title" content={`${title} | Melvin Lim - Law & Policy`} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={new URL(image, "https://winstonkoh87.github.io")} />
+        <meta property="og:image" content={new URL(image, "https://winstonkoh87.com")} />
 
         <!-- Schema.org -->
         <script type="application/ld+json" set:html={schema} />

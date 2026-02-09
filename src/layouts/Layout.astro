@@ -29,7 +29,7 @@ interface Props {
 
 const { 
     title, 
-    description = "AI Systems Architect. I build autonomous bionic workflows that scale your output 10x. [2026 Portfolio].",
+    description = "AI Systems Architect. I build autonomous bionic workflows that scale your output 10x. [Feb 2026 Portfolio].",
     showFloatingButtons = true,
     image = "/assets/images/og-image.png",
     articleData,
@@ -85,11 +85,11 @@ const ogImageURL = new URL(image, Astro.site);
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://winstonkoh87.github.io/#person",
+          "@id": "https://winstonkoh87.com/#person",
           "name": "Winston Koh",
           "jobTitle": "AI Systems Architect",
-          "url": "https://winstonkoh87.github.io",
-          "image": "https://winstonkoh87.github.io/assets/images/winston-avatar.jpg",
+          "url": "https://winstonkoh87.com",
+          "image": "https://winstonkoh87.com/assets/images/winston-avatar.jpg",
           "sameAs": [
             "https://www.linkedin.com/in/winstonkoh",
             "https://github.com/winstonkoh87"
@@ -98,8 +98,8 @@ const ogImageURL = new URL(image, Astro.site);
         {
           "@type": "ProfessionalService",
           "name": "Winston Koh - AI Systems & Strategy",
-          "@id": "https://winstonkoh87.github.io/#service",
-          "url": "https://winstonkoh87.github.io",
+          "@id": "https://winstonkoh87.com/#service",
+          "url": "https://winstonkoh87.com",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Singapore",
@@ -107,7 +107,7 @@ const ogImageURL = new URL(image, Astro.site);
           },
           "priceRange": "$$$",
           "description": "Specialized AI Systems Architecture and Bionic Workflows for SMEs and Enterprises in Singapore.",
-          "founder": { "@id": "https://winstonkoh87.github.io/#person" }
+          "founder": { "@id": "https://winstonkoh87.com/#person" }
         },
         articleData ? {
           "@type": "Article",

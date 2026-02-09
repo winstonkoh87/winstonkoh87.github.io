@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://winstonkoh87.github.io',
+  site: 'https://winstonkoh87.com',
   trailingSlash: 'never', // Clean URLs (no trailing slash)
   build: {
     format: 'directory' // Generates page/index.html instead of page.html for clean URL support
