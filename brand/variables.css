@@ -1,7 +1,8 @@
 /*
  * Winston Koh Brand Variables
- * Version: 1.0
+ * Version: 1.1
  * Generated: 2026-01-29
+ * Updated: 2026-02-11
  */
 
 :root {
@@ -145,6 +146,14 @@
     --z-modal: 500;
     --z-popover: 600;
     --z-tooltip: 700;
+
+    /* ========================================
+     BREAKPOINTS (as custom props for JS use)
+     ======================================== */
+    --bp-mobile: 480px;
+    --bp-tablet: 768px;
+    --bp-desktop: 1024px;
+    --bp-wide: 1280px;
 }
 
 /* ========================================

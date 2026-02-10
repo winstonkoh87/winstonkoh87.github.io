@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sitemap | Winston Koh" description="Complete sitemap of winstonkoh87.com. Browse all pages, articles, projects, and resources." showFloatingButtons={false}>
+  <main class="sitemap-page">
+    <div class="container">
+      <h1>Sitemap</h1>
+      <p class="sitemap-subtitle">All pages on this site, organized for easy navigation.</p>
+
+      <div class="sitemap-grid">
+        <!-- Column 1: Core Pages -->
+        <div class="sitemap-section">
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/writing">Writing</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/athena">Project Athena</a></li>
+            <li><a href="/framework">Framework</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Articles -->
+        <div class="sitemap-section">
+          <h2>Articles</h2>
+          <ul>
+            <li><a href="/articles/athena-public-launch">Athena Launch Story</a></li>
+            <li><a href="/articles/athena-5-pillars">Sovereign AI: 5 Pillars</a></li>
+            <li><a href="/articles/trilateral-feedback-loop">Adversarial AI Audit</a></li>
+            <li><a href="/articles/soulful-stoic-protocol">The Soulful Stoic Protocol</a></li>
+            <li><a href="/articles/ai-marketing-workflow">AI Marketing Workflow</a></li>
+            <li><a href="/articles/iterative-layer">Brew & Bean Case Study</a></li>
+            <li><a href="/articles/anti-slop-protocol">Anti-Slop Protocol</a></li>
+            <li><a href="/articles/vibe-coding-trap">The Vibe Coding Trap</a></li>
+            <li><a href="/articles/first-principles-design">First Principles Design</a></li>
+            <li><a href="/articles/pricing-trap">The Pricing Trap</a></li>
+            <li><a href="/articles/sme-ai-marketing-guide">SME AI Marketing Guide</a></li>
+            <li><a href="/articles/case-study-p6-math-tuition">P6 Math Tuition Case Study</a></li>
+            <li><a href="/articles/gemini-gem-agent">Gemini Gem Agent</a></li>
+            <li><a href="/articles/guardian-protocol">Guardian Protocol</a></li>
+            <li><a href="/articles/ai-bionic-layer">AI Bionic Layer</a></li>
+            <li><a href="/articles/net-life-hour-protocol">Net Life Hour Protocol</a></li>
+            <li><a href="/articles/clinkz-doctrine">The Clinkz Doctrine</a></li>
+            <li><a href="/articles/2-day-efficiency-trap">2-Day Efficiency Trap</a></li>
+            <li><a href="/articles/alteryx-24-hours">Alteryx in 24 Hours</a></li>
+            <li><a href="/articles/ai-second-brain">AI Second Brain</a></li>
+            <li><a href="/articles/debugging-with-ai">Debugging with AI</a></li>
+            <li><a href="/articles/giving-ai-jobs">Giving AI Jobs</a></li>
+            <li><a href="/articles/pair-programming-ai">Pair Programming with AI</a></li>
+            <li><a href="/articles/the-ballast-friend">The Ballast Friend</a></li>
+            <li><a href="/articles/the-price-of-ignoring-advice">The Price of Ignoring Advice</a></li>
+            <li><a href="/articles/why-the-200-coder-broke-your-app">Why the $200 Coder Broke Your App</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Projects & Legal -->
+        <div class="sitemap-section">
+          <h2>Projects</h2>
+          <ul>
+            <li><a href="/projects/melvin">Melvin's Portfolio</a></li>
+            <li><a href="/projects/gem-agent">Diagnostic Gem Agent</a></li>
+          </ul>
+
+          <h2 style="margin-top: 2rem;">Legal</h2>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/disclaimer">Earnings Disclaimer</a></li>
+          </ul>
+
+          <h2 style="margin-top: 2rem;">External</h2>
+          <ul>
+            <li><a href="https://sgassignmenthelp.com" target="_blank" rel="noopener noreferrer">SG Assignment Helper ↗</a></li>
+            <li><a href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener noreferrer">Athena GitHub ↗</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .sitemap-page {
+    padding: 8rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #e0e0e0;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .sitemap-subtitle {
+    color: #888;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+  .sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .sitemap-section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .sitemap-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sitemap-section li {
+    padding: 0.35rem 0;
+  }
+  .sitemap-section a {
+    color: #a3a3a3;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sitemap-section a:hover {
+    color: #fff;
+  }
+  .container {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+</style>

@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
   <main class="legal-page">
     <div class="container">
       <h1>Terms of Service</h1>
-      <p><strong>Last Updated: January 2026</strong></p>
+      <p><strong>Last Updated: {new Date().toLocaleDateString('en-SG', { year: 'numeric', month: 'long' })}</strong></p>
 
       <h2>1. Acceptance of Terms</h2>
       <p>By accessing this website, you agree to be bound by these Terms of Service. If you do not agree, strictly do not use this site.</p>

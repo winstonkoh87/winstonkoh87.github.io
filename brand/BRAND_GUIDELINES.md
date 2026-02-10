@@ -1,7 +1,8 @@
 # Winston Koh — Brand Guidelines
 
-> **Version**: 2.0 (Full Package)  
+> **Version**: 2.1 (Feb 2026 Domain Update)  
 > **Created**: 2026-01-29  
+> **Updated**: 2026-02-11  
 > **Author**: Athena (AI-Generated, Human-Approved)
 
 ---
@@ -275,7 +276,7 @@ background: linear-gradient(to right, #3B82F6, #EC4899);
 │    Winston Koh                      │
 │    AI Systems Architect             │
 │                                     │
-│    winstonkoh87.github.io           │
+│    winstonkoh87.com                 │
 │    wa.me/6583581066                 │
 │                                     │
 └─────────────────────────────────────┘
@@ -286,7 +287,133 @@ background: linear-gradient(to right, #3B82F6, #EC4899);
 ```
 —
 Winston Koh | AI Systems Architect
-winstonkoh87.github.io | +65 8358 1066
+winstonkoh87.com | +65 8358 1066
+```
+
+---
+
+## Social Media Specs
+
+### Image Sizes
+
+| Platform | Dimensions | File | Use |
+| -------- | ---------- | ---- | --- |
+| **OG Image** | 1200×630 | `social/og-image-1200x630.png` | Facebook, LinkedIn share |
+| **Twitter Card** | 1200×628 | Same as OG | Twitter/X large card |
+| **LinkedIn Square** | 1200×1200 | `social/og-image.png` | LinkedIn post share |
+| **Twitter Banner** | 1500×500 | `social/twitter-banner.png` | Twitter/X profile |
+| **Favicon** | 32×32, 16×16 | `public/favicon.svg` | Browser tab |
+| **Apple Touch** | 180×180 | `public/apple-touch-icon.png` | iOS bookmark |
+
+### Social Post Voice
+
+- Same No-BS brand voice as website
+- Always include a URL or CTA
+- Prefer dark-background screenshots over generic thumbnails
+- Use terminal/code screenshots for tech content
+
+---
+
+## Accessibility
+
+### WCAG 2.1 AA Compliance
+
+| Combination | Ratio | Status |
+| ----------- | ----- | ------ |
+| Snow (#E8E8E8) on Void (#0A0A0A) | 17.4:1 | ✅ AAA |
+| Ash (#A1A1AA) on Void (#0A0A0A) | 7.2:1 | ✅ AAA |
+| Electric (#3B82F6) on Void (#0A0A0A) | 4.6:1 | ✅ AA |
+| Orchid (#EC4899) on Void (#0A0A0A) | 4.5:1 | ✅ AA |
+| Pure (#FFFFFF) on Electric (#3B82F6) | 3.9:1 | ⚠️ AA Large only |
+
+### Accessibility Rules
+
+1. **Focus states**: All interactive elements must have visible focus rings (`--glow-color`)
+2. **Skip links**: Always include "Skip to main content" link
+3. **Alt text**: Descriptive, not decorative. "Terminal showing Athena output" not "screenshot"
+4. **Reduced motion**: Respect `prefers-reduced-motion: reduce`
+5. **Minimum touch target**: 44×44px for mobile interactive elements
+
+---
+
+## Photography & Imagery
+
+### What TO Use
+
+| Type | When | Example |
+| ---- | ---- | ------- |
+| **Terminal screenshots** | Technical/AI content | Dark terminal with Athena output |
+| **Code as art** | Articles, hero backgrounds | Syntax-highlighted code snippets |
+| **Dark product shots** | Portfolio, case studies | Screenshots on dark backgrounds |
+| **Data visualizations** | Case studies, metrics | Charts with brand accent colors |
+| **Singapore context** | Location-relevant content | Skyline, MBS, hawker culture (authentic, not stock) |
+
+### What to AVOID
+
+- ❌ Stock photography of any kind
+- ❌ AI-generated "person" images
+- ❌ Robot/neural network clipart
+- ❌ Generic office/computer stock photos
+- ❌ Light-mode screenshots
+
+### Image Treatment
+
+- Apply slight dark overlay for consistency: `rgba(0, 0, 0, 0.3)`
+- Border radius: 12px (match card radius)
+- Always optimize: WebP format, compressed
+
+---
+
+## SEO & Meta Voice
+
+### Meta Description Formula
+
+```
+[Role/Expertise]. [Value Proposition]. [Freshness Tag].
+```
+
+**Example**:
+
+```
+AI Systems Architect. I build autonomous bionic workflows that scale your output 10x. [Feb 2026 Portfolio].
+```
+
+### Freshness Tag Convention
+
+- Homepage: `[Mon YYYY Portfolio]` — e.g., `[Feb 2026 Portfolio]`
+- Articles: No tag (use `dateModified` in schema)
+- Services: No tag (use footer accuracy line)
+
+### Alt Text Voice
+
+- Descriptive, functional, brand-aligned
+- ✅ "Terminal screenshot showing Athena AI processing a diagnostic query"
+- ❌ "image1.png" or "screenshot"
+
+### URL Slug Convention
+
+- Lowercase, hyphenated: `/articles/anti-slop-protocol`
+- No dates in URLs (dates belong in schema, not URLs)
+- No trailing slashes (enforced in `astro.config.mjs`)
+
+---
+
+## Responsive Breakpoints
+
+| Name | Width | Target |
+| ---- | ----- | ------ |
+| **Mobile** | ≤480px | Small phones |
+| **Tablet** | ≤768px | Tablets, large phones |
+| **Desktop** | ≤1024px | Laptops, small monitors |
+| **Wide** | ≤1280px | Large monitors |
+
+### Media Query Convention
+
+```css
+/* Mobile-first: start with mobile styles, then override */
+@media (min-width: 481px)  { /* Tablet+ */ }
+@media (min-width: 769px)  { /* Desktop+ */ }
+@media (min-width: 1025px) { /* Wide+ */ }
 ```
 
 ---
@@ -294,10 +421,14 @@ winstonkoh87.github.io | +65 8358 1066
 ## File Exports
 
 | Asset | Format | Location |
-|-------|--------|----------|
+| ----- | ------ | -------- |
 | Logo (Lambda) | SVG, PNG | `/brand/logo/` |
-| Color Palette | CSS Variables | `/src/styles/variables.css` |
-| Typography | CSS | `/src/styles/typography.css` |
+| Color Palette | CSS Variables | `/brand/variables.css` |
+| Typography | CSS | `/brand/variables.css` |
+| Social Assets | PNG | `/brand/social/` |
+| Email Signature | HTML | `/brand/collateral/email-signature.html` |
+| Invoice Template | MD | `/brand/collateral/invoice-template.md` |
+| Presentation | MD | `/brand/collateral/presentation-template.md` |
 | This Document | MD | `/brand/BRAND_GUIDELINES.md` |
 
 ---

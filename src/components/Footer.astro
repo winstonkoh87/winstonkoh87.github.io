@@ -51,7 +51,8 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Winston Koh. All rights reserved. | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
+            <p>&copy; {new Date().getFullYear()} Winston Koh. All rights reserved. | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a> | <a href="/disclaimer">Disclaimer</a> | <a href="/sitemap">Sitemap</a></p>
+            <p class="footer-last-updated">Information accurate as of {new Date().toLocaleDateString('en-SG', { year: 'numeric', month: 'short', day: 'numeric' })}. Built with <a href="/athena">Athena</a>.</p>
             
             <!-- Social Media Icons -->
             <div class="footer-social">
@@ -101,5 +102,22 @@
     .footer-bottom a:hover {
         color: #ffffff;
         text-decoration: underline;
+    }
+
+    .footer-last-updated {
+        font-size: 0.75rem;
+        color: #666;
+        margin-top: 0.25rem;
+        letter-spacing: 0.02em;
+    }
+
+    .footer-last-updated a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .footer-last-updated a:hover {
+        color: #999;
     }
 </style>

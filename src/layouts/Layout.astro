@@ -36,7 +36,7 @@ const {
     faqData
 } = Astro.props;
 
-const siteLastModified = "2026-02-11";
+const siteLastModified = new Date().toISOString().split('T')[0];
 const ogType = articleData ? "article" : "website";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -81,6 +81,9 @@ const ogImageURL = new URL(image, Astro.site);
     <meta property="twitter:title" content={title}>
     <meta property="twitter:description" content={description}>
     <meta property="twitter:image" content={ogImageURL}>
+
+    <!-- Freshness Signal (SEO) -->
+    <meta property="article:modified_time" content={articleData?.modifiedTime || siteLastModified} />
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" is:inline set:html={JSON.stringify({

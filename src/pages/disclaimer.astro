@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Earnings Disclaimer | Winston Koh" description="Results vary. This page outlines the limitations and disclaimers for services provided by Winston Koh.">
+  <main class="legal-page">
+    <div class="container">
+      <h1>Earnings & Results Disclaimer</h1>
+      <p><strong>Last Updated: {new Date().toLocaleDateString('en-SG', { year: 'numeric', month: 'long' })}</strong></p>
+
+      <h2>1. No Guarantees</h2>
+      <p>The services provided by Winston Koh — including web development, AI systems architecture, digital marketing strategy, and consulting — are professional services. While we strive for excellence and have delivered measurable results for past clients, <strong>we make no guarantees</strong> regarding specific outcomes, revenue increases, lead generation numbers, or search engine rankings.</p>
+
+      <h2>2. Results Vary</h2>
+      <p>Every business is different. Results depend on many factors including but not limited to: your industry, competition, target market, product quality, sales process, execution speed, and market conditions. Past client results referenced on this website are not typical and should not be interpreted as a promise of similar outcomes.</p>
+
+      <h2>3. Not Professional Advice</h2>
+      <p>Content on this website — including articles, case studies, and framework descriptions — is provided for <strong>informational and educational purposes only</strong>. It does not constitute financial, legal, career, investment, or professional advice. Always consult qualified professionals for decisions in these areas.</p>
+
+      <h2>4. AI Systems Disclaimer</h2>
+      <p>AI-powered tools and systems referenced on this site (including Project Athena) are engineering projects. They are not autonomous decision-makers. All AI outputs require human review and validation before action. We are not liable for decisions made based on AI-generated content or recommendations.</p>
+
+      <h2>5. Third-Party Tools</h2>
+      <p>We may reference or recommend third-party tools, platforms, and services. These references are based on our professional experience and do not constitute endorsements. We are not responsible for the performance, pricing, or policies of third-party services.</p>
+
+      <h2>6. Client Responsibility</h2>
+      <p>Clients are solely responsible for executing strategies, implementing recommendations, and maintaining deliverables after handover. We are not liable for data loss, system failure, or business disruption caused by client negligence, failure to backup data, or incorrect execution of advice. (See: <a href="/terms">Terms of Service</a>)</p>
+
+      <h2>7. Testimonials</h2>
+      <p>Testimonials and case studies on this site reflect individual experiences and are not guarantees. Where specific metrics are cited, they represent verified outcomes for those particular clients under their specific circumstances.</p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .legal-page {
+    padding: 8rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #e0e0e0;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #ccc;
+  }
+  a {
+    color: var(--accent-primary, #3b82f6);
+    text-decoration: underline;
+  }
+  .container {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+</style>
