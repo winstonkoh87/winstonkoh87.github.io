@@ -36,6 +36,9 @@ const {
     faqData
 } = Astro.props;
 
+const siteLastModified = "2026-02-11";
+const ogType = articleData ? "article" : "website";
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
 ---
@@ -67,7 +70,7 @@ const ogImageURL = new URL(image, Astro.site);
     <meta name="google-site-verification" content="0LRsIInh-jyrPq-S0qX1qwLX_5GP7TiTIPZ_CUmGBVg" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -94,6 +97,14 @@ const ogImageURL = new URL(image, Astro.site);
             "https://www.linkedin.com/in/winstonkoh",
             "https://github.com/winstonkoh87"
           ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://winstonkoh87.com/#website",
+          "url": "https://winstonkoh87.com",
+          "name": "Winston Koh | AI Systems Architect",
+          "dateModified": siteLastModified,
+          "publisher": { "@id": "https://winstonkoh87.com/#person" }
         },
         {
           "@type": "ProfessionalService",
