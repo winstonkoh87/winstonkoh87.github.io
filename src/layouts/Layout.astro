@@ -159,7 +159,18 @@ const ogImageURL = new URL(image, Astro.site);
                 "bestRating": "5"
             },
             "reviewBody": "Winston didn't just build a website; he built a system that filters my leads and saves me 10 hours a week."
-        } : null
+        } : null,
+        {
+          "@type": "SiteNavigationElement",
+          "name": ["Portfolio", "Writing", "Services", "About", "Contact"],
+          "url": [
+            "https://winstonkoh87.com/portfolio",
+            "https://winstonkoh87.com/writing",
+            "https://winstonkoh87.com/services",
+            "https://winstonkoh87.com/about",
+            "https://winstonkoh87.com/contact"
+          ]
+        }
       ].filter(Boolean)
     })}>
     </script>
