@@ -114,7 +114,7 @@ import clientDerrick from '../assets/images/client-derrick.png';
                     <span class="card-icon" aria-hidden="true">🫡</span>
                     <span class="project-status production">Personal Branding</span>
                 </div>
-                <h3>Melvin Lim: Bionic Branding</h3>
+                <h3>Melvin Lim: AI-Augmented Branding</h3>
                 <p>
                     <strong>The Outcome:</strong> "The Soulful Stoic" — Automating elite personal branding.
                     <br><br>
@@ -276,9 +276,9 @@ import clientDerrick from '../assets/images/client-derrick.png';
             
             // Fallback responses
             const fallbacks = [
-                `I don't have specific info on "${query}" yet. I've logged this to Winston's "Bionic Loop" for future updates. Try asking about: projects, stack, or pricing.`,
+                `I don't have specific info on "${query}" yet. I've logged this for future updates. Try asking about: projects, stack, or pricing.`,
                 `Hmm, that's outside my current index. I've flagged "${query}" for Winston to review. Type 'help' to see my active protocols.`,
-                `Internal knowledge gap detected for "${query}". Protocol 102: Query logged. Try asking about Winston's AI systems or F&B work.`
+                `Knowledge gap detected for "${query}". Query logged. Try asking about Winston's AI systems or F&B work.`
             ];
             return fallbacks[Math.floor(Math.random() * fallbacks.length)];
         }
