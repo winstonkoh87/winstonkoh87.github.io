@@ -67,6 +67,45 @@ import '../styles/athena.css';
         </div>
     </section>
 
+    <!-- DIFFERENTIATION (RAM vs HDD) -->
+    <section class="athena-section">
+        <h2>"But My AI Already Has Memory"</h2>
+        <p style="color: #ccd6f6; font-size: 1.15rem; margin-bottom: 0.5rem;">You're confusing <strong style="color: #64ffda;">RAM</strong> with a <strong style="color: #64ffda;">hard drive</strong>.</p>
+        <p style="color: #8892b0;">ChatGPT Memory, Claude Projects, Gemini Gems — these store flat facts in short-term memory that gets wiped or silently forgotten. That works for casual chat. But for maintaining a codebase across 500 hours of development, you need a <strong style="color: #ccd6f6;">filing cabinet</strong>, not a sticky note.</p>
+
+        <div class="proof-grid" style="margin-top: 2rem;">
+            <div class="proof-card">
+                <div class="label" style="color: #ff6b6b; font-weight: 600; margin-bottom: 0.75rem;">Native Memory</div>
+                <div style="color: #8892b0; font-size: 0.9rem; line-height: 1.6;">
+                    "User likes Python"<br>
+                    Opaque. Vendor-controlled.<br>
+                    <span style="color: #6b7694;">Can't edit. Can't export.</span>
+                </div>
+            </div>
+            <div class="proof-card">
+                <div class="label" style="color: #fbbf24; font-weight: 600; margin-bottom: 0.75rem;">NotebookLM / Obsidian</div>
+                <div style="color: #8892b0; font-size: 0.9rem; line-height: 1.6;">
+                    "Here's what your docs say"<br>
+                    Passive reference only.<br>
+                    <span style="color: #6b7694;">You manage the rot.</span>
+                </div>
+            </div>
+            <div class="proof-card" style="border-color: #64ffda;">
+                <div class="label" style="color: #64ffda; font-weight: 600; margin-bottom: 0.75rem;">Athena</div>
+                <div style="color: #ccd6f6; font-size: 0.9rem; line-height: 1.6;">
+                    "In Session 847, you decided X because Y"<br>
+                    Active state you own.<br>
+                    <strong style="color: #64ffda;">Auto-distilled. Portable. Editable.</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="design-note" style="margin-top: 1.5rem;">
+            <h4>Why Context Rot Matters</h4>
+            <p>Over time, memory systems accumulate stale, contradictory info. Athena's <code style="color: #64ffda;">/end</code> protocol forces distillation — old context is compressed, conflicts resolved, only actionable state survives. Session 1,000 is <em>cleaner</em> than Session 100.</p>
+        </div>
+    </section>
+
     <!-- THE PROBLEM -->
     <section class="athena-section">
         <h2>The Problem</h2>
