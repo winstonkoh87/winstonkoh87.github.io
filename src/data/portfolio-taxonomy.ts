@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
     // --- Autonomous Systems ---
     {
         title: "Project Athena",
-        link: "/athena",
+        link: "/athena/",
         cluster: "autonomous-systems",
         role: "Architect + Full Stack",
         description: "An autonomous 'Second Brain' that reduces engineering research time by 60%. Leverages RAG and Supabase Vector to recall, reason, and execute.",
@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     },
     {
         title: "Service-Led Diagnostic Gem",
-        link: "/projects/gem-agent",
+        link: "/projects/gem-agent/",
         cluster: "autonomous-systems",
         role: "Prompt Engineering + Logic Design",
         description: "Automated client intake agent built in 24 hours. Features 'Integrity Gate' logic and dynamic context switching.",
@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
     },
     {
         title: "MathPro Tuition",
-        link: "/articles/case-study-p6-math-tuition",
+        link: "/articles/case-study-p6-math-tuition/",
         cluster: "strategic-infrastructure",
         role: "Design + Full Stack",
         description: "5-page static website for a P6 Math tuition centre. Clean design, 3-tier pricing, lead capture form. Demonstrates SME web service quality.",
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     // --- Commerce & Conversion ---
     {
         title: "ThatBioTutor Growth Proposal",
-        link: "/articles/sme-ai-marketing-guide",
+        link: "/articles/sme-ai-marketing-guide/",
         cluster: "commerce-conversion",
         role: "Strategy + SEO + UX",
         description: "Multi-page digital marketing proposal with SEO strategy, content recommendations, and pricing packages. Dark glassmorphism design with mobile nav.",
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] = [
     {
         title: "Coach Derrick Lim",
         subtitle: "(inspired)",
-        link: "/swim-coach-demo",
+        link: "/swim-coach-demo/",
         cluster: "commerce-conversion",
         role: "Strategy + Marketing",
         description: "90-day digital transformation proposal inspired by a real swim coach. Interactive slides, AI demo, ROI projections, and full PDF marketing plan.",
@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
     },
     {
         title: "Brew & Bean Café",
-        link: "/articles/iterative-layer",
+        link: "/articles/iterative-layer/",
         cluster: "commerce-conversion",
         role: "Design + Development",
         description: "Artisan coffee shop landing page with menu showcase, story section, testimonials, and reservation CTA. Premium F&B design.",
