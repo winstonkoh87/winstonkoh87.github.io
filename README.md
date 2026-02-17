@@ -18,9 +18,9 @@ This documents how I built (and evolved) a complete portfolio website with AI-au
 
 | Metric | Count |
 |--------|-------|
-| **Pages** | 8 |
-| **Articles** | 19 |
-| **Live Demo Sites** | 6 |
+| **Pages** | 13 |
+| **Articles** | 26 |
+| **Live Demo Sites** | 5 |
 | **AI Widget** | ✅ Athena Live |
 | **Framework** | Astro 5.0 (Vite-powered) |
 | **Brand Kit** | ✅ Lambda (Λ) Identity |
