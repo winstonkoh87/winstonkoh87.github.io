@@ -1,12 +1,12 @@
 # Building a Portfolio Website (Astro v5)
 
-> **Last Updated**: 29 January 2026
+> **Last Updated**: 17 February 2026
 > **Status**: Full Brand Kit Integrated 🎨
 
-[![Live Site](https://img.shields.io/badge/Live-winstonkoh87.github.io-00C853?style=flat-square)](https://winstonkoh87.github.io/)
+[![Live Site](https://img.shields.io/badge/Live-winstonkoh87.com-00C853?style=flat-square)](https://winstonkoh87.com/)
 [![Built with Athena](https://img.shields.io/badge/Built_with-Athena-CC785C?style=flat-square)](https://github.com/winstonkoh87/Athena-Public)
 [![Astro](https://img.shields.io/badge/Framework-Astro_5.0-BC52EE?logo=astro&logoColor=white&style=flat-square)](https://astro.build/)
-[![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222222?logo=github&logoColor=white&style=flat-square)](https://pages.github.com/)
+[![Cloudflare Pages](https://img.shields.io/badge/Hosted_on-Cloudflare_Pages-F38020?logo=cloudflare&logoColor=white&style=flat-square)](https://pages.cloudflare.com/)
 
 A personal portfolio website built with **Astro**, focusing on performance, component reusability, and zero-JavaScript defaults.
 
@@ -81,7 +81,7 @@ API integration with Gemini was too much hassle — rate limits, latency, key ma
 
 > **Future**: If usage justifies it, we'll add live API. The architecture already supports it — just swap the mock for a real fetch.
 
-Try it: [winstonkoh87.github.io](https://winstonkoh87.github.io/) → Click the chat icon
+Try it: [winstonkoh87.com](https://winstonkoh87.com/) → Click the chat icon
 
 ---
 
@@ -94,7 +94,7 @@ Try it: [winstonkoh87.github.io](https://winstonkoh87.github.io/) → Click the 
 | **Interactivity** | Vanilla JavaScript (Islands Architecture) |
 | **Build** | `npm run build` (Static Site Generation) |
 | **CI/CD** | GitHub Actions (Astro Build + Deploy) |
-| **Hosting** | GitHub Pages |
+| **Hosting** | Cloudflare Pages |
 
 ### Philosophy: Evolution to Astro
 
@@ -124,7 +124,7 @@ We didn't sell out. We **leveled up**.
 
 This isn't just a portfolio *about* AI-augmented work — it's a **living demonstration** of the workflow itself.
 
-### What Athena Did (January 2026)
+### What Athena Did (January–February 2026)
 
 - **Migrated** entire site from Vanilla HTML to Astro v5
 - **Refactored** repeated UI into reusable Components (`<Navigation/>`, `<Footer/>`)
@@ -133,6 +133,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 - **Designed** dark mode aesthetic, glassmorphism cards, particle constellation
 - **Audited** codebase for SEO, accessibility, broken links
 - **Cleaned** 230+ lines of duplicate code (January 2026 Audit)
+- **Optimized** GA4 event tracking with beacon-based outbound CTA tracking
 
 ### The Operating Model
 
@@ -152,14 +153,13 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 
 | Page | Description |
 |------|-------------|
-| [Home](https://winstonkoh87.github.io/) | Hero + Athena Live widget + Featured projects |
-| [About](https://winstonkoh87.github.io/about) | Identity, philosophy, Bionic Operating Model |
-| [Framework](https://winstonkoh87.github.io/framework) | Three-Pillar Leadership, Arena Physics, Laws, SDR |
-| [Writing](https://winstonkoh87.github.io/writing) | Blog with 19 published articles |
-| [Portfolio](https://winstonkoh87.github.io/portfolio) | 6 live demo sites |
-| [Athena](https://winstonkoh87.github.io/athena) | Product page: What Athena is and how it works |
-| [Services](https://winstonkoh87.github.io/services) | Fixed pricing. Fast delivery. Systems that work. |
-| [Contact](https://winstonkoh87.github.io/contact) | WhatsApp CTA + social links |
+| [Home](https://winstonkoh87.com/) | Hero + Athena Live widget + Featured projects |
+| [About](https://winstonkoh87.com/about/) | Identity, philosophy, Bionic Operating Model |
+| [Writing](https://winstonkoh87.com/writing/) | Blog with 19 published articles |
+| [Portfolio](https://winstonkoh87.com/portfolio/) | 6 live demo sites |
+| [Athena](https://winstonkoh87.com/athena/) | Product page: What Athena is and how it works |
+| [Services](https://winstonkoh87.com/services/) | Fixed pricing. Fast delivery. Systems that work. |
+| [Contact](https://winstonkoh87.com/contact/) | WhatsApp CTA + social links |
 
 ---
 
@@ -178,12 +178,12 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 
 | Project | Type | Link |
 |---------|------|------|
-| **P6 Math Tuition** | Education | [View Site](https://winstonkoh87.github.io/projects/p6-math-tuition/) |
-| **Brew & Bean** | F&B | [View Site](https://winstonkoh87.github.io/projects/brew/) |
-| **Sticker Shop** | E-commerce | [View Site](https://winstonkoh87.github.io/projects/sticker-shop/) |
-| **That Bio Tutor** | Education | [View Site](https://winstonkoh87.github.io/projects/thatbiotutor/) |
-| **Melvin Lim Portfolio** | Personal | [View Site](https://winstonkoh87.github.io/projects/melvin/) |
-| **Coach Derrick Lim** | Digital Marketing | [View Case Study](https://winstonkoh87.github.io/articles/ai-marketing-workflow/) |
+| **P6 Math Tuition** | Education | [View Site](https://winstonkoh87.com/projects/p6-math-tuition/) |
+| **Brew & Bean** | F&B | [View Site](https://winstonkoh87.com/projects/brew/) |
+| **Sticker Shop** | E-commerce | [View Site](https://winstonkoh87.com/projects/sticker-shop/) |
+| **That Bio Tutor** | Education | [View Site](https://winstonkoh87.com/projects/thatbiotutor/) |
+| **Melvin Lim Portfolio** | Personal | [View Site](https://winstonkoh87.com/projects/melvin/) |
+| **Coach Derrick Lim** | Digital Marketing | [View Case Study](https://winstonkoh87.com/articles/ai-marketing-workflow/) |
 
 ---
 
@@ -203,13 +203,13 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 
 ## 🚀 Deployment
 
-Hosted on **GitHub Pages** via Astro Build Action.
+Hosted on **Cloudflare Pages** with GitHub Actions build pipeline.
 
 ```bash
 git push origin main
 # → GitHub Actions builds Astro project
 # → Output generated in /dist
-# → Deployed to GitHub Pages
+# → Deployed to Cloudflare Pages
 ```
 
 ---
