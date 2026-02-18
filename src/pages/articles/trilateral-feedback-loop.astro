@@ -6,7 +6,16 @@ import ArticleCTA from '../../components/ArticleCTA.astro';
 import '../../styles/article.css';
 ---
 
-<Layout title="The Trilateral Feedback Loop: Why One AI is Not Enough | Winston Koh" description="How to stop your AI from becoming a 'Yes Man' and use adversarial audit loops to validate high-stakes decisions." showFloatingButtons={false} image="/assets/images/trilateral-hero.png">
+<Layout
+    title="The Trilateral Feedback Loop: Why One AI is Not Enough | Winston Koh"
+    description="How to stop your AI from becoming a 'Yes Man' and use adversarial audit loops to validate high-stakes decisions."
+    showFloatingButtons={false}
+    image="/assets/images/trilateral-hero.png"
+    articleData={{
+        publishedTime: "2026-01-01T08:00:00Z",
+        tags: ["Strategy", "AI", "Verification"]
+    }}
+>
     <!-- Mermaid.js for diagrams -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" is:inline></script>
     <script is:inline>
