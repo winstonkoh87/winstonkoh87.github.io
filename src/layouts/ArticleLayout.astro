@@ -1,0 +1,103 @@
+---
+import Layout from './Layout.astro';
+import ArticleCTA from '../components/ArticleCTA.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import '../styles/article.css';
+
+interface Props {
+    title: string;
+    description: string;
+    slug: string;
+    publishedDate: string;
+    modifiedDate?: string;
+    tags?: string[];
+    image?: string;
+    readingTime?: number;
+    badge?: string;
+    metaLabels?: { icon: string; text: string }[];
+}
+
+const {
+    title,
+    description,
+    slug,
+    publishedDate,
+    modifiedDate,
+    tags = [],
+    image,
+    readingTime,
+    badge,
+    metaLabels = []
+} = Astro.props;
+
+const formattedDate = new Date(publishedDate).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+});
+
+const formattedModifiedDate = modifiedDate
+    ? new Date(modifiedDate).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
+    : null;
+---
+
+<Layout 
+    title={`${title} | Winston Koh`}
+    description={description}
+    showFloatingButtons={false}
+    image={image}
+    articleData={{
+        publishedTime: publishedDate,
+        modifiedTime: modifiedDate,
+        tags: tags
+    }}
+>
+    <main class="article-container">
+        <a href="/writing/" class="back-link">← Back to Writing</a>
+        <article>
+            <header class="article-header">
+                {badge && <div class="protocol-badge">{badge}</div>}
+                <h1>{title}</h1>
+                <p class="subtitle">{description}</p>
+
+                {metaLabels.length > 0 && (
+                    <div class="article-meta">
+                        {metaLabels.map(label => (
+                            <span>{label.icon} {label.text}</span>
+                        ))}
+                    </div>
+                )}
+
+                <div class="article-dates">
+                    <span>Published: <time datetime={publishedDate}>{formattedDate}</time></span>
+                    {formattedModifiedDate && (
+                        <span> · Updated: <time datetime={modifiedDate}>{formattedModifiedDate}</time></span>
+                    )}
+                    {readingTime && (
+                        <span> · {readingTime} min read</span>
+                    )}
+                </div>
+            </header>
+
+            <div class="article-content">
+                <slot />
+            </div>
+
+            <ArticleCTA />
+
+            <RelatedArticles currentSlug={slug} limit={6} />
+
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">WK</div>
+                    <div class="author-info">
+                        <h4>Winston Koh & Project Athena</h4>
+                        <p>This article was co-authored by Winston and <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener">Project Athena</a><br>—
+                            his AI-powered digital personal assistant.</p>
+                        <p><a href="/about/">More about us →</a></p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>
