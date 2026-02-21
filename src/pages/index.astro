@@ -5,9 +5,17 @@ import clientMelvin from '../assets/images/client-melvin.png';
 import clientTuition from '../assets/images/client-tuition.png';
 import clientSme from '../assets/images/client-sme.png';
 import clientDerrick from '../assets/images/client-derrick.png';
+
+const faqData = [
+    { question: "What exactly is Athena?", answer: "Athena is an open-source operating system for AI agents. It gives any LLM persistent memory, structured reasoning, and governance — so your 500th session recalls patterns from your 5th. Think of it as the hard drive that ChatGPT is missing." },
+    { question: "How is this different from using ChatGPT or Claude directly?", answer: "ChatGPT and Claude are engines — powerful but amnesiac. Every session starts from zero. Athena wraps around any model to provide persistent memory, skill injection, and bounded autonomy. When you switch models, your memory stays mounted." },
+    { question: "Do I need to know how to code?", answer: "No. Athena boots with a single command (/start) and requires no API keys, no database setup, and no config files. The folder is the product. If you can type in a chat window, you can use Athena." },
+    { question: "What does a typical engagement look like?", answer: "For freelance projects: We start with a WhatsApp call to scope the work, I deliver a fixed-price proposal within 24 hours, and most projects ship within 1-2 weeks. For Athena consulting: I help you set up the system, build your initial memory bank, and train your team in a half-day workshop." },
+    { question: "What's your pricing?", answer: "Fixed pricing, no hourly billing. Websites start from SGD 500, AI agent builds from SGD 1,500, and Athena consulting packages from SGD 2,000. Every project includes a clear scope and deliverables upfront — no surprises." }
+];
 ---
 
-<Layout title="Winston Koh | AI Systems Architect [Feb 2026 Portfolio]" description="Singapore-based AI Systems Architect. I build autonomous agents, reliable business workflows, and production-grade software. Stop hiring tasks, start building assets.">
+<Layout title="Winston Koh | AI Systems Architect [Feb 2026 Portfolio]" description="Singapore-based AI Systems Architect. I build autonomous agents, reliable business workflows, and production-grade software. Stop hiring tasks, start building assets." faqData={faqData}>
     <section class="hero">
         <div class="hero-content">
             <!-- Intent Engine Toggle -->
@@ -78,6 +86,47 @@ import clientDerrick from '../assets/images/client-derrick.png';
                 <span class="metric-pillar">Sovereignty</span>
                 <span class="metric-value">100%</span>
                 <span class="metric-label">Local Ownership</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF — AS SEEN ON -->
+    <section class="social-proof-section" aria-label="Featured in">
+        <p class="social-proof-label">As Seen On</p>
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <div class="marquee-item">
+                    <span class="marquee-logo">📰</span>
+                    <span class="marquee-text">r/ChatGPT <strong>#4</strong></span>
+                </div>
+                <div class="marquee-item">
+                    <span class="marquee-logo">🤖</span>
+                    <span class="marquee-text">r/GeminiAI <strong>#1</strong></span>
+                </div>
+                <div class="marquee-item highlight">
+                    <span class="marquee-logo">🔥</span>
+                    <span class="marquee-text"><strong>1M+</strong> Reddit Views</span>
+                </div>
+                <div class="marquee-item">
+                    <span class="marquee-logo">⭐</span>
+                    <span class="marquee-text"><strong>100+</strong> GitHub Stars</span>
+                </div>
+                <div class="marquee-item">
+                    <span class="marquee-logo">📰</span>
+                    <span class="marquee-text">r/ChatGPT <strong>#4</strong></span>
+                </div>
+                <div class="marquee-item">
+                    <span class="marquee-logo">🤖</span>
+                    <span class="marquee-text">r/GeminiAI <strong>#1</strong></span>
+                </div>
+                <div class="marquee-item highlight">
+                    <span class="marquee-logo">🔥</span>
+                    <span class="marquee-text"><strong>1M+</strong> Reddit Views</span>
+                </div>
+                <div class="marquee-item">
+                    <span class="marquee-logo">⭐</span>
+                    <span class="marquee-text"><strong>100+</strong> GitHub Stars</span>
+                </div>
             </div>
         </div>
     </section>
@@ -171,6 +220,7 @@ import clientDerrick from '../assets/images/client-derrick.png';
         <h2 id="testimonials" class="section-label">What Clients Say</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card">
+                <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
                 <p class="testimonial-quote">Winston delivered exactly what we needed — a clean, fast website that
                     actually converts. No fluff, just results.</p>
                 <div class="testimonial-author">
@@ -180,8 +230,10 @@ import clientDerrick from '../assets/images/client-derrick.png';
                         <span class="testimonial-role">Personal Branding Client</span>
                     </div>
                 </div>
+                <span class="testimonial-date">Jan 2026</span>
             </div>
             <div class="testimonial-card">
+                <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
                 <p class="testimonial-quote">The turnaround was insane. From brief to live site in under a day. The
                     AI-augmented workflow is real.</p>
                 <div class="testimonial-author">
@@ -191,8 +243,10 @@ import clientDerrick from '../assets/images/client-derrick.png';
                         <span class="testimonial-role">Education SME</span>
                     </div>
                 </div>
+                <span class="testimonial-date">Jan 2026</span>
             </div>
             <div class="testimonial-card">
+                <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
                 <p class="testimonial-quote">Finally, someone who gets it. Not just a website, but a system that
                     works while I focus on my business.</p>
                 <div class="testimonial-author">
@@ -202,8 +256,10 @@ import clientDerrick from '../assets/images/client-derrick.png';
                         <span class="testimonial-role">F&B Industry</span>
                     </div>
                 </div>
+                <span class="testimonial-date">Dec 2025</span>
             </div>
             <div class="testimonial-card">
+                <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
                 <p class="testimonial-quote">The proposal blew me away. I went from not knowing where to start to having a complete 90-day roadmap with ROI projections. Professional, fast, and data-driven.</p>
                 <div class="testimonial-author">
                     <Image src={clientDerrick} alt="Freelance Coach" class="testimonial-avatar-img" />
@@ -212,7 +268,26 @@ import clientDerrick from '../assets/images/client-derrick.png';
                         <span class="testimonial-role">Sports Industry</span>
                     </div>
                 </div>
+                <span class="testimonial-date">Feb 2026</span>
             </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="section-label">Frequently Asked Questions</h2>
+        <div class="faq-list">
+            {faqData.map((item) => (
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')" aria-expanded="false">
+                        <span>{item.question}</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>{item.answer}</p>
+                    </div>
+                </div>
+            ))}
         </div>
     </section>
 
