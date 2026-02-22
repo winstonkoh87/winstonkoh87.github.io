@@ -1517,7 +1517,7 @@ blockquote {
    FEATURED PROJECTS
 ======================================== */
 .projects-section {
-    padding: 0 0 4rem;
+    padding: 3rem 0 4rem;
 }
 
 .section-label {
@@ -2064,7 +2064,7 @@ blockquote {
    SOCIAL PROOF — AS SEEN ON MARQUEE
 ======================================== */
 .social-proof-section {
-    padding: 1.5rem 0 0;
+    padding: 1.5rem 0 2rem;
     overflow: hidden;
     position: relative;
 }
@@ -2127,8 +2127,13 @@ blockquote {
 }
 
 @keyframes marquee-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* ========================================
