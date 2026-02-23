@@ -15,6 +15,7 @@ interface Props {
 	description?: string;
     showFloatingButtons?: boolean;
     image?: string;
+    canonicalUrl?: string;
     articleData?: {
         publishedTime?: string;
         modifiedTime?: string;
@@ -32,6 +33,7 @@ const {
     description = "AI Systems Architect. I build autonomous bionic workflows that scale your output 10x. [Feb 2026 Portfolio].",
     showFloatingButtons = true,
     image = "/assets/images/og-image.png",
+    canonicalUrl,
     articleData,
     faqData
 } = Astro.props;
@@ -39,7 +41,7 @@ const {
 const siteLastModified = new Date().toISOString().split('T')[0];
 const ogType = articleData ? "article" : "website";
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = canonicalUrl ? new URL(canonicalUrl) : new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
 ---
 
