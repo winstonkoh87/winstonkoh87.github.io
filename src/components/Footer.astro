@@ -51,8 +51,8 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Winston Koh. All rights reserved. | <a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a> | <a href="/disclaimer/">Disclaimer</a> | <a href="/sitemap/">Sitemap</a></p>
-            <p class="footer-last-updated">Information accurate as of {new Date().toLocaleDateString('en-SG', { year: 'numeric', month: 'short', day: 'numeric' })}. Built with <a href="/athena/">Athena</a>.</p>
+            <p>&copy; {new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Singapore', year: 'numeric' }).split('/').pop() || new Date().getFullYear()} Winston Koh. All rights reserved. | <a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a> | <a href="/disclaimer/">Disclaimer</a> | <a href="/sitemap/">Sitemap</a></p>
+            <p class="footer-last-updated">Information accurate as of {new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Singapore', year: 'numeric', month: 'short', day: 'numeric' })}. Built with <a href="/athena/">Athena</a>.</p>
             
             <!-- Social Media Icons -->
             <div class="footer-social">
