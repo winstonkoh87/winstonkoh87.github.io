@@ -1,7 +1,7 @@
 # Building a Portfolio Website (Astro v5)
 
-> **Last Updated**: 17 February 2026
-> **Status**: Full Brand Kit Integrated 🎨
+> **Last Updated**: 25 February 2026
+> **Status**: Homepage Refresh — 1,323 Sessions, 380+ Protocols, v9.2.4 ⚡
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.com-00C853?style=flat-square)](https://winstonkoh87.com/)
 [![Built with Athena](https://img.shields.io/badge/Built_with-Athena-CC785C?style=flat-square)](https://github.com/winstonkoh87/Athena-Public)
@@ -18,12 +18,15 @@ This documents how I built (and evolved) a complete portfolio website with AI-au
 
 | Metric | Count |
 |--------|-------|
-| **Pages** | 13 |
+| **Pages** | 45 |
 | **Articles** | 26 |
-| **Live Demo Sites** | 5 |
+| **Live Demo Sites** | 6 |
 | **AI Widget** | ✅ Athena Live |
 | **Framework** | Astro 5.0 (Vite-powered) |
 | **Brand Kit** | ✅ Lambda (Λ) Identity |
+| **Athena Kernel** | v9.2.4 |
+| **Sessions Logged** | 1,323 |
+| **Protocols** | 380+ |
 
 ---
 
@@ -134,6 +137,9 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 - **Audited** codebase for SEO, accessibility, broken links
 - **Cleaned** 230+ lines of duplicate code (January 2026 Audit)
 - **Optimized** GA4 event tracking with beacon-based outbound CTA tracking
+- **Refreshed** homepage content — outcome-first project cards, testimonial attributions, 380+ protocols, 1,323 sessions, v9.2.4
+- **Corrected** model references to Claude Opus 4.6 and Gemini 3.1 Pro
+- **Added** CSS metric-glow animation and fulltime mode resume CTA
 
 ### The Operating Model
 
@@ -155,7 +161,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 |------|-------------|
 | [Home](https://winstonkoh87.com/) | Hero + Athena Live widget + Featured projects |
 | [About](https://winstonkoh87.com/about/) | Identity, philosophy, Bionic Operating Model |
-| [Writing](https://winstonkoh87.com/writing/) | Blog with 19 published articles |
+| [Writing](https://winstonkoh87.com/writing/) | Blog with 26 published articles |
 | [Portfolio](https://winstonkoh87.com/portfolio/) | 6 live demo sites |
 | [Athena](https://winstonkoh87.com/athena/) | Product page: What Athena is and how it works |
 | [Services](https://winstonkoh87.com/services/) | Fixed pricing. Fast delivery. Systems that work. |
@@ -163,7 +169,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 
 ---
 
-## ✍️ Articles (19 Published)
+## ✍️ Articles (26 Published)
 
 | Cluster | Articles |
 |---------|----------|
@@ -171,6 +177,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | **Strategic Engineering** | The Price of Ignoring Advice, Anti-Slop Protocol, Soulful Stoic Protocol, Net Life Hour Protocol, First Principles Design |
 | **Economics of Leverage** | Why the $200 Coder Broke Your App, The Pricing Trap, Vibe Coding Trap, 2-Day Efficiency Trap |
 | **Case Files** | Alteryx 24 Hours, Gemini Gem Agent, AI Marketing Workflow, Case Study P6 Math Tuition, SME AI Marketing Guide |
+| **Tactical Guides** | Debugging with AI, Giving AI Jobs, Pair Programming with AI, The Ballast Friend, Guardian Protocol, Clinkz Doctrine |
 
 ---
 
@@ -224,4 +231,4 @@ System architectures and strategic frameworks are hosted on the **[Athena-Public
 
 ---
 
-*Built with Astro. Efficient. Scalable. Ships fast.*
+*Built with Astro + [Project Athena](https://github.com/winstonkoh87/Athena-Public). 1,323 sessions. 380+ protocols. Ships fast.*
