@@ -1,14 +1,13 @@
 ---
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.replace(/^\//, ''); // remove leading slash
+const pathname = Astro.url.pathname;
 ---
 <nav>
     <a href="/" class="logo">WK</a>
     <ul>
-        <li><a href="/portfolio/" class={currentPath.startsWith("portfolio") || currentPath.startsWith("projects") ? "active" : ""}>Portfolio</a></li>
-        <li><a href="/writing/" class={currentPath.startsWith("writing") || currentPath.startsWith("articles") ? "active" : ""}>Writing</a></li>
-        <li><a href="/services/" class={currentPath.startsWith("services") ? "active" : ""}>Services</a></li>
-        <li><a href="/about/" class={currentPath.startsWith("about") ? "active" : ""}>About</a></li>
-        <li><a href="/contact/" class={currentPath.startsWith("contact") ? "active" : ""}>Contact</a></li>
+        <li><a href="/portfolio/" class={pathname.startsWith('/portfolio') ? 'active' : ''}>Portfolio</a></li>
+        <li><a href="/writing/" class={pathname.startsWith('/writing') ? 'active' : ''}>Writing</a></li>
+        <li><a href="/services/" class={pathname.startsWith('/services') ? 'active' : ''}>Services</a></li>
+        <li><a href="/about/" class={pathname.startsWith('/about') ? 'active' : ''}>About</a></li>
+        <li><a href="/contact/" class={pathname.startsWith('/contact') ? 'active' : ''}>Contact</a></li>
     </ul>
 </nav>

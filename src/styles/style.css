@@ -449,6 +449,24 @@ main {
     color: var(--text-color);
 }
 
+.metric-glow {
+    color: #64ffda;
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.4), 0 0 20px rgba(100, 255, 218, 0.15);
+    animation: metricPulse 3s ease-in-out infinite;
+}
+
+@keyframes metricPulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 8px rgba(100, 255, 218, 0.4), 0 0 20px rgba(100, 255, 218, 0.15);
+    }
+
+    50% {
+        text-shadow: 0 0 12px rgba(100, 255, 218, 0.6), 0 0 30px rgba(100, 255, 218, 0.25);
+    }
+}
+
 .metric-label {
     font-size: 0.8rem;
     color: var(--accent-primary);
