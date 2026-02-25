@@ -110,12 +110,27 @@ const ogImageURL = new URL(image, Astro.site);
           "@type": "Person",
           "@id": "https://winstonkoh87.com/#person",
           "name": "Winston Koh",
+          "givenName": "Winston",
+          "familyName": "Koh",
           "jobTitle": "AI Systems Architect",
+          "description": "Singapore-based AI Systems Architect. Builder of Project Athena — the open-source Linux OS for AI Agents. Specializes in autonomous workflows, bionic systems, and technical consultancy.",
           "url": "https://winstonkoh87.com",
           "image": "https://winstonkoh87.com/assets/images/winston-avatar.jpg",
+          "nationality": {
+            "@type": "Country",
+            "name": "Singapore"
+          },
+          "knowsAbout": [
+            "AI Systems Architecture",
+            "Autonomous AI Agents",
+            "Web Development",
+            "Technical Consultancy",
+            "Project Athena"
+          ],
           "sameAs": [
             "https://www.linkedin.com/in/winstonkoh",
-            "https://github.com/winstonkoh87"
+            "https://github.com/winstonkoh87",
+            "https://www.carousell.sg/u/winstonkoh87/"
           ]
         },
         {
@@ -123,8 +138,18 @@ const ogImageURL = new URL(image, Astro.site);
           "@id": "https://winstonkoh87.com/#website",
           "url": "https://winstonkoh87.com",
           "name": "Winston Koh | AI Systems Architect",
+          "description": "Portfolio and services of Winston Koh — AI Systems Architect based in Singapore. Building autonomous agents, reliable business workflows, and production-grade software.",
           "dateModified": siteLastModified,
-          "publisher": { "@id": "https://winstonkoh87.com/#person" }
+          "inLanguage": "en",
+          "publisher": { "@id": "https://winstonkoh87.com/#person" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.google.com/search?q=site%3Awinstonkoh87.com+{search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         },
         {
           "@type": "ProfessionalService",
@@ -182,14 +207,33 @@ const ogImageURL = new URL(image, Astro.site);
         } : null,
         {
           "@type": "SiteNavigationElement",
-          "name": ["Portfolio", "Writing", "Services", "About", "Contact"],
-          "url": [
-            "https://winstonkoh87.com/portfolio/",
-            "https://winstonkoh87.com/writing/",
-            "https://winstonkoh87.com/services/",
-            "https://winstonkoh87.com/about/",
-            "https://winstonkoh87.com/contact/"
-          ]
+          "@id": "https://winstonkoh87.com/#nav-portfolio",
+          "name": "Portfolio",
+          "url": "https://winstonkoh87.com/portfolio/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://winstonkoh87.com/#nav-writing",
+          "name": "Writing",
+          "url": "https://winstonkoh87.com/writing/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://winstonkoh87.com/#nav-services",
+          "name": "Services",
+          "url": "https://winstonkoh87.com/services/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://winstonkoh87.com/#nav-about",
+          "name": "About",
+          "url": "https://winstonkoh87.com/about/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://winstonkoh87.com/#nav-contact",
+          "name": "Contact",
+          "url": "https://winstonkoh87.com/contact/"
         }
       ].filter(Boolean)
     })}>
