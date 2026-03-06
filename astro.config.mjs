@@ -9,7 +9,7 @@ import { EnumChangefreq } from 'sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://winstonkoh87.com',
-  trailingSlash: 'always', // Clean URLs (no trailing slash)
+  trailingSlash: 'always', // Enforce trailing slash for GitHub Pages directory-based routing
   build: {
     format: 'directory' // Generates page/index.html instead of page.html for clean URL support
   },
