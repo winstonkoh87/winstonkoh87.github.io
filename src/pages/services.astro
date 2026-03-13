@@ -78,7 +78,7 @@ import Layout from '../layouts/Layout.astro';
 
         .service-features {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .service-features li {
@@ -95,6 +95,30 @@ import Layout from '../layouts/Layout.astro';
             left: 0;
             color: var(--accent-primary);
             font-weight: bold;
+        }
+
+        /* Mini testimonial inside service cards */
+        .service-proof {
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            background: rgba(59, 130, 246, 0.04);
+            border-left: 2px solid var(--accent-primary);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .service-proof q {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .service-proof cite {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            margin-top: 0.35rem;
+            font-style: normal;
         }
 
         .service-cta {
@@ -116,6 +140,205 @@ import Layout from '../layouts/Layout.astro';
 
         .service-card.featured .service-cta {
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        }
+
+        /* Capacity Signal */
+        .capacity-signal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(100, 255, 218, 0.05);
+            border: 1px solid rgba(100, 255, 218, 0.15);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: #64ffda;
+        }
+
+        .capacity-dot {
+            width: 6px;
+            height: 6px;
+            background: #64ffda;
+            border-radius: 50%;
+            animation: capacityPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes capacityPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Who Is This For section */
+        .persona-section {
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .persona-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .persona-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .persona-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: border-color 0.3s;
+        }
+
+        .persona-card:hover {
+            border-color: var(--accent-primary);
+        }
+
+        .persona-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .persona-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .persona-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Bundle Section */
+        .bundle-section {
+            margin-top: 4rem;
+        }
+
+        .bundle-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .bundle-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .bundle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bundle-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .bundle-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+        }
+
+        .bundle-card.bundle-featured {
+            border-color: var(--accent-primary);
+            background: rgba(59, 130, 246, 0.03);
+            position: relative;
+        }
+
+        .bundle-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .bundle-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .bundle-original {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        .bundle-savings {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .bundle-includes {
+            list-style: none;
+            margin: 1.25rem 0;
+            text-align: left;
+        }
+
+        .bundle-includes li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .bundle-includes li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        .bundle-cta {
+            display: block;
+            text-align: center;
+            padding: 0.85rem;
+            background: var(--accent-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .bundle-cta:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
         }
 
         /* Guarantee Section */
@@ -161,7 +384,39 @@ import Layout from '../layouts/Layout.astro';
     <section class="page-content">
         <section class="page-header">
             <h1>Services</h1>
-            <p class="page-subtitle">Fixed pricing. Fast delivery. Systems that work.</p>
+            <p class="page-subtitle">7 sites shipped. 24-72hr turnaround. Perfect Lighthouse scores.</p>
+            <div class="capacity-signal">
+                <span class="capacity-dot"></span>
+                Currently accepting 2 new projects for Q2 2026
+            </div>
+        </section>
+
+        <!-- Who Is This For? (Persona-Based Self-Selection) -->
+        <section class="persona-section">
+            <h2>Who Is This For?</h2>
+            <p class="persona-subtitle">If one of these sounds like you, we should talk.</p>
+            <div class="persona-grid">
+                <div class="persona-card">
+                    <div class="persona-emoji">🚀</div>
+                    <h4>Founders who need to ship fast</h4>
+                    <p>You have the idea and the urgency. You need a site live this week — not a 3-month agency timeline.</p>
+                </div>
+                <div class="persona-card">
+                    <div class="persona-emoji">📈</div>
+                    <h4>SMEs outgrowing Wix or Squarespace</h4>
+                    <p>Your current site is slow, looks templated, and doesn't convert. You want something that performs.</p>
+                </div>
+                <div class="persona-card">
+                    <div class="persona-emoji">🤖</div>
+                    <h4>Business owners curious about AI</h4>
+                    <p>You know AI can help but don't know where to start. You want someone who builds real systems, not demos.</p>
+                </div>
+                <div class="persona-card">
+                    <div class="persona-emoji">🎯</div>
+                    <h4>Marketers who want results, not reports</h4>
+                    <p>You've been burned by agencies that deliver impressions but not revenue. You want leads and conversions.</p>
+                </div>
+            </div>
         </section>
 
         <section class="services-grid">
@@ -180,6 +435,10 @@ import Layout from '../layouts/Layout.astro';
                     <li>24h turnaround available</li>
                     <li>100% Confidential</li>
                 </ul>
+                <div class="service-proof">
+                    <q>Helped me understand my dissertation structure in one session. Saved me weeks.</q>
+                    <cite>— University Student, Jan 2026</cite>
+                </div>
                 <a href="https://sgassignmenthelp.com" class="service-cta" target="_blank" rel="noopener noreferrer"
                     onclick="trackCTA('services_academic')">
                     Visit Website →
@@ -203,10 +462,14 @@ import Layout from '../layouts/Layout.astro';
                     <li>Google Business setup</li>
                     <li>7-14 day delivery</li>
                 </ul>
-                <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'm%20interested%20in%20The%20System%20(Web%20Dev)%20package."
+                <div class="service-proof">
+                    <q>From brief to live site in under a day. The AI-augmented workflow is real.</q>
+                    <cite>— SG Assignment Helpers, Education SME</cite>
+                </div>
+                <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'm%20interested%20in%20a%20free%20site%20audit%20for%20my%20business."
                     class="service-cta" target="_blank" rel="noopener noreferrer"
                     onclick="trackCTA('services_webdev')">
-                    Get Started →
+                    Get a Free Site Audit →
                 </a>
                 <div style="text-align: center; margin-top: 0.75rem;">
                     <a href="/portfolio/" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: underline;">View Portfolio Projects →</a>
@@ -228,9 +491,14 @@ import Layout from '../layouts/Layout.astro';
                     <li>Multi-LLM Orchestration</li>
                     <li>Local-first Data Privacy</li>
                 </ul>
-                <a href="https://tally.so/r/3xjo1O" class="service-cta" target="_blank" rel="noopener noreferrer"
+                <div class="service-proof">
+                    <q>Custom AI agent that qualifies leads and generates proposals — automatically, 24/7.</q>
+                    <cite>— Service-Led Diagnostic Gem (Live Demo)</cite>
+                </div>
+                <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'd%20like%20a%20free%20workflow%20assessment%20for%20AI%20automation."
+                    class="service-cta" target="_blank" rel="noopener noreferrer"
                     onclick="trackCTA('services_ai')">
-                    Discuss Project →
+                    Get a Free Workflow Assessment →
                 </a>
                 <div style="text-align: center; margin-top: 0.75rem;">
                     <a href="/projects/gem-agent/" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: underline;">See Diagnostic Agent Demo →</a>
@@ -252,6 +520,10 @@ import Layout from '../layouts/Layout.astro';
                     <li>Application Strategy</li>
                     <li>SEO for your name</li>
                 </ul>
+                <div class="service-proof">
+                    <q>A clean, fast website that actually converts. No fluff, just results.</q>
+                    <cite>— M.L., SAF Officer, Personal Branding Client</cite>
+                </div>
                 <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'm%20interested%20in%20a%20Student%20Portfolio."
                     class="service-cta" target="_blank" rel="noopener noreferrer"
                     onclick="trackCTA('services_portfolio')">
@@ -280,6 +552,10 @@ import Layout from '../layouts/Layout.astro';
                     <li>ROI Tracking</li>
                     <li>Athena Copywriting Engine</li>
                 </ul>
+                <div class="service-proof">
+                    <q>Complete 90-day roadmap with ROI projections. Professional, fast, data-driven.</q>
+                    <cite>— Coach D.L., Sports Industry</cite>
+                </div>
                 <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'm%20interested%20in%20Digital%20Marketing."
                     class="service-cta" target="_blank" rel="noopener noreferrer"
                     onclick="trackCTA('services_marketing')">
@@ -305,11 +581,70 @@ import Layout from '../layouts/Layout.astro';
                     <li>Actionable Next Steps</li>
                     <li>Direct Access to Winston</li>
                 </ul>
-                <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'd%20like%20to%20book%20a%20Consulting%20session."
+                <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'd%20like%20to%20book%20a%20free%2015-min%20strategy%20call."
                     class="service-cta" target="_blank" rel="noopener noreferrer"
                     onclick="trackCTA('services_consulting')">
-                    Book Session →
+                    Book a Free 15-Min Call →
                 </a>
+            </div>
+        </section>
+
+        <!-- Service Bundles (Explicit Savings) -->
+        <section class="bundle-section">
+            <h2>Save More with Bundles</h2>
+            <p class="bundle-subtitle">Multi-service packages with transparent savings. No hidden fees.</p>
+            <div class="bundle-grid">
+                <div class="bundle-card">
+                    <div class="bundle-name">🚀 Launchpad</div>
+                    <div class="bundle-price">$800 <span class="bundle-original">$900</span></div>
+                    <div class="bundle-savings">SAVE $100</div>
+                    <ul class="bundle-includes">
+                        <li>Full website build (5-7 pages)</li>
+                        <li>SEO audit & optimization</li>
+                        <li>Google Business setup</li>
+                        <li>30-day support window</li>
+                    </ul>
+                    <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'm%20interested%20in%20the%20Launchpad%20bundle."
+                        class="bundle-cta" target="_blank" rel="noopener noreferrer"
+                        onclick="trackCTA('bundle_launchpad')">
+                        Get Launchpad →
+                    </a>
+                </div>
+                <div class="bundle-card bundle-featured">
+                    <span class="service-badge">Best Value</span>
+                    <div class="bundle-name">🔥 Growth Engine</div>
+                    <div class="bundle-price">$1,600 <span class="bundle-original">$2,000</span></div>
+                    <div class="bundle-savings">SAVE $400</div>
+                    <ul class="bundle-includes">
+                        <li>Full website build (5-7 pages)</li>
+                        <li>AI agent / chatbot integration</li>
+                        <li>Digital marketing setup</li>
+                        <li>Landing page optimization</li>
+                        <li>60-day support window</li>
+                    </ul>
+                    <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'm%20interested%20in%20the%20Growth%20Engine%20bundle."
+                        class="bundle-cta" target="_blank" rel="noopener noreferrer"
+                        onclick="trackCTA('bundle_growth')">
+                        Get Growth Engine →
+                    </a>
+                </div>
+                <div class="bundle-card">
+                    <div class="bundle-name">💎 Full Stack</div>
+                    <div class="bundle-price">$2,800 <span class="bundle-original">$3,500</span></div>
+                    <div class="bundle-savings">SAVE $700</div>
+                    <ul class="bundle-includes">
+                        <li>Everything in Growth Engine</li>
+                        <li>Custom AI automation build</li>
+                        <li>Ongoing consulting retainer</li>
+                        <li>Priority support channel</li>
+                        <li>Quarterly strategy review</li>
+                    </ul>
+                    <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'm%20interested%20in%20the%20Full%20Stack%20bundle."
+                        class="bundle-cta" target="_blank" rel="noopener noreferrer"
+                        onclick="trackCTA('bundle_fullstack')">
+                        Get Full Stack →
+                    </a>
+                </div>
             </div>
         </section>
 
