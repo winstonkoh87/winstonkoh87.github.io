@@ -39,7 +39,15 @@ import '../../styles/article.css';
             </header>
 
             <div class="article-content">
-                
+                <div class="exec-summary">
+                    <div class="implications">
+                        <h5>📊 Implications</h5>
+                        <div class="implication"><span class="signal-dot green"></span><span><strong>Immediate takeaway:</strong> For high-stakes tasks, switch from "Do X" prompts to negotiation: assign a Critical Editor role, request 3 structural outlines (Conservative, Aggressive, Contrarian), then select. The quality gap is massive.</span></div>
+                        <div class="implication"><span class="signal-dot yellow"></span><span><strong>Strategic implication:</strong> Thinking Partner mode has a higher "schlep cost" (input labor) but dramatically lower output variance. The upfront constraint drafting is the investment that produces deterministic quality.</span></div>
+                        <div class="implication"><span class="signal-dot red"></span><span><strong>Key risk:</strong> The Vending Machine Fallacy — expecting high-quality reasoning from zero-shot commands — is the default failure mode. Without constraints, you get autopilot output.</span></div>
+                    </div>
+                </div>
+
                 <div class="spec-block">
                     <h3>1. Interaction Modes</h3>
                     <p>The system distinguishes between two distinct operational modes:</p>
@@ -96,6 +104,12 @@ import '../../styles/article.css';
                     <li><strong>Vending Machine Fallacy:</strong> Expecting high-quality reasoning from zero-shot commands.</li>
                     <li><strong>Context Drift:</strong> Failing to "prune" the context window, leading to hallucinated constraints.</li>
                 </ul>
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><details><summary>What is the Thinking Partner Handshake?</summary><p>It's a protocol for shifting AI from "Vending Machine" mode (you ask, it outputs) to "Sparring Partner" mode (you negotiate, it presents options, you select). The key mechanism is assigning a role (Critical Editor), defining constraints (don't generate yet), and requesting multiple structural options before committing to a draft.</p></details></div>
+                    <div class="faq-item"><details><summary>When should I use Vending Machine vs Thinking Partner mode?</summary><p>Use Vending Machine for low-stakes, deterministic tasks: "Summarise this document," "Format this data." Use Thinking Partner for high-stakes decisions: strategy development, content architecture, investment analysis. The rule: if the cost of being wrong exceeds the cost of the extra input labor, use Thinking Partner.</p></details></div>
+                    <div class="faq-item"><details><summary>What is Context Drift?</summary><p>Context Drift happens when you fail to prune the AI's context window during long sessions. The AI starts hallucinating constraints from earlier in the conversation that no longer apply. The fix: periodically reset context or provide a fresh constraint block that overrides previous instructions.</p></details></div>
+                </div>
             </div>
 
             <ArticleCTA />

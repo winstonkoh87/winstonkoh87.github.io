@@ -39,7 +39,15 @@ import '../../styles/article.css';
             </header>
 
             <div class="article-content">
-                
+                <div class="exec-summary">
+                    <div class="implications">
+                        <h5>📊 Implications</h5>
+                        <div class="implication"><span class="signal-dot green"></span><span><strong>Immediate takeaway:</strong> Start logging decisions in structured data — timestamp, event, evidence, status. Even a simple text file beats biological memory.</span></div>
+                        <div class="implication"><span class="signal-dot yellow"></span><span><strong>Strategic implication:</strong> An externalized evidence store enables decision sparring — surfacing forgotten context before high-stakes conversations, eliminating narrative drift.</span></div>
+                        <div class="implication"><span class="signal-dot red"></span><span><strong>Key risk:</strong> Without strict citation requirements (source_file_id for every claim), you risk replacing human confabulation with AI hallucination — a faster version of the same problem.</span></div>
+                    </div>
+                </div>
+
                 <div class="spec-block">
                     <h3>1. Problem Definition</h3>
                     <p><strong>Human Memory Fault Tolerance:</strong> Low.</p>
@@ -119,6 +127,12 @@ Entry Schema:
                     <h4>⚠️ System Warning: Hallucination Mitigation</h4>
                     <p><strong>Risk:</strong> LLM Confabulation.</p>
                     <p><strong>Mitigation:</strong> <code>Strict Citation Requirement</code>. The RAG pipeline must return the <code>source_file_id</code> for every claim. If <code>source_file_id == null</code>, the insight is discarded as noise.</p>
+                </div>
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><details><summary>What is an AI memory core?</summary><p>An AI memory core is an externalized evidence store that captures decisions, insights, and experiences in structured data — then makes them semantically searchable. Unlike biological memory, it doesn't decay, drift, or selectively forget. It functions as a "Truth Layer" that decouples memory from ego.</p></details></div>
+                    <div class="faq-item"><details><summary>How does vector-based retrieval improve decision making?</summary><p>Vector-based retrieval uses embeddings to find semantically similar past experiences — not just keyword matches. Before a high-stakes conversation, you can query for all prior commitments, broken promises, or relevant context. This surfaces forgotten evidence that biological memory would have discarded.</p></details></div>
+                    <div class="faq-item"><details><summary>What prevents the AI from hallucinating false memories?</summary><p>A strict citation requirement. The RAG pipeline must return a source_file_id for every claim. If no source exists, the insight is discarded as noise. This creates an auditable chain of evidence rather than AI-generated confabulation.</p></details></div>
                 </div>
             </div>
 

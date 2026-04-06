@@ -55,6 +55,12 @@ import '../../styles/article.css';
                         <li><strong>The Failure:</strong> The client ignored the backup constraint. He prompted the AI to "clean up," and it wiped his current directory.</li>
                         <li><strong>The Lesson:</strong> Syncing is not backing up. You must have an offline/immutable checkpoint designated before granting AI write access.</li>
                     </ul>
+                    <div class="implications">
+                        <h5>📊 Implications</h5>
+                        <div class="implication"><span class="signal-dot green"></span><span><strong>Immediate takeaway:</strong> Before granting any AI tool write access to your filesystem, run the 3-Step Blast Shield: (1) git init, (2) push to remote, (3) commit before every "refactor" or "clean" prompt.</span></div>
+                        <div class="implication"><span class="signal-dot yellow"></span><span><strong>Strategic implication:</strong> Syncing is not backing up. Sync mirrors deletions — if the AI wipes your local folder, the cloud wipes the copy. You need immutable snapshots, not live reflections.</span></div>
+                        <div class="implication"><span class="signal-dot red"></span><span><strong>Key risk:</strong> Agentic AI has shell access. A single "clean up" prompt can execute rm -rf on your working directory. Without version control, there is no undo button.</span></div>
+                    </div>
                 </div>
 
                 <h2>The "Ferrari" Problem</h2>
@@ -145,6 +151,13 @@ import '../../styles/article.css';
                 </div>
                 
                 <p style="font-style: italic; color: #888;">This article was originally published on <a href="https://winstonkoh87.medium.com/i-charged-him-300-to-save-his-project-he-ignored-one-text-and-lost-it-all-453413008a72" target="_blank" rel="noopener">Medium</a>.</p>
+
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><details><summary>What is the difference between AI chat and Agentic AI?</summary><p>Standard chat AI (ChatGPT, Claude web) can only output text — it's a walled garden. Agentic AI (Cursor, Windsurf, Antigravity) has shell access: it can execute commands, delete files, rewrite code, and modify your filesystem directly. This is the "Ferrari Problem" — you bought the speed, but did you buy the brakes?</p></details></div>
+                    <div class="faq-item"><details><summary>Why isn't Google Drive sync enough for AI safety?</summary><p>Cloud sync mirrors your local state in real-time. If an AI agent deletes your project folder, the sync service faithfully deletes the cloud copy too. A backup is a frozen snapshot — an immutable checkpoint you can restore from regardless of what happens to the live files.</p></details></div>
+                    <div class="faq-item"><details><summary>What is the minimum safety setup before using Agentic AI?</summary><p>The 3-Step Blast Shield: (1) Initialize Git version control, (2) Push to a remote repository (GitHub/GitLab), (3) Commit your changes before every "refactor," "clean," or "reorganize" prompt. This gives you a one-second undo button via git checkout.</p></details></div>
+                </div>
 
             <ArticleCTA />
             

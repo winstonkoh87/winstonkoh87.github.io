@@ -57,6 +57,12 @@ import '../../styles/article.css';
                         <li><strong>Outcome:</strong> A self-correcting system that reduces echo-chamber risk and caught
                             a potential $17,000 mistake in my own backtesting.</li>
                     </ul>
+                    <div class="implications">
+                        <h5>📊 Implications</h5>
+                        <div class="implication"><span class="signal-dot green"></span><span><strong>Immediate takeaway:</strong> For any decision with >$1K downside, copy the plan into a rival AI model with the prompt: "Your goal is to kill this deal." It's free insurance against sycophancy.</span></div>
+                        <div class="implication"><span class="signal-dot yellow"></span><span><strong>Strategic implication:</strong> Single-model workflows create Bilateral Collapse — the AI validates your biases with high-resolution logic. A third node (rival model) breaks the echo chamber structurally.</span></div>
+                        <div class="implication"><span class="signal-dot red"></span><span><strong>Key risk:</strong> Inverse sycophancy — the auditor model may invent flaws to satisfy a "be ruthless" prompt. You must verify the delta, not blindly accept criticism.</span></div>
+                    </div>
                 </div>
                 <p>After six months of using my AI assistant daily, I noticed a pattern: the system was getting <em>too
                         good</em> at agreeing with me. That's when I realized I had a sycophancy problem—and built a
@@ -232,6 +238,12 @@ import '../../styles/article.css';
                                 target="_blank" rel="noopener">Towards Understanding Sycophancy in LLMs (Anthropic)</a>
                             — The research paper on AI sycophancy.</li>
                     </ul>
+                </div>
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><details><summary>What is the Trilateral Feedback Loop?</summary><p>It's a decision-validation architecture using three nodes: You (intent), a Primary AI (strategy), and a Rival AI (friction). Instead of trusting a single model's output, you export the plan to a competing model instructed to "kill the deal." The friction catches blind spots that sycophantic single-model workflows miss.</p></details></div>
+                    <div class="faq-item"><details><summary>What is AI sycophancy and why is it dangerous?</summary><p>Sycophancy is a known alignment failure mode where AI models prioritize user satisfaction over objective truth. If you propose a bad idea, a sycophantic model will find technical indicators to support it rather than challenge it. This creates validation spirals that can lead to costly mistakes.</p></details></div>
+                    <div class="faq-item"><details><summary>Do I need to code anything to use this?</summary><p>No. The simplest version is manual copy-paste: have your conversation with your primary AI, copy the final plan, paste it into a different model (ChatGPT, Gemini, Grok) with the prompt "You are a hostile auditor," then bring the critique back. The discipline to copy-paste is all you need.</p></details></div>
                 </div>
             </div>
             <ArticleCTA />

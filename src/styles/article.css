@@ -405,9 +405,146 @@
     margin-bottom: 0.5rem;
 }
 
+/* Implications Block (inside exec-summary) */
+.implications {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.implications h5 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.implication {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.implication:last-child {
+    margin-bottom: 0;
+}
+
+.signal-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+}
+
+.signal-dot.green {
+    background: #22c55e;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+}
+
+.signal-dot.yellow {
+    background: #eab308;
+    box-shadow: 0 0 6px rgba(234, 179, 8, 0.4);
+}
+
+.signal-dot.red {
+    background: #ef4444;
+    box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+}
+
+/* FAQ Section */
+.faq-section {
+    margin: 3rem 0 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.faq-item {
+    margin-bottom: 0.5rem;
+}
+
+.faq-item details {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.faq-item details:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.faq-item details[open] {
+    border-color: rgba(59, 130, 246, 0.25);
+    background: rgba(59, 130, 246, 0.04);
+}
+
+.faq-item summary {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.3rem;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    font-weight: 300;
+}
+
+.faq-item details[open] summary::after {
+    content: '−';
+}
+
+.faq-item details p {
+    padding: 0 1.25rem 1.25rem;
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
 @media (max-width: 768px) {
     .article-header {
         top: 56px;
         padding: 1.5rem 0 1rem;
+    }
+
+    .implication {
+        font-size: 0.9rem;
+    }
+
+    .faq-item summary {
+        font-size: 0.95rem;
+        padding: 0.85rem 1rem;
+    }
+
+    .faq-item details p {
+        padding: 0 1rem 1rem;
+        font-size: 0.9rem;
     }
 }

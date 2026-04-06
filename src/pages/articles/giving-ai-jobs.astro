@@ -38,7 +38,15 @@ import '../../styles/article.css';
             </header>
 
             <div class="article-content">
-                
+                <div class="exec-summary">
+                    <div class="implications">
+                        <h5>📊 Implications</h5>
+                        <div class="implication"><span class="signal-dot green"></span><span><strong>Immediate takeaway:</strong> Stop "chatting" with AI. Start assigning deliverables using the 4-part Handshake: Objective (“definition of done”), Context (constraints/tone), Output Schema (table/JSON), Quality Bar (what to reject).</span></div>
+                        <div class="implication"><span class="signal-dot yellow"></span><span><strong>Strategic implication:</strong> Template reuse cuts prompting time from 8 to 3 minutes and reduces re-roll rate by 60%. The upfront "schlep" of defining constraints pays compound dividends.</span></div>
+                        <div class="implication"><span class="signal-dot red"></span><span><strong>Key risk:</strong> Without a defined Output Schema, the AI defaults to "vibes-based" responses — fluent-sounding but non-actionable. You get essays when you need tables.</span></div>
+                    </div>
+                </div>
+
                 <div class="spec-block">
                     <h3>1. The Shift to Deterministic Output</h3>
                     <p><strong>Problem:</strong> "Chat" interfaces encourage vague querying, leading to non-actionable "vibes" based responses.</p>
@@ -105,6 +113,12 @@ import '../../styles/article.css';
                     <li><strong>Prompting Time:</strong> Reduced from 8m to 3m (Template Reuse).</li>
                     <li><strong>Re-roll Rate:</strong> Reduced by 60% (Clearer initial constraints).</li>
                 </ul>
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><details><summary>What is the AI Delegation Framework?</summary><p>It's a structured protocol for assigning deterministic tasks to LLMs. Instead of vague conversational queries, you provide a 4-part "Handshake" — Objective, Context, Output Schema, and Quality Bar — that forces the AI to produce actionable work product instead of generic advice.</p></details></div>
+                    <div class="faq-item"><details><summary>What is the difference between "Chat" and "Work Product"?</summary><p>"Chat" is open-ended conversation that produces opinions. "Work Product" is constrained output with defined deliverables. The shift happens when you specify an Output Schema (JSON, table, checklist) and a Quality Bar (e.g., "no buzzwords," "every claim must contain a number").</p></details></div>
+                    <div class="faq-item"><details><summary>How does the Task Template reduce re-rolls?</summary><p>By defining constraints upfront — tone, audience, format, and rejection criteria — you eliminate the ambiguity that causes bad first outputs. This reduced re-roll rate by 60% and prompting time from 8 to 3 minutes in measured use.</p></details></div>
+                </div>
             </div>
 
             <ArticleCTA />

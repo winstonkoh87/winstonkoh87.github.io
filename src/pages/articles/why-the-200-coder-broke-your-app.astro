@@ -54,6 +54,12 @@ import '../../styles/article.css';
                         <li><strong>The Fix:</strong> Restoring the project required architectural restructuring, not just code generation.</li>
                         <li><strong>The Lesson:</strong> You don't pay for the keystrokes. You pay for the 95% of work that happens <em>after</em> the code is generated (Testing, Debugging, Mentorship).</li>
                     </ul>
+                    <div class="implications">
+                        <h5>📊 Implications</h5>
+                        <div class="implication"><span class="signal-dot green"></span><span><strong>Immediate takeaway:</strong> Before hiring a developer, ask: "What happens when the code breaks at 2am?" If the answer is silence, you're buying a liability, not a solution. You pay for the 95% of work after code generation: testing, debugging, mentorship.</span></div>
+                        <div class="implication"><span class="signal-dot yellow"></span><span><strong>Strategic implication:</strong> AI has made code generation cheap, but code generation was never the hard part. Architecture, error handling, and stakeholder management are the real deliverables — and they can't be one-shot prompted.</span></div>
+                        <div class="implication"><span class="signal-dot red"></span><span><strong>Key risk:</strong> The "$200 Coder" is actually an LLM wrapper with no quality gate. The output looks correct until it hits edge cases — then it hallucinates, breaks, and the student fails while the vendor disappears.</span></div>
+                    </div>
                 </div>
 
                 <h2>The "Vendor" Mentality</h2>
@@ -146,6 +152,13 @@ import '../../styles/article.css';
                 </div>
                 
                 <p style="font-style: italic; color: #888;">This article was originally published on <a href="https://winstonkoh87.medium.com/why-the-200-coder-broke-your-app-and-why-i-charge-3x-more-to-fix-it-4f8571f235b6" target="_blank" rel="noopener">Medium</a>.</p>
+
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><details><summary>Why is $200 development work often worse than doing nothing?</summary><p>Because it creates a false foundation. A $200 coder using AI copy-paste can generate a working demo, but the code lacks error handling, testing, and architectural integrity. When it breaks (and it will), debugging someone else's hallucinated code is harder than building from scratch. You pay twice: once for the broken version, once for the fix.</p></details></div>
+                    <div class="faq-item"><details><summary>What should I look for when hiring a developer?</summary><p>Three things: (1) Do they ask questions about edge cases before writing code? (2) Do they include testing and documentation in their scope? (3) Do they explain their architecture decisions? If the answer to any of these is no, you're hiring a prompt-and-paste operator, not an engineer.</p></details></div>
+                    <div class="faq-item"><details><summary>What is the difference between code generation and software engineering?</summary><p>Code generation produces syntax. Software engineering produces systems. The difference is everything that happens after the first "working" version: handling edge cases, writing tests, structuring for maintainability, debugging under production conditions, and communicating architectural decisions to stakeholders.</p></details></div>
+                </div>
 
             <ArticleCTA />
             
