@@ -172,4 +172,37 @@ import '../../styles/article.css';
             </footer>
         </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between AI chat and Agentic AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard chat AI (ChatGPT, Claude web) can only output text — it's a walled garden. Agentic AI (Cursor, Windsurf, Antigravity) has shell access: it can execute commands, delete files, rewrite code, and modify your filesystem directly. This is the \"Ferrari Problem\" — you bought the speed, but did you buy the brakes?"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why isn't Google Drive sync enough for AI safety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cloud sync mirrors your local state in real-time. If an AI agent deletes your project folder, the sync service faithfully deletes the cloud copy too. A backup is a frozen snapshot — an immutable checkpoint you can restore from regardless of what happens to the live files."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the minimum safety setup before using Agentic AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 3-Step Blast Shield: (1) Initialize Git version control, (2) Push to a remote repository (GitHub/GitLab), (3) Commit your changes before every \"refactor,\" \"clean,\" or \"reorganize\" prompt. This gives you a one-second undo button via git checkout."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

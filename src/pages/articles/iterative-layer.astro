@@ -300,4 +300,37 @@ import '../../styles/article.css';
             }
         }
     </style>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Iterative Layer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a four-phase cycle — Plan, Execute, Calibrate, Iterate — for working with AI. Instead of expecting perfect output from a single prompt, you treat the first response as a starting point (50-70% done) and improve it through rapid feedback cycles. Each cycle takes 15-30 minutes, giving you 4-6x the iteration speed of traditional workflows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why don't \"magic prompts\" work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI models are probability machines that predict the most likely next token. They don't understand your specific context, constraints, or goals on the first try. \"Magic prompts\" optimize for luck; the Iterative Layer optimizes for convergence — consistently good results through systematic refinement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the three sources of calibration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordered by reliability: (1) Ground Truth — client feedback, user testing, production data (slow but highest signal); (2) Synthetic Calibration — using a second AI model to audit the first (fast, medium trust); (3) Peer Review — colleagues and mentors (slow but useful for subjective decisions). Without calibration, your iterations just polish biases."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

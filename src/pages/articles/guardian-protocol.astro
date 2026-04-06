@@ -136,4 +136,37 @@ import '../../styles/article.css';
             </footer>
         </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an Absorbing Barrier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An Absorbing Barrier is a state you cannot recover from — most commonly, losing 100% of your capital. In probability theory, once a trajectory hits zero, the game ends permanently. The Guardian System exists to detect positions that have any meaningful probability of reaching this barrier and prevent them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Structural Disadvantage Ratio (SDR)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SDR quantifies the friction working against a position. It measures how much the odds are structurally stacked against you over repeated iterations. If SDR > 5:1, the trade is statistically doomed over 100+ repetitions regardless of any single lucky outcome."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the Guardian prioritize survival over returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because we operate in Time Probability, not Ensemble Probability. In an ensemble, the average of 1000 traders looks fine. But you are one trajectory — and if your trajectory hits zero, the fact that others survived doesn't help you. Survival is the prerequisite for compounding."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

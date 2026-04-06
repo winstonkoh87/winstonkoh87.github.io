@@ -284,4 +284,37 @@ import '../../styles/article.css';
         </footer>
     </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Gemini Gem Agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Gemini Gem is a customizable AI agent built on Google Gemini's platform. Unlike a generic chatbot, it has hard-coded system instructions, conditional logic (\"If revenue < $10K, ask X\"), integrity constraints (it can reject clients), and a structured output template. Think of it as a programmable consultant that runs 24/7 for $0."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Integrity Gate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A deliberately programmed constraint that forces the AI to say \"No.\" If a lead has bad unit economics (<20% margin), capacity issues, or needs operational help rather than marketing, the agent is hard-coded to recommend against hiring. This builds more trust than any sales pitch — clients know the recommendation is honest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I build my own diagnostic agent without coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The article provides the exact system prompt structure: [IDENTITY] (role + tone), [CONTEXT] (user profile), [RULES] (logic gates), [OUTPUT] (template). You need domain expertise, not code. The full system instructions PDF is downloadable to use as a starting template for any service-based business."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

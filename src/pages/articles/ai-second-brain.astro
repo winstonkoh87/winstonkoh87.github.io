@@ -151,4 +151,37 @@ Entry Schema:
             </footer>
         </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an AI memory core?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An AI memory core is an externalized evidence store that captures decisions, insights, and experiences in structured data — then makes them semantically searchable. Unlike biological memory, it doesn't decay, drift, or selectively forget. It functions as a \"Truth Layer\" that decouples memory from ego."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does vector-based retrieval improve decision making?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vector-based retrieval uses embeddings to find semantically similar past experiences — not just keyword matches. Before a high-stakes conversation, you can query for all prior commitments, broken promises, or relevant context. This surfaces forgotten evidence that biological memory would have discarded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What prevents the AI from hallucinating false memories?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A strict citation requirement. The RAG pipeline must return a source_file_id for every claim. If no source exists, the insight is discarded as noise. This creates an auditable chain of evidence rather than AI-generated confabulation."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

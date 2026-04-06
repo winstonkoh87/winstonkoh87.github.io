@@ -136,4 +136,37 @@ import '../../styles/article.css';
             </footer>
         </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the AI Delegation Framework?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a structured protocol for assigning deterministic tasks to LLMs. Instead of vague conversational queries, you provide a 4-part \"Handshake\" — Objective, Context, Output Schema, and Quality Bar — that forces the AI to produce actionable work product instead of generic advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between \"Chat\" and \"Work Product\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "\"Chat\" is open-ended conversation that produces opinions. \"Work Product\" is constrained output with defined deliverables. The shift happens when you specify an Output Schema (JSON, table, checklist) and a Quality Bar (e.g., \"no buzzwords,\" \"every claim must contain a number\")."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Task Template reduce re-rolls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By defining constraints upfront — tone, audience, format, and rejection criteria — you eliminate the ambiguity that causes bad first outputs. This reduced re-roll rate by 60% and prompting time from 8 to 3 minutes in measured use."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

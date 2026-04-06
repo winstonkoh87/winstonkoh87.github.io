@@ -127,4 +127,37 @@ import '../../styles/article.css';
             </footer>
         </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Thinking Partner Handshake?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a protocol for shifting AI from \"Vending Machine\" mode (you ask, it outputs) to \"Sparring Partner\" mode (you negotiate, it presents options, you select). The key mechanism is assigning a role (Critical Editor), defining constraints (don't generate yet), and requesting multiple structural options before committing to a draft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I use Vending Machine vs Thinking Partner mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use Vending Machine for low-stakes, deterministic tasks: \"Summarise this document,\" \"Format this data.\" Use Thinking Partner for high-stakes decisions: strategy development, content architecture, investment analysis. The rule: if the cost of being wrong exceeds the cost of the extra input labor, use Thinking Partner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Context Drift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Context Drift happens when you fail to prune the AI's context window during long sessions. The AI starts hallucinating constraints from earlier in the conversation that no longer apply. The fix: periodically reset context or provide a fresh constraint block that overrides previous instructions."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

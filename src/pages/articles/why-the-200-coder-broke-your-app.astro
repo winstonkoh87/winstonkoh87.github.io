@@ -173,4 +173,37 @@ import '../../styles/article.css';
             </footer>
         </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is $200 development work often worse than doing nothing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because it creates a false foundation. A $200 coder using AI copy-paste can generate a working demo, but the code lacks error handling, testing, and architectural integrity. When it breaks (and it will), debugging someone else's hallucinated code is harder than building from scratch. You pay twice: once for the broken version, once for the fix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I look for when hiring a developer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three things: (1) Do they ask questions about edge cases before writing code? (2) Do they include testing and documentation in their scope? (3) Do they explain their architecture decisions? If the answer to any of these is no, you're hiring a prompt-and-paste operator, not an engineer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between code generation and software engineering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Code generation produces syntax. Software engineering produces systems. The difference is everything that happens after the first \"working\" version: handling edge cases, writing tests, structuring for maintainability, debugging under production conditions, and communicating architectural decisions to stakeholders."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

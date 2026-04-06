@@ -186,4 +186,37 @@ import '../../styles/article.css';
             </footer>
         </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you deliver with a tool you've never used?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You bet on portable meta-skills: (1) Architecture — understanding data flows regardless of the platform, (2) Documentation — reading official docs and mapping them to your mental model, (3) Iteration — building a working prototype first, then refining. AI bridges the syntax gap (\"how do I do X in Alteryx?\") while your fundamentals handle the strategy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are portable meta-skills?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Skills that transfer across tools and domains: system architecture, debugging methodology, technical documentation, stakeholder communication, and iteration discipline. These don't expire when a tool changes. A developer who understands data pipelines can learn any ETL tool in hours; someone who only knows one tool's UI is helpless when it changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should you NOT accept a gig with an unfamiliar tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When the domain itself is unfamiliar, not just the tool. If you've never worked with ML pipelines and a client needs Alteryx ML, AI can't bridge the conceptual gap. But if you understand ML and just need to learn Alteryx's interface, that's a 24-hour problem. Know the difference between \"new tool\" and \"new domain.\""
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

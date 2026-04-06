@@ -261,4 +261,37 @@ import '../../styles/article.css';
             </footer>
         </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Trilateral Feedback Loop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a decision-validation architecture using three nodes: You (intent), a Primary AI (strategy), and a Rival AI (friction). Instead of trusting a single model's output, you export the plan to a competing model instructed to \"kill the deal.\" The friction catches blind spots that sycophantic single-model workflows miss."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is AI sycophancy and why is it dangerous?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sycophancy is a known alignment failure mode where AI models prioritize user satisfaction over objective truth. If you propose a bad idea, a sycophantic model will find technical indicators to support it rather than challenge it. This creates validation spirals that can lead to costly mistakes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to code anything to use this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The simplest version is manual copy-paste: have your conversation with your primary AI, copy the final plan, paste it into a different model (ChatGPT, Gemini, Grok) with the prompt \"You are a hostile auditor,\" then bring the critique back. The discipline to copy-paste is all you need."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>

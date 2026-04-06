@@ -174,4 +174,37 @@ import '../../styles/article.css';
         </footer>
     </article>
     </main>
+
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is First Principles Design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a design methodology that enforces a strict build order: Soul (positioning and copy) → Skeleton (wireframe and logic) → Skin (UI and visual vibe). Instead of starting in Figma and making things \"look pretty,\" you start by defining what the page needs to communicate and prove, then build the structure, then apply the aesthetic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the \"Safe Harbor\" positioning pivot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the case study, the initial positioning for an academic service felt like a \"ghostwriting\" operation — shady and untrustworthy. By reframing it as \"Academic Safe Harbor\" (emphasizing triage, consulting, and zero-logs policy), the copy dictated a calm, professional design that built trust instead of suspicion. Copy drives design, not the reverse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AI accelerate First Principles Design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI handles the execution layer: generating 20 copy variations in 5 minutes (vs 4 hours manually), scanning for legal risk terms, and scaffolding boilerplate code. The human provides direction (the \"Safe Harbor\" strategy); the AI provides velocity. This lets a solo operator ship production-ready sites in a single Deep Work Saturday."
+      }
+    }
+  ]
+}
+    </script>
 </Layout>
