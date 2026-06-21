@@ -6,7 +6,8 @@
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.com-00C853?style=flat-square)](https://winstonkoh87.com/)
 [![Built with Athena](https://img.shields.io/badge/Built_with-Athena-CC785C?style=flat-square)](https://github.com/winstonkoh87/Athena-Public)
 [![Astro](https://img.shields.io/badge/Framework-Astro_5.0-BC52EE?logo=astro&logoColor=white&style=flat-square)](https://astro.build/)
-[![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222222?logo=githubpages&logoColor=white&style=flat-square)](https://pages.github.com/)
+[![GitHub Pages](https://img.shields.io/badge/Hosting-GitHub_Pages-222222?logo=githubpages&logoColor=white&style=flat-square)](https://pages.github.com/)
+[![Cloudflare DNS](https://img.shields.io/badge/DNS_+_CDN-Cloudflare-F38020?logo=cloudflare&logoColor=white&style=flat-square)](https://www.cloudflare.com/)
 
 A personal portfolio website built with **Astro**, focusing on performance, component reusability, and zero-JavaScript defaults.
 
@@ -98,6 +99,7 @@ Try it: [winstonkoh87.com](https://winstonkoh87.com/) → Click the chat icon
 | **Build** | `npm run build` (Static Site Generation) |
 | **CI/CD** | GitHub Actions (Astro Build + Deploy) |
 | **Hosting** | GitHub Pages |
+| **DNS / CDN** | Cloudflare (proxied) |
 
 ### Philosophy: Evolution to Astro
 
@@ -145,7 +147,9 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 
 - **Swept** site-wide metric/version drift — synced every current-state surface to verified-live values (1,900+ sessions, 396+ protocols, v9.9.4, 509★ / 69 forks)
 - **Surfaced** open-source traction (500+ GitHub stars) on the portfolio as a verifiable proof point
-- **Corrected** stale references — hosting (GitHub Pages, not Cloudflare) and styling stack (Tailwind v4)
+- **Bumped** model references to Claude Opus 4.8 (current stack)
+- **Clarified** infra — hosting is GitHub Pages (not Cloudflare *Pages*); the domain runs on Cloudflare DNS/CDN
+- **Consolidated** the chatbot KB to a single source (`public/data/athena_kb.json`); removed the unused `src/data` duplicate
 - **Audited** every project link, brand asset, and article entry for accuracy
 
 ### The Operating Model
@@ -217,13 +221,14 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 
 ## 🚀 Deployment
 
-Hosted on **GitHub Pages** via a GitHub Actions build pipeline.
+Built and deployed to **GitHub Pages** via GitHub Actions. The domain (`winstonkoh87.com`) runs on **Cloudflare DNS** — proxied, so Cloudflare also fronts the site as CDN/SSL.
 
 ```bash
 git push origin main
 # → GitHub Actions builds the Astro project (withastro/action@v2)
 # → Output generated in /dist
-# → Deployed to GitHub Pages (actions/deploy-pages@v4) → winstonkoh87.com
+# → Deployed to GitHub Pages (actions/deploy-pages@v4)
+# → Served at winstonkoh87.com via Cloudflare DNS/CDN
 ```
 
 ---
