@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import { EnumChangefreq } from 'sitemap';
@@ -14,7 +13,6 @@ export default defineConfig({
     format: 'directory' // Generates page/index.html instead of page.html for clean URL support
   },
   integrations: [
-    react(),
     sitemap({
       changefreq: EnumChangefreq.WEEKLY,
       filter: (page) =>

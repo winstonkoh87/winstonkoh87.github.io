@@ -96,7 +96,7 @@ Try it: [winstonkoh87.com](https://winstonkoh87.com/) → Click the chat icon
 | **Framework** | **Astro 5.0** |
 | **Styling** | Tailwind CSS v4 + Scoped Astro `<style>` |
 | **Interactivity** | Vanilla JavaScript (Islands Architecture) |
-| **Build** | `npm run build` (Static Site Generation) |
+| **Build** | `npm run build` — Astro SSG + IndexNow ping (postbuild) |
 | **CI/CD** | GitHub Actions (Astro Build + Deploy) |
 | **Hosting** | GitHub Pages |
 | **DNS / CDN** | Cloudflare (proxied) |
