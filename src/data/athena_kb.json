@@ -30,5 +30,5 @@
     "protocols": "Athena has 396+ reusable protocols covering reasoning, risk management, execution, research, trading, and AI safety.",
     "sessions": "Athena has logged 1,900+ sessions since its inception, each one building on the last. Session 1,900 recalls patterns from session 5.",
     "graphrag": "Athena uses GraphRAG with knowledge graph communities for entity-based knowledge retrieval. It's weighted 2x in the hybrid search.",
-    "version": "Athena is currently running v9.9.1 (Jun 2026 Sync). 498 GitHub stars, 68 forks, MIT licensed."
+    "version": "Athena is currently running v9.9.1 (Jun 2026 Sync). 509 GitHub stars, 68 forks, MIT licensed."
 }
