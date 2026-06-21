@@ -2,8 +2,8 @@
     "hello": "Hello! I'm Athena, Winston's AI assistant. Ask me about his projects, tech stack, or availability.",
     "hi": "Hey there! I'm Athena. Try asking: \"What projects has Winston built?\" or \"What's his tech stack?\"",
     "hey": "Hey! I'm Athena. How can I help you learn about Winston's work?",
-    "projects": "Winston has built:\n• Project Athena (AI OS with 4,200+ vector memories)\n• Brew & Bean (F&B landing page)\n• Melvin Lim Portfolio (SAF Officer)\n• ThatBioTutor (Education SME)\nType a project name for details.",
-    "athena": "Project Athena is Winston's AI OS — the Linux of AI Agents. It has 1,900+ sessions of persistent memory, 396+ protocols, and uses a hybrid RAG architecture with GraphRAG. It runs on Supabase + pgvector at $0/month infra cost. Currently at v9.9.1. It's the system you're talking to right now.",
+    "projects": "Winston has built:\n• Project Athena (AI OS with 5,600+ vector memories)\n• Brew & Bean (F&B landing page)\n• Melvin Lim Portfolio (SAF Officer)\n• ThatBioTutor (Education SME)\nType a project name for details.",
+    "athena": "Project Athena is Winston's AI OS — the Linux of AI Agents. It has 1,900+ sessions of persistent memory, 396+ protocols, and uses a hybrid RAG architecture with GraphRAG. It runs on Supabase + pgvector at $0/month infra cost. Currently at v9.9.4. It's the system you're talking to right now.",
     "brew": "Brew & Bean is a high-conversion F&B landing page with WhatsApp integration, optimized for lead capture. Built with Astro and achieves a 95+ Lighthouse score.",
     "melvin": "Melvin Lim's portfolio is a high-trust personal branding site for an SAF Officer. Uses narrative design with a bento grid layout. 100% accessibility score.",
     "biotutor": "ThatBioTutor is a full-stack digital marketing proposal for a Singapore tuition centre. Features SEO strategy, glassmorphism UI, and PDF export.",
@@ -30,5 +30,5 @@
     "protocols": "Athena has 396+ reusable protocols covering reasoning, risk management, execution, research, trading, and AI safety.",
     "sessions": "Athena has logged 1,900+ sessions since its inception, each one building on the last. Session 1,900 recalls patterns from session 5.",
     "graphrag": "Athena uses GraphRAG with knowledge graph communities for entity-based knowledge retrieval. It's weighted 2x in the hybrid search.",
-    "version": "Athena is currently running v9.9.1 (Jun 2026 Sync). 509 GitHub stars, 68 forks, MIT licensed."
+    "version": "Athena is currently running v9.9.4 (Jun 2026 Sync). 509 GitHub stars, 69 forks, MIT licensed."
 }

@@ -1,7 +1,7 @@
 # Building a Portfolio Website (Astro v5)
 
-> **Last Updated**: 25 February 2026
-> **Status**: Homepage Refresh — 1,323 Sessions, 380+ Protocols, v9.2.4 ⚡
+> **Last Updated**: 21 June 2026
+> **Status**: Metrics Sync — 1,900+ Sessions, 396+ Protocols, v9.9.4 ⚡
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.com-00C853?style=flat-square)](https://winstonkoh87.com/)
 [![Built with Athena](https://img.shields.io/badge/Built_with-Athena-CC785C?style=flat-square)](https://github.com/winstonkoh87/Athena-Public)
@@ -24,9 +24,9 @@ This documents how I built (and evolved) a complete portfolio website with AI-au
 | **AI Widget** | ✅ Athena Live |
 | **Framework** | Astro 5.0 (Vite-powered) |
 | **Brand Kit** | ✅ Lambda (Λ) Identity |
-| **Athena Kernel** | v9.2.4 |
-| **Sessions Logged** | 1,323 |
-| **Protocols** | 380+ |
+| **Athena Kernel** | v9.9.4 |
+| **Sessions Logged** | 1,900+ |
+| **Protocols** | 396+ |
 
 ---
 
@@ -231,5 +231,5 @@ System architectures and strategic frameworks are hosted on the **[Athena-Public
 
 ---
 
-*Built with Astro + [Project Athena](https://github.com/winstonkoh87/Athena-Public). 1,323 sessions. 380+ protocols. Ships fast.*
+*Built with Astro + [Project Athena](https://github.com/winstonkoh87/Athena-Public). 1,900+ sessions. 396+ protocols. Ships fast.*
 

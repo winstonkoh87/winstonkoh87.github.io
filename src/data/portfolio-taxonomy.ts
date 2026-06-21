@@ -42,7 +42,7 @@ export const PROJECTS: Project[] = [
         role: "Architect + Full Stack",
         description: "An autonomous 'Second Brain' that reduces engineering research time by 60%. Leverages RAG and Supabase Vector to recall, reason, and execute.",
         outcome: "Personal AI OS with 'commit semantics' — 1,900+ sessions of persistent memory and 500+ stars on GitHub.",
-        tags: ["Python", "Supabase Vector", "Gemini 3 Pro", "Claude Opus 4.5", "System Architecture"],
+        tags: ["Python", "Supabase Vector", "Gemini 3.1 Pro", "Claude Opus 4.6", "System Architecture"],
         status: "production",
         icon: "⚡",
         isLive: true
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
         role: "Prompt Engineering + Logic Design",
         description: "Automated client intake agent built in 24 hours. Features 'Integrity Gate' logic and dynamic context switching.",
         outcome: "Custom Gemini Gem agent that qualifies leads and generates proposals.",
-        tags: ["Gemini Gems", "Claude Opus 4.5", "Prompt Engineering", "System Design"],
+        tags: ["Gemini Gems", "Claude Opus 4.6", "Prompt Engineering", "System Design"],
         status: "production",
         icon: "💎"
     },
