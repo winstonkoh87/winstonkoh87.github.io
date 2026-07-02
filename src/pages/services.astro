@@ -387,7 +387,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="page-subtitle">7 sites shipped. 24-72hr turnaround. Perfect Lighthouse scores.</p>
             <div class="capacity-signal">
                 <span class="capacity-dot"></span>
-                Currently accepting 2 new projects for Q2 2026
+                Currently accepting 2 new projects for Q3 2026
             </div>
         </section>
 
@@ -473,6 +473,37 @@ import Layout from '../layouts/Layout.astro';
                 </a>
                 <div style="text-align: center; margin-top: 0.75rem;">
                     <a href="/portfolio/" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: underline;">View Portfolio Projects →</a>
+                </div>
+            </div>
+
+            <!-- Pillar 2b: AI Training & Workshops (Validated 2026 Offer) -->
+            <div class="service-card featured">
+                <span class="service-badge">Validated 2026</span>
+                <div class="service-icon">🧠</div>
+                <h3>AI Training & Workshops</h3>
+                <div class="service-price">From $800 <span>per workshop</span></div>
+                <p class="service-description">
+                    Hands-on Claude & agentic-AI training for founders and teams. We automate YOUR real workflows live in the session — quoting, customer handling, reporting.
+                </p>
+                <ul class="service-features">
+                    <li>Half-day hands-on workshop</li>
+                    <li>Claude Code + agent setup on your machine</li>
+                    <li>Your actual workflows automated live</li>
+                    <li>Team playbook + session recording</li>
+                    <li>30-day WhatsApp support</li>
+                    <li>$800-$1,500 by team size</li>
+                </ul>
+                <div class="service-proof">
+                    <q>Validated with paying SME clients across 2026. The same bionic pipeline that runs my own operation.</q>
+                    <cite>— Built on 1,900+ logged Athena sessions</cite>
+                </div>
+                <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'm%20interested%20in%20AI%20training%20for%20my%20team."
+                    class="service-cta" target="_blank" rel="noopener noreferrer"
+                    onclick="trackCTA('services_ai_training')">
+                    Book a Training Slot →
+                </a>
+                <div style="text-align: center; margin-top: 0.75rem;">
+                    <a href="/athena/" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: underline;">See the system I teach →</a>
                 </div>
             </div>
 
@@ -718,6 +749,16 @@ import Layout from '../layouts/Layout.astro';
                             The right tool for the right job.</p>
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What does AI training cover?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A <strong>half-day hands-on workshop</strong> where we set up Claude and agentic workflows on your team's real processes — quoting, customer handling, reporting, content. From <strong>$800</strong>, scaling to $1,500 by team size. You leave with working automations and a playbook, not slideware.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -791,6 +832,13 @@ import Layout from '../layouts/Layout.astro';
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Astro with optional React components. I use Astro for its Islands Architecture — zero JavaScript by default, but I can add React components when interactivity is needed. This gives you faster load times without sacrificing capability."
+            }
+          }, {
+            "@type": "Question",
+            "name": "What does AI training cover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A half-day hands-on workshop where we set up Claude and agentic workflows on your team's real processes — quoting, customer handling, reporting, content. From $800, scaling to $1,500 by team size. You leave with working automations and a playbook, not slideware."
             }
           }]
         }

@@ -30,7 +30,7 @@ interface Props {
 
 const { 
     title, 
-    description = "AI Systems Architect. I build autonomous bionic workflows that scale your output 10x. [Jun 2026 Portfolio].",
+    description = "AI Systems Architect. I build autonomous bionic workflows that scale your output 10x. [Jul 2026 Portfolio].",
     showFloatingButtons = true,
     image = "/assets/images/og-image.png",
     canonicalUrl,
@@ -43,6 +43,21 @@ const ogType = articleData ? "article" : "website";
 
 const canonicalURL = canonicalUrl ? new URL(canonicalUrl) : new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
+
+// BreadcrumbList for all non-home pages (rich-result eligibility)
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbLd = pathSegments.length ? {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://winstonkoh87.com/" },
+        ...pathSegments.map((seg, i) => ({
+            "@type": "ListItem",
+            "position": i + 2,
+            "name": seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+            "item": `https://winstonkoh87.com/${pathSegments.slice(0, i + 1).join('/')}/`
+        }))
+    ]
+} : null;
 ---
 
 <!DOCTYPE html>
@@ -112,7 +127,7 @@ const ogImageURL = new URL(image, Astro.site);
           "name": "Winston Koh",
           "givenName": "Winston",
           "familyName": "Koh",
-          "jobTitle": "AI Systems Architect",
+          "jobTitle": "AI Systems Architect & Corporate AI Trainer",
           "description": "Singapore-based AI Systems Architect. Builder of Project Athena — the open-source Linux OS for AI Agents. Specializes in autonomous workflows, bionic systems, and technical consultancy.",
           "url": "https://winstonkoh87.com",
           "image": "https://winstonkoh87.com/assets/images/winston-avatar.jpg",
@@ -123,13 +138,17 @@ const ogImageURL = new URL(image, Astro.site);
           "knowsAbout": [
             "AI Systems Architecture",
             "Autonomous AI Agents",
+            "Claude Code & Agentic Workflows",
+            "Corporate AI Training",
             "Web Development",
+            "SEO & AI Search Optimization (GEO)",
             "Technical Consultancy",
             "Project Athena"
           ],
           "sameAs": [
             "https://www.linkedin.com/in/winstonkoh",
             "https://github.com/winstonkoh87",
+            "https://medium.com/@winstonkoh87",
             "https://www.carousell.sg/u/winstonkoh87/"
           ]
         },
@@ -162,9 +181,49 @@ const ogImageURL = new URL(image, Astro.site);
             "addressCountry": "SG"
           },
           "priceRange": "$$$",
-          "description": "Specialized AI Systems Architecture and Bionic Workflows for SMEs and Enterprises in Singapore.",
-          "founder": { "@id": "https://winstonkoh87.com/#person" }
+          "telephone": "+65 8358 1066",
+          "email": "winstonkoh87@gmail.com",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 1.3521,
+            "longitude": 103.8198
+          },
+          "areaServed": [
+            { "@type": "Country", "name": "Singapore" },
+            { "@type": "Country", "name": "Malaysia" }
+          ],
+          "description": "Specialized AI Systems Architecture, Corporate AI Training, and Bionic Workflows for SMEs and Enterprises in Singapore.",
+          "founder": { "@id": "https://winstonkoh87.com/#person" },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Systems & Web Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "AI Agent Training & Workshops", "description": "Hands-on Claude Code and agentic-AI training for teams. Your real workflows, automated live." },
+                "priceSpecification": { "@type": "PriceSpecification", "price": 800, "priceCurrency": "SGD", "valueAddedTaxIncluded": true },
+                "priceCurrency": "SGD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Web Development", "description": "Production-grade static websites. Perfect Lighthouse scores, 7-14 day delivery." },
+                "priceSpecification": { "@type": "PriceSpecification", "price": 500, "priceCurrency": "SGD", "valueAddedTaxIncluded": true },
+                "priceCurrency": "SGD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "AI Agents & Automation", "description": "Custom internal tools, RAG knowledge bases, and lead-qualification agents." }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "1-on-1 Consulting", "description": "60-minute strategic session over Zoom with recording and action plan." },
+                "priceSpecification": { "@type": "PriceSpecification", "price": 150, "priceCurrency": "SGD", "valueAddedTaxIncluded": true },
+                "priceCurrency": "SGD"
+              }
+            ]
+          }
         },
+        breadcrumbLd,
         articleData ? {
           "@type": "Article",
           "headline": title,

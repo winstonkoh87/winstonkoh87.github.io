@@ -11,11 +11,12 @@ const faqData = [
     { question: "How is this different from using ChatGPT or Claude directly?", answer: "ChatGPT and Claude are engines — powerful but amnesiac. Every session starts from zero. Athena wraps around any model to provide persistent memory, skill injection, and bounded autonomy. When you switch models, your memory stays mounted." },
     { question: "Do I need to know how to code?", answer: "No. Athena boots with a single command (/start) and requires no API keys, no database setup, and no config files. The folder is the product. If you can type in a chat window, you can use Athena." },
     { question: "What does a typical engagement look like?", answer: "For freelance projects: We start with a WhatsApp call to scope the work, I deliver a fixed-price proposal within 24 hours, and most projects ship within 1-2 weeks. For Athena consulting: I help you set up the system, build your initial memory bank, and train your team in a half-day workshop." },
-    { question: "What's your pricing?", answer: "Fixed pricing, no hourly billing. Every project starts with a scoped proposal so you know exactly what you're getting. Websites, AI agent builds, and Athena consulting packages are all priced based on complexity and deliverables — no surprises, no hourly clock. Message me to discuss your project and I'll send a proposal within 24 hours." }
+    { question: "Do you run AI training for teams?", answer: "Yes — hands-on AI agent training is my most requested service in 2026. I train founders and teams to run Claude and agentic workflows on their real business processes: quoting, customer handling, reporting, content. Half-day workshop format, from $800, validated with paying SME clients. You leave with working automations, not slideware." },
+    { question: "What's your pricing?", answer: "Fixed pricing, no hourly billing. Websites from $500, AI training workshops from $800, consulting at $150/hr, custom AI agent builds by scope. Every project starts with a scoped proposal so you know exactly what you're getting — no surprises, no hourly clock. Message me and I'll send a proposal within 24 hours." }
 ];
 ---
 
-<Layout title="Winston Koh | AI Systems Architect [Jun 2026 Portfolio]" description="Singapore-based AI Systems Architect. I build autonomous agents, reliable business workflows, and production-grade software. Stop hiring tasks, start building assets." faqData={faqData}>
+<Layout title="Winston Koh | AI Systems Architect Singapore [Jul 2026]" description="Singapore AI Systems Architect. 513★ open-source AI OS (Athena), 1,900+ logged sessions, sites shipped in 24-72h. Fixed pricing, AI training from $800. WhatsApp me →" faqData={faqData}>
     <section class="hero">
         <div class="hero-content">
             <!-- Intent Engine Toggle -->
@@ -78,7 +79,7 @@ const faqData = [
             <!-- Athena Kernel -->
             <div class="metric-item">
                 <span class="metric-pillar">AI Kernel</span>
-                <span class="metric-value">v9.9.4</span>
+                <span class="metric-value">v9.9.2</span>
                 <span class="metric-label">Headless Architecture</span>
             </div>
             <!-- Sessions -->
@@ -90,10 +91,13 @@ const faqData = [
             <!-- Protocols -->
             <div class="metric-item">
                 <span class="metric-pillar">Codified Knowledge</span>
-                <span class="metric-value">396+</span>
+                <span class="metric-value">412</span>
                 <span class="metric-label">Protocols Active</span>
             </div>
         </div>
+        <p style="text-align: center; margin-top: 1.25rem; font-size: 0.8rem; color: #8892b0;">
+            Live numbers as of 2 Jul 2026 · <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Verify on GitHub →</a>
+        </p>
     </section>
 
     <!-- SOCIAL PROOF — AS SEEN ON -->
@@ -115,7 +119,7 @@ const faqData = [
                 </div>
                 <div class="marquee-item">
                     <span class="marquee-logo">⭐</span>
-                    <span class="marquee-text"><strong>509</strong> GitHub Stars</span>
+                    <span class="marquee-text"><strong>513</strong> GitHub Stars</span>
                 </div>
                 <div class="marquee-item">
                     <span class="marquee-logo">📰</span>
@@ -131,7 +135,7 @@ const faqData = [
                 </div>
                 <div class="marquee-item">
                     <span class="marquee-logo">⭐</span>
-                    <span class="marquee-text"><strong>509</strong> GitHub Stars</span>
+                    <span class="marquee-text"><strong>513</strong> GitHub Stars</span>
                 </div>
             </div>
         </div>
@@ -152,7 +156,7 @@ const faqData = [
                 </div>
                 <h3>Project Athena (The OS)</h3>
                 <p>
-                    <strong>The Outcome:</strong> 1,900+ sessions logged. 396+ protocols codified. One persistent brain that survives model switches.
+                    <strong>The Outcome:</strong> 1,900+ sessions logged. 412 protocols codified. One persistent brain that survives model switches.
                     <br><br>
                     <strong>The System:</strong> Hybrid RAG + MCP Server + Skill Injection. Your memory stays mounted — permanently.
                 </p>
@@ -446,8 +450,8 @@ Or just ask a question naturally!`, 'system');
 
         // Boot sequence
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => logToTerminal('Initializing Athena Protocol v9.9.4...', 'system'), 500);
-            setTimeout(() => logToTerminal('Knowledge base loaded. 396+ protocols active. 1,900+ sessions recalled.', 'system'), 1200);
+            setTimeout(() => logToTerminal('Initializing Athena Protocol v9.9.2...', 'system'), 500);
+            setTimeout(() => logToTerminal('Knowledge base loaded. 412 protocols active. 1,900+ sessions recalled.', 'system'), 1200);
             setTimeout(() => typeWriterResponse('Welcome! I\'m Athena, Winston\'s AI assistant. Ask me about his projects, tech stack, or how to hire him.'), 1800);
         });
     </script>
@@ -466,7 +470,7 @@ Or just ask a question naturally!`, 'system');
             fulltime: {
                 headline: "Full-Stack Engineer<br>with <span class='text-gradient'>AI Specialization.</span>",
                 subtitle: "Python • JavaScript • RAG • Agentic Orchestration",
-                desc: "I build production-grade applications with Claude Opus 4.8, Gemini 3.1 Pro, and multi-LLM pipelines. Creator of Athena v9.9.4 (1,900+ sessions).",
+                desc: "I build production-grade applications with Claude Opus 4.8, Gemini 3.1 Pro, and multi-LLM pipelines. Creator of Athena v9.9.2 (1,900+ sessions).",
                 cta: "Try The Simulation",
                 ctaLink: "https://github.com/winstonkoh87/Athena-Public",
                 showSecondary: true,
