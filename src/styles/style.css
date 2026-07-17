@@ -326,9 +326,28 @@ nav ul {
 }
 
 @media (max-width: 600px) {
+    header {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Logo + links on one compact row each — no ragged two-row wrap */
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
     nav ul {
-        gap: 1rem;
+        gap: 0.9rem;
+        flex-wrap: nowrap;
         justify-content: center;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+        /* Comfortable tap target despite the small type */
+        display: inline-block;
+        padding: 0.35rem 0;
     }
 }
 
@@ -359,8 +378,24 @@ main {
    HOME / HERO
 ======================================== */
 .hero {
-    padding: 8rem 0 4rem;
+    padding: 4rem 0 4rem;
     text-align: center;
+}
+
+/* Terminal sits below the value prop + CTA, as supporting proof.
+   Doubled class beats terminal.css's .terminal-window margin (loaded later). */
+.terminal-window.hero-terminal {
+    margin: 3.5rem auto 0;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 2.5rem 0 3rem;
+    }
+
+    .terminal-window.hero-terminal {
+        margin-top: 2.5rem;
+    }
 }
 
 .hero-content {
@@ -1429,16 +1464,16 @@ blockquote {
 ======================================== */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
     background-color: #25d366;
     color: #FFF;
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -1448,8 +1483,10 @@ blockquote {
 
 @media (max-width: 768px) {
     .whatsapp-float {
-        bottom: 100px;
-        /* Move up to avoid filter buttons */
+        width: 52px;
+        height: 52px;
+        bottom: 16px;
+        right: 16px;
     }
 }
 
@@ -1496,16 +1533,16 @@ blockquote {
 ======================================== */
 .telegram-float {
     position: fixed;
-    bottom: 110px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
+    bottom: 92px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
     background-color: #0088cc;
     color: #FFF;
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -1515,8 +1552,10 @@ blockquote {
 
 @media (max-width: 768px) {
     .telegram-float {
-        bottom: 180px;
-        /* Move up to avoid filter buttons */
+        width: 52px;
+        height: 52px;
+        bottom: 80px;
+        right: 16px;
     }
 }
 
@@ -1766,11 +1805,25 @@ blockquote {
 ======================================== */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 1.9rem;
+        line-height: 1.25;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .intent-toggle-container {
+        margin-bottom: 1.25rem;
+    }
+
+    .hire-me-headline {
+        font-size: 1.1rem;
     }
 
     .card-grid,

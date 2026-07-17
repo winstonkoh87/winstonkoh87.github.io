@@ -14,14 +14,17 @@ const faqData = [
     { question: "Do you run AI training for teams?", answer: "Yes — hands-on AI agent training is my most requested service in 2026. I train founders and teams to run Claude and agentic workflows on their real business processes: quoting, customer handling, reporting, content. Half-day workshop format, from $800, validated with paying SME clients. You leave with working automations, not slideware." },
     { question: "What's your pricing?", answer: "Fixed pricing, no hourly billing. Websites from $500, AI training workshops from $800, consulting at $150/hr, custom AI agent builds by scope. Every project starts with a scoped proposal so you know exactly what you're getting — no surprises, no hourly clock. Message me and I'll send a proposal within 24 hours." }
 ];
+
+// Single source of truth for freshness — matches the footer's build-time date
+const lastVerified = new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Singapore', year: 'numeric', month: 'short', day: 'numeric' });
 ---
 
-<Layout title="Winston Koh | AI Systems Architect Singapore [Jul 2026]" description="Singapore AI Systems Architect. 513★ open-source AI OS (Athena), 1,900+ logged sessions, sites shipped in 24-72h. Fixed pricing, AI training from $800. WhatsApp me →" faqData={faqData}>
+<Layout title="Winston Koh | AI Systems Architect Singapore" description="Singapore AI Systems Architect. 513★ open-source AI OS (Athena), 1,900+ logged sessions, sites shipped in 24-72h. Fixed pricing, AI training from $800. WhatsApp me →" faqData={faqData}>
     <section class="hero">
         <div class="hero-content">
             <!-- Intent Engine Toggle -->
             <div class="intent-toggle-container fade-in-delayed">
-                <h2 class="hire-me-headline">Hire Me</h2>
+                <p class="hire-me-headline">Hire Me</p>
                 <div class="intent-switch">
                     <button class="intent-btn active" onclick="setIntent('freelance')"
                         id="btn-freelance">Freelance</button>
@@ -30,29 +33,12 @@ const faqData = [
                 </div>
             </div>
 
-            <!-- INTERACTIVE ATHENA TERMINAL (Pseudo-API) -->
-            <div class="terminal-window" onclick="document.getElementById('term-input').focus()" role="region" aria-label="Athena AI Terminal">
-                <div class="terminal-header">
-                    <span class="terminal-dot red"></span>
-                    <span class="terminal-dot yellow"></span>
-                    <span class="terminal-dot green"></span>
-                    <span class="ai-badge">✨ Athena AI Active</span>
-                </div>
-                <div class="terminal-body" id="terminal-body">
-                    <div id="terminal-history"></div>
-                    <div class="input-line">
-                        <span class="prompt" id="term-prompt">guest@winston.io:~$</span>
-                        <input type="text" id="term-input" autocomplete="off" spellcheck="false" placeholder="Type 'help' or ask me anything...">
-                    </div>
-                </div>
-            </div>
-
             <h1 id="hero-headline" class="fade-in-delayed">AI Systems Architect<br>I build the <span class="text-gradient">Linux OS for
                     AI Agents.</span>
             </h1>
-            <p id="hero-subtitle" class="hero-subtitle fade-in-delayed-2">7+ Sites Shipped • 24-72hr Delivery • Perfect Lighthouse Scores</p>
+            <p id="hero-subtitle" class="hero-subtitle fade-in-delayed-2">24-72hr Delivery • Perfect Lighthouse Scores • Fixed Pricing</p>
             <p id="hero-description" class="hero-description fade-in-delayed-3">
-                Stop renting your brain from OpenAI. I build local-first architectures (Athena) that give your agents permanent, owned memory.
+                Stop renting your brain from OpenAI. I build local-first AI architectures (Athena) with permanent, owned memory — and production-grade websites for SMEs that load instantly.
             </p>
 
             <div class="hero-cta fade-in-delayed-3">
@@ -63,6 +49,23 @@ const faqData = [
                 <a id="hero-secondary-btn" class="btn btn-secondary" style="display: none;"
                     href="/Winston Koh - Resume.pdf" target="_blank"
                     onclick="trackCTA('resume_download')">Download Resume</a>
+            </div>
+
+            <!-- INTERACTIVE ATHENA TERMINAL (Pseudo-API) -->
+            <div class="terminal-window hero-terminal" onclick="document.getElementById('term-input').focus()" role="region" aria-label="Athena AI Terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="ai-badge">✨ Athena AI Active</span>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div id="terminal-history"></div>
+                    <div class="input-line">
+                        <span class="prompt" id="term-prompt">guest@winston.io:~$</span>
+                        <input type="text" id="term-input" autocomplete="off" spellcheck="false" placeholder="Type 'help' or ask me anything..." aria-label="Ask Athena a question">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -96,7 +99,7 @@ const faqData = [
             </div>
         </div>
         <p style="text-align: center; margin-top: 1.25rem; font-size: 0.8rem; color: #8892b0;">
-            Live numbers as of 2 Jul 2026 · <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Verify on GitHub →</a>
+            Live numbers as of {lastVerified} · <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Verify on GitHub →</a>
         </p>
     </section>
 
@@ -289,7 +292,7 @@ const faqData = [
         <div class="faq-list">
             {faqData.map((item) => (
                 <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')" aria-expanded="false">
+                    <button class="faq-question" onclick="this.setAttribute('aria-expanded', this.parentElement.classList.toggle('open'))" aria-expanded="false">
                         <span>{item.question}</span>
                         <span class="faq-icon">+</span>
                     </button>
@@ -338,30 +341,57 @@ const faqData = [
             .then(data => { ATHENA_KNOWLEDGE = data; })
             .catch(err => console.warn('Failed to load knowledge base:', err));
 
-        // Pattern matching for fuzzy search
+        // Intent aliases: natural-language tokens → knowledge base key.
+        // Lets "how much do you charge?" resolve to the pricing entry instead of the fallback.
+        const INTENT_ALIASES = {
+            pricing: ['pricing', 'price', 'prices', 'cost', 'costs', 'charge', 'charges', 'rate', 'rates', 'fee', 'fees', 'expensive', 'cheap', 'budget', 'quote'],
+            hire: ['hire', 'hiring', 'freelance', 'engage', 'build', 'website', 'websites', 'site', 'sites', 'landing', 'ecommerce', 'e-commerce', 'app', 'commission', 'work'],
+            contact: ['contact', 'reach', 'email', 'whatsapp', 'telegram', 'phone', 'call', 'message', 'talk'],
+            projects: ['projects', 'project', 'portfolio', 'built', 'works', 'clients', 'showcase'],
+            stack: ['stack', 'tech', 'technology', 'technologies', 'tools', 'languages', 'framework', 'frameworks'],
+            athena: ['athena', 'memory', 'agent', 'agents', 'rag', 'protocols', 'os'],
+            availability: ['availability', 'available', 'free', 'when', 'timeline', 'turnaround', 'schedule']
+        };
+
         function findAnswer(query) {
             const q = query.toLowerCase().trim();
-            
-            // Direct match
+
+            // 1. Direct match
             if (ATHENA_KNOWLEDGE[q]) {
                 return ATHENA_KNOWLEDGE[q];
             }
-            
-            // Keyword search
-            for (const [key, value] of Object.entries(ATHENA_KNOWLEDGE)) {
-                if (q.includes(key) || key.includes(q)) {
-                    return value;
+
+            const tokens = q.replace(/[^a-z0-9\s-]/g, '').split(/\s+/).filter(Boolean);
+
+            // 2. Exact KB key appears as a word in the query (longest key wins)
+            const kbKeys = Object.keys(ATHENA_KNOWLEDGE).sort((a, b) => b.length - a.length);
+            for (const key of kbKeys) {
+                if (tokens.includes(key) || (key.includes(' ') && q.includes(key))) {
+                    return ATHENA_KNOWLEDGE[key];
                 }
             }
-            
+
+            // 3. Intent aliases — score by number of alias hits, best intent wins
+            let bestIntent = null, bestScore = 0;
+            for (const [intent, aliases] of Object.entries(INTENT_ALIASES)) {
+                const score = tokens.filter(t => aliases.includes(t)).length;
+                if (score > bestScore && ATHENA_KNOWLEDGE[intent]) {
+                    bestScore = score;
+                    bestIntent = intent;
+                }
+            }
+            if (bestIntent) {
+                return ATHENA_KNOWLEDGE[bestIntent];
+            }
+
             // Capture Hook: Log missed queries for "Bionic" improvement
             console.log(`[ATHENA CAPTURE] Thinking about: "${query}" (No direct match found. Logging for knowledge base expansion.)`);
-            
+
             // Fallback responses
             const fallbacks = [
                 `I don't have specific info on "${query}" yet. I've logged this for future updates. Try asking about: projects, stack, or pricing.`,
                 `Hmm, that's outside my current index. I've flagged "${query}" for Winston to review. Type 'help' to see my active protocols.`,
-                `Knowledge gap detected for "${query}". Query logged. Try asking about Winston's AI systems or F&B work.`
+                `Knowledge gap detected for "${query}". Query logged. Try asking about Winston's projects, pricing, or tech stack.`
             ];
             return fallbacks[Math.floor(Math.random() * fallbacks.length)];
         }
@@ -386,28 +416,35 @@ const faqData = [
             div.className = 'log-entry ai';
             div.style.whiteSpace = 'pre-wrap';
             terminalHistory.appendChild(div);
-            
-            let i = 0;
-            const speed = 15; // ms per character
-            
+
+            // Time-based typing: chars shown are computed from elapsed time, so the
+            // animation catches up instantly after any timer throttling (hidden tabs)
+            // and long answers never take longer than MAX_DURATION.
+            const CHARS_PER_SEC = 90;
+            const MAX_DURATION = 2000; // ms
+            const duration = Math.min((text.length / CHARS_PER_SEC) * 1000, MAX_DURATION);
+            const start = performance.now();
+
+            function finish() {
+                // Linkify after typing
+                const linkified = text.replace(/(\/[a-zA-Z0-9_-]+)/g, (match) => {
+                    if (match === '/help' || match === '/clear') return match;
+                    return `<a href="${match}" class="terminal-link">${match}</a>`;
+                });
+                div.innerHTML = linkified;
+                termBody.scrollTop = termBody.scrollHeight;
+                if (callback) callback();
+            }
+
             function type() {
-                if (i < text.length) {
-                    // Check for links after typing is done or during? 
-                    // Simpler to type everything then linkify at the end.
-                    div.innerText += text.charAt(i);
-                    i++;
-                    termBody.scrollTop = termBody.scrollHeight;
-                    setTimeout(type, speed);
+                const progress = Math.min((performance.now() - start) / duration, 1);
+                const chars = Math.floor(progress * text.length);
+                div.innerText = text.slice(0, chars);
+                termBody.scrollTop = termBody.scrollHeight;
+                if (progress < 1) {
+                    setTimeout(type, 40);
                 } else {
-                    // Linkify after typing
-                    const content = div.innerText;
-                    const linkified = content.replace(/(\/[a-zA-Z0-9_-]+)/g, (match) => {
-                        // Avoid matching tech tags like /athena if not followed by space or end
-                        if (match === '/help' || match === '/clear') return match; 
-                        return `<a href="${match}" class="terminal-link">${match}</a>`;
-                    });
-                    div.innerHTML = linkified;
-                    if (callback) callback();
+                    finish();
                 }
             }
             type();
@@ -461,8 +498,8 @@ Or just ask a question naturally!`, 'system');
         const INTENT_DATA = {
             freelance: {
                 headline: "AI Systems Architect<br>I build the <span class='text-gradient'>Linux OS for AI Agents.</span>",
-                subtitle: "7+ Sites Shipped • 24-72hr Delivery • Perfect Lighthouse Scores",
-                desc: "Stop renting your brain from OpenAI. I build local-first architectures (Athena) that give your agents permanent, owned memory. For SMEs: production-grade websites that load instantly.",
+                subtitle: "24-72hr Delivery • Perfect Lighthouse Scores • Fixed Pricing",
+                desc: "Stop renting your brain from OpenAI. I build local-first AI architectures (Athena) with permanent, owned memory — and production-grade websites for SMEs that load instantly.",
                 cta: "Let's Talk",
                 ctaLink: "https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20site%20and%20wanted%20to%20connect.",
                 showSecondary: false
