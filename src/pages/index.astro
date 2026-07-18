@@ -1,10 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import clientMelvin from '../assets/images/client-melvin.png';
 import clientTuition from '../assets/images/client-tuition.png';
 import clientSme from '../assets/images/client-sme.png';
-import clientDerrick from '../assets/images/client-derrick.png';
+import { ATHENA_VERSION, PROTOCOLS_ACTIVE, SESSIONS_LOGGED, GITHUB_STARS } from '../data/site-stats';
 
 const faqData = [
     { question: "What exactly is Athena?", answer: "Athena is an open-source operating system for AI agents. It gives any LLM persistent memory, structured reasoning, and governance — so your 1,900th session recalls patterns from your 5th. Think of it as the hard drive that ChatGPT is missing." },
@@ -17,9 +16,11 @@ const faqData = [
 
 // Single source of truth for freshness — matches the footer's build-time date
 const lastVerified = new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Singapore', year: 'numeric', month: 'short', day: 'numeric' });
+
+const metaDescription = `Singapore AI Systems Architect. ${GITHUB_STARS}★ open-source AI OS (Athena), ${SESSIONS_LOGGED} logged sessions, sites shipped in 24-72h. Fixed pricing, AI training from $800. WhatsApp me →`;
 ---
 
-<Layout title="Winston Koh | AI Systems Architect Singapore" description="Singapore AI Systems Architect. 513★ open-source AI OS (Athena), 1,900+ logged sessions, sites shipped in 24-72h. Fixed pricing, AI training from $800. WhatsApp me →" faqData={faqData}>
+<Layout title="Winston Koh | AI Systems Architect Singapore" description={metaDescription} faqData={faqData}>
     <section class="hero">
         <div class="hero-content">
             <!-- Intent Engine Toggle -->
@@ -82,19 +83,19 @@ const lastVerified = new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Si
             <!-- Athena Kernel -->
             <div class="metric-item">
                 <span class="metric-pillar">AI Kernel</span>
-                <span class="metric-value">v9.9.6</span>
+                <span class="metric-value">{ATHENA_VERSION}</span>
                 <span class="metric-label">Headless Architecture</span>
             </div>
             <!-- Sessions -->
             <div class="metric-item">
                 <span class="metric-pillar">Stress-Tested</span>
-                <span class="metric-value">1,900+</span>
+                <span class="metric-value">{SESSIONS_LOGGED}</span>
                 <span class="metric-label">Sessions Logged</span>
             </div>
             <!-- Protocols -->
             <div class="metric-item">
                 <span class="metric-pillar">Codified Knowledge</span>
-                <span class="metric-value">412</span>
+                <span class="metric-value">{PROTOCOLS_ACTIVE}</span>
                 <span class="metric-label">Protocols Active</span>
             </div>
         </div>
@@ -122,7 +123,7 @@ const lastVerified = new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Si
                 </div>
                 <div class="marquee-item">
                     <span class="marquee-logo">⭐</span>
-                    <span class="marquee-text"><strong>513</strong> GitHub Stars</span>
+                    <span class="marquee-text"><strong>{GITHUB_STARS}</strong> GitHub Stars</span>
                 </div>
                 <div class="marquee-item">
                     <span class="marquee-logo">📰</span>
@@ -138,7 +139,7 @@ const lastVerified = new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Si
                 </div>
                 <div class="marquee-item">
                     <span class="marquee-logo">⭐</span>
-                    <span class="marquee-text"><strong>513</strong> GitHub Stars</span>
+                    <span class="marquee-text"><strong>{GITHUB_STARS}</strong> GitHub Stars</span>
                 </div>
             </div>
         </div>
@@ -159,7 +160,7 @@ const lastVerified = new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Si
                 </div>
                 <h3>Project Athena (The OS)</h3>
                 <p>
-                    <strong>The Outcome:</strong> 1,900+ sessions logged. 412 protocols codified. One persistent brain that survives model switches.
+                    <strong>The Outcome:</strong> {SESSIONS_LOGGED} sessions logged. {PROTOCOLS_ACTIVE} protocols codified. One persistent brain that survives model switches.
                     <br><br>
                     <strong>The System:</strong> Hybrid RAG + MCP Server + Skill Injection. Your memory stays mounted — permanently.
                 </p>
@@ -234,19 +235,6 @@ const lastVerified = new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Si
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                <p class="testimonial-quote">Winston delivered exactly what we needed — a clean, fast website that
-                    actually converts. No fluff, just results.</p>
-                <div class="testimonial-author">
-                    <Image src={clientMelvin} alt="M.L., SAF Officer" class="testimonial-avatar-img" />
-                    <div class="testimonial-info">
-                        <span class="testimonial-name">M.L., SAF Officer</span>
-                        <span class="testimonial-role">Personal Branding Client</span>
-                    </div>
-                </div>
-                <span class="testimonial-date">Jan 2026</span>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
                 <p class="testimonial-quote">The turnaround was insane. From brief to live site in under a day. The
                     AI-augmented workflow is real.</p>
                 <div class="testimonial-author">
@@ -270,18 +258,6 @@ const lastVerified = new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Si
                     </div>
                 </div>
                 <span class="testimonial-date">Dec 2025</span>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                <p class="testimonial-quote">The proposal blew me away. I went from not knowing where to start to having a complete 90-day roadmap with ROI projections. Professional, fast, and data-driven.</p>
-                <div class="testimonial-author">
-                    <Image src={clientDerrick} alt="Coach D.L." class="testimonial-avatar-img" />
-                    <div class="testimonial-info">
-                        <span class="testimonial-name">Coach D.L.</span>
-                        <span class="testimonial-role">Sports Industry</span>
-                    </div>
-                </div>
-                <span class="testimonial-date">Mar 2026</span>
             </div>
         </div>
     </section>
@@ -329,7 +305,7 @@ const lastVerified = new Date().toLocaleDateString('en-SG', { timeZone: 'Asia/Si
     <script src="/assets/js/counter.js" is:inline></script>
 
     <!-- ATHENA PSEUDO-API TERMINAL SCRIPT -->
-    <script is:inline>
+    <script is:inline define:vars={{ ATHENA_VERSION, PROTOCOLS_ACTIVE, SESSIONS_LOGGED }}>
         // ========================================
         // ATHENA KNOWLEDGE BASE (Loaded from external JSON)
         // ========================================
@@ -487,14 +463,14 @@ Or just ask a question naturally!`, 'system');
 
         // Boot sequence
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => logToTerminal('Initializing Athena Protocol v9.9.6...', 'system'), 500);
-            setTimeout(() => logToTerminal('Knowledge base loaded. 412 protocols active. 1,900+ sessions recalled.', 'system'), 1200);
+            setTimeout(() => logToTerminal(`Initializing Athena Protocol ${ATHENA_VERSION}...`, 'system'), 500);
+            setTimeout(() => logToTerminal(`Knowledge base loaded. ${PROTOCOLS_ACTIVE} protocols active. ${SESSIONS_LOGGED} sessions recalled.`, 'system'), 1200);
             setTimeout(() => typeWriterResponse('Welcome! I\'m Athena, Winston\'s AI assistant. Ask me about his projects, tech stack, or how to hire him.'), 1800);
         });
     </script>
 
     <!-- Intent Engine Script -->
-    <script is:inline>
+    <script is:inline define:vars={{ ATHENA_VERSION, SESSIONS_LOGGED }}>
         const INTENT_DATA = {
             freelance: {
                 headline: "AI Systems Architect<br>I build the <span class='text-gradient'>Linux OS for AI Agents.</span>",
@@ -507,7 +483,7 @@ Or just ask a question naturally!`, 'system');
             fulltime: {
                 headline: "Full-Stack Engineer<br>with <span class='text-gradient'>AI Specialization.</span>",
                 subtitle: "Python • JavaScript • RAG • Agentic Orchestration",
-                desc: "I build production-grade applications with Claude Fable 5, Gemini 3.1 Pro, and multi-LLM pipelines. Creator of Athena v9.9.6 (1,900+ sessions).",
+                desc: `I build production-grade applications with Claude Fable 5, Gemini 3.1 Pro, and multi-LLM pipelines. Creator of Athena ${ATHENA_VERSION} (${SESSIONS_LOGGED} sessions).`,
                 cta: "Try The Simulation",
                 ctaLink: "https://github.com/winstonkoh87/Athena-Public",
                 showSecondary: true,

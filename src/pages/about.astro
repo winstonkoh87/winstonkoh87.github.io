@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import winstonAvatar from '../assets/images/winston-avatar.jpg';
+import { ATHENA_VERSION } from '../data/site-stats';
 ---
 
 <Layout title="About | Winston Koh | AI Systems Architect" description="Explore the technical framework and philosophy of Winston Koh. Building high-leverage AI systems and sovereign digital assets.">
@@ -92,10 +93,10 @@ import winstonAvatar from '../assets/images/winston-avatar.jpg';
             <div class="stack-category">
                 <h3>Frontier Models (2026)</h3>
                 <ul>
-                    <li><strong>Google:</strong> Gemini 3.1 Pro, Gemini 3.5 Flash (3.5 Pro rolling out)</li>
-                    <li><strong>xAI:</strong> Grok 4.1 (Thinking)</li>
-                    <li><strong>Anthropic:</strong> Claude Fable 5, Claude Opus 4.8</li>
-                    <li><strong>OpenAI:</strong> GPT-5.5, GPT-5.5 Pro</li>
+                    <li><strong>Google:</strong> Gemini 3.5 Pro (July rollout), Gemini 3.1 Pro, Gemini 3.5 Flash</li>
+                    <li><strong>xAI:</strong> Grok 4.5</li>
+                    <li><strong>Anthropic:</strong> Claude Fable 5, Claude Opus 4.8, Claude Sonnet 5</li>
+                    <li><strong>OpenAI:</strong> GPT-5.6 family (Sol, Terra, Luna)</li>
                 </ul>
             </div>
             <div class="stack-category">
@@ -138,7 +139,7 @@ import winstonAvatar from '../assets/images/winston-avatar.jpg';
     </section>
 
     <section class="content-section">
-        <h2>Current Project: <a href="/athena/" style="color: inherit; text-decoration: none;">Athena</a> (v9.9.6)</h2>
+        <h2>Current Project: <a href="/athena/" style="color: inherit; text-decoration: none;">Athena</a> ({ATHENA_VERSION})</h2>
         <p>
             <a href="/athena/" style="color: inherit; text-decoration: underline;">Athena</a> is an AI-Powered Digital Personal Assistant operating on the <strong>Zero-Point Codex</strong> architecture.
             It enforces the <strong>Triple-Lock Protocol</strong> (Search → Save → Speak) to ensure every output is grounded in context.

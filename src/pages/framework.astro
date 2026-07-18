@@ -1,6 +1,7 @@
 
 ---
 import Layout from '../layouts/Layout.astro';
+import { PROTOCOLS_ACTIVE, SESSIONS_LOGGED, VECTOR_MEMORIES } from '../data/site-stats';
 ---
 
 <Layout title="The Athena Framework | Operating System for Sovereign AI" description="The decision architecture, bionic model, and governing laws behind Project Athena." showFloatingButtons={false}>
@@ -258,7 +259,7 @@ import Layout from '../layouts/Layout.astro';
                     <span class="law-number">4</span>
                     <div class="law-content">
                         <h4>Memory Compounds</h4>
-                        <p>A vanilla LLM has no past. We have 1,900+ sessions, 412 protocols, 5,600+ vector memories. Context
+                        <p>A vanilla LLM has no past. We have {SESSIONS_LOGGED} sessions, {PROTOCOLS_ACTIVE} protocols, {VECTOR_MEMORIES} vector memories. Context
                             is the differentiator.</p>
                     </div>
                 </div>

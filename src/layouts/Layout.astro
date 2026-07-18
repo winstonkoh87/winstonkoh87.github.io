@@ -247,23 +247,6 @@ const breadcrumbLd = pathSegments.length ? {
             }
           }))
         } : null,
-        Astro.url.pathname === '/' ? {
-            "@type": "Review",
-            "itemReviewed": {
-                "@type": "ProfessionalService",
-                "name": "Winston Koh - AI Systems & Strategy"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Melvin Tan"
-            },
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-            },
-            "reviewBody": "Winston didn't just build a website; he built a system that filters my leads and saves me 10 hours a week."
-        } : null,
         {
           "@type": "SiteNavigationElement",
           "@id": "https://winstonkoh87.com/#nav-portfolio",

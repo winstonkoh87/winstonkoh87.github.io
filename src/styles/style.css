@@ -1551,11 +1551,11 @@ blockquote {
 }
 
 @media (max-width: 768px) {
+    /* One CTA on mobile: the stacked second FAB covered the hero terminal's
+       header chip on small screens. WhatsApp is the primary contact channel
+       everywhere on the site; Telegram remains reachable via /contact. */
     .telegram-float {
-        width: 52px;
-        height: 52px;
-        bottom: 80px;
-        right: 16px;
+        display: none;
     }
 }
 

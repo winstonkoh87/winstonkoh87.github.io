@@ -1,13 +1,25 @@
 /**
  * Counter Animation Script
- * Animates numbers from 0 to target value immediately on page load
+ * Animates numeric .metric-value elements from 0 to target on page load.
+ * Non-numeric values (e.g. "v9.9.7", "<1.5s") are left untouched — parseFloat
+ * would yield NaN and the element would display "NaN" mid-animation.
+ * Respects prefers-reduced-motion: values render instantly, never stuck at 0.
  */
 
 function animateCounters() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     document.querySelectorAll('.metric-value').forEach(el => {
-        const endValue = parseFloat(el.innerText.replace(/,/g, ''));
-        const hasPlus = el.innerText.includes('+');
-        el.setAttribute('data-target', el.innerText);
+        const finalText = el.innerText;
+        const endValue = parseFloat(finalText.replace(/,/g, ''));
+
+        // Skip non-numeric metrics and skip animation entirely under reduced motion
+        if (!Number.isFinite(endValue) || !/^\d/.test(finalText.trim()) || reducedMotion) {
+            return;
+        }
+
+        const hasPlus = finalText.includes('+');
+        el.setAttribute('data-target', finalText);
         el.innerText = '0';
 
         const duration = 2000;
@@ -42,4 +54,3 @@ function animateCounters() {
 }
 
 document.addEventListener('DOMContentLoaded', animateCounters);
-

@@ -19,10 +19,12 @@ Object.keys(articlesByCluster).forEach(key => {
 });
 
 // Get cluster keys in specific order
-const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 'economics-of-leverage', 'case-files', 'ai-for-business'];
+// 'ai-for-business' is intentionally omitted: no article carries that cluster,
+// so its filter button matched nothing. Its lone article lives under case-files.
+const clusterKeys: ClusterId[] = ['sovereign-systems', 'strategic-engineering', 'economics-of-leverage', 'case-files'];
 ---
 
-<Layout title="Writing | AI Strategy & Engineering Insights [2026]" description="Strategic insights on AI architecture, sovereign systems, and the bionic workflow. Decoding the physics of digital leverage and survival in the automation age.">
+<Layout title="Writing | AI Strategy & Engineering Insights" description="Strategic insights on AI architecture, sovereign systems, and the bionic workflow. Decoding the physics of digital leverage and survival in the automation age.">
     <section class="page-content">
         <section class="page-header">
             <div class="header-row">
