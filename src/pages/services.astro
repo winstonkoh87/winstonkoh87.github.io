@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { SESSIONS_LOGGED } from '../data/site-stats';
 ---
 
 <Layout title="Services | Fixed-Price AI & Full-stack Development | Winston Koh" description="Production-ready AI systems and SME websites. Landing pages, LLM integration, and bionic automation. 24-72 hour delivery with fixed pricing.">
@@ -495,7 +496,7 @@ import Layout from '../layouts/Layout.astro';
                 </ul>
                 <div class="service-proof">
                     <q>Validated with paying SME clients across 2026. The same bionic pipeline that runs my own operation.</q>
-                    <cite>— Built on 1,900+ logged Athena sessions</cite>
+                    <cite>— Built on {SESSIONS_LOGGED} logged Athena sessions</cite>
                 </div>
                 <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'm%20interested%20in%20AI%20training%20for%20my%20team."
                     class="service-cta" target="_blank" rel="noopener noreferrer"

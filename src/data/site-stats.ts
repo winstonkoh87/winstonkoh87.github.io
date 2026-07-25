@@ -4,12 +4,15 @@
 // so each deploy refreshes the count); the fallback keeps builds green if the
 // API is unreachable or rate-limited in CI.
 
-export const ATHENA_VERSION = 'v9.9.7';
+export const ATHENA_VERSION = 'v9.9.8';
 export const PROTOCOLS_ACTIVE = 414;
-export const SESSIONS_LOGGED = '1,900+';
+export const SESSIONS_LOGGED = '2,090+';
+// Rounded-down ordinal for prose ("your Nth session recalls..."). Derived by hand
+// from SESSIONS_LOGGED so copy never contradicts the counter above it.
+export const SESSIONS_MILESTONE = '2,000th';
 export const VECTOR_MEMORIES = '5,600+';
 
-const FALLBACK_STARS = 516;
+const FALLBACK_STARS = 544;
 
 async function fetchStars(): Promise<number> {
     try {

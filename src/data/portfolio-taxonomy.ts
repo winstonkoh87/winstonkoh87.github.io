@@ -1,3 +1,5 @@
+import { SESSIONS_LOGGED, GITHUB_STARS } from './site-stats';
+
 export type ClusterId = 'autonomous-systems' | 'strategic-infrastructure' | 'commerce-conversion';
 
 export interface Project {
@@ -41,7 +43,7 @@ export const PROJECTS: Project[] = [
         cluster: "autonomous-systems",
         role: "Architect + Full Stack",
         description: "An autonomous 'Second Brain' that reduces engineering research time by 60%. Leverages RAG and Supabase Vector to recall, reason, and execute.",
-        outcome: "Personal AI OS with 'commit semantics' — 1,900+ sessions of persistent memory and 500+ stars on GitHub.",
+        outcome: `Personal AI OS with 'commit semantics' — ${SESSIONS_LOGGED} sessions of persistent memory and ${GITHUB_STARS}+ stars on GitHub.`,
         tags: ["Python", "Supabase Vector", "Gemini 3.1 Pro", "Claude Opus 4.8", "System Architecture"],
         status: "production",
         icon: "⚡",

@@ -3,10 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import clientTuition from '../assets/images/client-tuition.png';
 import clientSme from '../assets/images/client-sme.png';
-import { ATHENA_VERSION, PROTOCOLS_ACTIVE, SESSIONS_LOGGED, GITHUB_STARS } from '../data/site-stats';
+import { ATHENA_VERSION, PROTOCOLS_ACTIVE, SESSIONS_LOGGED, SESSIONS_MILESTONE, GITHUB_STARS } from '../data/site-stats';
 
 const faqData = [
-    { question: "What exactly is Athena?", answer: "Athena is an open-source operating system for AI agents. It gives any LLM persistent memory, structured reasoning, and governance — so your 1,900th session recalls patterns from your 5th. Think of it as the hard drive that ChatGPT is missing." },
+    { question: "What exactly is Athena?", answer: `Athena is an open-source operating system for AI agents. It gives any LLM persistent memory, structured reasoning, and governance — so your ${SESSIONS_MILESTONE} session recalls patterns from your 5th. Think of it as the hard drive that ChatGPT is missing.` },
     { question: "How is this different from using ChatGPT or Claude directly?", answer: "ChatGPT and Claude are engines — powerful but amnesiac. Every session starts from zero. Athena wraps around any model to provide persistent memory, skill injection, and bounded autonomy. When you switch models, your memory stays mounted." },
     { question: "Do I need to know how to code?", answer: "No. Athena boots with a single command (/start) and requires no API keys, no database setup, and no config files. The folder is the product. If you can type in a chat window, you can use Athena." },
     { question: "What does a typical engagement look like?", answer: "For freelance projects: We start with a WhatsApp call to scope the work, I deliver a fixed-price proposal within 24 hours, and most projects ship within 1-2 weeks. For Athena consulting: I help you set up the system, build your initial memory bank, and train your team in a half-day workshop." },
