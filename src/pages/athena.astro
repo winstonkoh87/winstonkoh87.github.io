@@ -1,12 +1,65 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/athena.css';
-import { ATHENA_VERSION, PROTOCOLS_ACTIVE, SESSIONS_LOGGED, GITHUB_STARS } from '../data/site-stats';
+import {
+    ATHENA_VERSION, PROTOCOLS_ACTIVE, SESSIONS_LOGGED,
+    GITHUB_STARS, GITHUB_FORKS, GITHUB_URL, LICENSE
+} from '../data/site-stats';
 
 const metaDescription = `Open-source memory OS for any LLM. ${SESSIONS_LOGGED} logged sessions, ${PROTOCOLS_ACTIVE} protocols, 1M+ Reddit views. Own the state, rent the intelligence. Clone & run in 5 minutes →`;
+
+// This page is the portfolio's centrepiece, so describe the artefact in the
+// vocabulary search engines and AI answer engines actually parse. Every value
+// below is checkable against the public repo — no unverifiable claims.
+const athenaSchema = [
+    {
+        "@type": "SoftwareApplication",
+        "@id": "https://winstonkoh87.com/athena/#software",
+        "name": "Project Athena",
+        "alternateName": "Athena — The Linux OS for AI Agents",
+        "url": "https://winstonkoh87.com/athena/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "AI agent framework",
+        "operatingSystem": "macOS, Linux, Windows",
+        "softwareVersion": ATHENA_VERSION,
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/licenses/MIT",
+        "isAccessibleForFree": true,
+        "downloadUrl": GITHUB_URL,
+        "codeRepository": GITHUB_URL,
+        "author": { "@id": "https://winstonkoh87.com/#person" },
+        "description": "Open-source operating system for AI agents. Gives any LLM persistent memory, structured reasoning and governed autonomy — own the state, rent the intelligence.",
+        "offers": { "@type": "Offer", "price": 0, "priceCurrency": "USD" },
+        "interactionStatistic": [
+            {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/LikeAction",
+                "name": "GitHub stars",
+                "userInteractionCount": GITHUB_STARS
+            },
+            {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ShareAction",
+                "name": "GitHub forks",
+                "userInteractionCount": GITHUB_FORKS
+            }
+        ]
+    },
+    {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://winstonkoh87.com/athena/#sourcecode",
+        "name": "Project Athena",
+        "codeRepository": GITHUB_URL,
+        "programmingLanguage": { "@type": "ComputerLanguage", "name": "Python" },
+        "license": "https://opensource.org/licenses/MIT",
+        "runtimePlatform": "Python 3",
+        "author": { "@id": "https://winstonkoh87.com/#person" },
+        "about": { "@id": "https://winstonkoh87.com/athena/#software" }
+    }
+];
 ---
 
-<Layout title="Project Athena | The Linux OS for AI Agents" description={metaDescription}>
+<Layout title="Project Athena | The Linux OS for AI Agents" description={metaDescription} extraSchema={athenaSchema}>
     <!-- HERO -->
     <section class="athena-hero">
         <div class="athena-hero-content">

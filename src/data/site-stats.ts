@@ -12,21 +12,37 @@ export const SESSIONS_LOGGED = '2,090+';
 export const SESSIONS_MILESTONE = '2,000th';
 export const VECTOR_MEMORIES = '5,600+';
 
-const FALLBACK_STARS = 544;
+// Repo facts. Anything here is externally verifiable on the GitHub repo page,
+// which is the point — these are the proof numbers, so they must not drift.
+export const GITHUB_REPO = 'winstonkoh87/Athena-Public';
+export const GITHUB_URL = `https://github.com/${GITHUB_REPO}`;
+export const LICENSE = 'MIT';
 
-async function fetchStars(): Promise<number> {
+const FALLBACK_STARS = 544;
+const FALLBACK_FORKS = 74;
+
+async function fetchRepo(): Promise<{ stars: number; forks: number }> {
     try {
-        const res = await fetch('https://api.github.com/repos/winstonkoh87/Athena-Public', {
+        const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}`, {
             headers: { Accept: 'application/vnd.github+json' },
             signal: AbortSignal.timeout(5000),
         });
-        if (!res.ok) return FALLBACK_STARS;
+        if (!res.ok) return { stars: FALLBACK_STARS, forks: FALLBACK_FORKS };
         const data = await res.json();
         const stars = Number(data?.stargazers_count);
-        return Number.isFinite(stars) && stars >= FALLBACK_STARS ? stars : FALLBACK_STARS;
+        const forks = Number(data?.forks_count);
+        return {
+            // Never report below the last-known floor: a transient API blip
+            // shouldn't make the proof numbers appear to go backwards.
+            stars: Number.isFinite(stars) && stars >= FALLBACK_STARS ? stars : FALLBACK_STARS,
+            forks: Number.isFinite(forks) && forks >= FALLBACK_FORKS ? forks : FALLBACK_FORKS,
+        };
     } catch {
-        return FALLBACK_STARS;
+        return { stars: FALLBACK_STARS, forks: FALLBACK_FORKS };
     }
 }
 
-export const GITHUB_STARS = await fetchStars();
+const repo = await fetchRepo();
+
+export const GITHUB_STARS = repo.stars;
+export const GITHUB_FORKS = repo.forks;

@@ -26,16 +26,19 @@ interface Props {
         question: string;
         answer: string;
     }[];
+    /** Extra JSON-LD nodes merged into the site @graph for this page. */
+    extraSchema?: Record<string, unknown>[];
 }
 
-const { 
-    title, 
+const {
+    title,
     description = "AI Systems Architect. I build autonomous bionic workflows that scale your output 10x.",
     showFloatingButtons = true,
     image = "/assets/images/og-image.png",
     canonicalUrl,
     articleData,
-    faqData
+    faqData,
+    extraSchema = []
 } = Astro.props;
 
 const siteLastModified = new Date().toISOString().split('T')[0];
@@ -228,6 +231,7 @@ const breadcrumbLd = pathSegments.length ? {
           }
         },
         breadcrumbLd,
+        ...extraSchema,
         articleData ? {
           "@type": "Article",
           "headline": title,

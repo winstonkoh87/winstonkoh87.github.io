@@ -13,26 +13,25 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, "https://winstonkoh87.com");
 
+// Deliberately NOT Person schema. This is a design demo, and emitting a Person
+// entity here — with sameAs pointing at real social profiles — would tell Google
+// to merge unwritten, illustrative copy into a real individual's entity record.
+// The page is described as what it actually is: a design concept authored by
+// Winston Koh. No claims are made about any real person.
 const schema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Melvin Lim",
-  "url": "https://winstonkoh87.com/projects/melvin",
-  "image": `https://winstonkoh87.com${image}`,
-  "sameAs": [
-    "https://www.linkedin.com/in/melvinlimjunwei",
-    "https://www.instagram.com/melv._.innnn/"
-  ],
-  "jobTitle": "Student Leader & Aspiring Legal Scholar",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Singapore Armed Forces"
-  },
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "St Andrew's Junior College"
-  },
-  "description": description
+  "@type": "WebPage",
+  "url": canonicalURL.href,
+  "name": `${title} — design concept`,
+  "isPartOf": { "@id": "https://winstonkoh87.com/#website" },
+  "author": { "@type": "Person", "name": "Winston Koh", "url": "https://winstonkoh87.com" },
+  "creator": { "@type": "Person", "name": "Winston Koh", "url": "https://winstonkoh87.com" },
+  "about": {
+    "@type": "CreativeWork",
+    "name": "Personal-brand portfolio design concept",
+    "genre": "Web design demonstration",
+    "abstract": "Unbuilt design concept demonstrating layout, typography and narrative structure for a personal-brand portfolio. Illustrative content only."
+  }
 });
 ---
 
@@ -81,6 +80,27 @@ const schema = JSON.stringify({
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 	</head>
 	<body>
+        <div class="demo-banner" id="demo-banner">
+            <strong>Design demo.</strong> An unbuilt concept piece by
+            <a href="/">Winston Koh</a> — layout, typography and narrative structure only.
+            The copy is illustrative and is not a statement by or about any real person.
+            <a href="/portfolio/">Back to portfolio →</a>
+        </div>
+        <script is:inline>
+            // Match the nav offset to the banner's real height, which changes
+            // when the text wraps at narrow widths.
+            (function () {
+                var b = document.getElementById('demo-banner');
+                if (!b) return;
+                var sync = function () {
+                    document.documentElement.style.setProperty(
+                        '--demo-banner-h', b.offsetHeight + 'px');
+                };
+                sync();
+                addEventListener('resize', sync);
+                if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
+            })();
+        </script>
         <div class="melvin-shell">
             <header class="melvin-nav">
                 <div class="nav-container">
@@ -110,12 +130,15 @@ const schema = JSON.stringify({
                 <div class="footer-content">
                     <p class="footer-motto">"Discipline for outcomes. Warmth for people."</p>
                     
+                    <!-- Social/email links intentionally removed: this is a design
+                         demo, and it must not route traffic to, or publish contact
+                         details for, a real individual. Placeholders keep the layout. -->
                     <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/melvinlimjunwei/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <span>LinkedIn</span>
                         <span class="social-separator">/</span>
-                        <a href="https://www.instagram.com/melv._.innnn/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <span>Instagram</span>
                         <span class="social-separator">/</span>
-                        <a href="mailto:melvinlim976@gmail.com">Email</a>
+                        <span>Email</span>
                     </div>
 
                     <div class="footer-interests">
@@ -229,9 +252,15 @@ const schema = JSON.stringify({
     }
 
     /* Navigation */
+    /* Pages already pad the top to clear the fixed nav; shift the whole content
+       column down by the banner height so that existing spacing still holds. */
+    .melvin-shell > main {
+        padding-top: var(--demo-banner-h, 0px);
+    }
+
     .melvin-nav {
         position: fixed;
-        top: 0;
+        top: var(--demo-banner-h, 0px);
         width: 100%;
         background: rgba(10, 10, 10, 0.8);
         backdrop-filter: blur(12px);
@@ -411,5 +440,50 @@ const schema = JSON.stringify({
         text-transform: uppercase;
         letter-spacing: 0.05em;
         opacity: 0.6;
+    }
+
+    /* Demo disclosure. Pinned above the fixed nav (z-index 1000) so it stays
+       visible on any deep-linked entry, not just the homepage. The nav is
+       offset by --demo-banner-h; the CSS default covers the no-JS case and the
+       inline script below refines it to the measured height after wrapping. */
+    :root { --demo-banner-h: 44px; }
+
+    .demo-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        box-sizing: border-box;
+        min-height: var(--demo-banner-h);
+        background: #1c1917;
+        color: #fafaf9;
+        border-bottom: 1px solid rgba(250, 250, 249, 0.15);
+        padding: 0.7rem 1.25rem;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .demo-banner strong {
+        font-weight: 600;
+        letter-spacing: 0.01em;
+    }
+
+    .demo-banner a {
+        color: #fafaf9;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        white-space: nowrap;
+    }
+
+    .demo-banner a:hover {
+        opacity: 0.75;
+    }
+
+    @media (max-width: 640px) {
+        :root { --demo-banner-h: 62px; }
+        .demo-banner { font-size: 0.72rem; padding: 0.6rem 1rem; }
     }
 </style>
