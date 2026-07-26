@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <defs>
+    <linearGradient id="bionic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#EC4899"/>
+    </linearGradient>
+  </defs>
+  <!-- iOS applies its own mask; fill the full square with Void -->
+  <rect width="180" height="180" fill="#0A0A0A"/>
+  <!-- Lambda polygon from brand/logo/lambda-gradient.svg, centred with clear space -->
+  <g transform="translate(35 35) scale(1.1)">
+    <polygon points="50,10 85,90 70,90 50,45 30,90 15,90" fill="url(#bionic)"/>
+  </g>
+</svg>

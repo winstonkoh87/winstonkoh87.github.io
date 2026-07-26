@@ -1,9 +1,13 @@
 # Winston Koh — Brand Guidelines
 
-> **Version**: 2.1 (Feb 2026 Domain Update)  
+> **Version**: 2.2 (Jul 2026 — asset + convention correction)  
 > **Created**: 2026-01-29  
-> **Updated**: 2026-02-11  
+> **Updated**: 2026-07-26  
 > **Author**: Athena (AI-Generated, Human-Approved)
+
+> **Scope note**: this document and `variables.css` are a **reference kit for humans**.
+> Nothing in `brand/` is imported by the build. The live design tokens are in
+> `src/styles/style.css` — changing a colour means editing both files.
 
 ---
 
@@ -298,12 +302,27 @@ winstonkoh87.com | +65 8358 1066
 
 | Platform | Dimensions | File | Use |
 | -------- | ---------- | ---- | --- |
-| **OG Image** | 1200×630 | `social/og-image-1200x630.png` | Facebook, LinkedIn share |
+| **OG Image** | 1200×630 | `social/og-image-1200x630.png` | Facebook, LinkedIn, X — the live card |
+| **OG Image (source)** | vector | `social/og-image-1200x630.svg` | Edit here, re-render to PNG |
 | **Twitter Card** | 1200×628 | Same as OG | Twitter/X large card |
-| **LinkedIn Square** | 1200×1200 | `social/og-image.png` | LinkedIn post share |
+| **LinkedIn Square** | 1024×1024 | `social/og-image.png` | Legacy square variant |
 | **Twitter Banner** | 1500×500 | `social/twitter-banner.png` | Twitter/X profile |
-| **Favicon** | 32×32, 16×16 | `public/favicon.svg` | Browser tab |
+| **Favicon** | SVG | `public/favicon.svg` | Browser tab |
 | **Apple Touch** | 180×180 | `public/apple-touch-icon.png` | iOS bookmark |
+
+> **1200×630 is not optional.** Until July 2026 the live OG image was 1024×1024
+> and `social/og-image-1200x630.png` was a 640×640 file with a misleading name —
+> so every share on every platform was cropped or shown as a small square. The
+> card is now generated from `og-image-1200x630.svg`:
+>
+> ```bash
+> rsvg-convert -w 1200 -h 630 brand/social/og-image-1200x630.svg \
+>   -o brand/social/og-image-1200x630.png
+> cp brand/social/og-image-1200x630.png public/assets/images/og-image.png
+> ```
+>
+> After changing it, re-scrape the card in the LinkedIn Post Inspector and
+> Facebook Sharing Debugger — both cache aggressively.
 
 ### Social Post Voice
 
@@ -378,11 +397,18 @@ winstonkoh87.com | +65 8358 1066
 AI Systems Architect. I build autonomous bionic workflows that scale your output 10x. [Feb 2026 Portfolio].
 ```
 
-### Freshness Tag Convention
+### Freshness Tag Convention — RETIRED (Jul 2026)
 
-- Homepage: `[Mon YYYY Portfolio]` — e.g., `[Feb 2026 Portfolio]`
-- Articles: No tag (use `dateModified` in schema)
-- Services: No tag (use footer accuracy line)
+**Do not put a `[Mon YYYY]` tag in the homepage `<title>`.** The convention backfired:
+Google cached `Winston Koh | AI Systems Architect [May 2026 Portfolio]` and was still
+serving that title in July, so the tag intended to signal freshness was actively
+advertising a stale page. Titles are cached far longer than they are re-crawled.
+
+Signal freshness where crawlers actually read it:
+
+- `dateModified` in the JSON-LD `@graph` (already emitted site-wide)
+- `article:modified_time` meta (already emitted)
+- The footer's build-stamped date
 
 ### Alt Text Voice
 
@@ -392,9 +418,11 @@ AI Systems Architect. I build autonomous bionic workflows that scale your output
 
 ### URL Slug Convention
 
-- Lowercase, hyphenated: `/articles/anti-slop-protocol`
+- Lowercase, hyphenated: `/articles/anti-slop-protocol/`
 - No dates in URLs (dates belong in schema, not URLs)
-- No trailing slashes (enforced in `astro.config.mjs`)
+- **Trailing slashes are required** — `astro.config.mjs` sets `trailingSlash: 'always'`
+  with `build.format: 'directory'`, so every route is served as `path/index.html`.
+  Internal links must include the trailing slash or they take a redirect hop.
 
 ---
 

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bionic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#EC4899"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.28"/>
+      <stop offset="60%" style="stop-color:#7C3AED;stop-opacity:0.10"/>
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="rule" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Void background -->
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+
+  <!-- Ambient bionic glow behind the mark -->
+  <ellipse cx="255" cy="315" rx="290" ry="290" fill="url(#glow)"/>
+
+  <!-- Lambda mark (exact polygon from brand/logo/lambda-gradient.svg, scaled 2.6x) -->
+  <g transform="translate(125 185) scale(2.6)">
+    <polygon points="50,10 85,90 70,90 50,45 30,90 15,90" fill="url(#bionic)"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="510" y="268" font-family="Avenir Next, Avenir, Helvetica Neue, sans-serif"
+        font-size="86" font-weight="700" fill="#FFFFFF" letter-spacing="-1.5">Winston Koh</text>
+
+  <!-- Role -->
+  <text x="513" y="332" font-family="Avenir Next, Avenir, Helvetica Neue, sans-serif"
+        font-size="38" font-weight="500" fill="#A1A1AA" letter-spacing="0.4">AI Systems Architect</text>
+
+  <!-- Accent rule -->
+  <rect x="513" y="368" width="300" height="3" rx="1.5" fill="url(#rule)"/>
+
+  <!-- Tagline -->
+  <text x="513" y="428" font-family="Avenir Next, Avenir, Helvetica Neue, sans-serif"
+        font-size="30" font-weight="400" fill="#E8E8E8">I build systems that run themselves.</text>
+
+  <!-- Domain, monospace per brand type stack -->
+  <text x="513" y="482" font-family="JetBrains Mono, Menlo, monospace"
+        font-size="24" font-weight="400" fill="#3B82F6" letter-spacing="0.5">winstonkoh87.com</text>
+</svg>

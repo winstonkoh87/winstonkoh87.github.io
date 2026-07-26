@@ -12,7 +12,9 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div class="terminal-body">
                 <p class="prompt">guest@winston.io:~$ <span class="command">look --around</span></p>
-                <p class="error-code">HTTP 404: RESOURCE_NOT_FOUND</p>
+                <!-- The error code is the page's heading — screen readers need one
+                     landmark heading, and the terminal styling is preserved. -->
+                <h1 class="error-code">HTTP 404: RESOURCE_NOT_FOUND</h1>
                 <p class="error-msg">You have drifted outside the Arena. The requested coordinate does not exist in the current simulation.</p>
                 <div class="nav-links">
                     <p><span class="prompt">></span> <a href="/">cd /home</a></p>
@@ -65,6 +67,12 @@ import Layout from '../layouts/Layout.astro';
     .terminal-body {
         padding: 2rem;
         line-height: 1.6;
+        /* terminal.css is imported globally for the homepage's interactive
+           terminal and pins .terminal-body to height:220px + overflow-y:auto.
+           On this page that clipped the escape links out of the box — the one
+           thing a 404 has to show. Let it size to its content instead. */
+        height: auto;
+        overflow: visible;
     }
 
     .prompt { color: #3b82f6; margin-right: 8px; }
