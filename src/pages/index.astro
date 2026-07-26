@@ -573,6 +573,9 @@ Or just ask a question naturally!`, 'system');
             localStorage.setItem('intent_mode', mode);
         }
 
+        // Expose to global scope (define:vars wraps in IIFE)
+        window.setIntent = setIntent;
+
         // Initialize on load
         document.addEventListener('DOMContentLoaded', () => {
             const savedMode = localStorage.getItem('intent_mode') || 'freelance';
