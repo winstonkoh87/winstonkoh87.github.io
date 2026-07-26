@@ -63,6 +63,10 @@ const breadcrumbLd = pathSegments.length ? {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Warm the analytics sockets before the async script needs them -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG4XS3R5NV"></script>
     <script is:inline>
@@ -130,7 +134,7 @@ const breadcrumbLd = pathSegments.length ? {
           "jobTitle": "AI Systems Architect & Corporate AI Trainer",
           "description": "Singapore-based AI Systems Architect. Builder of Project Athena — the open-source Linux OS for AI Agents. Specializes in autonomous workflows, bionic systems, and technical consultancy.",
           "url": "https://winstonkoh87.com",
-          "image": "https://winstonkoh87.com/assets/images/winston-avatar.jpg",
+          "image": "https://winstonkoh87.com/assets/images/winston-avatar.webp",
           "nationality": {
             "@type": "Country",
             "name": "Singapore"

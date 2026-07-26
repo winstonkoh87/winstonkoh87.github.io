@@ -114,7 +114,7 @@ export const ARTICLES: Article[] = [
         tags: ["AI Strategy"],
         keywords: ["sovereign ai", "project athena", "ai agent framework", "personal ai assistant", "build your own ai"],
         excerpt: "Why a portable, augmenting, and sovereign AI beats a 'smart' one. The 5 pillars that make Athena an asset, not a liability.",
-        image: "/images/articles/athena-5-pillars.png",
+        image: "/images/articles/athena-5-pillars.webp",
         readingTime: 8
     },
     {
@@ -125,7 +125,7 @@ export const ARTICLES: Article[] = [
         tags: ["Strategy"],
         keywords: ["trilateral feedback loop", "multi ai workflow", "adversarial audit", "claude vs gemini vs chatgpt", "ai validation"],
         excerpt: "How to stop your AI from becoming a 'Yes Man' and use adversarial audit loops to validate high-stakes decisions.",
-        image: "/images/articles/trilateral-feedback-loop.png",
+        image: "/images/articles/trilateral-feedback-loop.webp",
         readingTime: 6
     },
     {
@@ -136,7 +136,7 @@ export const ARTICLES: Article[] = [
         tags: ["Strategy"],
         keywords: ["bionic operator", "ai augmentation", "ai replaces tasks", "human ai collaboration", "ai will not replace you"],
         excerpt: "Why the 'AI will replace you' narrative is wrong. The real play is augmentation — becoming a bionic operator.",
-        image: "/images/articles/ai-bionic-layer.png",
+        image: "/images/articles/ai-bionic-layer.webp",
         readingTime: 7
     },
     {
@@ -147,7 +147,7 @@ export const ARTICLES: Article[] = [
         tags: ["Strategy"],
         keywords: ["iterative ai", "ai iteration", "prompt engineering", "ai workflow", "plan execute calibrate"],
         excerpt: "Magic prompts don't exist. The real power of AI comes from iterative collaboration—Plan, Execute, Calibrate, Iterate.",
-        image: "/images/articles/iterative-layer.png",
+        image: "/images/articles/iterative-layer.webp",
         readingTime: 7
     },
     {
@@ -158,7 +158,7 @@ export const ARTICLES: Article[] = [
         tags: ["Launch Story"],
         keywords: ["open source ai agent", "project athena launch", "github open source", "ai personal assistant", "shipping in public"],
         excerpt: "A first-hand account of open-sourcing Project Athena and the counter-intuitive lesson on why 'risky' authenticity beats 'safe' professionalism.",
-        image: "/images/articles/athena-public-launch.png",
+        image: "/images/articles/athena-public-launch.webp",
         readingTime: 6
     },
 
@@ -204,7 +204,7 @@ export const ARTICLES: Article[] = [
         tags: ["Protocol"],
         keywords: ["speed as weapon", "clinkz doctrine", "fast execution", "bureaucracy", "velocity"],
         excerpt: "Why speed is a weapon, and how to use the 'Clinkz Doctrine' to outmaneuver bureaucratic sluggishness.",
-        image: "/assets/images/articles/clinkz-doctrine/hero-clinkz.png",
+        image: "/assets/images/articles/clinkz-doctrine/clinkz-archetype.png",
         readingTime: 3
     },
     {
@@ -215,7 +215,7 @@ export const ARTICLES: Article[] = [
         tags: ["Safety Protocol"],
         keywords: ["ai safety", "ai backup protocol", "ai destroyed project", "agentic ai risk", "ai safety net"],
         excerpt: "A client paid for Agentic AI superpowers but ignored the one rule that kept them safe. How one prompt wiped a project, and the backup protocol that would have saved it.",
-        image: "/images/articles/the-price-of-ignoring-advice.png",
+        image: "/images/articles/the-price-of-ignoring-advice.webp",
         featured: true,
         readingTime: 5
     },
@@ -227,7 +227,7 @@ export const ARTICLES: Article[] = [
         tags: ["Protocol"],
         keywords: ["anti slop", "ai writing protocol", "ai content quality", "ai ghostwriting", "long form ai writing"],
         excerpt: "Stop trying to prompt-engineer a perfect essay. Start acting like a Manager instead of a Maker. A 4-phase protocol for high-quality AI co-creation.",
-        image: "/images/articles/anti-slop-protocol.png",
+        image: "/images/articles/anti-slop-protocol.webp",
         readingTime: 5
     },
     {
@@ -238,7 +238,7 @@ export const ARTICLES: Article[] = [
         tags: ["Case Study"],
         keywords: ["bionic branding", "ai portfolio", "trilateral feedback loop", "multi ai branding", "student portfolio"],
         excerpt: "How we used a Trilateral Feedback Loop (Gemini + Claude + O1) to build a high-performance portfolio for a student leader.",
-        image: "/images/articles/soulful-stoic-protocol.png",
+        image: "/images/articles/soulful-stoic-protocol.webp",
         readingTime: 6
     },
     {
@@ -249,7 +249,7 @@ export const ARTICLES: Article[] = [
         tags: ["Protocol"],
         keywords: ["net life hour", "career economics", "hourly rate calculator", "grab driver", "true hourly wage"],
         excerpt: "The dangerous illusion of 'Monthly Income' vs. The brutal reality of 'Net Life Hour'. A framework for auditing the unit economics of your career.",
-        image: "/images/articles/net-life-hour-protocol.png",
+        image: "/images/articles/net-life-hour-protocol.webp",
         readingTime: 5
     },
     {
@@ -260,7 +260,7 @@ export const ARTICLES: Article[] = [
         tags: ["Case Study"],
         keywords: ["first principles design", "website in one day", "design case study", "ai web design", "deep work"],
         excerpt: "How I used First Principles Thinking and Project Athena to compress a week of design paralysis into a single Deep Work Saturday.",
-        image: "/images/articles/first-principles-design.png",
+        image: "/images/articles/first-principles-design.webp",
         readingTime: 5
     },
 
@@ -273,7 +273,7 @@ export const ARTICLES: Article[] = [
         tags: ["Strategy"],
         keywords: ["cheap developer", "ai generated app", "vibe coding", "freelancer pricing", "cheap vs quality developer"],
         excerpt: "The hidden cost of 'just throwing it into ChatGPT.' A case study on why a cheap AI-generated web app failed, and the engineering required to fix it.",
-        image: "/images/articles/why-the-200-coder-broke-your-app.png",
+        image: "/images/articles/why-the-200-coder-broke-your-app.webp",
         featured: true,
         readingTime: 5
     },
@@ -285,7 +285,7 @@ export const ARTICLES: Article[] = [
         tags: ["Strategy"],
         keywords: ["website pricing", "freelance pricing", "price discovery", "value based pricing", "cheap website"],
         excerpt: "I tested how cheap I could price a website before the market pushed back. They didn't. Here's what that taught me about value, scope, and expectation gaps.",
-        image: "/images/articles/pricing-trap.png",
+        image: "/images/articles/pricing-trap.webp",
         readingTime: 5
     },
     {
@@ -296,7 +296,7 @@ export const ARTICLES: Article[] = [
         tags: ["AI Strategy"],
         keywords: ["vibe coding", "ai speed trap", "business physics", "ai startup mistake", "building 10 apps"],
         excerpt: "I built 10 apps in a week, and I have $0 revenue. Why AI accelerates the 'How' but breaks the 'Who', 'Where', and 'How Much'.",
-        image: "/images/articles/vibe-coding-trap.png",
+        image: "/images/articles/vibe-coding-trap.webp",
         readingTime: 5
     },
     {
@@ -307,7 +307,7 @@ export const ARTICLES: Article[] = [
         tags: ["Strategy"],
         keywords: ["efficiency trap", "false competence", "accelerated learning", "2 day course", "fragile knowledge"],
         excerpt: "Deconstructing the mechanic of 'False Competence' in accelerated learning. Why efficient inputs (2-Day Courses) lead to fragile outputs.",
-        image: "/images/articles/2-day-efficiency-trap.png",
+        image: "/images/articles/2-day-efficiency-trap.webp",
         readingTime: 5
     },
 
@@ -320,7 +320,7 @@ export const ARTICLES: Article[] = [
         tags: ["Case Study"],
         keywords: ["alteryx ai", "unfamiliar tools", "bionic approach", "rapid learning", "ml pipeline"],
         excerpt: "A client needed an ML pipeline in Alteryx — software I'd never touched. Here's how portable fundamentals compressed a week of work into a single day.",
-        image: "/images/articles/alteryx-24-hours.png",
+        image: "/images/articles/alteryx-24-hours.webp",
         readingTime: 5
     },
     {
@@ -331,7 +331,7 @@ export const ARTICLES: Article[] = [
         tags: ["Case Study"],
         keywords: ["gemini gems", "ai agent", "rapid prototyping", "ai r&d", "logic prototyping"],
         excerpt: "I thought replacing myself with an AI agent would take a week. It took me 24 hours. A case study in rapid logic prototyping and hard-coding ethics.",
-        image: "/images/articles/gemini-gem-agent.png",
+        image: "/images/articles/gemini-gem-agent.webp",
         readingTime: 6
     },
     {
@@ -342,7 +342,7 @@ export const ARTICLES: Article[] = [
         tags: ["Case Study"],
         keywords: ["ai marketing strategy", "marketing automation", "ai pitch deck", "strategic analysis ai", "marketing workflow"],
         excerpt: "A methodology demonstration of AI-augmented strategic analysis — from industry research to interactive pitch deck in 4 hours.",
-        image: "/images/articles/ai-marketing-workflow.png",
+        image: "/images/articles/ai-marketing-workflow.webp",
         readingTime: 8
     },
     {
@@ -353,7 +353,7 @@ export const ARTICLES: Article[] = [
         tags: ["Case Study"],
         keywords: ["tuition centre website", "sme website", "lead generation", "digital marketing tuition", "ai website builder"],
         excerpt: "From brief to deployment: a 5-page SME website and digital marketing launch plan — built in under one hour with AI-augmented execution.",
-        image: "/images/articles/case-study-p6-math-tuition.png",
+        image: "/images/articles/case-study-p6-math-tuition.webp",
         readingTime: 9
     },
     {
@@ -364,7 +364,7 @@ export const ARTICLES: Article[] = [
         tags: ["AI for Business"],
         keywords: ["sme marketing singapore", "ai marketing sme", "cheap marketing", "facebook ads ai", "google ads ai", "digital marketing guide"],
         excerpt: "Website creation, SEO content, Facebook/Google ads — a practical guide on using AI to run your digital marketing without hiring a team.",
-        image: "/images/articles/sme-ai-marketing-guide.png",
+        image: "/images/articles/sme-ai-marketing-guide.webp",
         readingTime: 10
     }
 ];
