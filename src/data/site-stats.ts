@@ -6,7 +6,7 @@
 
 export const ATHENA_VERSION = 'v9.9.8';
 export const PROTOCOLS_ACTIVE = 414;
-export const SESSIONS_LOGGED = '2,090+';
+export const SESSIONS_LOGGED = '2,100+';
 // Rounded-down ordinal for prose ("your Nth session recalls..."). Derived by hand
 // from SESSIONS_LOGGED so copy never contradicts the counter above it.
 export const SESSIONS_MILESTONE = '2,000th';
