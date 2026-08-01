@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
         role: "Architect + Full Stack",
         description: "An autonomous 'Second Brain' that reduces engineering research time by 60%. Leverages RAG and Supabase Vector to recall, reason, and execute.",
         outcome: `Personal AI OS with 'commit semantics' — ${SESSIONS_LOGGED} sessions of persistent memory and ${GITHUB_STARS}+ stars on GitHub.`,
-        tags: ["Python", "Supabase Vector", "Gemini 3.1 Pro", "Claude Opus 5", "System Architecture"],
+        tags: ["Python", "Supabase Vector", "Gemini 3.5 Pro", "Claude Opus 5", "System Architecture"],
         status: "production",
         icon: "⚡",
         isLive: true

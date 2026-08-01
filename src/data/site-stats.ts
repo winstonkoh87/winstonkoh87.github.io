@@ -18,8 +18,8 @@ export const GITHUB_REPO = 'winstonkoh87/Athena-Public';
 export const GITHUB_URL = `https://github.com/${GITHUB_REPO}`;
 export const LICENSE = 'MIT';
 
-const FALLBACK_STARS = 544;
-const FALLBACK_FORKS = 74;
+const FALLBACK_STARS = 554;
+const FALLBACK_FORKS = 75;
 
 async function fetchRepo(): Promise<{ stars: number; forks: number }> {
     try {
