@@ -1,0 +1,30 @@
+# Winston Koh — AI Systems Architect & Corporate AI Trainer
+
+> Singapore-based AI Systems Architect specializing in autonomous agentic infrastructure (Project Athena), bionic business workflows, and production-grade websites for SMEs.
+
+## Core Capabilities & Services (SGD)
+- **AI Agent Training & Workshops**: S$800 (Half-day hands-on workshop for founders & teams on Claude Code and agentic workflows. Real business automations built live.)
+- **Web Development**: S$500 – S$1,500 (Production-grade static sites, 100/100 Lighthouse score guaranteed, 24–72 hour delivery.)
+- **Custom AI Agents & Automation**: Fixed proposal based on scope (Custom internal tools, RAG knowledge bases, lead-qualification agents.)
+- **1-on-1 Strategy Consulting**: S$150/hr (60-minute strategic session over Zoom with recording and actionable roadmap.)
+
+## Key Proof Points & Metrics
+- **Project Athena**: Open-source local-first agentic PKM operating system (554★ on GitHub, 2,100+ stress-tested sessions, 414 codified protocols).
+- **Client Outcomes**: 7+ production sites shipped in 24–72 hours with zero bloat and instant load times.
+- **Social Proof**: #1 on r/GeminiAI, #4 on r/ChatGPT, 1M+ total Reddit views.
+
+## Primary Knowledge Links
+- [Homepage](https://winstonkoh87.com/)
+- [Services & Fixed Pricing](https://winstonkoh87.com/services/)
+- [Portfolio & Live Case Studies](https://winstonkoh87.com/portfolio/)
+- [Project Athena Overview](https://winstonkoh87.com/athena/)
+- [Articles & Technical Writing](https://winstonkoh87.com/writing/)
+- [About Winston Koh](https://winstonkoh87.com/about/)
+- [Contact & WhatsApp Direct](https://winstonkoh87.com/contact/)
+
+## Contact Information
+- **WhatsApp**: +65 8358 1066
+- **Email**: winstonkoh87@gmail.com
+- **Location**: Singapore
+- **GitHub**: https://github.com/winstonkoh87
+- **LinkedIn**: https://www.linkedin.com/in/winstonkoh87

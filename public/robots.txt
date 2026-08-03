@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
+# Machine-Readable AI Knowledge Map
+llms: https://winstonkoh87.com/llms.txt
+
+Host: https://winstonkoh87.com
 Sitemap: https://winstonkoh87.com/sitemap-index.xml
