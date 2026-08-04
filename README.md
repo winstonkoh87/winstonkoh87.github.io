@@ -1,6 +1,6 @@
 # winstonkoh87.com
 
-> **Last verified**: 26 July 2026
+> **Last verified**: 4 August 2026
 > **Purpose**: Portfolio. Proof of work on [Project Athena](https://github.com/winstonkoh87/Athena-Public) — not a lead-gen site.
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.com-00C853?style=flat-square)](https://winstonkoh87.com/)
@@ -41,7 +41,7 @@ The sitemap and the indexable set are kept in exact agreement — 0 leaks, 0 orp
 | Licence | MIT |
 | Language | Python |
 | Stars / forks | 544 / 74 (fetched live at build time) |
-| Protocols | 414 active |
+| Protocols | 448 (414 active) |
 | Sessions logged | 2,090+ |
 
 Every one of these numbers is checkable against the public repo, which is the point. They're surfaced through `src/data/site-stats.ts` — a single module every page imports, so a stat can't drift between pages. Stars and forks are fetched from the GitHub API at build time with a last-known floor, so a transient API failure can't make the numbers appear to go backwards.
