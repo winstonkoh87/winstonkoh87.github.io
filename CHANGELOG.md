@@ -9,6 +9,7 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/). This sit
 ## 2026-08
 
 ### Changed
+- **Synchronized Portfolio & Freshness Pass (5 Aug 2026)**: Updated site-wide verification dates, sitemap timestamps, and Athena metrics to 5 August 2026.
 - **System-2 & Canonical Counts Sync (4 Aug 2026)**: Synced site-wide Athena metrics to 448 protocols (414 active), 72 slash command workflows, 260 scripts, and 4,197 memory files following the Athena v9.9.8 System-2 compute release.
 - **Positioning Alignment**: Verified canonical description and governed AI agent positioning across Astro layout templates and Athena product pages.
 
