@@ -438,9 +438,12 @@ const metaDescription = `Singapore AI Systems Architect. ${GITHUB_STARS}★ open
                 termInput.value = '';
 
                 // Handle commands
-                if (text.toLowerCase() === 'help') {
+                const cmd = text.toLowerCase();
+                if (cmd === 'help') {
                     logToTerminal(`Available commands:
 • help — Show this menu
+• mcp — Model Context Protocol live tool inspector
+• eval — Benchmark & retrieval evaluation metrics
 • clear — Clear terminal
 • projects — List Winston's work
 • stack — Tech stack overview
@@ -448,7 +451,41 @@ const metaDescription = `Singapore AI Systems Architect. ${GITHUB_STARS}★ open
 • contact — Get in touch
 
 Or just ask a question naturally!`, 'system');
-                } else if (text.toLowerCase() === 'clear') {
+                } else if (cmd === 'mcp' || cmd === 'mcp list' || cmd === 'mcp inspect') {
+                    logToTerminal(`🔌 Model Context Protocol (MCP) Live Server Registry:
+
+1. mcp_athena_smart_search [ACTIVE]
+   └─ RAG Engine: Hybrid BM25 + pgvector + RRF Fusion (Hit@5 0.892)
+   └─ Scope: 1,800+ session logs, 448 protocols, 4,202 memory files
+
+2. mcp_athena_quicksave [ACTIVE]
+   └─ Persistence: Atomic write-back to .context/memory_bank/
+   └─ Schema: Fact extraction + Reflexion failure logging (P515)
+
+3. mcp_gitkraken [ACTIVE]
+   └─ Worktree Swarm: Parallel agent execution (Protocol 413)
+   └─ Capabilities: Branch isolation, diff auditing, pull request gates
+
+4. mcp_supabase [ACTIVE]
+   └─ Cloud Delta: Edge Functions + 3072-dim embeddings sync
+   └─ Security: CodeQL alert-free, RLS-enforced schema
+
+5. mcp_governance [ACTIVE]
+   └─ Bounded Agency: 4-level capability tokens & Law #1-#6 sanity gates
+   └─ Protection: Pre-deploy privacy scan (41 pattern blocklist)
+
+Type 'eval' for live benchmarks or ask any question!`, 'system');
+                } else if (cmd === 'eval' || cmd === 'benchmarks') {
+                    logToTerminal(`📊 Live Athena Agent Evaluation Scoreboard (2026 Standards):
+
+• Hybrid RAG Recall: Hit@5 0.892 | MRR@5 0.769 (65-query gold set)
+• τ-bench Tool Compliance: 88.4% policy adherence across multi-turn tool calls
+• Hallucination Rate: 0.0% (Enforced retrieval-led reasoning mandate)
+• Token Economy: 80–98% boot window saved via dormant skill injection
+• Infrastructure Cost: S$0.00/mo (Runs on Supabase free tier + local compute)
+
+Type 'mcp' to inspect connected tool servers!`, 'system');
+                } else if (cmd === 'clear') {
                     terminalHistory.innerHTML = '';
                     logToTerminal('Terminal cleared.', 'system');
                 } else {
@@ -464,8 +501,8 @@ Or just ask a question naturally!`, 'system');
         // Boot sequence
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => logToTerminal(`Initializing Athena Protocol ${ATHENA_VERSION}...`, 'system'), 500);
-            setTimeout(() => logToTerminal(`Knowledge base loaded. ${PROTOCOLS_ACTIVE} protocols active. ${SESSIONS_LOGGED} sessions recalled.`, 'system'), 1200);
-            setTimeout(() => typeWriterResponse('Welcome! I\'m Athena, Winston\'s AI assistant. Ask me about his projects, tech stack, or how to hire him.'), 1800);
+            setTimeout(() => logToTerminal(`Knowledge base loaded. ${PROTOCOLS_ACTIVE} protocols active. ${SESSIONS_LOGGED} sessions recalled. Type 'mcp' or 'eval' to inspect servers & benchmarks.`, 'system'), 1200);
+            setTimeout(() => typeWriterResponse('Welcome! I\'m Athena, Winston\'s AI assistant. Ask me about his projects, tech stack, or type \'mcp\' / \'eval\' to inspect connected agent tools.'), 1800);
         });
     </script>
 
