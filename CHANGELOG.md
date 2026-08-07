@@ -9,6 +9,7 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/). This sit
 ## 2026-08
 
 ### Changed
+- **Synchronized Digital Portfolio Refresh (8 Aug 2026)**: Updated site-wide verification dates, sitemap timestamps, and Athena metrics (448 protocols, 43 active skills, 72 workflows, 260 scripts, 4,209 memory files) to 8 August 2026 state.
 - **Synchronized Portfolio & Freshness Pass (7 Aug 2026)**: Updated site-wide verification dates, sitemap timestamps, and Athena metrics (448 protocols, 43 active skills, 72 workflows, 260 scripts, 4,202 memory files) to 7 August 2026.
 - **Synchronized Portfolio & Freshness Pass (5 Aug 2026)**: Updated site-wide verification dates, sitemap timestamps, and Athena metrics to 5 August 2026.
 - **System-2 & Canonical Counts Sync (4 Aug 2026)**: Synced site-wide Athena metrics to 448 protocols (414 active), 72 slash command workflows, 260 scripts, and 4,197 memory files following the Athena v9.9.8 System-2 compute release.
