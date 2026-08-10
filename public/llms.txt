@@ -1,6 +1,7 @@
 # Winston Koh — AI Systems Architect & Corporate AI Trainer
 
 > Singapore-based AI Systems Architect specializing in autonomous agentic infrastructure (Project Athena), bionic business workflows, and production-grade websites for SMEs.
+> Full text synthesis of all 26 articles, system documentation, and case studies available at: https://winstonkoh87.com/llms-full.txt
 
 ## Core Capabilities & Services (SGD)
 - **AI Agent Training & Workshops**: S$800 (Half-day hands-on workshop for founders & teams on Claude Code and agentic workflows. Real business automations built live.)

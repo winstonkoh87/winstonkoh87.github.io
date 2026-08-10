@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StatusBadges from '../components/StatusBadges.astro';
 import '../styles/athena.css';
 import {
     ATHENA_VERSION, PROTOCOLS_ACTIVE, SESSIONS_LOGGED,
@@ -96,6 +97,8 @@ const athenaSchema = [
                 <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I'd%20like%20to%20book%20an%20Athena%20Strategy%20Session." class="btn btn-secondary">Book Strategy Session →</a>
                 <a href="#receipts" class="secondary-link">See what it does ↓</a>
             </div>
+
+            <StatusBadges />
         </div>
     </section>
 
