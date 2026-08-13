@@ -106,6 +106,12 @@ const breadcrumbLd = pathSegments.length ? {
     <title>{title}</title>
     <meta name="description" content={description}>
     
+    <!-- AI Agent & WebMCP Discovery Standards -->
+    <link rel="agent-manifest" href="/llms.txt" type="text/plain" title="LLM Context Manifest" />
+    <link rel="agent-manifest-full" href="/llms-full.txt" type="text/plain" title="Full LLM Context" />
+    <meta name="agent-context" content="https://winstonkoh87.com/llms.txt" />
+    <meta name="webmcp:discovery" content="https://winstonkoh87.com/llms.txt" />
+
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="0LRsIInh-jyrPq-S0qX1qwLX_5GP7TiTIPZ_CUmGBVg" />
 
