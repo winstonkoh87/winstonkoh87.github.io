@@ -1,6 +1,6 @@
-# Architecture: winstonkoh87.com
+# Architecture: winstonkoh87.com — Architecture Reference
 
-> **Last verified**: 14 August 2026 · Astro 5.16.6 · Tailwind 4.1.18
+> **Last verified**: 16 August 2026 · Astro 5.16.6 · Tailwind 4.1.18
 > Companion to [README.md](README.md). This document is about *where things live and why* — read it before changing anything structural.
 
 ---
