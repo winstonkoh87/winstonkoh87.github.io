@@ -15,18 +15,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       changefreq: EnumChangefreq.WEEKLY,
-      // Keep mock-client demos out of the sitemap. They carry noindex and stay
-      // reachable from /portfolio/ — they just shouldn't be submitted for
-      // indexing, since they'd dilute the site's topical entity.
-      filter: (page) =>
-        !page.includes('/404') &&
-        !page.includes('/swim-coach-demo/') &&
-        !page.includes('/coach-derrick/') &&
-        !page.includes('/projects/melvin/') &&
-        !page.includes('/projects/brew/') &&
-        !page.includes('/projects/p6-math-tuition/') &&
-        !page.includes('/projects/sticker-shop/') &&
-        !page.includes('/projects/thatbiotutor/'),
+      filter: (page) => !page.includes('/404'),
       serialize: (item) => {
         const url = item.url;
         // Homepage = highest priority

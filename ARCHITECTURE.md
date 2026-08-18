@@ -87,7 +87,7 @@ Don't hand-roll a second `<script type="application/ld+json">` in a page — two
 
 ### `MelvinLayout.astro` is deliberately separate
 
-It does **not** extend `Layout.astro` — the demo needs its own visual identity, its own fonts, and critically its own `noindex` + demo banner + `WebPage`/`CreativeWork` schema. Keeping it separate means the demo can never accidentally inherit the site's `Person` schema or nav.
+It does **not** extend `Layout.astro` — the demo needs its own visual identity, its own fonts, and its own demo banner + `WebPage`/`CreativeWork` schema. Keeping it separate means the demo can never accidentally inherit the site's `Person` schema or nav.
 
 ---
 
@@ -123,14 +123,14 @@ Those two settings must agree. GitHub Pages resolves `/about/` to `/about/index.
 
 `@astrojs/sitemap` with a `filter` and a `serialize`:
 
-- **`filter`** excludes `/404` and every mock-demo path. Any new demo directory must be added here *and* carry a `noindex` meta tag — the two go together.
+- **`filter`** excludes `/404`. All live routes, articles, and project pages are included in the sitemap.
 - **`serialize`** assigns priority and changefreq by URL shape: home 1.0/daily, core pages 0.9/weekly, articles 0.8/monthly, projects 0.6/monthly.
 
 **Invariant**: the sitemap and the set of indexable pages agree exactly. Verify after any routing change:
 
 ```bash
 npm run build
-# then: every dist page without a noindex should appear in dist/sitemap-0.xml, and vice versa
+# then: verify sitemap contains all generated routes
 ```
 
 ---
@@ -168,16 +168,12 @@ Tailwind v4 is wired through the Vite plugin (`@tailwindcss/vite`) — there is 
 ---
 
 ## 8. Indexing policy
+ 
+All site pages and project demos are configured for full search engine indexing (`index, follow`).
 
-Three mechanisms, all of which must agree for a page to be indexed:
-
-1. **`noindex` meta tag** — absent on real pages, present on all 19 demo pages
-2. **Sitemap `filter`** in `astro.config.mjs` — demos excluded
-3. **`robots.txt`** — `Allow: /` plus the sitemap pointer; it does not do per-path blocking
-
-Demo pages use `noindex, follow` (not `nofollow`) so link equity still flows back to the main site.
-
-**Adding a new mock demo?** Do all three: `noindex` meta, sitemap `filter` entry, and — if it names a real person or business — a visible "Design demo" banner with no real contact details and no `Person` schema.
+1. **`robots.txt`** — `Allow: /` plus the sitemap pointer.
+2. **Sitemap** — all routes included except `/404`.
+3. **Demo Pages** — carry `index, follow` along with a visible "Design demo" banner and `CreativeWork` schema to maintain transparency on concept pieces.
 
 ---
 
@@ -208,7 +204,7 @@ git push origin main
 | Add page-specific structured data | Pass `extraSchema` to `Layout` |
 | Change nav or footer | `src/components/Navigation.astro` / `Footer.astro` |
 | Change a brand colour | `src/styles/style.css` **and** `brand/variables.css` |
-| Add a mock demo | `public/` + `noindex` + sitemap `filter` + demo banner (§8) |
+| Add a mock demo | `public/` or `src/pages/projects/` + demo banner (§8) |
 | Change sitemap priority | `serialize` in `astro.config.mjs` |
 | Replace the OG card | `brand/social/og-image-1200x630.svg` → render → copy to `public/assets/images/og-image.png` |
 
@@ -218,7 +214,7 @@ git push origin main
 
 These have each been broken at least once. A build that violates one is a regression:
 
-1. **Sitemap ≡ indexable set.** No noindexed page in the sitemap; no indexable page missing from it.
+1. **Sitemap completeness.** All valid public routes appear in the sitemap.
 2. **No broken image references.** Every `src`/`href` pointing at an image resolves in `dist/`.
 3. **One `<h1>` per content page.** (`athena-demo-live.html` is an embedded widget
    fragment and the Google verification file is a stub — neither is a page.)
@@ -231,6 +227,6 @@ Quick check after a structural change:
 
 ```bash
 npm run build
-grep -rl 'noindex' dist --include="*.html" | wc -l     # expect 19
-grep -o '<loc>' dist/sitemap-0.xml | wc -l             # expect 40
+grep -rl 'noindex' dist --include="*.html" | wc -l     # expect 0
+grep -o '<loc>' dist/sitemap-0.xml | wc -l
 ```
