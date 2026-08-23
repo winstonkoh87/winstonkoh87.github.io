@@ -1,16 +1,32 @@
 import type { APIRoute } from 'astro';
 import fs from 'node:fs';
 import path from 'node:path';
-import { ATHENA_VERSION, PROTOCOLS_ACTIVE, SESSIONS_LOGGED, VECTOR_MEMORIES, GITHUB_STARS, GITHUB_FORKS, GITHUB_REPO } from '../data/site-stats';
+import { ATHENA_VERSION, PROTOCOLS_ACTIVE, SESSIONS_LOGGED, GITHUB_STARS, GITHUB_REPO } from '../data/site-stats';
 import { ARTICLES, CLUSTERS as ARTICLE_CLUSTERS } from '../data/writing-taxonomy';
 import { PROJECTS, CLUSTERS as PROJECT_CLUSTERS } from '../data/portfolio-taxonomy';
+
+const HTML_ENTITIES: Record<string, string> = {
+    '&nbsp;': ' ',
+    '&lt;': '<',
+    '&gt;': '>',
+    '&quot;': '"',
+    '&#39;': "'",
+    '&mdash;': '—',
+    '&ndash;': '–',
+    '&amp;': '&',
+};
 
 function cleanAstroToMarkdown(raw: string): string {
     // Strip frontmatter
     let text = raw.replace(/^---[\s\S]*?---/, '');
 
-    // Strip scripts, styles, SVGs, import lines, and layout tags
-    text = text.replace(/<(script|style|svg)[\s\S]*?<\/\1>/gi, '');
+    // Strip scripts, styles, SVGs, import lines, and layout tags (loop until fixed point to avoid incomplete sanitization)
+    let prev: string;
+    do {
+        prev = text;
+        text = text.replace(/<(script|style|svg)[\s\S]*?<\/\1>/gi, '');
+    } while (text !== prev);
+
     text = text.replace(/^import\s+[\s\S]*?;$/gm, '');
 
     // Headings
@@ -34,19 +50,14 @@ function cleanAstroToMarkdown(raw: string): string {
     // Paragraphs
     text = text.replace(/<p[^>]*>([\s\S]*?)<\/p>/gi, '$1\n\n');
 
-    // Strip remaining HTML tags
-    text = text.replace(/<[^>]+>/g, '');
+    // Strip remaining HTML tags (loop until fixed point to prevent nested tag bypasses)
+    do {
+        prev = text;
+        text = text.replace(/<[^>]+>/g, '');
+    } while (text !== prev);
 
-    // Decode HTML entities
-    text = text
-        .replace(/&nbsp;/g, ' ')
-        .replace(/&amp;/g, '&')
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&quot;/g, '"')
-        .replace(/&#39;/g, "'")
-        .replace(/&mdash;/g, '—')
-        .replace(/&ndash;/g, '–');
+    // Decode HTML entities in a single dictionary pass to prevent double unescaping
+    text = text.replace(/&(?:nbsp|lt|gt|quot|#39|mdash|ndash|amp);/g, match => HTML_ENTITIES[match] ?? match);
 
     // Clean whitespace
     const lines = text.split('\n').map(l => l.trim());
