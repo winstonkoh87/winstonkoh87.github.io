@@ -4,13 +4,13 @@
 // so each deploy refreshes the count); the fallback keeps builds green if the
 // API is unreachable or rate-limited in CI.
 
-export const ATHENA_VERSION = 'v9.9.9';
+export const ATHENA_VERSION = 'v9.9.8';
 export const PROTOCOLS_ACTIVE = 418;
 export const SESSIONS_LOGGED = '2,100+';
 // Rounded-down ordinal for prose ("your Nth session recalls..."). Derived by hand
 // from SESSIONS_LOGGED so copy never contradicts the counter above it.
 export const SESSIONS_MILESTONE = '2,000th';
-export const VECTOR_MEMORIES = '5,600+';
+export const VECTOR_MEMORIES = '4,361+';
 
 // Repo facts. Anything here is externally verifiable on the GitHub repo page,
 // which is the point — these are the proof numbers, so they must not drift.

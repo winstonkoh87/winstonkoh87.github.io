@@ -41,7 +41,7 @@ const {
     extraSchema = []
 } = Astro.props;
 
-const siteLastModified = new Date().toISOString().split('T')[0];
+const siteLastModified = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Singapore' });
 const ogType = articleData ? "article" : "website";
 
 const canonicalURL = canonicalUrl ? new URL(canonicalUrl) : new URL(Astro.url.pathname, Astro.site);
