@@ -84,11 +84,11 @@ export const GET: APIRoute = async () => {
     fullText += `- **Architect & Author**: Winston Koh (Singapore 🇸🇬)\n`;
     fullText += `- **Primary Open-Source Engine**: Project Athena (https://github.com/${GITHUB_REPO})\n`;
     fullText += `- **Athena Version**: ${ATHENA_VERSION} (Frozen reference: v8.2-stable)\n`;
-    fullText += `- **Active Protocols**: ${PROTOCOLS_ACTIVE} active decision/risk/execution protocols across 26 categories (448 total)\n`;
+    fullText += `- **Active Protocols**: ${PROTOCOLS_ACTIVE} active decision/risk/execution protocols across 26 categories (452 total)\n`;
     fullText += `- **Active Cognitive Skills**: 43 active skills with path/topic conditional activation (~40-60% token savings)\n`;
     fullText += `- **Workflows**: 74 slash command triggers (/start, /ultrastart, /end, /ultraend, /think, /research, /audit, /do)\n`;
-    fullText += `- **Python Stack**: 264 automation scripts (boot, shutdown, governance, memory sync, hybrid search)\n`;
-    fullText += `- **Logged Sessions**: ${SESSIONS_LOGGED} stress-tested bilateral sessions (4,346 indexed memory files)\n`;
+    fullText += `- **Python Stack**: 268 automation scripts (boot, shutdown, governance, memory sync, hybrid search)\n`;
+    fullText += `- **Logged Sessions**: ${SESSIONS_LOGGED} stress-tested bilateral sessions (4,365 indexed memory files)\n`;
     fullText += `- **Hybrid RAG Performance**: Hit@5 0.892 / MRR@5 0.769 / Coverage 0.618 measured on a published 65-query gold set\n`;
     fullText += `- **Social Proof**: 1M+ Reddit views (#1 r/GeminiAI, #4 r/ChatGPT), 960+ unique cloners, ${GITHUB_STARS}★ on GitHub\n`;
     fullText += `- **Infrastructure Cost**: $0/month (Supabase free tier + local POSIX storage + model APIs)\n\n`;

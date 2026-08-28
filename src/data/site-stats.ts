@@ -4,7 +4,7 @@
 // so each deploy refreshes the count); the fallback keeps builds green if the
 // API is unreachable or rate-limited in CI.
 
-export const ATHENA_VERSION = 'v9.9.8';
+export const ATHENA_VERSION = 'v9.9.9';
 export const PROTOCOLS_ACTIVE = 418;
 export const SESSIONS_LOGGED = '2,100+';
 // Rounded-down ordinal for prose ("your Nth session recalls..."). Derived by hand

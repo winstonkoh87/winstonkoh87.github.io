@@ -10,7 +10,7 @@
 - **1-on-1 Strategy Consulting**: S$150/hr (60-minute strategic session over Zoom with recording and actionable roadmap.)
 
 ## Key Proof Points & Metrics
-- **Project Athena**: Open-source local-first agentic PKM operating system (554★ on GitHub, 2,100+ stress-tested sessions, 414 codified protocols).
+- **Project Athena**: Open-source local-first agentic PKM operating system (554★ on GitHub, 2,100+ stress-tested sessions, 418 codified protocols).
 - **Client Outcomes**: 7+ production sites shipped in 24–72 hours with zero bloat and instant load times.
 - **Social Proof**: #1 on r/GeminiAI, #4 on r/ChatGPT, 1M+ total Reddit views.
 

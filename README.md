@@ -37,7 +37,7 @@ The sitemap and the indexable set are kept in exact agreement — 0 leaks, 0 orp
 | | |
 |---|---|
 | Repo | [winstonkoh87/Athena-Public](https://github.com/winstonkoh87/Athena-Public) |
-| Version | v9.9.8 |
+| Version | v9.9.9 |
 | Licence | MIT |
 | Language | Python |
 | Stars / forks | 544 / 74 (fetched live at build time) |
