@@ -1,6 +1,6 @@
 # winstonkoh87.com
 
-> **Last verified**: 3 September 2026 (Winston Koh · Singapore) <!-- 2026-09-03 -->
+> **Last verified**: 4 September 2026 (Winston Koh · Singapore) <!-- 2026-09-04 -->
 > **Purpose**: Portfolio. Proof of work on [Project Athena](https://github.com/winstonkoh87/Athena-Public) — not a lead-gen site.
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.com-00C853?style=flat-square)](https://winstonkoh87.com/)
