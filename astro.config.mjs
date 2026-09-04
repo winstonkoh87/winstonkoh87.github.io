@@ -16,10 +16,10 @@ export default defineConfig({
     sitemap({
       changefreq: EnumChangefreq.WEEKLY,
       filter: (page) => !page.includes('/404'),
-      lastmod: new Date('2026-09-04'),
+      lastmod: new Date('2026-09-05'),
       serialize: (item) => {
         const url = item.url;
-        const lastmod = '2026-09-04';
+        const lastmod = '2026-09-05';
         // Homepage = highest priority
         if (url === 'https://winstonkoh87.com/' || url === 'https://winstonkoh87.com') {
           return { ...item, priority: 1.0, changefreq: EnumChangefreq.DAILY, lastmod };
