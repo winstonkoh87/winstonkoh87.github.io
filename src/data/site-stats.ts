@@ -1,5 +1,5 @@
 // Single source of truth for site-wide Athena stats.
-// Last verified: 2026-09-15
+// Last verified: 2026-09-16
 // Every page imports from here — update once, deploy, done.
 // GITHUB_STARS is fetched live at build time (the site rebuilds on every push,
 // so each deploy refreshes the count); the fallback keeps builds green if the
@@ -15,8 +15,8 @@ export const SESSIONS_LOGGED = '2,100+';
 // Rounded-down ordinal for prose ("your Nth session recalls..."). Derived by hand
 // from SESSIONS_LOGGED so copy never contradicts the counter above it.
 export const SESSIONS_MILESTONE = '2,000th';
-export const VECTOR_MEMORIES = '4,757';
-export const CASE_STUDIES = 502;
+export const VECTOR_MEMORIES = '4,774';
+export const CASE_STUDIES = 503;
 
 // Repo facts. Anything here is externally verifiable on the GitHub repo page,
 // which is the point — these are the proof numbers, so they must not drift.
