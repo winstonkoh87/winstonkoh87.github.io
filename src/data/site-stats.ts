@@ -15,7 +15,7 @@ export const SESSIONS_LOGGED = '2,100+';
 // Rounded-down ordinal for prose ("your Nth session recalls..."). Derived by hand
 // from SESSIONS_LOGGED so copy never contradicts the counter above it.
 export const SESSIONS_MILESTONE = '2,000th';
-export const VECTOR_MEMORIES = '4,774';
+export const VECTOR_MEMORIES = '4,775';
 export const CASE_STUDIES = 503;
 
 // Repo facts. Anything here is externally verifiable on the GitHub repo page,
