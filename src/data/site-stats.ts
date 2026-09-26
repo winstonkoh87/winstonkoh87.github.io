@@ -1,21 +1,21 @@
 // Single source of truth for site-wide Athena stats.
-// Last verified: 2026-09-25
+// Last verified: 2026-09-27
 // Every page imports from here — update once, deploy, done.
 // GITHUB_STARS is fetched live at build time (the site rebuilds on every push,
 // so each deploy refreshes the count); the fallback keeps builds green if the
 // API is unreachable or rate-limited in CI.
 
 export const ATHENA_VERSION = 'v9.9.9';
-export const PROTOCOLS_ACTIVE = 421;
-export const PROTOCOLS_TOTAL = 455;
+export const PROTOCOLS_ACTIVE = 422;
+export const PROTOCOLS_TOTAL = 456;
 export const SKILLS_ACTIVE = 43;
-export const WORKFLOWS_COUNT = 74;
-export const SCRIPTS_COUNT = 279;
+export const WORKFLOWS_COUNT = 75;
+export const SCRIPTS_COUNT = 285;
 export const SESSIONS_LOGGED = '2,100+';
 // Rounded-down ordinal for prose ("your Nth session recalls..."). Derived by hand
 // from SESSIONS_LOGGED so copy never contradicts the counter above it.
 export const SESSIONS_MILESTONE = '2,000th';
-export const VECTOR_MEMORIES = '4,960';
+export const VECTOR_MEMORIES = '5,015';
 export const CASE_STUDIES = 503;
 
 // Repo facts. Anything here is externally verifiable on the GitHub repo page,
